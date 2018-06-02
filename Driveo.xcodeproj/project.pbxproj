@@ -31,6 +31,11 @@
 		84A2D4E420C2CD7D00576ACF /* DropDownPlacesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4DB20C2CD7D00576ACF /* DropDownPlacesItem.swift */; };
 		84A2D4E520C2CD7D00576ACF /* DropDownPlacesItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A2D4DC20C2CD7D00576ACF /* DropDownPlacesItem.xib */; };
 		84A2D4E620C2CD7D00576ACF /* PlacesDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4DD20C2CD7D00576ACF /* PlacesDropDownMenu.swift */; };
+		84A2D4F020C2CE2400576ACF /* LocationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4E920C2CE2400576ACF /* LocationManger.swift */; };
+		84A2D4F120C2CE2400576ACF /* SearchUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4EB20C2CE2400576ACF /* SearchUITextField.swift */; };
+		84A2D4F220C2CE2400576ACF /* UIDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4EC20C2CE2400576ACF /* UIDatePicker.swift */; };
+		84A2D4F320C2CE2400576ACF /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4ED20C2CE2400576ACF /* RoundedButton.swift */; };
+		84A2D4F420C2CE2400576ACF /* NetworkDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4EF20C2CE2400576ACF /* NetworkDAL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +87,11 @@
 		84A2D4DB20C2CD7D00576ACF /* DropDownPlacesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownPlacesItem.swift; sourceTree = "<group>"; };
 		84A2D4DC20C2CD7D00576ACF /* DropDownPlacesItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownPlacesItem.xib; sourceTree = "<group>"; };
 		84A2D4DD20C2CD7D00576ACF /* PlacesDropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesDropDownMenu.swift; sourceTree = "<group>"; };
+		84A2D4E920C2CE2400576ACF /* LocationManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManger.swift; sourceTree = "<group>"; };
+		84A2D4EB20C2CE2400576ACF /* SearchUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUITextField.swift; sourceTree = "<group>"; };
+		84A2D4EC20C2CE2400576ACF /* UIDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePicker.swift; sourceTree = "<group>"; };
+		84A2D4ED20C2CE2400576ACF /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		84A2D4EF20C2CE2400576ACF /* NetworkDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDAL.swift; sourceTree = "<group>"; };
 		AFD4C75E002CC92DBAF6FD12 /* Pods-Driveo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Driveo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Driveo/Pods-Driveo.release.xcconfig"; sourceTree = "<group>"; };
 		B6E29ACB4486A1DAC46D0BDF /* Pods-DriveoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoUITests/Pods-DriveoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD7A33C575B0340738F6AF6C /* Pods-DriveoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoUITests/Pods-DriveoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +201,7 @@
 				8424621620C11FA800D00057 /* Pojo */,
 				8447455720C07D270076D0EC /* Errors */,
 				8447456C20C07D2A0076D0EC /* Protocols */,
+				84A2D4E720C2CE2400576ACF /* Utilities */,
 				84A2D4A720C2C91200576ACF /* View */,
 				8447456920C07D290076D0EC /* UIViewControllerExtention */,
 				845D48EF20BEEF92000F16C1 /* AppDelegate.swift */,
@@ -259,6 +270,42 @@
 				84A2D4DD20C2CD7D00576ACF /* PlacesDropDownMenu.swift */,
 			);
 			path = PlacesDropDownList;
+			sourceTree = "<group>";
+		};
+		84A2D4E720C2CE2400576ACF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				84A2D4E820C2CE2400576ACF /* LocationUtilities */,
+				84A2D4EA20C2CE2400576ACF /* CustomControls */,
+				84A2D4EE20C2CE2400576ACF /* NetworkUtilities */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		84A2D4E820C2CE2400576ACF /* LocationUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				84A2D4E920C2CE2400576ACF /* LocationManger.swift */,
+			);
+			path = LocationUtilities;
+			sourceTree = "<group>";
+		};
+		84A2D4EA20C2CE2400576ACF /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				84A2D4EB20C2CE2400576ACF /* SearchUITextField.swift */,
+				84A2D4EC20C2CE2400576ACF /* UIDatePicker.swift */,
+				84A2D4ED20C2CE2400576ACF /* RoundedButton.swift */,
+			);
+			path = CustomControls;
+			sourceTree = "<group>";
+		};
+		84A2D4EE20C2CE2400576ACF /* NetworkUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				84A2D4EF20C2CE2400576ACF /* NetworkDAL.swift */,
+			);
+			path = NetworkUtilities;
 			sourceTree = "<group>";
 		};
 		9BEDF054A8AE9E53D422E8FA /* Frameworks */ = {
@@ -518,14 +565,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A2D4F020C2CE2400576ACF /* LocationManger.swift in Sources */,
 				84A2D4DE20C2CD7D00576ACF /* DropDownCarrierItem.swift in Sources */,
 				8447457B20C07D2A0076D0EC /* LocationMangerProtocol.swift in Sources */,
 				84A2D4E020C2CD7D00576ACF /* DropDownMenu.swift in Sources */,
 				84A2D4E120C2CD7D00576ACF /* HomePresenter.swift in Sources */,
+				84A2D4F120C2CE2400576ACF /* SearchUITextField.swift in Sources */,
 				8424621820C11FA800D00057 /* SelectedPlace.swift in Sources */,
+				84A2D4F220C2CE2400576ACF /* UIDatePicker.swift in Sources */,
 				845D48F820BEEF92000F16C1 /* Driveo.xcdatamodeld in Sources */,
 				8447457920C07D2A0076D0EC /* SpinnerExtention.swift in Sources */,
 				84A2D4E420C2CD7D00576ACF /* DropDownPlacesItem.swift in Sources */,
+				84A2D4F320C2CE2400576ACF /* RoundedButton.swift in Sources */,
+				84A2D4F420C2CE2400576ACF /* NetworkDAL.swift in Sources */,
 				8447456E20C07D2A0076D0EC /* ErrorType.swift in Sources */,
 				8447457A20C07D2A0076D0EC /* LocationMangerProtocolExtention.swift in Sources */,
 				845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */,
