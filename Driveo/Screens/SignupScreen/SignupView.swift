@@ -10,6 +10,10 @@ import UIKit
 
 class SignupView: UIViewController ,SignupViewProtocol{
     
+    var spinner:UIView?
+    
+    var alert:UIAlertController?
+    
     lazy var signupPresenter:SignupPresenter = SignupPresenter(signupView: self)
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -19,6 +23,7 @@ class SignupView: UIViewController ,SignupViewProtocol{
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
     
     
     @IBOutlet weak var confirmPasswordError: UILabel!
@@ -70,11 +75,11 @@ class SignupView: UIViewController ,SignupViewProtocol{
     
     
     func showLoading() {
-        UIViewController.displaySpinner(onView: self.view)
+         spinner = UIViewController.displaySpinner(onView: self.view)
     }
     
     func dismissLoading() {
-        UIViewController.removeSpinner(spinner: self.view)
+        UIViewController.removeSpinner(spinner: spinner!)
     }
     
     func showNoInternetAlert(){
@@ -94,8 +99,18 @@ class SignupView: UIViewController ,SignupViewProtocol{
     }
     
     @IBAction func goToLoginScreen(_ sender: Any) {
-        
+      //  self.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
+    
+    
+    func goToVerifyScreen(){
+        //self.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+    }
+    
+    func showAlert(withTitle title :String , andMessage msg:String){
+        alert = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)
+    }
+    
     
 }
 

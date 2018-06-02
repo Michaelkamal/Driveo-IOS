@@ -13,4 +13,4 @@ enum ErrorType:String,Error{
     case location = "This app is unusable if you don't authorize this app to use your location!"
     case parse = "Error parsing Json"
     case incompleteData = "Please complete data"
-}
+    }

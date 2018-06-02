@@ -75,7 +75,6 @@ public class NetworkDAL{
                 let jsonData = JSON(data);
                 print(response.request!.url!.absoluteString)
                 onSuccess(parser(jsonData));
-                
             case .failure :
                 onFailure(.internet)
             }
