@@ -16,7 +16,6 @@ enum ApiBaseUrl:String{
     case mainApi = "https://mina7esh.herokuapp.com/"
 }
 
-
 public class NetworkDAL{
     
     static func isInternetAvailable() -> Bool {

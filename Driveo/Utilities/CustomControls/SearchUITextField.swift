@@ -12,15 +12,15 @@ class SearchUITextField: UITextField {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        let iconWidth = 20;
-        let iconHeight = 20;
+        let iconWidth = 19;
+        let iconHeight = 19;
         
         leftView=UIView()
         let searchButton = UIButton(type: .custom)
         searchButton.setImage(#imageLiteral(resourceName: "ic_search"), for: UIControlState.normal)
         searchButton.backgroundColor = UIColor.clear
-        leftView!.frame=CGRect(x:0, y:0, width: iconWidth+10, height: iconHeight+5)
-        searchButton.frame = CGRect(x: 5, y: 5, width: iconWidth, height: iconHeight)
+        leftView!.frame=CGRect(x:0, y:0, width: iconWidth+16, height: iconHeight)
+        searchButton.frame = CGRect(x: 0, y: 0, width: iconWidth, height: iconHeight)
         searchButton.addTarget( self, action:#selector(didTapOnSearchButton), for: UIControlEvents.touchUpInside)
         leftView!.addSubview(searchButton)
         leftViewMode = UITextFieldViewMode.always
@@ -32,8 +32,8 @@ class SearchUITextField: UITextField {
         clearButton.backgroundColor = UIColor.clear
         clearButton.contentEdgeInsets=UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5)
         clearButton.addTarget( self, action:#selector(didTapOnClearButton), for: UIControlEvents.touchUpInside)
-        rightView!.frame=CGRect(x:0, y:0, width: iconWidth+10, height: iconHeight+5)
-        clearButton.frame = CGRect(x: 5, y: 5, width: iconWidth, height: iconHeight)
+        rightView!.frame=CGRect(x:0, y:0, width: iconWidth, height: iconHeight)
+        clearButton.frame = CGRect(x: 6, y: 0, width: iconWidth, height: iconHeight)
         rightView!.addSubview(clearButton)
         rightViewMode = UITextFieldViewMode.always
         layer.borderWidth = 2.0

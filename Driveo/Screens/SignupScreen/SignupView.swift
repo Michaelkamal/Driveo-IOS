@@ -70,11 +70,11 @@ class SignupView: UIViewController ,SignupViewProtocol{
     
     
     func showLoading() {
-        
+        UIViewController.displaySpinner(onView: self.view)
     }
     
     func dismissLoading() {
-        
+        UIViewController.removeSpinner(spinner: self.view)
     }
     
     func showNoInternetAlert(){
