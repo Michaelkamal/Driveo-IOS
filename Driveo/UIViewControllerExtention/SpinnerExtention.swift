@@ -26,5 +26,9 @@ extension UIViewController {
             spinner.isHidden=true
             spinner.removeFromSuperview()
         }}
+    class func getAlertController(ofErrorType err: ErrorType,withTitle title: String)-> UIAlertController{
+        return UIAlertController(title: title, message: err.rawValue, preferredStyle: UIAlertControllerStyle.alert)
+       
+    }
 }
 

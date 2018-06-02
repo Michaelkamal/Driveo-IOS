@@ -7,8 +7,9 @@
 //
 
 import Foundation
+
 enum ErrorType:String,Error{
     case internet = "Check your internet connection"
-    case location = "Allow app to use location in order to continue"
+    case location = "This app is unusable if you don't authorize this app to use your location!"
     case parse = "Error parsing Json"
 }
