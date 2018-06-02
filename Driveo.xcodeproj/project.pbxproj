@@ -1,0 +1,900 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		151A73D53C1296903E0BAC0C /* Pods_DriveoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3039D78FFA4FBB8FC7748D /* Pods_DriveoTests.framework */; };
+		3991B73336CFAB391EE43C70 /* Pods_Driveo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812B8BD6E5F1093D015199A1 /* Pods_Driveo.framework */; };
+		6A8B2742BD4EA93B23009918 /* Pods_DriveoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF644CBEF5F0792EAC23D85C /* Pods_DriveoUITests.framework */; };
+		842461FE20C11F6500D00057 /* DropDownCarrierItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842461F220C11F6500D00057 /* DropDownCarrierItem.swift */; };
+		842461FF20C11F6500D00057 /* DropDownCarrierItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842461F320C11F6500D00057 /* DropDownCarrierItem.xib */; };
+		8424620020C11F6500D00057 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842461F420C11F6500D00057 /* DropDownMenu.swift */; };
+		8424620120C11F6500D00057 /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842461F520C11F6500D00057 /* SourceViewController.swift */; };
+		8424620320C11F6500D00057 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842461F820C11F6500D00057 /* Home.storyboard */; };
+		8424620420C11F6500D00057 /* DropDownPlacesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842461FA20C11F6500D00057 /* DropDownPlacesItem.swift */; };
+		8424620520C11F6500D00057 /* DropDownPlacesItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842461FB20C11F6500D00057 /* DropDownPlacesItem.xib */; };
+		8424620620C11F6500D00057 /* PlacesDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842461FC20C11F6500D00057 /* PlacesDropDownMenu.swift */; };
+		8424620720C11F6500D00057 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842461FD20C11F6500D00057 /* HomePresenter.swift */; };
+		8424621120C11F7C00D00057 /* LocationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424620A20C11F7C00D00057 /* LocationManger.swift */; };
+		8424621220C11F7C00D00057 /* SearchUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424620C20C11F7C00D00057 /* SearchUITextField.swift */; };
+		8424621320C11F7C00D00057 /* UIDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424620D20C11F7C00D00057 /* UIDatePicker.swift */; };
+		8424621420C11F7C00D00057 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424620E20C11F7C00D00057 /* RoundedButton.swift */; };
+		8424621520C11F7C00D00057 /* NetworkDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424621020C11F7C00D00057 /* NetworkDAL.swift */; };
+		8424621820C11FA800D00057 /* SelectedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424621720C11FA800D00057 /* SelectedPlace.swift */; };
+		8447456E20C07D2A0076D0EC /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447455820C07D270076D0EC /* ErrorType.swift */; };
+		8447457920C07D2A0076D0EC /* SpinnerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447456A20C07D290076D0EC /* SpinnerExtention.swift */; };
+		8447457A20C07D2A0076D0EC /* LocationMangerProtocolExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447456B20C07D290076D0EC /* LocationMangerProtocolExtention.swift */; };
+		8447457B20C07D2A0076D0EC /* LocationMangerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447456D20C07D2A0076D0EC /* LocationMangerProtocol.swift */; };
+		845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D48EF20BEEF92000F16C1 /* AppDelegate.swift */; };
+		845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D48F320BEEF92000F16C1 /* Main.storyboard */; };
+		845D48F820BEEF92000F16C1 /* Driveo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 845D48F620BEEF92000F16C1 /* Driveo.xcdatamodeld */; };
+		845D48FA20BEEF92000F16C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845D48F920BEEF92000F16C1 /* Assets.xcassets */; };
+		845D48FD20BEEF92000F16C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D48FB20BEEF92000F16C1 /* LaunchScreen.storyboard */; };
+		845D490820BEEF92000F16C1 /* DriveoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D490720BEEF92000F16C1 /* DriveoTests.swift */; };
+		845D491320BEEF93000F16C1 /* DriveoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D491220BEEF93000F16C1 /* DriveoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		845D490420BEEF92000F16C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 845D48E420BEEF92000F16C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 845D48EB20BEEF92000F16C1;
+			remoteInfo = Driveo;
+		};
+		845D490F20BEEF93000F16C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 845D48E420BEEF92000F16C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 845D48EB20BEEF92000F16C1;
+			remoteInfo = Driveo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A1900466273D5750A34E2B9 /* Pods-Driveo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Driveo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Driveo/Pods-Driveo.debug.xcconfig"; sourceTree = "<group>"; };
+		70AFABCD82D6A1F0E690F921 /* Pods-DriveoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoTests/Pods-DriveoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7C3039D78FFA4FBB8FC7748D /* Pods_DriveoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DriveoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		812B8BD6E5F1093D015199A1 /* Pods_Driveo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Driveo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		842461F220C11F6500D00057 /* DropDownCarrierItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownCarrierItem.swift; sourceTree = "<group>"; };
+		842461F320C11F6500D00057 /* DropDownCarrierItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownCarrierItem.xib; sourceTree = "<group>"; };
+		842461F420C11F6500D00057 /* DropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
+		842461F520C11F6500D00057 /* SourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
+		842461F820C11F6500D00057 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		842461FA20C11F6500D00057 /* DropDownPlacesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownPlacesItem.swift; sourceTree = "<group>"; };
+		842461FB20C11F6500D00057 /* DropDownPlacesItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownPlacesItem.xib; sourceTree = "<group>"; };
+		842461FC20C11F6500D00057 /* PlacesDropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesDropDownMenu.swift; sourceTree = "<group>"; };
+		842461FD20C11F6500D00057 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		8424620A20C11F7C00D00057 /* LocationManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManger.swift; sourceTree = "<group>"; };
+		8424620C20C11F7C00D00057 /* SearchUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUITextField.swift; sourceTree = "<group>"; };
+		8424620D20C11F7C00D00057 /* UIDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePicker.swift; sourceTree = "<group>"; };
+		8424620E20C11F7C00D00057 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		8424621020C11F7C00D00057 /* NetworkDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDAL.swift; sourceTree = "<group>"; };
+		8424621720C11FA800D00057 /* SelectedPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedPlace.swift; sourceTree = "<group>"; };
+		8447455820C07D270076D0EC /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
+		8447456A20C07D290076D0EC /* SpinnerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerExtention.swift; sourceTree = "<group>"; };
+		8447456B20C07D290076D0EC /* LocationMangerProtocolExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationMangerProtocolExtention.swift; sourceTree = "<group>"; };
+		8447456D20C07D2A0076D0EC /* LocationMangerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationMangerProtocol.swift; sourceTree = "<group>"; };
+		845D48EC20BEEF92000F16C1 /* Driveo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driveo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		845D48EF20BEEF92000F16C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		845D48F420BEEF92000F16C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		845D48F720BEEF92000F16C1 /* Driveo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Driveo.xcdatamodel; sourceTree = "<group>"; };
+		845D48F920BEEF92000F16C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		845D48FC20BEEF92000F16C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		845D48FE20BEEF92000F16C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845D490320BEEF92000F16C1 /* DriveoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		845D490720BEEF92000F16C1 /* DriveoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveoTests.swift; sourceTree = "<group>"; };
+		845D490920BEEF93000F16C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845D490E20BEEF93000F16C1 /* DriveoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		845D491220BEEF93000F16C1 /* DriveoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveoUITests.swift; sourceTree = "<group>"; };
+		845D491420BEEF93000F16C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFD4C75E002CC92DBAF6FD12 /* Pods-Driveo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Driveo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Driveo/Pods-Driveo.release.xcconfig"; sourceTree = "<group>"; };
+		B6E29ACB4486A1DAC46D0BDF /* Pods-DriveoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoUITests/Pods-DriveoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD7A33C575B0340738F6AF6C /* Pods-DriveoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoUITests/Pods-DriveoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CF644CBEF5F0792EAC23D85C /* Pods_DriveoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DriveoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D76515B77D4AB3AD17607439 /* Pods-DriveoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoTests/Pods-DriveoTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		845D48E920BEEF92000F16C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3991B73336CFAB391EE43C70 /* Pods_Driveo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845D490020BEEF92000F16C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				151A73D53C1296903E0BAC0C /* Pods_DriveoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845D490B20BEEF93000F16C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A8B2742BD4EA93B23009918 /* Pods_DriveoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A6938E59CBF8D3C0B799700 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A1900466273D5750A34E2B9 /* Pods-Driveo.debug.xcconfig */,
+				AFD4C75E002CC92DBAF6FD12 /* Pods-Driveo.release.xcconfig */,
+				70AFABCD82D6A1F0E690F921 /* Pods-DriveoTests.debug.xcconfig */,
+				D76515B77D4AB3AD17607439 /* Pods-DriveoTests.release.xcconfig */,
+				B6E29ACB4486A1DAC46D0BDF /* Pods-DriveoUITests.debug.xcconfig */,
+				BD7A33C575B0340738F6AF6C /* Pods-DriveoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		842461EF20C11F6500D00057 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				842461F020C11F6500D00057 /* HomeView */,
+			);
+			name = View;
+			path = ../../Map/Map/View;
+			sourceTree = "<group>";
+		};
+		842461F020C11F6500D00057 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				842461F120C11F6500D00057 /* CarrierDropDownList */,
+				842461F920C11F6500D00057 /* PlacesDropDownList */,
+				842461F520C11F6500D00057 /* SourceViewController.swift */,
+				842461FD20C11F6500D00057 /* HomePresenter.swift */,
+				842461F820C11F6500D00057 /* Home.storyboard */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		842461F120C11F6500D00057 /* CarrierDropDownList */ = {
+			isa = PBXGroup;
+			children = (
+				842461F220C11F6500D00057 /* DropDownCarrierItem.swift */,
+				842461F320C11F6500D00057 /* DropDownCarrierItem.xib */,
+				842461F420C11F6500D00057 /* DropDownMenu.swift */,
+			);
+			path = CarrierDropDownList;
+			sourceTree = "<group>";
+		};
+		842461F920C11F6500D00057 /* PlacesDropDownList */ = {
+			isa = PBXGroup;
+			children = (
+				842461FA20C11F6500D00057 /* DropDownPlacesItem.swift */,
+				842461FB20C11F6500D00057 /* DropDownPlacesItem.xib */,
+				842461FC20C11F6500D00057 /* PlacesDropDownMenu.swift */,
+			);
+			path = PlacesDropDownList;
+			sourceTree = "<group>";
+		};
+		8424620820C11F7C00D00057 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8424620920C11F7C00D00057 /* LocationUtilities */,
+				8424620B20C11F7C00D00057 /* CustomControls */,
+				8424620F20C11F7C00D00057 /* NetworkUtilities */,
+			);
+			name = Utilities;
+			path = ../../Map/Map/Utilities;
+			sourceTree = "<group>";
+		};
+		8424620920C11F7C00D00057 /* LocationUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				8424620A20C11F7C00D00057 /* LocationManger.swift */,
+			);
+			path = LocationUtilities;
+			sourceTree = "<group>";
+		};
+		8424620B20C11F7C00D00057 /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				8424620C20C11F7C00D00057 /* SearchUITextField.swift */,
+				8424620D20C11F7C00D00057 /* UIDatePicker.swift */,
+				8424620E20C11F7C00D00057 /* RoundedButton.swift */,
+			);
+			path = CustomControls;
+			sourceTree = "<group>";
+		};
+		8424620F20C11F7C00D00057 /* NetworkUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				8424621020C11F7C00D00057 /* NetworkDAL.swift */,
+			);
+			path = NetworkUtilities;
+			sourceTree = "<group>";
+		};
+		8424621620C11FA800D00057 /* Pojo */ = {
+			isa = PBXGroup;
+			children = (
+				8424621720C11FA800D00057 /* SelectedPlace.swift */,
+			);
+			path = Pojo;
+			sourceTree = "<group>";
+		};
+		8447455720C07D270076D0EC /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				8447455820C07D270076D0EC /* ErrorType.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		8447456920C07D290076D0EC /* UIViewControllerExtention */ = {
+			isa = PBXGroup;
+			children = (
+				8447456A20C07D290076D0EC /* SpinnerExtention.swift */,
+				8447456B20C07D290076D0EC /* LocationMangerProtocolExtention.swift */,
+			);
+			path = UIViewControllerExtention;
+			sourceTree = "<group>";
+		};
+		8447456C20C07D2A0076D0EC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8447456D20C07D2A0076D0EC /* LocationMangerProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		845D48E320BEEF92000F16C1 = {
+			isa = PBXGroup;
+			children = (
+				845D48EE20BEEF92000F16C1 /* Driveo */,
+				845D490620BEEF92000F16C1 /* DriveoTests */,
+				845D491120BEEF93000F16C1 /* DriveoUITests */,
+				845D48ED20BEEF92000F16C1 /* Products */,
+				1A6938E59CBF8D3C0B799700 /* Pods */,
+				9BEDF054A8AE9E53D422E8FA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		845D48ED20BEEF92000F16C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				845D48EC20BEEF92000F16C1 /* Driveo.app */,
+				845D490320BEEF92000F16C1 /* DriveoTests.xctest */,
+				845D490E20BEEF93000F16C1 /* DriveoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		845D48EE20BEEF92000F16C1 /* Driveo */ = {
+			isa = PBXGroup;
+			children = (
+				8424621620C11FA800D00057 /* Pojo */,
+				8447455720C07D270076D0EC /* Errors */,
+				8447456C20C07D2A0076D0EC /* Protocols */,
+				8447456920C07D290076D0EC /* UIViewControllerExtention */,
+				8424620820C11F7C00D00057 /* Utilities */,
+				842461EF20C11F6500D00057 /* View */,
+				845D48EF20BEEF92000F16C1 /* AppDelegate.swift */,
+				845D48F320BEEF92000F16C1 /* Main.storyboard */,
+				845D48F920BEEF92000F16C1 /* Assets.xcassets */,
+				845D48FB20BEEF92000F16C1 /* LaunchScreen.storyboard */,
+				845D48FE20BEEF92000F16C1 /* Info.plist */,
+				845D48F620BEEF92000F16C1 /* Driveo.xcdatamodeld */,
+			);
+			path = Driveo;
+			sourceTree = "<group>";
+		};
+		845D490620BEEF92000F16C1 /* DriveoTests */ = {
+			isa = PBXGroup;
+			children = (
+				845D490720BEEF92000F16C1 /* DriveoTests.swift */,
+				845D490920BEEF93000F16C1 /* Info.plist */,
+			);
+			path = DriveoTests;
+			sourceTree = "<group>";
+		};
+		845D491120BEEF93000F16C1 /* DriveoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				845D491220BEEF93000F16C1 /* DriveoUITests.swift */,
+				845D491420BEEF93000F16C1 /* Info.plist */,
+			);
+			path = DriveoUITests;
+			sourceTree = "<group>";
+		};
+		9BEDF054A8AE9E53D422E8FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				812B8BD6E5F1093D015199A1 /* Pods_Driveo.framework */,
+				7C3039D78FFA4FBB8FC7748D /* Pods_DriveoTests.framework */,
+				CF644CBEF5F0792EAC23D85C /* Pods_DriveoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		845D48EB20BEEF92000F16C1 /* Driveo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 845D491720BEEF93000F16C1 /* Build configuration list for PBXNativeTarget "Driveo" */;
+			buildPhases = (
+				A3FA5D68E3CD0464EA01D797 /* [CP] Check Pods Manifest.lock */,
+				845D48E820BEEF92000F16C1 /* Sources */,
+				845D48E920BEEF92000F16C1 /* Frameworks */,
+				845D48EA20BEEF92000F16C1 /* Resources */,
+				E1A2ADFBB4E6044226B30B67 /* [CP] Embed Pods Frameworks */,
+				C5211619F4A5A99F1BA2E738 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Driveo;
+			productName = Driveo;
+			productReference = 845D48EC20BEEF92000F16C1 /* Driveo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		845D490220BEEF92000F16C1 /* DriveoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 845D491A20BEEF93000F16C1 /* Build configuration list for PBXNativeTarget "DriveoTests" */;
+			buildPhases = (
+				12FFACBBF7036AB5E9948B4D /* [CP] Check Pods Manifest.lock */,
+				845D48FF20BEEF92000F16C1 /* Sources */,
+				845D490020BEEF92000F16C1 /* Frameworks */,
+				845D490120BEEF92000F16C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				845D490520BEEF92000F16C1 /* PBXTargetDependency */,
+			);
+			name = DriveoTests;
+			productName = DriveoTests;
+			productReference = 845D490320BEEF92000F16C1 /* DriveoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		845D490D20BEEF93000F16C1 /* DriveoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 845D491D20BEEF93000F16C1 /* Build configuration list for PBXNativeTarget "DriveoUITests" */;
+			buildPhases = (
+				964F7071473A836D16BE3D3F /* [CP] Check Pods Manifest.lock */,
+				845D490A20BEEF93000F16C1 /* Sources */,
+				845D490B20BEEF93000F16C1 /* Frameworks */,
+				845D490C20BEEF93000F16C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				845D491020BEEF93000F16C1 /* PBXTargetDependency */,
+			);
+			name = DriveoUITests;
+			productName = DriveoUITests;
+			productReference = 845D490E20BEEF93000F16C1 /* DriveoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		845D48E420BEEF92000F16C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = ITI;
+				TargetAttributes = {
+					845D48EB20BEEF92000F16C1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					845D490220BEEF92000F16C1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 845D48EB20BEEF92000F16C1;
+					};
+					845D490D20BEEF93000F16C1 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 845D48EB20BEEF92000F16C1;
+					};
+				};
+			};
+			buildConfigurationList = 845D48E720BEEF92000F16C1 /* Build configuration list for PBXProject "Driveo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 845D48E320BEEF92000F16C1;
+			productRefGroup = 845D48ED20BEEF92000F16C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				845D48EB20BEEF92000F16C1 /* Driveo */,
+				845D490220BEEF92000F16C1 /* DriveoTests */,
+				845D490D20BEEF93000F16C1 /* DriveoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		845D48EA20BEEF92000F16C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				842461FF20C11F6500D00057 /* DropDownCarrierItem.xib in Resources */,
+				8424620520C11F6500D00057 /* DropDownPlacesItem.xib in Resources */,
+				8424620320C11F6500D00057 /* Home.storyboard in Resources */,
+				845D48FD20BEEF92000F16C1 /* LaunchScreen.storyboard in Resources */,
+				845D48FA20BEEF92000F16C1 /* Assets.xcassets in Resources */,
+				845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845D490120BEEF92000F16C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845D490C20BEEF93000F16C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12FFACBBF7036AB5E9948B4D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DriveoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		964F7071473A836D16BE3D3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DriveoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3FA5D68E3CD0464EA01D797 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Driveo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5211619F4A5A99F1BA2E738 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Driveo/Pods-Driveo-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Driveo/Pods-Driveo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1A2ADFBB4E6044226B30B67 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Driveo/Pods-Driveo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GooglePlacesSearchController/GooglePlacesSearchController.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GooglePlacesSearchController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Driveo/Pods-Driveo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		845D48E820BEEF92000F16C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8424621120C11F7C00D00057 /* LocationManger.swift in Sources */,
+				8447457B20C07D2A0076D0EC /* LocationMangerProtocol.swift in Sources */,
+				8424621820C11FA800D00057 /* SelectedPlace.swift in Sources */,
+				845D48F820BEEF92000F16C1 /* Driveo.xcdatamodeld in Sources */,
+				8447457920C07D2A0076D0EC /* SpinnerExtention.swift in Sources */,
+				8424621220C11F7C00D00057 /* SearchUITextField.swift in Sources */,
+				8447456E20C07D2A0076D0EC /* ErrorType.swift in Sources */,
+				8424621320C11F7C00D00057 /* UIDatePicker.swift in Sources */,
+				8447457A20C07D2A0076D0EC /* LocationMangerProtocolExtention.swift in Sources */,
+				8424620120C11F6500D00057 /* SourceViewController.swift in Sources */,
+				845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */,
+				8424621420C11F7C00D00057 /* RoundedButton.swift in Sources */,
+				8424621520C11F7C00D00057 /* NetworkDAL.swift in Sources */,
+				842461FE20C11F6500D00057 /* DropDownCarrierItem.swift in Sources */,
+				8424620720C11F6500D00057 /* HomePresenter.swift in Sources */,
+				8424620620C11F6500D00057 /* PlacesDropDownMenu.swift in Sources */,
+				8424620420C11F6500D00057 /* DropDownPlacesItem.swift in Sources */,
+				8424620020C11F6500D00057 /* DropDownMenu.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845D48FF20BEEF92000F16C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				845D490820BEEF92000F16C1 /* DriveoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845D490A20BEEF93000F16C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				845D491320BEEF93000F16C1 /* DriveoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		845D490520BEEF92000F16C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 845D48EB20BEEF92000F16C1 /* Driveo */;
+			targetProxy = 845D490420BEEF92000F16C1 /* PBXContainerItemProxy */;
+		};
+		845D491020BEEF93000F16C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 845D48EB20BEEF92000F16C1 /* Driveo */;
+			targetProxy = 845D490F20BEEF93000F16C1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		845D48F320BEEF92000F16C1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				845D48F420BEEF92000F16C1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		845D48FB20BEEF92000F16C1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				845D48FC20BEEF92000F16C1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		845D491520BEEF93000F16C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		845D491620BEEF93000F16C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		845D491820BEEF93000F16C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A1900466273D5750A34E2B9 /* Pods-Driveo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Driveo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ibtekar.Driveo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		845D491920BEEF93000F16C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFD4C75E002CC92DBAF6FD12 /* Pods-Driveo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Driveo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ibtekar.Driveo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		845D491B20BEEF93000F16C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70AFABCD82D6A1F0E690F921 /* Pods-DriveoTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DriveoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ibtekar.DriveoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Driveo.app/Driveo";
+			};
+			name = Debug;
+		};
+		845D491C20BEEF93000F16C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D76515B77D4AB3AD17607439 /* Pods-DriveoTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DriveoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ibtekar.DriveoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Driveo.app/Driveo";
+			};
+			name = Release;
+		};
+		845D491E20BEEF93000F16C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6E29ACB4486A1DAC46D0BDF /* Pods-DriveoUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DriveoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ibtekar.DriveoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Driveo;
+			};
+			name = Debug;
+		};
+		845D491F20BEEF93000F16C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD7A33C575B0340738F6AF6C /* Pods-DriveoUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DriveoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ibtekar.DriveoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Driveo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		845D48E720BEEF92000F16C1 /* Build configuration list for PBXProject "Driveo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845D491520BEEF93000F16C1 /* Debug */,
+				845D491620BEEF93000F16C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		845D491720BEEF93000F16C1 /* Build configuration list for PBXNativeTarget "Driveo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845D491820BEEF93000F16C1 /* Debug */,
+				845D491920BEEF93000F16C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		845D491A20BEEF93000F16C1 /* Build configuration list for PBXNativeTarget "DriveoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845D491B20BEEF93000F16C1 /* Debug */,
+				845D491C20BEEF93000F16C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		845D491D20BEEF93000F16C1 /* Build configuration list for PBXNativeTarget "DriveoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845D491E20BEEF93000F16C1 /* Debug */,
+				845D491F20BEEF93000F16C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		845D48F620BEEF92000F16C1 /* Driveo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				845D48F720BEEF92000F16C1 /* Driveo.xcdatamodel */,
+			);
+			currentVersion = 845D48F720BEEF92000F16C1 /* Driveo.xcdatamodel */;
+			path = Driveo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 845D48E420BEEF92000F16C1 /* Project object */;
+}
