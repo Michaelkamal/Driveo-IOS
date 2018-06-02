@@ -18,7 +18,9 @@ enum ApiBaseUrl:String{
 
 public class NetworkDAL{
     
-    
+    static func isInternetAvailable() -> Bool {
+        return (NetworkReachabilityManager()?.isReachable)!
+    }
     
     static internal func sharedInstance () ->(NetworkDAL)
     {
