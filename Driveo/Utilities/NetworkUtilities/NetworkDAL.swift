@@ -13,7 +13,7 @@ import SwiftyJSON
 
 enum ApiBaseUrl:String{
     case googleApi = "https://maps.googleapis.com/"
-    case mainApi = "https://minamon.herokuapp.com/"
+    case mainApi = "https://mina7esh.herokuapp.com/"
 }
 
 
@@ -38,7 +38,7 @@ public class NetworkDAL{
         withBaseUrl baseUrl:ApiBaseUrl,
         andUrlSuffix urlSuffix:String,
         andParameters param: Parameters,
-        onSuccess: @escaping (_ :[Any])->Void,
+        onSuccess: @escaping (_ :Any)->Void,
         onFailure:  @escaping (_ networkError:ErrorType)->Void
         )-> Void{
         
@@ -48,7 +48,7 @@ public class NetworkDAL{
                 let jsonData = JSON(data);
                 print("-------*-*-*-----*******------///////-------********-----------------")
                 print(jsonData)
-                //onSuccess(parser(jsonData));
+                onSuccess(data);
                 
             case .failure :
                 //onFailure(.internet)
