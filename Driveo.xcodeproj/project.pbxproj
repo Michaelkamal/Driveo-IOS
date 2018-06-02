@@ -36,8 +36,14 @@
 		84A2D4F220C2CE2400576ACF /* UIDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4EC20C2CE2400576ACF /* UIDatePicker.swift */; };
 		84A2D4F320C2CE2400576ACF /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4ED20C2CE2400576ACF /* RoundedButton.swift */; };
 		84A2D4F420C2CE2400576ACF /* NetworkDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4EF20C2CE2400576ACF /* NetworkDAL.swift */; };
-		84D1853E20C2D18E0054BEBF /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1853D20C2D18E0054BEBF /* SignupView.swift */; };
 		84D1854020C2D2BA0054BEBF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1853F20C2D2BA0054BEBF /* User.swift */; };
+		84D1854320C2D3860054BEBF /* SignupModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1854220C2D3860054BEBF /* SignupModelProtocol.swift */; };
+		84D1854520C2D39B0054BEBF /* SignupViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1854420C2D39B0054BEBF /* SignupViewProtocol.swift */; };
+		84D1854720C2DEF40054BEBF /* SignupPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1854620C2DEF40054BEBF /* SignupPresenterProtocol.swift */; };
+		84D1854B20C2E3640054BEBF /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1854A20C2E3640054BEBF /* SignupView.swift */; };
+		84D1854D20C2E4BE0054BEBF /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1854C20C2E4BE0054BEBF /* SignupPresenter.swift */; };
+		84D1854F20C2E52D0054BEBF /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1854E20C2E52D0054BEBF /* SignupModel.swift */; };
+		84D1855220C2E6CC0054BEBF /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1855120C2E6CC0054BEBF /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,8 +100,14 @@
 		84A2D4EC20C2CE2400576ACF /* UIDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePicker.swift; sourceTree = "<group>"; };
 		84A2D4ED20C2CE2400576ACF /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		84A2D4EF20C2CE2400576ACF /* NetworkDAL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDAL.swift; sourceTree = "<group>"; };
-		84D1853D20C2D18E0054BEBF /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		84D1853F20C2D2BA0054BEBF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		84D1854220C2D3860054BEBF /* SignupModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModelProtocol.swift; sourceTree = "<group>"; };
+		84D1854420C2D39B0054BEBF /* SignupViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewProtocol.swift; sourceTree = "<group>"; };
+		84D1854620C2DEF40054BEBF /* SignupPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenterProtocol.swift; sourceTree = "<group>"; };
+		84D1854A20C2E3640054BEBF /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		84D1854C20C2E4BE0054BEBF /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
+		84D1854E20C2E52D0054BEBF /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
+		84D1855120C2E6CC0054BEBF /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		AFD4C75E002CC92DBAF6FD12 /* Pods-Driveo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Driveo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Driveo/Pods-Driveo.release.xcconfig"; sourceTree = "<group>"; };
 		B6E29ACB4486A1DAC46D0BDF /* Pods-DriveoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoUITests/Pods-DriveoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD7A33C575B0340738F6AF6C /* Pods-DriveoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoUITests/Pods-DriveoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +159,7 @@
 		8424621620C11FA800D00057 /* Pojo */ = {
 			isa = PBXGroup;
 			children = (
+				84D1854820C2E1E70054BEBF /* Screens */,
 				84D1853F20C2D2BA0054BEBF /* User.swift */,
 				8424621720C11FA800D00057 /* SelectedPlace.swift */,
 			);
@@ -173,6 +186,7 @@
 		8447456C20C07D2A0076D0EC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				84D1854120C2D3580054BEBF /* SignupProtocols */,
 				8447456D20C07D2A0076D0EC /* LocationMangerProtocol.swift */,
 			);
 			path = Protocols;
@@ -207,7 +221,7 @@
 				8447455720C07D270076D0EC /* Errors */,
 				8447456C20C07D2A0076D0EC /* Protocols */,
 				84A2D4E720C2CE2400576ACF /* Utilities */,
-				84A2D4A720C2C91200576ACF /* View */,
+				84A2D4A720C2C91200576ACF /* Screens */,
 				8447456920C07D290076D0EC /* UIViewControllerExtention */,
 				845D48EF20BEEF92000F16C1 /* AppDelegate.swift */,
 				845D48F320BEEF92000F16C1 /* Main.storyboard */,
@@ -237,16 +251,16 @@
 			path = DriveoUITests;
 			sourceTree = "<group>";
 		};
-		84A2D4A720C2C91200576ACF /* View */ = {
+		84A2D4A720C2C91200576ACF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				84A2D4A820C2C91200576ACF /* HomeView */,
-				84D1853D20C2D18E0054BEBF /* SignupView.swift */,
+				84D1854920C2E1F10054BEBF /* SignupScreen */,
+				84A2D4A820C2C91200576ACF /* HomeScreen */,
 			);
-			path = View;
+			path = Screens;
 			sourceTree = "<group>";
 		};
-		84A2D4A820C2C91200576ACF /* HomeView */ = {
+		84A2D4A820C2C91200576ACF /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
 				84A2D4D320C2CD7C00576ACF /* CarrierDropDownList */,
@@ -255,7 +269,7 @@
 				84A2D4DA20C2CD7D00576ACF /* PlacesDropDownList */,
 				84A2D4D820C2CD7D00576ACF /* SourceViewController.swift */,
 			);
-			path = HomeView;
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 		84A2D4D320C2CD7C00576ACF /* CarrierDropDownList */ = {
@@ -281,6 +295,7 @@
 		84A2D4E720C2CE2400576ACF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				84D1855020C2E6AD0054BEBF /* StringExtension */,
 				84A2D4E820C2CE2400576ACF /* LocationUtilities */,
 				84A2D4EA20C2CE2400576ACF /* CustomControls */,
 				84A2D4EE20C2CE2400576ACF /* NetworkUtilities */,
@@ -312,6 +327,41 @@
 				84A2D4EF20C2CE2400576ACF /* NetworkDAL.swift */,
 			);
 			path = NetworkUtilities;
+			sourceTree = "<group>";
+		};
+		84D1854120C2D3580054BEBF /* SignupProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				84D1854220C2D3860054BEBF /* SignupModelProtocol.swift */,
+				84D1854420C2D39B0054BEBF /* SignupViewProtocol.swift */,
+				84D1854620C2DEF40054BEBF /* SignupPresenterProtocol.swift */,
+			);
+			path = SignupProtocols;
+			sourceTree = "<group>";
+		};
+		84D1854820C2E1E70054BEBF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		84D1854920C2E1F10054BEBF /* SignupScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84D1854A20C2E3640054BEBF /* SignupView.swift */,
+				84D1854C20C2E4BE0054BEBF /* SignupPresenter.swift */,
+				84D1854E20C2E52D0054BEBF /* SignupModel.swift */,
+			);
+			path = SignupScreen;
+			sourceTree = "<group>";
+		};
+		84D1855020C2E6AD0054BEBF /* StringExtension */ = {
+			isa = PBXGroup;
+			children = (
+				84D1855120C2E6CC0054BEBF /* StringExtension.swift */,
+			);
+			path = StringExtension;
 			sourceTree = "<group>";
 		};
 		9BEDF054A8AE9E53D422E8FA /* Frameworks */ = {
@@ -571,26 +621,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84D1853E20C2D18E0054BEBF /* SignupView.swift in Sources */,
 				84A2D4F020C2CE2400576ACF /* LocationManger.swift in Sources */,
+				84D1854F20C2E52D0054BEBF /* SignupModel.swift in Sources */,
 				84A2D4DE20C2CD7D00576ACF /* DropDownCarrierItem.swift in Sources */,
 				8447457B20C07D2A0076D0EC /* LocationMangerProtocol.swift in Sources */,
 				84A2D4E020C2CD7D00576ACF /* DropDownMenu.swift in Sources */,
 				84A2D4E120C2CD7D00576ACF /* HomePresenter.swift in Sources */,
 				84A2D4F120C2CE2400576ACF /* SearchUITextField.swift in Sources */,
 				8424621820C11FA800D00057 /* SelectedPlace.swift in Sources */,
+				84D1854720C2DEF40054BEBF /* SignupPresenterProtocol.swift in Sources */,
 				84D1854020C2D2BA0054BEBF /* User.swift in Sources */,
 				84A2D4F220C2CE2400576ACF /* UIDatePicker.swift in Sources */,
 				845D48F820BEEF92000F16C1 /* Driveo.xcdatamodeld in Sources */,
 				8447457920C07D2A0076D0EC /* SpinnerExtention.swift in Sources */,
+				84D1854520C2D39B0054BEBF /* SignupViewProtocol.swift in Sources */,
 				84A2D4E420C2CD7D00576ACF /* DropDownPlacesItem.swift in Sources */,
 				84A2D4F320C2CE2400576ACF /* RoundedButton.swift in Sources */,
 				84A2D4F420C2CE2400576ACF /* NetworkDAL.swift in Sources */,
 				8447456E20C07D2A0076D0EC /* ErrorType.swift in Sources */,
 				8447457A20C07D2A0076D0EC /* LocationMangerProtocolExtention.swift in Sources */,
+				84D1854320C2D3860054BEBF /* SignupModelProtocol.swift in Sources */,
 				845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */,
 				84A2D4E620C2CD7D00576ACF /* PlacesDropDownMenu.swift in Sources */,
 				84A2D4E220C2CD7D00576ACF /* SourceViewController.swift in Sources */,
+				84D1854D20C2E4BE0054BEBF /* SignupPresenter.swift in Sources */,
+				84D1855220C2E6CC0054BEBF /* StringExtension.swift in Sources */,
+				84D1854B20C2E3640054BEBF /* SignupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

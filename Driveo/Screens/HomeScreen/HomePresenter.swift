@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import GooglePlacesSearchController
 import CoreLocation
 import GooglePlaces
 
