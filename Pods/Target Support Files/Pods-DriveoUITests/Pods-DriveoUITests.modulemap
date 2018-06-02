@@ -1,0 +1,6 @@
+framework module Pods_DriveoUITests {
+  umbrella header "Pods-DriveoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
