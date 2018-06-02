@@ -266,9 +266,9 @@
 			isa = PBXGroup;
 			children = (
 				84A2D4D320C2CD7C00576ACF /* CarrierDropDownList */,
+				84A2D4DA20C2CD7D00576ACF /* PlacesDropDownList */,
 				84A2D4D920C2CD7D00576ACF /* Home.storyboard */,
 				84A2D4D720C2CD7C00576ACF /* HomePresenter.swift */,
-				84A2D4DA20C2CD7D00576ACF /* PlacesDropDownList */,
 				84A2D4D820C2CD7D00576ACF /* SourceViewController.swift */,
 			);
 			path = HomeScreen;
