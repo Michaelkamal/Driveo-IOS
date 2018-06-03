@@ -25,7 +25,7 @@
                                 <color key="textColor" red="0.29411764705882354" green="0.27450980392156865" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUk-wZ-ecb" userLabel="Status Area">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUk-wZ-ecb" userLabel="Order Status Label">
                                 <rect key="frame" x="166" y="86" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.51372549019607838" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -43,10 +43,10 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQv-CD-gSJ">
-                                <rect key="frame" x="49" y="179.5" width="277" height="490"/>
+                                <rect key="frame" x="49" y="159.5" width="277" height="510"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeX-tO-e0u" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="277" height="490"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="277" height="510"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -62,7 +62,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="EQv-CD-gSJ" firstAttribute="top" secondItem="DUk-wZ-ecb" secondAttribute="bottom" constant="72.329999999999998" id="7oL-tx-uLb"/>
+                            <constraint firstItem="EQv-CD-gSJ" firstAttribute="top" secondItem="DUk-wZ-ecb" secondAttribute="bottom" constant="52.329999999999998" id="7oL-tx-uLb"/>
                             <constraint firstItem="T6s-8t-7TZ" firstAttribute="centerX" secondItem="jB5-aL-VuJ" secondAttribute="centerX" id="AAD-X1-0IB"/>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="centerX" secondItem="jB5-aL-VuJ" secondAttribute="centerX" id="HoY-2t-dgy"/>
                             <constraint firstItem="hWG-YJ-Fpo" firstAttribute="leading" secondItem="jB5-aL-VuJ" secondAttribute="leading" constant="22.699999999999999" id="Iim-yH-zjF"/>
@@ -77,6 +77,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ii6-8q-b8t"/>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="WeX-tO-e0u" id="M8C-BM-sJc"/>
+                        <outlet property="orderStatus" destination="DUk-wZ-ecb" id="xsP-mR-gs9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uzS-67-0eI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
