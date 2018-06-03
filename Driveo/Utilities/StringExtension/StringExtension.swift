@@ -9,6 +9,9 @@
 import Foundation
 
 extension String {
+    enum regexes:String {
+        case email = ".+[@].+\\.\\w"
+    }
     func matches(_ regex: String) -> Bool {
         return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
     }
