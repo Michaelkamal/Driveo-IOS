@@ -10,11 +10,6 @@ import Foundation
 
 
 class SignupModel : SignupModelProtocol{
-    func onRegisterFailure(data: Any) {
-            }
-    
-   
-    
 
     var presenter:SignupPresenterProtocol
     
@@ -28,18 +23,21 @@ class SignupModel : SignupModelProtocol{
     }
     
     
+    func onRegisterFailure(data: Any) {
+        presenter.alertToShow(withTitle: "Error", andMessage: "Failed to connect")
+    }
+    
     func onRegisterSucsess(data: Any) {
         let response = data as! [String:Any]
-        if response["message"] as! String == "Account created successfully" {
-            presenter.goToVerifyScreen()
+        let msg:String = response["message"] as! String
+        if  msg == "Account created successfully" {
             let defaults = UserDefaults.standard
             let token = response["auth_token"] as! String
             defaults.set(token, forKey :"auth_token")
             defaults.synchronize()
+            presenter.goToVerifyScreen()
         }else{
-            
-        
+            presenter.alertToShow(withTitle: "Error", andMessage:msg )
     }
-    
 }
 }

@@ -10,17 +10,7 @@ import Foundation
 
 
 class SignupPresenter : SignupPresenterProtocol{
-    func goToVerifyScreen() {
-        signupView.dismissLoading()
-        signupView.goToVerifyScreen()
-    }
-    
-    func alertToShow(withTitle title: String, andMessage msg: String) {
-        signupView.dismissLoading()
-        signupView.showAlert(withTitle: title, andMessage: msg)
-    }
-    
-    
+ 
     lazy var signupModel:SignupModelProtocol = SignupModel(presenter: self)
     
     var signupView:SignupViewProtocol
@@ -117,11 +107,25 @@ class SignupPresenter : SignupPresenterProtocol{
         }
     }
     
+    func goToVerifyScreen() {
+        signupView.dismissLoading()
+        signupView.goToVerifyScreen()
+    }
+    
+    func alertToShow(withTitle title: String, andMessage msg: String) {
+        signupView.dismissLoading()
+        signupView.showAlert(withTitle: title, andMessage: msg)
+    }
+    
+    
     func registerclicked(user: User) {
+        signupView.showLoading()
         print("Hello from registered \(user.email) \(user.password) + \(user.phone) \(isEmailCorrect) \(isPhoneCorrect) \(isPasswordCorrect) \(isConfirmPasswordCorrect)")
         if !isEmailCorrect || !isPhoneCorrect || !isPasswordCorrect || !isConfirmPasswordCorrect {
-            print("Complete your data")
+            signupView.dismissLoading()
+            signupView.showAlert(withTitle: "Error", andMessage: ErrorType.incompleteData.rawValue)
         }else if NetworkDAL.isInternetAvailable() {
+            signupView.dismissLoading()
             signupView.showNoInternetAlert()
         }else {
             signupModel.registerNewUser(user: user)
