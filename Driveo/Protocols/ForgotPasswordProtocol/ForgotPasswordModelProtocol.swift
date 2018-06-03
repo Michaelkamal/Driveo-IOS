@@ -9,6 +9,8 @@
 import Foundation
 protocol ForgotPasswordModelProtocol {
     
-    func sendRequest(withParameters params:Dictionary<String,Any>, onSuccess: @escaping (_ :Any)->Void);
+    func sendRequest(withParameters params:Dictionary<String,Any>);
+    func onSuccess(_ response:Any) -> Void
+    func onFailure(_ networkError:ErrorType) -> Void
 }
 

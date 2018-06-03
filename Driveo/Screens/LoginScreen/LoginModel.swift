@@ -34,8 +34,8 @@ class LoginModel : LoginModelProtocol{
         let dict = response as! Dictionary<String,Any>
         let defaults = UserDefaults.standard
         let token = dict["auth_token"] as! String
-        defaults.set(token, forKey :token)
-        defaults.set(user, forKey: "user")
+        defaults.set(token, forKey :"auth_token")
+        defaults.synchronize()
         lp.loginSuccess(user: user, token: token)
     }
     func onFailure(_ networkError:ErrorType) -> Void{

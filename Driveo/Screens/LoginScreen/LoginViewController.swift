@@ -32,8 +32,8 @@ class LoginViewController: UIViewController , LoginViewProtocol {
         self.present(forgotPassView!, animated: true, completion: nil)
     }
     @IBAction func registerBut(_ sender: Any) {
-        let shawarbystory = UIStoryboard(name: "Main", bundle: nil)
-        let signup = shawarbystory.instantiateViewController(withIdentifier: "signup")
+        let signupStoryboard = UIStoryboard(name: "SignupStoryboard", bundle: nil)
+        let signup = signupStoryboard.instantiateViewController(withIdentifier: "signup")
         self.present(signup, animated: true, completion: nil)
     }
     

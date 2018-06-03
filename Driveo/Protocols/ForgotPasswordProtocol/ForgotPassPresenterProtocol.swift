@@ -8,6 +8,8 @@
 
 import Foundation
 protocol ForgotPassPresenterProtocol {
-    func sendLink(withEmail mail:String);
+    func sendLink(withEmail mail:String)
+    func sendSuccess(message:String) ->Void
+    func sendFailure(message:String) -> Void
 }
 
