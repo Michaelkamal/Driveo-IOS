@@ -13,7 +13,7 @@ import SwiftyJSON
 
 enum ApiBaseUrl:String{
     case googleApi = "https://maps.googleapis.com/"
-    case mainApi = "https://mina7esh.herokuapp.com/"
+    case mainApi = "https://driveo.herokuapp.com/"
 }
 
 public class NetworkDAL{
@@ -52,14 +52,11 @@ public class NetworkDAL{
             case .failure :
                 //onFailure(.internet)
                 print("failed")
+                onFailure(ErrorType.internet)
             }
         }
         
     }
-    
-    
-    
-    
     
     internal func processReq(
         withBaseUrl baseUrl:ApiBaseUrl,

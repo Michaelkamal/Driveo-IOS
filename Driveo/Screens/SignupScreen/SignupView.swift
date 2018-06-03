@@ -10,6 +10,9 @@ import UIKit
 
 class SignupView: UIViewController ,SignupViewProtocol{
     
+    
+    
+    
     var spinner:UIView?
     
     var alert:UIAlertController?
@@ -37,6 +40,8 @@ class SignupView: UIViewController ,SignupViewProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//          let defaults = UserDefaults.standard
+//        print(defaults.string(forKey: "auth_token") ?? "nothing")
     }
     
     override func didReceiveMemoryWarning() {
