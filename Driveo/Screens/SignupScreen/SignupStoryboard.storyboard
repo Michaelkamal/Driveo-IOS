@@ -14,7 +14,7 @@
         <!--SignupView-->
         <scene sceneID="V4Q-63-Rpy">
             <objects>
-                <viewController title="SignupView" id="3mV-vk-0Ww" customClass="SignupView" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupView" title="SignupView" id="3mV-vk-0Ww" customClass="SignupView" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l7K-aL-hpJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,6 +175,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MO7-86-m5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-863.768115942029" y="-814.4021739130435"/>
+        </scene>
+        <!--Verify View-->
+        <scene sceneID="vg1-et-MwM">
+            <objects>
+                <viewController storyboardIdentifier="VerifyView" id="8sl-W1-8sL" customClass="VerifyView" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6qb-O0-xo3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter code here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rdG-uf-n6D">
+                                <rect key="frame" x="56" y="396" width="263" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19.299999237060547"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8sl-W1-8sL" id="CDT-Z9-cur"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxo-pJ-QUj" customClass="RoundedButton" customModule="Driveo" customModuleProvider="target">
+                                <rect key="frame" x="56" y="454" width="263" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.64999452459999996" blue="0.15928030539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Verify">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="verifyButtonAction:" destination="8sl-W1-8sL" eventType="touchUpInside" id="J6T-K5-i2D"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjy-N9-9n6">
+                                <rect key="frame" x="56" y="434" width="263" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14.300000190734863"/>
+                                <color key="textColor" red="1" green="0.1158596633" blue="0.15590602749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Enter The Code To Verify Your Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngF-rn-A79">
+                                <rect key="frame" x="76" y="325.33333333333331" width="223" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rdG-uf-n6D" firstAttribute="top" secondItem="ngF-rn-A79" secondAttribute="bottom" constant="30" id="1P6-5X-0jO"/>
+                            <constraint firstItem="gxo-pJ-QUj" firstAttribute="leading" secondItem="rdG-uf-n6D" secondAttribute="leading" id="56x-T8-w6M"/>
+                            <constraint firstItem="gxo-pJ-QUj" firstAttribute="top" secondItem="gjy-N9-9n6" secondAttribute="bottom" constant="20" id="8B6-3M-Qd2"/>
+                            <constraint firstItem="gjy-N9-9n6" firstAttribute="trailing" secondItem="rdG-uf-n6D" secondAttribute="trailing" id="CPA-9n-FUB"/>
+                            <constraint firstItem="gxo-pJ-QUj" firstAttribute="trailing" secondItem="rdG-uf-n6D" secondAttribute="trailing" id="Gee-KA-Apt"/>
+                            <constraint firstItem="gjy-N9-9n6" firstAttribute="leading" secondItem="rdG-uf-n6D" secondAttribute="leading" id="QBp-ms-zgw"/>
+                            <constraint firstItem="rdG-uf-n6D" firstAttribute="centerY" secondItem="aWi-un-8RI" secondAttribute="centerY" id="b9q-Lo-BwR"/>
+                            <constraint firstItem="ngF-rn-A79" firstAttribute="leading" secondItem="aWi-un-8RI" secondAttribute="leading" constant="76" id="eQF-gH-UVo"/>
+                            <constraint firstItem="ngF-rn-A79" firstAttribute="centerX" secondItem="aWi-un-8RI" secondAttribute="centerX" id="mv0-VO-xEV"/>
+                            <constraint firstItem="gjy-N9-9n6" firstAttribute="top" secondItem="rdG-uf-n6D" secondAttribute="bottom" constant="8" id="r86-s9-7EE"/>
+                            <constraint firstItem="aWi-un-8RI" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gxo-pJ-QUj" secondAttribute="bottom" priority="16" constant="294" id="sAV-9Y-Hed"/>
+                            <constraint firstItem="ngF-rn-A79" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aWi-un-8RI" secondAttribute="top" constant="16" id="vDz-WX-jve"/>
+                            <constraint firstItem="rdG-uf-n6D" firstAttribute="centerX" secondItem="aWi-un-8RI" secondAttribute="centerX" id="xzU-B4-KDK"/>
+                            <constraint firstItem="aWi-un-8RI" firstAttribute="trailing" secondItem="rdG-uf-n6D" secondAttribute="trailing" constant="56" id="yWF-kf-EDE"/>
+                            <constraint firstItem="ngF-rn-A79" firstAttribute="centerX" secondItem="aWi-un-8RI" secondAttribute="centerX" id="zIL-6L-aRl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aWi-un-8RI"/>
+                    </view>
+                    <connections>
+                        <outlet property="errorCodeLabel" destination="gjy-N9-9n6" id="cAg-OQ-lcu"/>
+                        <outlet property="verificationCodeTextField" destination="rdG-uf-n6D" id="oyl-d7-bNe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rLn-ro-wth" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-132" y="-814.28571428571433"/>
         </scene>
     </scenes>
     <resources>

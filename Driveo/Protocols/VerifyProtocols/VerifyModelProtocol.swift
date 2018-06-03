@@ -10,6 +10,6 @@ import Foundation
 
 protocol VerifyModelProtocol {
     
-    
+     func sendVerificationCode(withToken token: String, withCode code: String)
     
 }

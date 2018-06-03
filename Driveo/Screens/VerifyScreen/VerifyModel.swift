@@ -7,3 +7,33 @@
 //
 
 import Foundation
+
+class  VerifyModel : VerifyModelProtocol {
+   
+    var presenter:VerifyPresenterProtocol
+    init(withPresenter presenter:VerifyPresenterProtocol) {
+        self.presenter = presenter
+    }
+
+    
+    
+    
+    func sendVerificationCode(withToken token: String, withCode code: String) {
+        let networkObject : NetworkDAL = NetworkDAL.sharedInstance()
+        var parameters = [String:Any]()
+        parameters["code"] = code
+        
+        networkObject.processPostReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: "verify", andParameters: parameters , onSuccess: onVerifySucces, onFailure: onVerifyFailure)
+        
+    }
+    
+    func onVerifySucces(response:Any){
+        
+    }
+    
+    func onVerifyFailure(response:ErrorType){
+        
+    }
+    
+    
+}

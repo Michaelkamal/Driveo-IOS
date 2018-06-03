@@ -10,9 +10,9 @@ import Foundation
 
 protocol VerifyPresenterProtocol {
     
-    func sendVerificationCode(withcode code: String,andToken token:String )
+    func sendVerificationCode(withcode code: String)
     
-    func setErrorLabel()
+    func isCodeValid(withCode code: String)
     
     func OnCodeVerifiedSuccesfuly()
     

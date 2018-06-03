@@ -108,7 +108,8 @@ class SignupView: UIViewController ,SignupViewProtocol{
     
     
     func goToVerifyScreen(){
-        //self.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        let verifyScreen:VerifyView = self.storyboard?.instantiateViewController(withIdentifier: "VerifyView") as! VerifyView
+        self.present(verifyScreen, animated: true, completion: nil)
     }
     
     func showAlert(withTitle title :String , andMessage msg:String){
@@ -134,5 +135,12 @@ extension SignupView : UITextFieldDelegate{
             
         }
     }
+
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
+    
     
 }
