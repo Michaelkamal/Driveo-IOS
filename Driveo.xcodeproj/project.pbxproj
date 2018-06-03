@@ -22,6 +22,8 @@
 		844BD5F820C37045005E98FC /* GenericProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F720C37044005E98FC /* GenericProtocol.swift */; };
 		844BD5FC20C3776E005E98FC /* CreateOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BD5FB20C3776E005E98FC /* CreateOrder.storyboard */; };
 		844BD5FE20C3778A005E98FC /* CreateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */; };
+		844BD60220C38C20005E98FC /* CreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD60120C38C20005E98FC /* CreateOrderView.swift */; };
+		844BD60420C38C36005E98FC /* OrderItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844BD60320C38C36005E98FC /* OrderItem.xib */; };
 		845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D48EF20BEEF92000F16C1 /* AppDelegate.swift */; };
 		845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D48F320BEEF92000F16C1 /* Main.storyboard */; };
 		845D48F820BEEF92000F16C1 /* Driveo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 845D48F620BEEF92000F16C1 /* Driveo.xcdatamodeld */; };
@@ -88,6 +90,8 @@
 		844BD5F720C37044005E98FC /* GenericProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericProtocol.swift; sourceTree = "<group>"; };
 		844BD5FB20C3776E005E98FC /* CreateOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateOrder.storyboard; sourceTree = "<group>"; };
 		844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewController.swift; sourceTree = "<group>"; };
+		844BD60120C38C20005E98FC /* CreateOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderView.swift; sourceTree = "<group>"; };
+		844BD60320C38C36005E98FC /* OrderItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderItem.xib; sourceTree = "<group>"; };
 		845D48EC20BEEF92000F16C1 /* Driveo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driveo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D48EF20BEEF92000F16C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845D48F420BEEF92000F16C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 			children = (
 				844BD5FB20C3776E005E98FC /* CreateOrder.storyboard */,
 				844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */,
+				844BD60120C38C20005E98FC /* CreateOrderView.swift */,
+				844BD60320C38C36005E98FC /* OrderItem.xib */,
 			);
 			path = CreateOrderScreen;
 			sourceTree = "<group>";
@@ -536,6 +542,7 @@
 				845D48FD20BEEF92000F16C1 /* LaunchScreen.storyboard in Resources */,
 				845D48FA20BEEF92000F16C1 /* Assets.xcassets in Resources */,
 				845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */,
+				844BD60420C38C36005E98FC /* OrderItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +679,7 @@
 				84A2D4E020C2CD7D00576ACF /* DropDownMenu.swift in Sources */,
 				844BD5F320C36436005E98FC /* GooglePlacesDAL.swift in Sources */,
 				844BD5EF20C35E17005E98FC /* DPItem.swift in Sources */,
+				844BD60220C38C20005E98FC /* CreateOrderView.swift in Sources */,
 				844BD5F120C35F12005E98FC /* Order.swift in Sources */,
 				84A2D4E120C2CD7D00576ACF /* SourceViewPresenter.swift in Sources */,
 				84A2D4F120C2CE2400576ACF /* SearchUITextField.swift in Sources */,

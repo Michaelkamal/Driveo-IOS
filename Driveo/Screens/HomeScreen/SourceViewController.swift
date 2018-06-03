@@ -30,7 +30,7 @@ class SourceViewController: UIViewController {
     
     // init carrier menu
     private lazy var carrierDropDownMenu=DropDownMenu(withView:carrierDropListView, whenPressOnButton:dropDownBtn,andFoldingOrientation:FoldingOptions.up)
- 
+    
     @IBOutlet weak var dropDownBtn: UIButton!
     
     @IBOutlet weak var searchView: UIView!
@@ -59,22 +59,26 @@ class SourceViewController: UIViewController {
     
     // create order
     @IBAction func didPressOrderNow(_ sender: RoundedButton) {
+        dismissAllPopups()
         presenter.createOrder()
     }
     
     // render calender to select date
     @IBAction func didTapOnCalendar(_ sender: RoundedButton) {
+        dismissAllPopups()
         showDatePicker()
     }
     
     // select carrier
     @IBAction func didTapOnSelectCarrier(_ sender: UIButton) {
+        dismissAllPopups()
         carrierDropDownMenu.items=presenter.getCarriers()
         carrierDropDownMenu.didSelectedButton()
     }
     
     // set current Location
     @IBAction func didTapCurrentLocation(_ sender: Any) {
+        dismissAllPopups()
         presenter.getCurrentLocation()
     }
     
@@ -82,15 +86,18 @@ class SourceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter=SourceViewPresenter(withController: self)
-    
+        
         presenter.getCurrentLocation()
         
-    
+        
         carrierDropDownMenu.didSelectedItemIndex=presenter.didSelectCarrier
         placesDropDownMenu.didSelectedItemIndex=presenter.didSelectplace
     }
     
-    
+    private func dismissAllPopups(){
+        self.dismissDatePicker()
+        self.dismissPlacesSearch()
+    }
 }
 
 
@@ -98,8 +105,7 @@ class SourceViewController: UIViewController {
 extension SourceViewController:GMSMapViewDelegate
 {
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        self.dismissDatePicker()
-        self.dismissPlacesSearch()
+        dismissAllPopups()
     }
 }
 
@@ -169,7 +175,7 @@ extension SourceViewController:SourceViewProtocol
         let vc = createOrderStoryboard.instantiateViewController(withIdentifier: "CreateOrderViewController") as! CreateOrderViewController
         vc.userOrder=order
         vc.modalTransitionStyle = .crossDissolve
-        self.navigationController!.pushViewController(vc, animated: true)
+        self.present(vc, animated: true,completion: nil)
     }
 }
 // mark : places auto complete extention
@@ -182,8 +188,8 @@ extension SourceViewController {
         {
             presenter.searchForPlace(withName:searchString)
         }
-     }
-   
+    }
+    
 }
 
 
@@ -217,7 +223,7 @@ extension SourceViewController
             UIView.animate(withDuration: 0.25, delay: 0.0,
                            options: [UIViewAnimationOptions.curveEaseOut],
                            animations:{ [unowned self] in
-                             self.datePicker.sendActions(for: .valueChanged)
+                            self.datePicker.sendActions(for: .valueChanged)
                             self.datePicker.frame = CGRect(x: 0, y: self.view.frame.maxY, width: self.view.frame.size.width, height: 0)
                 }, completion: { [unowned self] finished in
                     self.datePicker.removeFromSuperview()
