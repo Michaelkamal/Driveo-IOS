@@ -88,12 +88,9 @@ class SignupView: UIViewController ,SignupViewProtocol{
     }
     
     func showNoInternetAlert(){
-        let connectionAlertView:UIAlertController = UIAlertController(title: "Error", message: "Connect Your Internet AND Try Again", preferredStyle: .alert)
-        
+        let connectionAlertView:UIAlertController = UIAlertController(title: "Error", message: ErrorType.internet.rawValue, preferredStyle: .alert)
         let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)
-        
         connectionAlertView.addAction(dismissAlertAction)
-        
         self.present(connectionAlertView, animated: true, completion: nil)
         
     }
@@ -104,7 +101,9 @@ class SignupView: UIViewController ,SignupViewProtocol{
     }
     
     @IBAction func goToLoginScreen(_ sender: Any) {
-      //  self.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
+        let loginScreen:LoginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.present(loginScreen, animated: true, completion: nil)
     }
     
     

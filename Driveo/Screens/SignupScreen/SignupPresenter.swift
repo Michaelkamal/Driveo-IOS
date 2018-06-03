@@ -109,8 +109,11 @@ class SignupPresenter : SignupPresenterProtocol{
         }
     }
     
-    func goToVerifyScreen() {
+   func goToVerifyScreen(withToken token:String){
         signupView.dismissLoading()
+        let defaults = UserDefaults.standard
+        defaults.set(token, forKey :"auth_token")
+        defaults.synchronize()
         signupView.goToVerifyScreen()
     }
     

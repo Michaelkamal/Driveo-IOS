@@ -64,6 +64,12 @@
 		84D1854D20C2E4BE0054BEBF /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1854C20C2E4BE0054BEBF /* SignupPresenter.swift */; };
 		84D1854F20C2E52D0054BEBF /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1854E20C2E52D0054BEBF /* SignupModel.swift */; };
 		84D1855220C2E6CC0054BEBF /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1855120C2E6CC0054BEBF /* StringExtension.swift */; };
+		84EFC1B820C434E6004E5BDF /* VerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFC1B720C434E6004E5BDF /* VerifyView.swift */; };
+		84EFC1BA20C434FF004E5BDF /* VerifyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFC1B920C434FF004E5BDF /* VerifyModel.swift */; };
+		84EFC1BC20C43510004E5BDF /* VerifyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFC1BB20C43510004E5BDF /* VerifyPresenter.swift */; };
+		84EFC1BF20C43530004E5BDF /* VerifyPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFC1BE20C43530004E5BDF /* VerifyPresenterProtocol.swift */; };
+		84EFC1C120C43530004E5BDF /* VerifyViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFC1C020C43530004E5BDF /* VerifyViewProtocol.swift */; };
+		84EFC1C320C43530004E5BDF /* VerifyModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFC1C220C43530004E5BDF /* VerifyModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +155,12 @@
 		84D1854C20C2E4BE0054BEBF /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
 		84D1854E20C2E52D0054BEBF /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
 		84D1855120C2E6CC0054BEBF /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		84EFC1B720C434E6004E5BDF /* VerifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyView.swift; sourceTree = "<group>"; };
+		84EFC1B920C434FF004E5BDF /* VerifyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyModel.swift; sourceTree = "<group>"; };
+		84EFC1BB20C43510004E5BDF /* VerifyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPresenter.swift; sourceTree = "<group>"; };
+		84EFC1BE20C43530004E5BDF /* VerifyPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPresenterProtocol.swift; sourceTree = "<group>"; };
+		84EFC1C020C43530004E5BDF /* VerifyViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewProtocol.swift; sourceTree = "<group>"; };
+		84EFC1C220C43530004E5BDF /* VerifyModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyModelProtocol.swift; sourceTree = "<group>"; };
 		AFD4C75E002CC92DBAF6FD12 /* Pods-Driveo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Driveo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Driveo/Pods-Driveo.release.xcconfig"; sourceTree = "<group>"; };
 		B6E29ACB4486A1DAC46D0BDF /* Pods-DriveoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoUITests/Pods-DriveoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD7A33C575B0340738F6AF6C /* Pods-DriveoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoUITests/Pods-DriveoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +240,7 @@
 		8447456C20C07D2A0076D0EC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				84EFC1BD20C43530004E5BDF /* VerifyProtocols */,
 				84937BC120C366CD00727437 /* LoginProtocol */,
 				84937BBF20C3665D00727437 /* ForgotPasswordProtocol */,
 				844BD5F720C37044005E98FC /* GenericProtocol.swift */,
@@ -358,6 +371,7 @@
 		84A2D4A720C2C91200576ACF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				84EFC1B620C434BC004E5BDF /* VerifyScreen */,
 				84937BB420C3651300727437 /* LoginScreen */,
 				84D1854920C2E1F10054BEBF /* SignupScreen */,
 				84A2D4A820C2C91200576ACF /* HomeScreen */,
@@ -464,6 +478,26 @@
 				84D1855120C2E6CC0054BEBF /* StringExtension.swift */,
 			);
 			path = StringExtension;
+			sourceTree = "<group>";
+		};
+		84EFC1B620C434BC004E5BDF /* VerifyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84EFC1B720C434E6004E5BDF /* VerifyView.swift */,
+				84EFC1B920C434FF004E5BDF /* VerifyModel.swift */,
+				84EFC1BB20C43510004E5BDF /* VerifyPresenter.swift */,
+			);
+			path = VerifyScreen;
+			sourceTree = "<group>";
+		};
+		84EFC1BD20C43530004E5BDF /* VerifyProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				84EFC1BE20C43530004E5BDF /* VerifyPresenterProtocol.swift */,
+				84EFC1C020C43530004E5BDF /* VerifyViewProtocol.swift */,
+				84EFC1C220C43530004E5BDF /* VerifyModelProtocol.swift */,
+			);
+			path = VerifyProtocols;
 			sourceTree = "<group>";
 		};
 		9BEDF054A8AE9E53D422E8FA /* Frameworks */ = {
@@ -728,9 +762,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				84937BCB20C3672600727437 /* LoginViewProtocol.swift in Sources */,
+				84EFC1BF20C43530004E5BDF /* VerifyPresenterProtocol.swift in Sources */,
 				84937BC520C3670800727437 /* ForgotPassPresenterProtocol.swift in Sources */,
+				84EFC1BA20C434FF004E5BDF /* VerifyModel.swift in Sources */,
 				84937BBE20C3660B00727437 /* LoginViewController.swift in Sources */,
 				84A2D4F020C2CE2400576ACF /* LocationManger.swift in Sources */,
+				84EFC1BC20C43510004E5BDF /* VerifyPresenter.swift in Sources */,
 				84D1854F20C2E52D0054BEBF /* SignupModel.swift in Sources */,
 				84A2D4DE20C2CD7D00576ACF /* DropDownCarrierItem.swift in Sources */,
 				8447457B20C07D2A0076D0EC /* LocationMangerProtocol.swift in Sources */,
@@ -747,10 +784,12 @@
 				84D1854020C2D2BA0054BEBF /* User.swift in Sources */,
 				84A2D4F220C2CE2400576ACF /* UIDatePicker.swift in Sources */,
 				84937BCD20C3672600727437 /* LoginModelProtocol.swift in Sources */,
+				84EFC1B820C434E6004E5BDF /* VerifyView.swift in Sources */,
 				84937BC720C3670800727437 /* ForgotPasswordModelProtocol.swift in Sources */,
 				84937BBD20C3660B00727437 /* LoginModel.swift in Sources */,
 				845D48F820BEEF92000F16C1 /* Driveo.xcdatamodeld in Sources */,
 				8447457920C07D2A0076D0EC /* SpinnerExtention.swift in Sources */,
+				84EFC1C320C43530004E5BDF /* VerifyModelProtocol.swift in Sources */,
 				84D1854520C2D39B0054BEBF /* SignupViewProtocol.swift in Sources */,
 				84A2D4E420C2CD7D00576ACF /* DropDownPlacesItem.swift in Sources */,
 				84A2D4F320C2CE2400576ACF /* RoundedButton.swift in Sources */,
@@ -763,6 +802,7 @@
 				84D1854320C2D3860054BEBF /* SignupModelProtocol.swift in Sources */,
 				84937BBB20C3660B00727437 /* LoginPresenter.swift in Sources */,
 				845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */,
+				84EFC1C120C43530004E5BDF /* VerifyViewProtocol.swift in Sources */,
 				84A2D4E620C2CD7D00576ACF /* PlacesDropDownMenu.swift in Sources */,
 				84A2D4E220C2CD7D00576ACF /* SourceViewController.swift in Sources */,
 				844BD5FE20C3778A005E98FC /* CreateOrderViewController.swift in Sources */,

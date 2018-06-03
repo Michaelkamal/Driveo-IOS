@@ -33,7 +33,7 @@ class LoginModel : LoginModelProtocol{
         let user = User(email: "", phone: "", password: "")
         let dict = response as! Dictionary<String,Any>
         let defaults = UserDefaults.standard
-        var token = dict["auth_token"] as! String
+        let token = dict["auth_token"] as! String
         defaults.set(token, forKey :token)
         defaults.set(user, forKey: "user")
         lp.loginSuccess(user: user, token: token)

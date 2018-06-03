@@ -15,7 +15,7 @@ protocol SignupPresenterProtocol {
     func isEmailValid(email: String)
     func isPhoneValid(phone : String)
     func registerclicked(user:User)
-    func goToVerifyScreen()
+    func goToVerifyScreen(withToken token:String)
     func alertToShow(withTitle title :String , andMessage msg:String)
     
 }

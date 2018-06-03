@@ -15,7 +15,7 @@
         <!--Login View Controller-->
         <scene sceneID="xLF-sM-JbD">
             <objects>
-                <viewController id="xAa-4N-ti6" customClass="LoginViewController" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="xAa-4N-ti6" customClass="LoginViewController" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rUn-hz-d8v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

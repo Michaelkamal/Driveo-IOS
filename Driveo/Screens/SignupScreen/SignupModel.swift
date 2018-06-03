@@ -31,11 +31,10 @@ class SignupModel : SignupModelProtocol{
         let response = data as! [String:Any]
         let msg:String = response["message"] as! String
         if  msg == "Account created successfully" {
-            let defaults = UserDefaults.standard
-            let token = response["auth_token"] as! String
-            defaults.set(token, forKey :"auth_token")
-            defaults.synchronize()
-            presenter.goToVerifyScreen()
+             let token = response["auth_token"] as! String
+            
+           
+            presenter.goToVerifyScreen(withToken: token)
         }else{
             presenter.alertToShow(withTitle: "Error", andMessage:msg )
     }
