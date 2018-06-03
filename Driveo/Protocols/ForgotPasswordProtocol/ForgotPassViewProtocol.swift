@@ -8,5 +8,6 @@
 
 import Foundation
 protocol ForgotPassViewProtocol{
-    
+    func goToScreen(withScreenName name:String);
+    func ChangeLabel(withString str:String)
 }

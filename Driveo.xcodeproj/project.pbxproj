@@ -44,6 +44,9 @@
 		84937BCB20C3672600727437 /* LoginViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BC820C3672600727437 /* LoginViewProtocol.swift */; };
 		84937BCC20C3672600727437 /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BC920C3672600727437 /* LoginPresenterProtocol.swift */; };
 		84937BCD20C3672600727437 /* LoginModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BCA20C3672600727437 /* LoginModelProtocol.swift */; };
+		84937BD020C45D0B00727437 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BCF20C45D0B00727437 /* ForgetPasswordViewController.swift */; };
+		84937BD220C45D0B00727437 /* ForgotPassPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BD120C45D0B00727437 /* ForgotPassPresenter.swift */; };
+		84937BD420C45D0B00727437 /* ForgotPassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BD320C45D0B00727437 /* ForgotPassModel.swift */; };
 		84A2D4DE20C2CD7D00576ACF /* DropDownCarrierItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4D420C2CD7C00576ACF /* DropDownCarrierItem.swift */; };
 		84A2D4DF20C2CD7D00576ACF /* DropDownCarrierItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A2D4D520C2CD7C00576ACF /* DropDownCarrierItem.xib */; };
 		84A2D4E020C2CD7D00576ACF /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4D620C2CD7C00576ACF /* DropDownMenu.swift */; };
@@ -137,6 +140,9 @@
 		84937BC820C3672600727437 /* LoginViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewProtocol.swift; sourceTree = "<group>"; };
 		84937BC920C3672600727437 /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
 		84937BCA20C3672600727437 /* LoginModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModelProtocol.swift; sourceTree = "<group>"; };
+		84937BCF20C45D0B00727437 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
+		84937BD120C45D0B00727437 /* ForgotPassPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassPresenter.swift; sourceTree = "<group>"; };
+		84937BD320C45D0B00727437 /* ForgotPassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassModel.swift; sourceTree = "<group>"; };
 		84A2D4D420C2CD7C00576ACF /* DropDownCarrierItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownCarrierItem.swift; sourceTree = "<group>"; };
 		84A2D4D520C2CD7C00576ACF /* DropDownCarrierItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownCarrierItem.xib; sourceTree = "<group>"; };
 		84A2D4D620C2CD7C00576ACF /* DropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
@@ -373,9 +379,20 @@
 			path = LoginProtocol;
 			sourceTree = "<group>";
 		};
+		84937BCE20C45BFB00727437 /* ForgotPasswordScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84937BCF20C45D0B00727437 /* ForgetPasswordViewController.swift */,
+				84937BD120C45D0B00727437 /* ForgotPassPresenter.swift */,
+				84937BD320C45D0B00727437 /* ForgotPassModel.swift */,
+			);
+			path = ForgotPasswordScreen;
+			sourceTree = "<group>";
+		};
 		84A2D4A720C2C91200576ACF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				84937BCE20C45BFB00727437 /* ForgotPasswordScreen */,
 				84EFC1B620C434BC004E5BDF /* VerifyScreen */,
 				84937BB420C3651300727437 /* LoginScreen */,
 				84D1854920C2E1F10054BEBF /* SignupScreen */,
@@ -768,6 +785,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84937BD420C45D0B00727437 /* ForgotPassModel.swift in Sources */,
 				84937BCB20C3672600727437 /* LoginViewProtocol.swift in Sources */,
 				84EFC1BF20C43530004E5BDF /* VerifyPresenterProtocol.swift in Sources */,
 				84937BC520C3670800727437 /* ForgotPassPresenterProtocol.swift in Sources */,
@@ -776,6 +794,7 @@
 				84A2D4F020C2CE2400576ACF /* LocationManger.swift in Sources */,
 				84EFC1BC20C43510004E5BDF /* VerifyPresenter.swift in Sources */,
 				84D1854F20C2E52D0054BEBF /* SignupModel.swift in Sources */,
+				84937BD220C45D0B00727437 /* ForgotPassPresenter.swift in Sources */,
 				84A2D4DE20C2CD7D00576ACF /* DropDownCarrierItem.swift in Sources */,
 				8447457B20C07D2A0076D0EC /* LocationMangerProtocol.swift in Sources */,
 				844BD60A20C48BE1005E98FC /* ScreenStoryBoardController.swift in Sources */,
@@ -808,6 +827,7 @@
 				8447457A20C07D2A0076D0EC /* LocationMangerProtocolExtention.swift in Sources */,
 				844BD5F820C37045005E98FC /* GenericProtocol.swift in Sources */,
 				84D1854320C2D3860054BEBF /* SignupModelProtocol.swift in Sources */,
+				84937BD020C45D0B00727437 /* ForgetPasswordViewController.swift in Sources */,
 				84937BBB20C3660B00727437 /* LoginPresenter.swift in Sources */,
 				845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */,
 				84EFC1C120C43530004E5BDF /* VerifyViewProtocol.swift in Sources */,
