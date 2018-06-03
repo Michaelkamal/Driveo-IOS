@@ -38,7 +38,7 @@ class SignupPresenter : SignupPresenterProtocol{
     
     var phoneErrorLabel:String = "" {
         didSet{
-            signupView.setEmailAlertLabel(errorMsg:phoneErrorLabel)
+            signupView.setPhoneAlertLabel(errorMsg:phoneErrorLabel)
             if phoneErrorLabel != "" {
                 isPhoneCorrect = false;
             }else{
@@ -49,7 +49,7 @@ class SignupPresenter : SignupPresenterProtocol{
     
     var passwordErrorLabel:String = "" {
         didSet{
-            signupView.setEmailAlertLabel(errorMsg:passwordErrorLabel)
+            signupView.setPasswordAlertLabel(errorMsg:passwordErrorLabel)
             if passwordErrorLabel != "" {
                 isPasswordCorrect = false;
             }else{
@@ -60,7 +60,7 @@ class SignupPresenter : SignupPresenterProtocol{
     
     var confirmPasswordErrorLabel:String = "" {
         didSet{
-            signupView.setEmailAlertLabel(errorMsg:confirmPasswordErrorLabel)
+            signupView.setConfirmPasswordAlertLabel(errorMsg:confirmPasswordErrorLabel)
             if confirmPasswordErrorLabel != "" {
                 isConfirmPasswordCorrect = false;
             }else{
@@ -75,8 +75,10 @@ class SignupPresenter : SignupPresenterProtocol{
         if (password.matches("^((?!.*\\s)(?=.*[a-zA-Z])(?=.*\\d)).{6,12}$"))
         {
             passwordErrorLabel=""
+        }else if password.count<6 || password.count>12{
+            passwordErrorLabel="Password length should between 6-12"
         }else{
-            passwordErrorLabel="password should have letter and number and length between 6-12"
+            passwordErrorLabel="Password should have letter and number"
         }
     }
     
@@ -124,7 +126,7 @@ class SignupPresenter : SignupPresenterProtocol{
         if !isEmailCorrect || !isPhoneCorrect || !isPasswordCorrect || !isConfirmPasswordCorrect {
             signupView.dismissLoading()
             signupView.showAlert(withTitle: "Error", andMessage: ErrorType.incompleteData.rawValue)
-        }else if NetworkDAL.isInternetAvailable() {
+        }else if NetworkDAL.isInternetAvailable() == false {
             signupView.dismissLoading()
             signupView.showNoInternetAlert()
         }else {

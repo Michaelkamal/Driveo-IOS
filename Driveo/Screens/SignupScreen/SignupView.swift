@@ -109,9 +109,10 @@ class SignupView: UIViewController ,SignupViewProtocol{
     
     func showAlert(withTitle title :String , andMessage msg:String){
         alert = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)
+        self.present(alert!, animated: true, completion: nil)
+        let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)
+        alert?.addAction(dismissAlertAction)
     }
-    
-    
 }
 
 extension SignupView : UITextFieldDelegate{
