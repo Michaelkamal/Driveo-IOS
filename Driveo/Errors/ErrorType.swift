@@ -12,5 +12,6 @@ enum ErrorType:String,Error{
     case internet = "Check your internet connection"
     case location = "This app is unusable if you don't authorize this app to use your location!"
     case parse = "Error parsing Json"
+    case destinationError = "Destination can't be the source location"
     case incompleteData = "Please complete data"
     }

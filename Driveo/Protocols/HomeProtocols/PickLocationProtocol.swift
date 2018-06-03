@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 import CoreLocation
-protocol SourceViewProtocol:GenericProtocol {
+protocol PickLocationProtocol:GenericProtocol {
+    var isCurrentScreenSourcePickUp:Bool{get}
     func placeMarker(onLocation location:CLLocation,withTitle title:String,andImage image:UIImage? ) ->Void
     func clearSearchText()->Void
     func displaySelectedCarrier(withLogo logo:UIImage)->Void

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Order {
+class Order {
 
     internal var source:OrderLocation!{
         didSet{
