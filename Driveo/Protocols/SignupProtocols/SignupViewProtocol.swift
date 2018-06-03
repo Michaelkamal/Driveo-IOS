@@ -17,4 +17,6 @@ protocol SignupViewProtocol {
     func showLoading()
     func dismissLoading()
     func showNoInternetAlert()
+    func goToVerifyScreen()
+    func showAlert(withTitle title :String , andMessage msg:String)
 }

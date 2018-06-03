@@ -33,5 +33,12 @@ extension UIViewController {
         return alert
         
     }
+    class func getCustomAlertController(ofErrorType err: String,withTitle title: String)-> UIAlertController{
+        let alert = UIAlertController(title: title, message: err, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel,handler: nil)
+        alert.addAction(cancelAction)
+        return alert
+        
+    }
 }
 
