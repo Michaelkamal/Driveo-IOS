@@ -84,20 +84,8 @@ class SourceViewController: UIViewController {
         presenter=SourceViewPresenter(withController: self)
     
         presenter.getCurrentLocation()
-        presenter.placeMarkerFunc=placeMarker
-        presenter.clearTextFunc={
-             () in
-            self.searchTextField.text="" }
-        presenter.selectCarrierFunc={
-            (image) in
-            self.carrierView.subviews.forEach { $0.removeFromSuperview() }
-            let imageView:UIImageView=UIImageView()
-            imageView.frame = CGRect(x:20, y:5, width: self.carrierView.frame.width-20, height: self.carrierView.frame.height-10)
-            imageView.contentMode = UIViewContentMode.scaleAspectFit
-            imageView.image=image
-            self.carrierView.addSubview(imageView)
-
-        }
+        
+    
         carrierDropDownMenu.didSelectedItemIndex=presenter.didSelectCarrier
         placesDropDownMenu.didSelectedItemIndex=presenter.didSelectplace
     }
@@ -109,10 +97,18 @@ class SourceViewController: UIViewController {
 // mark : google map delagate
 extension SourceViewController:GMSMapViewDelegate
 {
-    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        self.dismissDatePicker()
+        self.dismissPlacesSearch()
+    }
+}
+
+// mark : view delagate
+extension SourceViewController:SourceViewProtocol
+{
     // mark: put place marker on location
     
-    private func placeMarker(onLocation location:CLLocation,withTitle title:String,andImage image:UIImage? = nil) ->Void {
+    internal func placeMarker(onLocation location:CLLocation,withTitle title:String,andImage image:UIImage? = nil) ->Void {
         self.map.clear();
         let marker = GMSMarker(position: location.coordinate);
         marker.title=title
@@ -128,12 +124,50 @@ extension SourceViewController:GMSMapViewDelegate
         self.map.camera = GMSCameraPosition(target: location.coordinate,
                                             zoom: 60, bearing: 0, viewingAngle: 0)
     }
-    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        self.dismissDatePicker()
-        self.dismissPlacesSearch()
+    
+    // clear search text
+    
+    func clearSearchText()->Void{
+        self.searchTextField.text=""
+    }
+    
+    // display selected carrier logo on drop up list
+    
+    func displaySelectedCarrier(withLogo logo:UIImage)->Void
+    {
+        self.carrierView.subviews.forEach { $0.removeFromSuperview() }
+        let imageView:UIImageView=UIImageView()
+        imageView.frame = CGRect(x:20, y:5, width: self.carrierView.frame.width-20, height: self.carrierView.frame.height-10)
+        imageView.contentMode = UIViewContentMode.scaleAspectFit
+        imageView.image=logo
+        self.carrierView.addSubview(imageView)
+    }
+    
+    // display places in list
+    
+    public func renderPlaces(placesArray arr:[PlaceDPItem]){
+        placesDropDownMenu.items=arr
+    }
+    
+    // dismiss places list
+    public func dismissPlacesSearch()
+    {
+        placesDropDownMenu.dismissMenu()
+    }
+    
+    // show alert
+    
+    func showAlert(ofError error:ErrorType)->Void{
+        let alert = UIViewController.getAlertController(ofErrorType: error, withTitle: "Error")
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // move to second screen
+    
+    func presentToNextScreen(withOrder order:Order){
+        
     }
 }
-
 // mark : places auto complete extention
 extension SourceViewController {
     @objc public func search(){
@@ -142,16 +176,10 @@ extension SourceViewController {
         }
         if searchString != ""
         {
-            presenter.searchForPlace(withName:searchString,andRenderFunction: renderPlaces)
+            presenter.searchForPlace(withName:searchString)
         }
      }
-    public func renderPlaces(placesArray arr:[PlaceDPItem]){
-        placesDropDownMenu.items=arr
-    }
-    public func dismissPlacesSearch()
-    {
-        placesDropDownMenu.dismissMenu()
-    }
+   
 }
 
 
@@ -185,6 +213,7 @@ extension SourceViewController
             UIView.animate(withDuration: 0.25, delay: 0.0,
                            options: [UIViewAnimationOptions.curveEaseOut],
                            animations:{ [unowned self] in
+                             self.datePicker.sendActions(for: .valueChanged)
                             self.datePicker.frame = CGRect(x: 0, y: self.view.frame.maxY, width: self.view.frame.size.width, height: 0)
                 }, completion: { [unowned self] finished in
                     self.datePicker.removeFromSuperview()

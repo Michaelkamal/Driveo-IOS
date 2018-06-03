@@ -27,8 +27,11 @@ extension UIViewController {
             spinner.removeFromSuperview()
         }}
     class func getAlertController(ofErrorType err: ErrorType,withTitle title: String)-> UIAlertController{
-        return UIAlertController(title: title, message: err.rawValue, preferredStyle: UIAlertControllerStyle.alert)
-       
+        let alert = UIAlertController(title: title, message: err.rawValue, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel,handler: nil)
+        alert.addAction(cancelAction)
+        return alert
+        
     }
 }
 

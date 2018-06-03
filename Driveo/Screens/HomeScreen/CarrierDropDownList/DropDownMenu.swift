@@ -9,20 +9,7 @@
 
 import UIKit
 
-public struct CarrierDPItem {
-    
-    public var carrierLogo: UIImage?
-    public var rating: String
-    
-    public init(image: UIImage?, rating: String) {
-        self.carrierLogo = image
-        self.rating = rating
-    }
-    
-    public init(rating: String) {
-        self.rating = rating
-    }
-}
+
 public enum FoldingOptions{
     case up
     case down

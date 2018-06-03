@@ -10,17 +10,6 @@ import Foundation
 
 import UIKit
 
-public struct PlaceDPItem {
-    
-    public var place: String?
-    public var city: String?
-    public var id:String?
-    public init(place: String?, city: String?,id:String?) {
-        self.place = place
-        self.city = city
-        self.id=id
-    }
-}
 
 public class PlacesDropDownMenu : NSObject {
     
