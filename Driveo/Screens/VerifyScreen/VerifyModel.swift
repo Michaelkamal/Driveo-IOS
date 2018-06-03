@@ -28,11 +28,11 @@ class  VerifyModel : VerifyModelProtocol {
     }
     
     func onVerifySucces(response:Any){
-        
+        presenter.OnCodeVerifiedSuccesfuly()
     }
     
     func onVerifyFailure(response:ErrorType){
-        
+        presenter.OnCodeVerifyFailure(withmsg: "Failed")
     }
     
     

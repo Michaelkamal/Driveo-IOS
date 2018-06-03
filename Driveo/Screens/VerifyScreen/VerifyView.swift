@@ -40,8 +40,12 @@ class VerifyView: UIViewController , VerifyViewProtocol, UITextFieldDelegate{
     }
     */
 
-    func setCodeErrorLabel(withError: String) {
-        
+    func setCodeErrorLabel(withError error: String) {
+        errorCodeLabel.text = error
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     func showLoading() {

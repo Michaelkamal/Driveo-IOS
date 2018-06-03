@@ -25,26 +25,31 @@ class VerifyPresenter : VerifyPresenterProtocol{
     }
     
     func sendVerificationCode(withcode code: String) {
-        verifyView.showLoading()
-        if NetworkDAL.isInternetAvailable()
-        {
-              let defaults = UserDefaults.standard
-              let token = defaults.string(forKey: "auth_token")
-                 if (token != nil) {
-                     verifyModel.sendVerificationCode(withToken: token!, withCode: code)
-                                       }
+        if code.matches("^\\d{4}$"){
+            verifyView.showLoading()
+                    if NetworkDAL.isInternetAvailable()
+                    {
+                        let defaults = UserDefaults.standard
+                        let token = defaults.string(forKey: "auth_token")
+                            if (token != nil) {
+                                verifyModel.sendVerificationCode(withToken: token!, withCode: code)
+                            }
+                    }
+                    else{
+                        verifyView.dismissLoading()
+                        verifyView.showAlert(withTitle: "Error", andMsg: ErrorType.internet.rawValue)
+                    }
+        }else{
+             errorText = "Please enter Valid Code"
         }
-        else{
-                verifyView.dismissLoading()
-               verifyView.showAlert(withTitle: "Error", andMsg: ErrorType.internet.rawValue)
-        }
+       
     }
     
     func isCodeValid(withCode code: String){
         if code.matches("^\\d{4}$"){
-            errorText = "Please enter Valid Code"
-        }else{
             errorText = ""
+        }else{
+            errorText = "Please enter Valid Code"
         }
     }
     
