@@ -10,18 +10,30 @@ import UIKit
 import GoogleMaps
 import GooglePlacesSearchController
 
-class SourceViewController: UIViewController {
+class PickLoacationViewController: UIViewController {
     
-    private var presenter:SourceViewPresenter!
+    private var presenter:PickLoacationPresenter!
+    
+    public var userOrder:Order?
     
     private lazy var datePicker: UIDatePicker = UIDatePicker()
     
+    private var isSource : Bool?
+    public var isEditingFromCreateOrder : Bool?
     
     @IBOutlet weak var searchTextField: SearchUITextField!{
         didSet{
             searchTextField.searchFunc=search
             searchTextField.clearFunc=dismissPlacesSearch
             searchTextField.addTarget(self, action: #selector(search), for: UIControlEvents.allEditingEvents)
+            if (carrierDropListView != nil)
+            {
+                isSource=true
+            }
+            else
+            {
+                isSource=false
+            }
         }
     }
     
@@ -29,7 +41,7 @@ class SourceViewController: UIViewController {
     private lazy var placesDropDownMenu=PlacesDropDownMenu(withView:searchView)
     
     // init carrier menu
-    private lazy var carrierDropDownMenu=DropDownMenu(withView:carrierDropListView, whenPressOnButton:dropDownBtn,andFoldingOrientation:FoldingOptions.up)
+    private lazy var carrierDropDownMenu=DropDownMenu(withView:carrierDropListView!, whenPressOnButton:dropDownBtn,andFoldingOrientation:FoldingOptions.up)
     
     @IBOutlet weak var dropDownBtn: UIButton!
     
@@ -42,9 +54,7 @@ class SourceViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    
-    @IBOutlet weak var carrierDropListView: UIView!
+    @IBOutlet weak var carrierDropListView: UIView?
     
     @IBOutlet weak var addressLabel: UILabel!
     
@@ -57,10 +67,14 @@ class SourceViewController: UIViewController {
     }
     @IBOutlet weak var carrierView: UIView!
     
-    // create order
-    @IBAction func didPressOrderNow(_ sender: RoundedButton) {
-        dismissAllPopups()
-        presenter.createOrder()
+    
+    
+    // create order and move to destination (OR) set destination and move to create order
+    @IBAction func didPressOnNextButton(_ sender: RoundedButton) {
+        if isSource! {
+            dismissAllPopups()
+        }
+        presenter.moveForward()
     }
     
     // render calender to select date
@@ -85,24 +99,28 @@ class SourceViewController: UIViewController {
     // mark: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter=SourceViewPresenter(withController: self)
+        presenter=PickLoacationPresenter(withController: self,andOrder: userOrder)
         
         presenter.getCurrentLocation()
         
+        if(isSource)!{
+            carrierDropDownMenu.didSelectedItemIndex=presenter.didSelectCarrier
+        }
         
-        carrierDropDownMenu.didSelectedItemIndex=presenter.didSelectCarrier
         placesDropDownMenu.didSelectedItemIndex=presenter.didSelectplace
     }
     
     private func dismissAllPopups(){
-        self.dismissDatePicker()
+        if(isSource)!{
+            self.dismissDatePicker()
+        }
         self.dismissPlacesSearch()
     }
 }
 
 
 // mark : google map delagate
-extension SourceViewController:GMSMapViewDelegate
+extension PickLoacationViewController:GMSMapViewDelegate
 {
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         dismissAllPopups()
@@ -110,8 +128,12 @@ extension SourceViewController:GMSMapViewDelegate
 }
 
 // mark : view delagate
-extension SourceViewController:SourceViewProtocol
+extension PickLoacationViewController:PickLocationProtocol
 {
+    var isCurrentScreenSourcePickUp: Bool {
+        return self.isSource!
+    }
+    
     // mark: put place marker on location
     
     internal func placeMarker(onLocation location:CLLocation,withTitle title:String,andImage image:UIImage? = nil) ->Void {
@@ -171,15 +193,24 @@ extension SourceViewController:SourceViewProtocol
     // move to second screen
     
     func presentToNextScreen(withOrder order:Order){
-        let createOrderStoryboard = UIStoryboard(name: "CreateOrder", bundle: nil)
-        let vc = createOrderStoryboard.instantiateViewController(withIdentifier: "CreateOrderViewController") as! CreateOrderViewController
-        vc.userOrder=order
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true,completion: nil)
+        
+        if isSource!,isEditingFromCreateOrder == nil{
+            let destinationStoryboard = UIStoryboard(name: "DestinationScreen", bundle: nil)
+            let vc = destinationStoryboard.instantiateViewController(withIdentifier: "PickLoacationViewController") as! PickLoacationViewController
+            vc.userOrder=order
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true,completion: nil)
+        }else{
+            let createOrderStoryboard = UIStoryboard(name: "CreateOrder", bundle: nil)
+            let vc = createOrderStoryboard.instantiateViewController(withIdentifier: "CreateOrderViewController") as! CreateOrderViewController
+            vc.userOrder=order
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: true,completion: nil)
+        }
     }
 }
 // mark : places auto complete extention
-extension SourceViewController {
+extension PickLoacationViewController {
     @objc public func search(){
         guard let searchString=searchTextField.text else {
             return
@@ -194,7 +225,7 @@ extension SourceViewController {
 
 
 // mark : date picker
-extension SourceViewController
+extension PickLoacationViewController
 {
     // show date picker
     func showDatePicker(){

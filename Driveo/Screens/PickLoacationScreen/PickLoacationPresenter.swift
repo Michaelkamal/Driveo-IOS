@@ -10,16 +10,18 @@ import Foundation
 import CoreLocation
 import GooglePlaces
 
-class SourceViewPresenter{
+class PickLoacationPresenter{
     
     
-    private var sourceLocation:OrderLocation!
+    private var selectedLocation:OrderLocation!
+    
+    public var userOrder:Order?
+    
     private var carrier:String?
     private var pickUpDate:String?
     
-    private var view:UIViewController!
     
-    private var viewDelagate:SourceViewProtocol!
+    private var viewDelagate:PickLocationProtocol!
     
     private let googlePlacesDal:GooglePlacesDAL = GooglePlacesDAL.sharedInstance()
     
@@ -27,13 +29,17 @@ class SourceViewPresenter{
     
     private var controller:UIViewController!
     
-    init(withController controller:UIViewController ) {
+    init(withController controller:UIViewController,andOrder order:Order?=nil) {
         self.controller=controller
-        viewDelagate=controller as! SourceViewProtocol
-        sourceLocation=OrderLocation(locationType: LocationType.source)
-    }
+        self.userOrder=order
+        viewDelagate=controller as! PickLocationProtocol
+        if viewDelagate.isCurrentScreenSourcePickUp {
+            selectedLocation=OrderLocation(locationType: LocationType.source)
+        }else{
+        selectedLocation=OrderLocation(locationType: LocationType.destination)
+        }}
     // set order date
-     @objc func datePickerValueChanged(_ sender: UIDatePicker){
+    @objc func datePickerValueChanged(_ sender: UIDatePicker){
         
         // Create date formatter
         let dateFormatter: DateFormatter = DateFormatter()
@@ -54,23 +60,43 @@ class SourceViewPresenter{
             if let locationFound = location{
                 self.locationManager.getAddress(ofLocationCoordinates: locationFound, onSuccess:{(address) in
                     self.viewDelagate.placeMarker(onLocation: locationFound,withTitle: address,andImage: #imageLiteral(resourceName: "ic_myself"))
-                    self.sourceLocation.coordinates=locationFound
-                    self.sourceLocation.address=address
+                    self.selectedLocation.coordinates=locationFound
+                    self.selectedLocation.address=address
                 })
-              
+                
             }}
     }
     
-    // create order
-    func createOrder() {
-       if sourceLocation.isComplete(),pickUpDate != nil,carrier != nil
-       {
-        let order:Order=Order(withSource: sourceLocation,byCarrier: carrier!, onDate: pickUpDate!)
-        viewDelagate.presentToNextScreen(withOrder:order)
+    // create order and move to destination (OR) set destination and move to create order
+    func moveForward() {
+        if viewDelagate.isCurrentScreenSourcePickUp
+        {
+            if selectedLocation.isComplete(),pickUpDate != nil,carrier != nil
+            {
+                let order:Order=Order(withSource: selectedLocation,byCarrier: carrier!, onDate: pickUpDate!)
+                viewDelagate.presentToNextScreen(withOrder:order)
+            }else
+            {
+                viewDelagate.showAlert(ofError: .incompleteData)
+            }
         }else
-       {
-        viewDelagate.showAlert(ofError: .incompleteData)
+        {
+            if selectedLocation.isComplete(),let userOrder=userOrder
+            {
+                if userOrder.source.coordinates!.coordinate.longitude != selectedLocation.coordinates!.coordinate.longitude, userOrder.source.coordinates!.coordinate.latitude != selectedLocation.coordinates!.coordinate.latitude
+                {
+                userOrder.destination=selectedLocation
+                viewDelagate.presentToNextScreen(withOrder:userOrder)
+                }else{
+                  viewDelagate.showAlert(ofError: .destinationError)
+                }
+                print(userOrder)
+            }else
+            {
+                viewDelagate.showAlert(ofError: .incompleteData)
+            }
         }
+        
     }
     
     // Select carrier
@@ -88,23 +114,22 @@ class SourceViewPresenter{
 }
 
 // mark : places auto complete extention
-extension SourceViewPresenter {
+extension PickLoacationPresenter {
     
     func searchForPlace(withName name:String)->Void {
         googlePlacesDal.searchForPlace(withName: name, onSuccess: viewDelagate.renderPlaces, onFailure: viewDelagate.showAlert)
     }
     
     func didSelectplace(selectedPlace place:PlaceDPItem,_ onSuccess:()->Void)->Void {
-        print(place)
         guard let placeID=place.id else{
             return
         }
         googlePlacesDal.getPlaceDetails(withID: placeID, onSuccess: { (placeDetails) in
             let coordinates=CLLocation(latitude: placeDetails.coordinate.latitude,longitude: placeDetails.coordinate.longitude)
             self.viewDelagate.placeMarker(onLocation: coordinates,withTitle: placeDetails.formattedAddress!,andImage: #imageLiteral(resourceName: "ic_destination_b"))
-            self.sourceLocation.coordinates=coordinates
-            self.sourceLocation.address=placeDetails.formattedAddress
+            self.selectedLocation.coordinates=coordinates
+            self.selectedLocation.address=placeDetails.formattedAddress
             self.viewDelagate.clearSearchText()
         }, onFailure: viewDelagate.showAlert)
-}
+    }
 }

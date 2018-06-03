@@ -58,6 +58,9 @@ public class NetworkDAL{
         
     }
     
+    
+    
+    
     internal func processReq(
         withBaseUrl baseUrl:ApiBaseUrl,
         andUrlSuffix urlSuffix:String,
@@ -66,17 +69,19 @@ public class NetworkDAL{
         onFailure:  @escaping (_ networkError:ErrorType)->Void
         )-> Void{
         
-        Alamofire.request(baseUrl.rawValue+urlSuffix).validate().responseJSON { response  in
-            switch response.result {
-            case .success(let data):
-                let jsonData = JSON(data);
-                print(response.request!.url!.absoluteString)
-                onSuccess(parser(jsonData));
-            case .failure :
-                onFailure(.internet)
-            }
-        }
+                    Alamofire.request(baseUrl.rawValue+urlSuffix).validate().responseJSON { response  in
+                        switch response.result {
+                        case .success(let data):
+                            let jsonData = JSON(data);
+                            print(response.request!.url!.absoluteString)
+                            onSuccess(parser(jsonData));
+                        case .failure :
+                            onFailure(.internet)
+                        }
+                    }
         
     }
+    
+    
     
 }

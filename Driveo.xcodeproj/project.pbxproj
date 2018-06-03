@@ -10,7 +10,7 @@
 		151A73D53C1296903E0BAC0C /* Pods_DriveoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3039D78FFA4FBB8FC7748D /* Pods_DriveoTests.framework */; };
 		3991B73336CFAB391EE43C70 /* Pods_Driveo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812B8BD6E5F1093D015199A1 /* Pods_Driveo.framework */; };
 		6A8B2742BD4EA93B23009918 /* Pods_DriveoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF644CBEF5F0792EAC23D85C /* Pods_DriveoUITests.framework */; };
-		8424621820C11FA800D00057 /* SelectedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424621720C11FA800D00057 /* SelectedPlace.swift */; };
+		8424621820C11FA800D00057 /* OrderLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424621720C11FA800D00057 /* OrderLocation.swift */; };
 		8447456E20C07D2A0076D0EC /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447455820C07D270076D0EC /* ErrorType.swift */; };
 		8447457920C07D2A0076D0EC /* SpinnerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447456A20C07D290076D0EC /* SpinnerExtention.swift */; };
 		8447457A20C07D2A0076D0EC /* LocationMangerProtocolExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447456B20C07D290076D0EC /* LocationMangerProtocolExtention.swift */; };
@@ -18,12 +18,14 @@
 		844BD5EF20C35E17005E98FC /* DPItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5EE20C35E17005E98FC /* DPItem.swift */; };
 		844BD5F120C35F12005E98FC /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F020C35F12005E98FC /* Order.swift */; };
 		844BD5F320C36436005E98FC /* GooglePlacesDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F220C36436005E98FC /* GooglePlacesDAL.swift */; };
-		844BD5F620C3679D005E98FC /* SourceViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F520C3679D005E98FC /* SourceViewProtocol.swift */; };
+		844BD5F620C3679D005E98FC /* PickLocationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F520C3679D005E98FC /* PickLocationProtocol.swift */; };
 		844BD5F820C37045005E98FC /* GenericProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F720C37044005E98FC /* GenericProtocol.swift */; };
 		844BD5FC20C3776E005E98FC /* CreateOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BD5FB20C3776E005E98FC /* CreateOrder.storyboard */; };
 		844BD5FE20C3778A005E98FC /* CreateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */; };
 		844BD60220C38C20005E98FC /* CreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD60120C38C20005E98FC /* CreateOrderView.swift */; };
 		844BD60420C38C36005E98FC /* OrderItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844BD60320C38C36005E98FC /* OrderItem.xib */; };
+		844BD60720C45052005E98FC /* DestinationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BD60520C45051005E98FC /* DestinationScreen.storyboard */; };
+		844BD60820C45052005E98FC /* SourceScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BD60620C45051005E98FC /* SourceScreen.storyboard */; };
 		845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D48EF20BEEF92000F16C1 /* AppDelegate.swift */; };
 		845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D48F320BEEF92000F16C1 /* Main.storyboard */; };
 		845D48F820BEEF92000F16C1 /* Driveo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 845D48F620BEEF92000F16C1 /* Driveo.xcdatamodeld */; };
@@ -47,9 +49,8 @@
 		84A2D4DE20C2CD7D00576ACF /* DropDownCarrierItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4D420C2CD7C00576ACF /* DropDownCarrierItem.swift */; };
 		84A2D4DF20C2CD7D00576ACF /* DropDownCarrierItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A2D4D520C2CD7C00576ACF /* DropDownCarrierItem.xib */; };
 		84A2D4E020C2CD7D00576ACF /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4D620C2CD7C00576ACF /* DropDownMenu.swift */; };
-		84A2D4E120C2CD7D00576ACF /* SourceViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4D720C2CD7C00576ACF /* SourceViewPresenter.swift */; };
-		84A2D4E220C2CD7D00576ACF /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4D820C2CD7D00576ACF /* SourceViewController.swift */; };
-		84A2D4E320C2CD7D00576ACF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A2D4D920C2CD7D00576ACF /* Home.storyboard */; };
+		84A2D4E120C2CD7D00576ACF /* PickLoacationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4D720C2CD7C00576ACF /* PickLoacationPresenter.swift */; };
+		84A2D4E220C2CD7D00576ACF /* PickLoacationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4D820C2CD7D00576ACF /* PickLoacationViewController.swift */; };
 		84A2D4E420C2CD7D00576ACF /* DropDownPlacesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4DB20C2CD7D00576ACF /* DropDownPlacesItem.swift */; };
 		84A2D4E520C2CD7D00576ACF /* DropDownPlacesItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A2D4DC20C2CD7D00576ACF /* DropDownPlacesItem.xib */; };
 		84A2D4E620C2CD7D00576ACF /* PlacesDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A2D4DD20C2CD7D00576ACF /* PlacesDropDownMenu.swift */; };
@@ -97,7 +98,7 @@
 		70AFABCD82D6A1F0E690F921 /* Pods-DriveoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoTests/Pods-DriveoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C3039D78FFA4FBB8FC7748D /* Pods_DriveoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DriveoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		812B8BD6E5F1093D015199A1 /* Pods_Driveo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Driveo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8424621720C11FA800D00057 /* SelectedPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedPlace.swift; sourceTree = "<group>"; };
+		8424621720C11FA800D00057 /* OrderLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderLocation.swift; sourceTree = "<group>"; };
 		8447455820C07D270076D0EC /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		8447456A20C07D290076D0EC /* SpinnerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerExtention.swift; sourceTree = "<group>"; };
 		8447456B20C07D290076D0EC /* LocationMangerProtocolExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationMangerProtocolExtention.swift; sourceTree = "<group>"; };
@@ -105,12 +106,14 @@
 		844BD5EE20C35E17005E98FC /* DPItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPItem.swift; sourceTree = "<group>"; };
 		844BD5F020C35F12005E98FC /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		844BD5F220C36436005E98FC /* GooglePlacesDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesDAL.swift; sourceTree = "<group>"; };
-		844BD5F520C3679D005E98FC /* SourceViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewProtocol.swift; sourceTree = "<group>"; };
+		844BD5F520C3679D005E98FC /* PickLocationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationProtocol.swift; sourceTree = "<group>"; };
 		844BD5F720C37044005E98FC /* GenericProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericProtocol.swift; sourceTree = "<group>"; };
 		844BD5FB20C3776E005E98FC /* CreateOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateOrder.storyboard; sourceTree = "<group>"; };
 		844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewController.swift; sourceTree = "<group>"; };
 		844BD60120C38C20005E98FC /* CreateOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderView.swift; sourceTree = "<group>"; };
 		844BD60320C38C36005E98FC /* OrderItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderItem.xib; sourceTree = "<group>"; };
+		844BD60520C45051005E98FC /* DestinationScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = DestinationScreen.storyboard; path = Driveo/Screens/PickLocationScreen/DestinationScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		844BD60620C45051005E98FC /* SourceScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SourceScreen.storyboard; path = Driveo/Screens/PickLocationScreen/SourceScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		845D48EC20BEEF92000F16C1 /* Driveo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driveo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D48EF20BEEF92000F16C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845D48F420BEEF92000F16C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,9 +144,8 @@
 		84A2D4D420C2CD7C00576ACF /* DropDownCarrierItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownCarrierItem.swift; sourceTree = "<group>"; };
 		84A2D4D520C2CD7C00576ACF /* DropDownCarrierItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownCarrierItem.xib; sourceTree = "<group>"; };
 		84A2D4D620C2CD7C00576ACF /* DropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
-		84A2D4D720C2CD7C00576ACF /* SourceViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewPresenter.swift; sourceTree = "<group>"; };
-		84A2D4D820C2CD7D00576ACF /* SourceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
-		84A2D4D920C2CD7D00576ACF /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		84A2D4D720C2CD7C00576ACF /* PickLoacationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickLoacationPresenter.swift; sourceTree = "<group>"; };
+		84A2D4D820C2CD7D00576ACF /* PickLoacationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickLoacationViewController.swift; sourceTree = "<group>"; };
 		84A2D4DB20C2CD7D00576ACF /* DropDownPlacesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownPlacesItem.swift; sourceTree = "<group>"; };
 		84A2D4DC20C2CD7D00576ACF /* DropDownPlacesItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownPlacesItem.xib; sourceTree = "<group>"; };
 		84A2D4DD20C2CD7D00576ACF /* PlacesDropDownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesDropDownMenu.swift; sourceTree = "<group>"; };
@@ -219,7 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				84D1853F20C2D2BA0054BEBF /* User.swift */,
-				8424621720C11FA800D00057 /* SelectedPlace.swift */,
+				8424621720C11FA800D00057 /* OrderLocation.swift */,
 				844BD5EE20C35E17005E98FC /* DPItem.swift */,
 				844BD5F020C35F12005E98FC /* Order.swift */,
 			);
@@ -271,7 +273,7 @@
 		844BD5F420C3676D005E98FC /* HomeProtocols */ = {
 			isa = PBXGroup;
 			children = (
-				844BD5F520C3679D005E98FC /* SourceViewProtocol.swift */,
+				844BD5F520C3679D005E98FC /* PickLocationProtocol.swift */,
 			);
 			path = HomeProtocols;
 			sourceTree = "<group>";
@@ -391,22 +393,23 @@
 				84EFC1B620C434BC004E5BDF /* VerifyScreen */,
 				84937BB420C3651300727437 /* LoginScreen */,
 				84D1854920C2E1F10054BEBF /* SignupScreen */,
-				84A2D4A820C2C91200576ACF /* HomeScreen */,
+				84A2D4A820C2C91200576ACF /* PickLoacationScreen */,
 				844BD5ED20C31B65005E98FC /* CreateOrderScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		84A2D4A820C2C91200576ACF /* HomeScreen */ = {
+		84A2D4A820C2C91200576ACF /* PickLoacationScreen */ = {
 			isa = PBXGroup;
 			children = (
 				84A2D4D320C2CD7C00576ACF /* CarrierDropDownList */,
 				84A2D4DA20C2CD7D00576ACF /* PlacesDropDownList */,
-				84A2D4D920C2CD7D00576ACF /* Home.storyboard */,
-				84A2D4D820C2CD7D00576ACF /* SourceViewController.swift */,
-				84A2D4D720C2CD7C00576ACF /* SourceViewPresenter.swift */,
+				84A2D4D820C2CD7D00576ACF /* PickLoacationViewController.swift */,
+				84A2D4D720C2CD7C00576ACF /* PickLoacationPresenter.swift */,
+				844BD60620C45051005E98FC /* SourceScreen.storyboard */,
+				844BD60520C45051005E98FC /* DestinationScreen.storyboard */,
 			);
-			path = HomeScreen;
+			path = PickLoacationScreen;
 			sourceTree = "<group>";
 		};
 		84A2D4D320C2CD7C00576ACF /* CarrierDropDownList */ = {
@@ -641,9 +644,10 @@
 			files = (
 				84BD73D920C2F02000380E11 /* SignupStoryboard.storyboard in Resources */,
 				844BD5FC20C3776E005E98FC /* CreateOrder.storyboard in Resources */,
+				844BD60820C45052005E98FC /* SourceScreen.storyboard in Resources */,
 				84A2D4DF20C2CD7D00576ACF /* DropDownCarrierItem.xib in Resources */,
+				844BD60720C45052005E98FC /* DestinationScreen.storyboard in Resources */,
 				84A2D4E520C2CD7D00576ACF /* DropDownPlacesItem.xib in Resources */,
-				84A2D4E320C2CD7D00576ACF /* Home.storyboard in Resources */,
 				845D48FD20BEEF92000F16C1 /* LaunchScreen.storyboard in Resources */,
 				845D48FA20BEEF92000F16C1 /* Assets.xcassets in Resources */,
 				845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */,
@@ -796,9 +800,9 @@
 				844BD5EF20C35E17005E98FC /* DPItem.swift in Sources */,
 				844BD60220C38C20005E98FC /* CreateOrderView.swift in Sources */,
 				844BD5F120C35F12005E98FC /* Order.swift in Sources */,
-				84A2D4E120C2CD7D00576ACF /* SourceViewPresenter.swift in Sources */,
+				84A2D4E120C2CD7D00576ACF /* PickLoacationPresenter.swift in Sources */,
 				84A2D4F120C2CE2400576ACF /* SearchUITextField.swift in Sources */,
-				8424621820C11FA800D00057 /* SelectedPlace.swift in Sources */,
+				8424621820C11FA800D00057 /* OrderLocation.swift in Sources */,
 				84D1854720C2DEF40054BEBF /* SignupPresenterProtocol.swift in Sources */,
 				84D1854020C2D2BA0054BEBF /* User.swift in Sources */,
 				84A2D4F220C2CE2400576ACF /* UIDatePicker.swift in Sources */,
@@ -812,7 +816,7 @@
 				84D1854520C2D39B0054BEBF /* SignupViewProtocol.swift in Sources */,
 				84A2D4E420C2CD7D00576ACF /* DropDownPlacesItem.swift in Sources */,
 				84A2D4F320C2CE2400576ACF /* RoundedButton.swift in Sources */,
-				844BD5F620C3679D005E98FC /* SourceViewProtocol.swift in Sources */,
+				844BD5F620C3679D005E98FC /* PickLocationProtocol.swift in Sources */,
 				84A2D4F420C2CE2400576ACF /* NetworkDAL.swift in Sources */,
 				8447456E20C07D2A0076D0EC /* ErrorType.swift in Sources */,
 				84937BCC20C3672600727437 /* LoginPresenterProtocol.swift in Sources */,
@@ -824,7 +828,7 @@
 				845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */,
 				84EFC1C120C43530004E5BDF /* VerifyViewProtocol.swift in Sources */,
 				84A2D4E620C2CD7D00576ACF /* PlacesDropDownMenu.swift in Sources */,
-				84A2D4E220C2CD7D00576ACF /* SourceViewController.swift in Sources */,
+				84A2D4E220C2CD7D00576ACF /* PickLoacationViewController.swift in Sources */,
 				844BD5FE20C3778A005E98FC /* CreateOrderViewController.swift in Sources */,
 				84D1854D20C2E4BE0054BEBF /* SignupPresenter.swift in Sources */,
 				84D1855220C2E6CC0054BEBF /* StringExtension.swift in Sources */,

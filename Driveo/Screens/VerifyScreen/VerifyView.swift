@@ -8,11 +8,16 @@
 
 import UIKit
 
-class VerifyView: UIViewController , VerifyViewProtocol{
+class VerifyView: UIViewController , VerifyViewProtocol, UITextFieldDelegate{
     
-    var spinner:UIView?
+    @IBOutlet weak var verificationCodeTextField: UITextField!
+    @IBOutlet weak var errorCodeLabel: UILabel!
+    private lazy var presenter:VerifyPresenterProtocol = VerifyPresenter(view: self)
+    
+     var spinner:UIView?
     var alert:UIAlertController?
     
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,8 +40,12 @@ class VerifyView: UIViewController , VerifyViewProtocol{
     }
     */
 
-    func setCodeErrorLabel(withError: String) {
-        
+    func setCodeErrorLabel(withError error: String) {
+        errorCodeLabel.text = error
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     func showLoading() {
@@ -49,7 +58,7 @@ class VerifyView: UIViewController , VerifyViewProtocol{
     
     func goToHomeScreen() {
         let storyBoard = UIStoryboard(name: "Home", bundle: nil)
-        let homeScreen:SourceViewController = storyBoard.instantiateViewController(withIdentifier: "SourceViewController") as! SourceViewController
+        let homeScreen:PickLoacationViewController = storyBoard.instantiateViewController(withIdentifier: "SourceViewController") as! PickLoacationViewController
         self.present(homeScreen, animated: true, completion: nil)
     }
     
@@ -60,6 +69,23 @@ class VerifyView: UIViewController , VerifyViewProtocol{
         self.present(alert!, animated: true, completion: nil)
     }
     
+    @IBAction func verifyButtonAction(_ sender: Any) {
+        presenter.sendVerificationCode(withcode: verificationCodeTextField.text!)
+    }
+    
+    
+    func textFieldDidEndEditing(_ textField: UITextField){
+        switch textField.tag {
+        case 1:
+            presenter.isCodeValid(withCode: textField.text!)
+        default: break
+        }
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
     
     
 }

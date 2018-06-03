@@ -39,10 +39,51 @@ class SignupView: UIViewController ,SignupViewProtocol{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
         // Do any additional setup after loading the view.
 //          let defaults = UserDefaults.standard
 //        print(defaults.string(forKey: "auth_token") ?? "nothing")
     }
+  
+    
+ @objc   func keyboardWillShow(notification: NSNotification) {
+    let keyboardHeight = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue.height
+    UIView.animate(withDuration: 0.1, animations: { () -> Void in
+        self.view.window?.frame.origin.y = -1 * keyboardHeight
+            self.view.layoutIfNeeded()
+        })
+    }
+ @objc   func keyboardWillHide(notification: NSNotification) {
+    UIView.animate(withDuration: 0.1, animations: { () -> Void in
+            self.view.window?.frame.origin.y = 0
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    
+    
+// @objc  func keyboardWillShow(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if view.frame.origin.y == 0{
+//                self.view.frame.origin.y -= keyboardSize.height
+//            }
+//        }
+//    }
+//
+//  @objc  func keyboardWillHide(notification: NSNotification) {
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+//            if view.frame.origin.y != 0 {
+//                self.view.frame.origin.y += keyboardSize.height
+//            }
+//        }
+//    }
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -108,7 +149,13 @@ class SignupView: UIViewController ,SignupViewProtocol{
     
     
     func goToVerifyScreen(){
-        //self.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        let verifyScreen:VerifyView = self.storyboard?.instantiateViewController(withIdentifier: "VerifyView") as! VerifyView
+        self.present(verifyScreen, animated: true, completion: nil)
+    }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     func showAlert(withTitle title :String , andMessage msg:String){
@@ -134,5 +181,12 @@ extension SignupView : UITextFieldDelegate{
             
         }
     }
+
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
+    
     
 }
