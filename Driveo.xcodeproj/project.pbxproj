@@ -26,7 +26,7 @@
 		844BD5F320C36436005E98FC /* GooglePlacesDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F220C36436005E98FC /* GooglePlacesDAL.swift */; };
 		844BD5F620C3679D005E98FC /* PickLocationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F520C3679D005E98FC /* PickLocationProtocol.swift */; };
 		844BD5F820C37045005E98FC /* GenericProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F720C37044005E98FC /* GenericProtocol.swift */; };
-		844BD5FC20C3776E005E98FC /* CreateOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BD5FB20C3776E005E98FC /* CreateOrder.storyboard */; };
+		844BD5FC20C3776E005E98FC /* CreateOrderScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BD5FB20C3776E005E98FC /* CreateOrderScreen.storyboard */; };
 		844BD5FE20C3778A005E98FC /* CreateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */; };
 		844BD60220C38C20005E98FC /* CreateOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD60120C38C20005E98FC /* CreateOrderView.swift */; };
 		844BD60420C38C36005E98FC /* OrderItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844BD60320C38C36005E98FC /* OrderItem.xib */; };
@@ -119,7 +119,7 @@
 		844BD5F220C36436005E98FC /* GooglePlacesDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesDAL.swift; sourceTree = "<group>"; };
 		844BD5F520C3679D005E98FC /* PickLocationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationProtocol.swift; sourceTree = "<group>"; };
 		844BD5F720C37044005E98FC /* GenericProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericProtocol.swift; sourceTree = "<group>"; };
-		844BD5FB20C3776E005E98FC /* CreateOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateOrder.storyboard; sourceTree = "<group>"; };
+		844BD5FB20C3776E005E98FC /* CreateOrderScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateOrderScreen.storyboard; sourceTree = "<group>"; };
 		844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewController.swift; sourceTree = "<group>"; };
 		844BD60120C38C20005E98FC /* CreateOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderView.swift; sourceTree = "<group>"; };
 		844BD60320C38C36005E98FC /* OrderItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderItem.xib; sourceTree = "<group>"; };
@@ -254,6 +254,7 @@
 				8424621720C11FA800D00057 /* OrderLocation.swift */,
 				844BD5EE20C35E17005E98FC /* DPItem.swift */,
 				844BD5F020C35F12005E98FC /* Order.swift */,
+				844BD60920C48BE1005E98FC /* ScreenController.swift */,
 			);
 			path = Pojo;
 			sourceTree = "<group>";
@@ -293,7 +294,7 @@
 		844BD5ED20C31B65005E98FC /* CreateOrderScreen */ = {
 			isa = PBXGroup;
 			children = (
-				844BD5FB20C3776E005E98FC /* CreateOrder.storyboard */,
+				844BD5FB20C3776E005E98FC /* CreateOrderScreen.storyboard */,
 				844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */,
 				844BD60120C38C20005E98FC /* CreateOrderView.swift */,
 				844BD60320C38C36005E98FC /* OrderItem.xib */,
@@ -315,6 +316,15 @@
 				84937BAE20C3023A00727437 /* Login.storyboard */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		844BD60B20C4BB12005E98FC /* PaymentScreen */ = {
+			isa = PBXGroup;
+			children = (
+				844BD60C20C4BB3E005E98FC /* PaymentScreen.storyboard */,
+				844BD60E20C4BCC3005E98FC /* PaymentViewController.swift */,
+			);
+			path = PaymentScreen;
 			sourceTree = "<group>";
 		};
 		845D48E320BEEF92000F16C1 = {
@@ -427,6 +437,7 @@
 				84D1854920C2E1F10054BEBF /* SignupScreen */,
 				84A2D4A820C2C91200576ACF /* PickLoacationScreen */,
 				844BD5ED20C31B65005E98FC /* CreateOrderScreen */,
+				844BD60B20C4BB12005E98FC /* PaymentScreen */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -825,7 +836,9 @@
 				840B1CCB20C52FF80046542D /* ResetPasswordModel.swift in Sources */,
 				84937BD220C45D0B00727437 /* ForgotPassPresenter.swift in Sources */,
 				84A2D4DE20C2CD7D00576ACF /* DropDownCarrierItem.swift in Sources */,
+				844BD60F20C4BCC3005E98FC /* PaymentViewController.swift in Sources */,
 				8447457B20C07D2A0076D0EC /* LocationMangerProtocol.swift in Sources */,
+				844BD60A20C48BE1005E98FC /* ScreenController.swift in Sources */,
 				84A2D4E020C2CD7D00576ACF /* DropDownMenu.swift in Sources */,
 				844BD5F320C36436005E98FC /* GooglePlacesDAL.swift in Sources */,
 				84937BC620C3670800727437 /* ForgotPassViewProtocol.swift in Sources */,

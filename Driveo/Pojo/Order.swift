@@ -7,20 +7,16 @@
 //
 
 import Foundation
-
+enum OrderStatus:String{
+    case sourceLocation = "Pick up location"
+    case destinationLocation = "Drop location"
+    case paymentMethod = "Payment"
+}
 class Order {
-
-    internal var source:OrderLocation!{
-        didSet{
-            if source!.isComplete()
-            {
-                completeStatus+=1
-            }
-            else{
-                source=nil
-            }
-        }
-    }
+    
+    internal var orderStatus:OrderStatus?
+    
+    internal var source:OrderLocation!
     
     internal var date:String!
     
@@ -28,12 +24,10 @@ class Order {
     
     internal var destination:OrderLocation?{
         didSet{
-            if destination!.isComplete()
+            if destination!.isComplete(),oldValue == nil
             {
                 completeStatus+=1
-            }
-            else{
-                destination=nil
+                orderStatus = .destinationLocation
             }
         }
     }
@@ -41,6 +35,7 @@ class Order {
     
     init(withSource source:OrderLocation,byCarrier carrier:String,onDate date:String) {
         self.source = source
+        completeStatus+=1
         self.carrier=carrier
         self.date = date
     }

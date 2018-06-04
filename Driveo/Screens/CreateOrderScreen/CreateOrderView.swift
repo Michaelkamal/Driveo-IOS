@@ -10,12 +10,22 @@ import UIKit
 
 class CreateOrderView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var statusImage: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var subtitle: UILabel!
+    @IBOutlet weak var editButton: UIButton!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
-    */
-
+    public var editFunc : (()->Void)?
+    
+    public func registerEditFunction(){
+    editButton.addTarget(self, action:#selector(didTapOnEditButton), for: UIControlEvents.touchUpInside)
+    }
+    @objc func didTapOnEditButton()
+    {
+        becomeFirstResponder()
+        editFunc?()
+    }
 }

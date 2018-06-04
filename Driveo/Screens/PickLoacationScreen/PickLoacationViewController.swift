@@ -18,7 +18,7 @@ class PickLoacationViewController: UIViewController {
     
     private lazy var datePicker: UIDatePicker = UIDatePicker()
     
-    private var isSource : Bool?
+    public var isSource : Bool?
     public var isEditingFromCreateOrder : Bool?
     
     @IBOutlet weak var searchTextField: SearchUITextField!{
@@ -100,14 +100,29 @@ class PickLoacationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter=PickLoacationPresenter(withController: self,andOrder: userOrder)
-        
-        presenter.getCurrentLocation()
+        if isEditingFromCreateOrder == nil
+        {presenter.getCurrentLocation()}
         
         if(isSource)!{
             carrierDropDownMenu.didSelectedItemIndex=presenter.didSelectCarrier
         }
         
         placesDropDownMenu.didSelectedItemIndex=presenter.didSelectplace
+        
+        if let userOrder=userOrder{
+            if(isSource)!{
+                addressLabel.text=userOrder.source.address
+                placeMarker(onLocation: userOrder.source.coordinates!, withTitle: userOrder.source.address!)
+               
+            }else{
+                if(isEditingFromCreateOrder != nil)
+                {
+                    addressLabel.text=userOrder.destination!.address
+                    placeMarker(onLocation: userOrder.destination!.coordinates!, withTitle: userOrder.destination!.address!)
+                }
+            }
+            
+        }
     }
     
     private func dismissAllPopups(){
@@ -195,14 +210,14 @@ extension PickLoacationViewController:PickLocationProtocol
     func presentToNextScreen(withOrder order:Order){
         
         if isSource!,isEditingFromCreateOrder == nil{
-            let destinationStoryboard = UIStoryboard(name: "DestinationScreen", bundle: nil)
-            let vc = destinationStoryboard.instantiateViewController(withIdentifier: "PickLoacationViewController") as! PickLoacationViewController
+            let destinationStoryboard = UIStoryboard(name: ScreenController.destinationScreen.storyBoardName(), bundle: nil)
+            let vc = destinationStoryboard.instantiateViewController(withIdentifier: ScreenController.destinationScreen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces)) as! PickLoacationViewController
             vc.userOrder=order
             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true,completion: nil)
         }else{
-            let createOrderStoryboard = UIStoryboard(name: "CreateOrder", bundle: nil)
-            let vc = createOrderStoryboard.instantiateViewController(withIdentifier: "CreateOrderViewController") as! CreateOrderViewController
+            let createOrderStoryboard = UIStoryboard(name: ScreenController.createOrderScreen.storyBoardName(), bundle: nil)
+            let vc = createOrderStoryboard.instantiateViewController(withIdentifier: ScreenController.createOrderScreen.rawValue) as! CreateOrderViewController
             vc.userOrder=order
             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true,completion: nil)
@@ -235,6 +250,15 @@ extension PickLoacationViewController
         datePicker.backgroundColor = UIColor.white
         
         datePicker.setDate(Date(), unit:.year, deltaMinimum:0, deltaMaximum:1, animated:true)
+        
+        if let userOrder=userOrder{
+            // Create date formatter
+            let dateFormatter: DateFormatter = DateFormatter()
+            // Set date format
+            dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
+            let date = dateFormatter.date (from: userOrder.date)
+            datePicker.setDate(date!, animated: false)
+        }
         // Add an event to call onDidChangeDate function when value is changed.
         datePicker.addTarget(presenter, action: #selector(presenter.datePickerValueChanged), for: .valueChanged)
         

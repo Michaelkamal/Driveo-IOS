@@ -33,11 +33,28 @@ class PickLoacationPresenter{
         self.controller=controller
         self.userOrder=order
         viewDelagate=controller as! PickLocationProtocol
-        if viewDelagate.isCurrentScreenSourcePickUp {
-            selectedLocation=OrderLocation(locationType: LocationType.source)
-        }else{
-        selectedLocation=OrderLocation(locationType: LocationType.destination)
-        }}
+        
+        if let userOrder = self.userOrder {
+            self.pickUpDate=userOrder.date
+            if viewDelagate.isCurrentScreenSourcePickUp{
+               selectedLocation = userOrder.source
+            }else{
+            if let destination = userOrder.destination
+            {
+                selectedLocation = destination
+            }
+            else
+            {
+                selectedLocation=OrderLocation(locationType: LocationType.destination)
+            }
+            }
+        }
+        else{
+            if viewDelagate.isCurrentScreenSourcePickUp {
+                selectedLocation=OrderLocation(locationType: LocationType.source)
+            }
+        }
+    }
     // set order date
     @objc func datePickerValueChanged(_ sender: UIDatePicker){
         
@@ -73,8 +90,14 @@ class PickLoacationPresenter{
         {
             if selectedLocation.isComplete(),pickUpDate != nil,carrier != nil
             {
-                let order:Order=Order(withSource: selectedLocation,byCarrier: carrier!, onDate: pickUpDate!)
-                viewDelagate.presentToNextScreen(withOrder:order)
+                if let userOrder = userOrder {
+                    userOrder.source=selectedLocation
+                    userOrder.date=pickUpDate
+                    if let carrier=carrier{userOrder.carrier=carrier}
+                }else{
+                    userOrder=Order(withSource: selectedLocation,byCarrier: carrier!, onDate: pickUpDate!)
+                }
+                viewDelagate.presentToNextScreen(withOrder:userOrder!)
             }else
             {
                 viewDelagate.showAlert(ofError: .incompleteData)
@@ -85,12 +108,11 @@ class PickLoacationPresenter{
             {
                 if userOrder.source.coordinates!.coordinate.longitude != selectedLocation.coordinates!.coordinate.longitude, userOrder.source.coordinates!.coordinate.latitude != selectedLocation.coordinates!.coordinate.latitude
                 {
-                userOrder.destination=selectedLocation
-                viewDelagate.presentToNextScreen(withOrder:userOrder)
+                    userOrder.destination=selectedLocation
+                    viewDelagate.presentToNextScreen(withOrder:userOrder)
                 }else{
-                  viewDelagate.showAlert(ofError: .destinationError)
+                    viewDelagate.showAlert(ofError: .destinationError)
                 }
-                print(userOrder)
             }else
             {
                 viewDelagate.showAlert(ofError: .incompleteData)
