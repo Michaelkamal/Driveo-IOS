@@ -9,7 +9,9 @@
 import UIKit
 import BeautifulTextField
 
-class CreateRequestView: UIViewController {
+class CreateRequestView: UIViewController, CreateRequestViewProtocol {
+   
+    
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -77,6 +79,30 @@ extension CreateRequestView : UICollectionViewDelegate,UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var width = UIScreen.main.bounds.size.width
         return CGSize(width: width*0.36 , height: width*0.36)
+    }
+    
+    func showLoading() {
+        
+    }
+    
+    func dismissLoading() {
+        
+    }
+    
+    func showAlert(withTitle title: String, withMsg msg: String) {
+        
+    }
+    
+    func goToNextScreen() {
+        
+    }
+    
+    func getNewImage() {
+        
+    }
+    
+    func updateImages() {
+        
     }
     
 }

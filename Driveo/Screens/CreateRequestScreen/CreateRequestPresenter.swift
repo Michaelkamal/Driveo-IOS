@@ -7,6 +7,10 @@
 //
 
 import Foundation
-class CreateRequestPresenter{
+class CreateRequestPresenter : CreateRequestPresenterProtocol{
+    func createRequestclicked(withTitle title: String, withDescription: String, withImages: [Any]) {
+        
+    }
+    
     
 }

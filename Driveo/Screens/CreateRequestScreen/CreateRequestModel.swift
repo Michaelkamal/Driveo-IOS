@@ -7,6 +7,6 @@
 //
 
 import Foundation
-class CreateRequestModel{
+class CreateRequestModel:CreateRequestModelProtocol{
     
 }
