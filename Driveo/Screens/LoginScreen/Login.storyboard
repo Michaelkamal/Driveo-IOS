@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xAa-4N-ti6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UvW-tJ-WaQ">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -302,7 +302,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backToLogin:" destination="sUC-Kl-8xU" eventType="touchUpInside" id="oEM-Bn-xK2"/>
-                                    <action selector="exitView:" destination="sUC-Kl-8xU" eventType="touchUpInside" id="Ssf-nu-1hd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Reset your password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wFw-8U-Yvz">
@@ -332,8 +331,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="sendLink:" destination="sUC-Kl-8xU" eventType="touchUpInside" id="1fn-ZT-Po7"/>
-                                    <action selector="sendPassword:" destination="sUC-Kl-8xU" eventType="touchUpInside" id="gi4-Za-pgl"/>
+                                    <action selector="sendPassword:" destination="sUC-Kl-8xU" eventType="touchUpInside" id="Zh0-2J-Eot"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epv-y4-E4x">
@@ -426,8 +424,7 @@
                         <viewLayoutGuide key="safeArea" id="GQu-Wd-EO2"/>
                     </view>
                     <connections>
-                        <outlet property="invalidPassLbl" destination="epv-y4-E4x" id="bak-hL-4KJ"/>
-                        <outlet property="invalidPasslbl" destination="epv-y4-E4x" id="gfk-q9-PBZ"/>
+                        <outlet property="invalidPassLbl" destination="epv-y4-E4x" id="OLG-yQ-WyH"/>
                         <outlet property="messageLbl" destination="tcq-Bj-OP8" id="dkX-cD-mrp"/>
                         <outlet property="passwordFld1" destination="Adb-a2-dPD" id="kBA-vf-aWK"/>
                         <outlet property="passwordFld2" destination="haZ-De-dJN" id="QKY-kr-cjk"/>

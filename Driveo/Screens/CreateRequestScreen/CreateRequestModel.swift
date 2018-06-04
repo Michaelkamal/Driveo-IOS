@@ -9,6 +9,15 @@
 import Foundation
 class CreateRequestModel:CreateRequestModelProtocol{
     
+    func sendCreateRequest(withTitle title: String, withDescription description: String, withImages imaged: [Any]) {
+        
+    }
+    
+    func getPhoto(withImage image: Any) {
+        
+    }
+    
+    
    
     
     

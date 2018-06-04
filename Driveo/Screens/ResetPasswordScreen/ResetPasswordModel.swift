@@ -16,18 +16,19 @@ class ResetPasswordModel: ResetPasswordModelProtocol {
     }
     func sendRequest(withParameters params: Dictionary<String, Any>) {
         let networkObj:NetworkDAL = NetworkDAL.sharedInstance()
-        networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "auth/login", andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
+        let defaults = UserDefaults.standard
+        var token = defaults.object(forKey: "reset_token") as! String
+        if token != nil{
+            networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "reset_passwor/?hash="+token, andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
+            let defaults = UserDefaults.standard
+            defaults.set(nil, forKey: "reset_token")
+            defaults.synchronize()
+        }
     }
     
     func onSuccess(_ response: Any) {
         let dict = response as! Dictionary<String,Any>
         let message = dict["message"] as! String
-        if message.contains("done"){
-            let defaults = UserDefaults.standard
-            let token = dict["reset_token"] as! String
-            defaults.set(token, forKey :"reset_token")
-            defaults.synchronize()
-        }
         rPP.resetSuccess(message:message)
     }
     

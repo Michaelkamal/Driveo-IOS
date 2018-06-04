@@ -38,18 +38,21 @@ class ForgetPasswordViewController: UIViewController, ForgotPassViewProtocol {
             wrongMailLbl.isHidden = true
             fPP.sendLink(withEmail: emailTxt.text!)
             print("matches")
+            showLoading()
         }
         else{
             ChangeLabel(withString: "Invalid email")
         }
     }
     func goToScreen(withScreenName name: String) {
-        
+        dismissLoading()
     }
     
     func ChangeLabel(withString str: String) {
         wrongMailLbl.text = str
         wrongMailLbl.isHidden = false
+        if !str.contains("invalid email"){
+            dismissLoading()}
     }
     
     func showLoading() {
@@ -70,5 +73,6 @@ class ForgetPasswordViewController: UIViewController, ForgotPassViewProtocol {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }

@@ -38,12 +38,6 @@ class ForgotPassModel : ForgotPasswordModelProtocol{
         
         let dict = response as! Dictionary<String,Any>
         let message = dict["message"] as! String
-        if message.contains("check your mail"){
-            let defaults = UserDefaults.standard
-            let token = dict["reset_token"] as! String
-            defaults.set(token, forKey :"reset_token")
-            defaults.synchronize()
-        }
         fPP.sendSuccess(message: message)
     }
     

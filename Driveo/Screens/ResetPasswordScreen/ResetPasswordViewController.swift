@@ -9,7 +9,8 @@
 import UIKit
 
 class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
-
+    
+    var spinner:UIView!
     var rPP:ResetPasswordPresenterProtocol!
     
     @IBOutlet weak var passwordFld1: UITextField!
@@ -21,6 +22,7 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
         super.viewDidLoad()
         
         invalidPassLbl.isHidden = true
+        messageLbl.isHidden = true
         rPP = ResetPasswordPresenter(withController: self)
         // Do any additional setup after loading the view.
     }
@@ -35,7 +37,9 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
     }
     
     func ChangeLabel(withString str: String) {
-        
+        messageLbl.isHidden = false
+        messageLbl.text=str
+        dismissLoading()
     }
     
     @IBAction func backToLogin(_ sender: UIButton) {
@@ -45,14 +49,26 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
     
     @IBAction func sendPassword(_ sender: UIButton) {
         if true{
-           // wrongMailLbl.isHidden = true
-           // fPP.sendLink(withEmail: emailTxt.text!)
+            invalidPassLbl.isHidden = true
+            messageLbl.isHidden = true
+            rPP.resetPassword(withPassword: passwordFld1.text!)
             print("matches")
+            showLoading()
         }
         else{
-            ChangeLabel(withString: "Invalid email")
+            invalidPassLbl.isHidden = false
+            invalidPassLbl.text = "Invalid password"
         }
     }
+    
+    func showLoading() {
+        spinner = UIViewController.displaySpinner(onView: self.view)
+    }
+    
+    func dismissLoading() {
+        UIViewController.removeSpinner(spinner: spinner!)
+    }
+    
     /*
     // MARK: - Navigation
 
