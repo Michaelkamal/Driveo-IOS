@@ -48,6 +48,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
     
+    //MARK: - Open app via link
+    
+    public func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any?) -> Bool{
+        
+        if url.host!=="driveo.herokuapp.com" {
+            if url.lastPathComponent == "reset_password"{
+               let tokenHash = ((url.query!).split(separator: "="))[1]
+                let defaults = UserDefaults.standard
+                defaults.set(tokenHash, forKey: "reset_token")
+                defaults.synchronize()
+                let loginStoryBoard = UIStoryboard(name: "Login", bundle: nil)
+                
+                let rpView: ResetPasswordViewController = loginStoryBoard.instantiateViewController(withIdentifier: "resetPassword") as! ResetPasswordViewController
+                self.window?.rootViewController = rpView
+                self.window?.makeKeyAndVisible()
+            }
+        }
+
+        return true
+    }
+    
     // MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {
