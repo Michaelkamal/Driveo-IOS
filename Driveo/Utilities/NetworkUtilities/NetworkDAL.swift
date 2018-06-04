@@ -39,9 +39,9 @@ public class NetworkDAL{
         andParameters param: Parameters,
         onSuccess: @escaping (_ :Any)->Void,
         onFailure:  @escaping (_ networkError:ErrorType)->Void
-        )-> Void{
+        , headers:HTTPHeaders? = nil)-> Void{
         
-        Alamofire.request(baseUrl.rawValue+urlSuffix,method: .post, parameters: param).validate().responseJSON { response  in
+        Alamofire.request(baseUrl.rawValue+urlSuffix,method: .post, parameters: param, headers:headers).validate().responseJSON { response  in
             switch response.result {
             case .success(let data):
                 let jsonData = JSON(data);
