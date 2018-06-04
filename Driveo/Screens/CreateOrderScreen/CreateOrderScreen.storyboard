@@ -43,10 +43,10 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQv-CD-gSJ">
-                                <rect key="frame" x="49" y="139.5" width="277" height="530"/>
+                                <rect key="frame" x="0.0" y="139.5" width="375" height="530"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeX-tO-e0u" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="277" height="530"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="530"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -66,13 +66,13 @@
                             <constraint firstItem="T6s-8t-7TZ" firstAttribute="centerX" secondItem="jB5-aL-VuJ" secondAttribute="centerX" id="AAD-X1-0IB"/>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="centerX" secondItem="jB5-aL-VuJ" secondAttribute="centerX" id="HoY-2t-dgy"/>
                             <constraint firstItem="hWG-YJ-Fpo" firstAttribute="leading" secondItem="jB5-aL-VuJ" secondAttribute="leading" constant="22.699999999999999" id="Iim-yH-zjF"/>
-                            <constraint firstItem="EQv-CD-gSJ" firstAttribute="leading" secondItem="ii6-8q-b8t" secondAttribute="leading" constant="49" id="YJF-n6-Kay"/>
+                            <constraint firstItem="EQv-CD-gSJ" firstAttribute="leading" secondItem="ii6-8q-b8t" secondAttribute="leading" id="YJF-n6-Kay"/>
                             <constraint firstItem="hWG-YJ-Fpo" firstAttribute="top" secondItem="ii6-8q-b8t" secondAttribute="top" constant="33.670000000000002" id="aNe-fs-q8R"/>
                             <constraint firstItem="hWG-YJ-Fpo" firstAttribute="width" secondItem="jB5-aL-VuJ" secondAttribute="height" multiplier="17:667" id="euz-vh-SaH"/>
                             <constraint firstItem="DUk-wZ-ecb" firstAttribute="centerX" secondItem="jB5-aL-VuJ" secondAttribute="centerX" id="hGE-yT-8Jn"/>
                             <constraint firstItem="T6s-8t-7TZ" firstAttribute="top" secondItem="ii6-8q-b8t" secondAttribute="top" constant="33.670000000000002" id="qvd-U0-deL"/>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="bottom" secondItem="ii6-8q-b8t" secondAttribute="bottom" constant="2.3300000000000001" id="uPF-yr-Bet"/>
-                            <constraint firstItem="EQv-CD-gSJ" firstAttribute="trailing" secondItem="ii6-8q-b8t" secondAttribute="trailing" constant="-49" id="uYN-it-b5S"/>
+                            <constraint firstItem="EQv-CD-gSJ" firstAttribute="trailing" secondItem="ii6-8q-b8t" secondAttribute="trailing" id="uYN-it-b5S"/>
                             <constraint firstItem="DUk-wZ-ecb" firstAttribute="top" secondItem="T6s-8t-7TZ" secondAttribute="bottom" constant="2.3300000000000001" id="ywB-p6-h6M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ii6-8q-b8t"/>

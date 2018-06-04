@@ -197,6 +197,7 @@ extension DropDownMenu {
         backgroundView = UIView(frame: superSuperView.bounds)
         superSuperView.addSubview(backgroundView)
         tableView = UITableView(frame: originTableFrame, style: .plain)
+        tableView.backgroundColor=UIColor.clear
         tableView.register(UINib(nibName: "DropDownCarrierItem", bundle: nil), forCellReuseIdentifier: dropDownCellIdentifier)
         tableView.backgroundColor = .clear
         superSuperView.addSubview(tableView)
@@ -229,7 +230,10 @@ extension DropDownMenu: UITableViewDataSource, UITableViewDelegate {
         cell.reload(item: items[indexPath.row])
         reload(cell: cell, indexPath: indexPath)
         
-        cell.contentView.layer.cornerRadius = 10;
+        cell.contentView.layer.borderWidth = 2.0
+        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.contentView.layer.cornerRadius = 10.0
+        cell.contentView.clipsToBounds = true
         cell.contentView.layer.masksToBounds = true;
         return cell
     }
