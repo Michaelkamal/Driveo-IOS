@@ -11,6 +11,7 @@ target 'Driveo' do
     pod 'SwiftyJSON', '~> 4.0'
     pod 'SDWebImage', '~> 4.0' 
     pod "GooglePlacesSearchController"
+    pod "BeautifulTextField"
 
   target 'DriveoTests' do
     inherit! :search_paths
