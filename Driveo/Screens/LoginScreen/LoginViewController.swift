@@ -11,6 +11,7 @@ import UIKit
 class LoginViewController: UIViewController , LoginViewProtocol {
     
     var lp:LoginPresenterProtocol!
+    var spinner:UIView!
     
     @IBOutlet weak var passTxt: UITextField!
     @IBOutlet weak var wrongEmail: UILabel!
@@ -21,6 +22,7 @@ class LoginViewController: UIViewController , LoginViewProtocol {
         wrongEmail.text=""
         if (emailTxt.text?.matches(String((String.regexes.email).rawValue)))! {
             lp.login(withUserName: emailTxt.text!, andPassword: passTxt.text!)
+            showLoading()
         }
         else{
             wrongEmail.text = "Invalid E-mail"
@@ -39,6 +41,7 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         wrongEmail.text=""
         
@@ -65,7 +68,15 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     func goToScreen(withScreenName name:String){
         if name == "next"{
             print("hanroo7 next")
+            dismissLoading()
         }
+    }
+    func showLoading() {
+        spinner = UIViewController.displaySpinner(onView: self.view)
+    }
+    
+    func dismissLoading() {
+        UIViewController.removeSpinner(spinner: spinner!)
     }
     
 }

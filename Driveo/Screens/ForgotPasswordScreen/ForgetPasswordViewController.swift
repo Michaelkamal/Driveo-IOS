@@ -10,6 +10,8 @@ import UIKit
 
 class ForgetPasswordViewController: UIViewController, ForgotPassViewProtocol {
     
+    var spinner:UIView!
+    
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var wrongMailLbl: UILabel!
     var fPP:ForgotPassPresenterProtocol!
@@ -48,6 +50,14 @@ class ForgetPasswordViewController: UIViewController, ForgotPassViewProtocol {
     func ChangeLabel(withString str: String) {
         wrongMailLbl.text = str
         wrongMailLbl.isHidden = false
+    }
+    
+    func showLoading() {
+        spinner = UIViewController.displaySpinner(onView: self.view)
+    }
+    
+    func dismissLoading() {
+        UIViewController.removeSpinner(spinner: spinner!)
     }
     
 
