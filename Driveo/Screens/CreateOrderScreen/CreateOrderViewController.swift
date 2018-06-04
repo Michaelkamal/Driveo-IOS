@@ -45,6 +45,12 @@ class CreateOrderViewController: UIViewController {
                         orderStep.subtitle.text=userOrder.destination?.address
                         orderStep.editFunc={
                             () in
+                            self.presentScreen(screen: ScreenController.destinationScreen, withOrder: userOrder)}
+                    case 2:
+                        orderStep.title.text="Payment method"
+                        orderStep.subtitle.text=userOrder.destination?.address
+                        orderStep.editFunc={
+                            () in
                             self.presentScreen(screen: ScreenController.destinationScreen, withOrder: userOrder)
                         }
                     default:
@@ -76,6 +82,10 @@ class CreateOrderViewController: UIViewController {
             vc.isEditingFromCreateOrder=true
             if screen == .sourceScreen {vc.isSource=true}
             
+        case .createOrderScreen:
+            break
+        case .paymentScreen:
+            break
         }
         vc.modalTransitionStyle = .flipHorizontal
         self.present(vc, animated: true,completion: nil)
