@@ -12,6 +12,9 @@ import BeautifulTextField
 class CreateRequestView: UIViewController, CreateRequestViewProtocol {
    
     
+    var spinner:UIView?
+    var alert:UIAlertController?
+    
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -82,15 +85,18 @@ extension CreateRequestView : UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     func showLoading() {
-        
+        spinner = UIViewController.displaySpinner(onView: self.view)
     }
     
     func dismissLoading() {
-        
+        UIViewController.removeSpinner(spinner: spinner!)
     }
     
-    func showAlert(withTitle title: String, withMsg msg: String) {
-        
+    func showAlert(withTitle title :String , withMsg msg:String){
+        alert = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)
+        self.present(alert!, animated: true, completion: nil)
+        let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)
+        alert?.addAction(dismissAlertAction)
     }
     
     func goToNextScreen() {

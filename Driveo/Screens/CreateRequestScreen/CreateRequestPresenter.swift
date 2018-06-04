@@ -12,5 +12,26 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
         
     }
     
+    func addPhoto(withPhoto photo: Any) {
+        
+    }
+    
+    func deletePhoto(withPhoto photo: Any) {
+        
+    }
+    
+    func getPhoto() {
+        
+    }
+    
+    func onCreateRequestSuccess() {
+        
+    }
+    
+    func onCreateRequestFailure(withError error: String) {
+        
+    }
+    
+
     
 }
