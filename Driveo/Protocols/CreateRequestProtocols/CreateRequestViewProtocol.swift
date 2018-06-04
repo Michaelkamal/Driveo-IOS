@@ -7,3 +7,13 @@
 //
 
 import Foundation
+protocol CreateRequestViewProtocol {
+    
+    
+    func showLoading()
+    func dismissLoading()
+    func showAlert(withTitle title : String , withMsg msg:String)
+    func goToNextScreen()
+    func getNewImage()
+    func updateImages()
+}
