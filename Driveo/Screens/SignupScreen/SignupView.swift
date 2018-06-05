@@ -17,7 +17,7 @@ class SignupView: UIViewController ,SignupViewProtocol{
     lazy var signupPresenter:SignupPresenter = SignupPresenter(signupView: self)
     
     @IBOutlet weak var emailTextField: UITextField!
-    
+
     @IBOutlet weak var phoneTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -141,12 +141,9 @@ extension SignupView : UITextFieldDelegate{
         case 4:
             signupPresenter.isPasswordmatches(password: passwordTextField.text!, confirmPassword: confirmPasswordTextField.text!)
         default: break
-            
         }
     }
 
-    
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textField.resignFirstResponder()
     }

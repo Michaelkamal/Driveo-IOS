@@ -18,4 +18,5 @@ protocol SignupViewProtocol {
     func dismissLoading()
     func goToVerifyScreen()
     func showAlert(withTitle title :String , andMessage msg:String)
+    
 }
