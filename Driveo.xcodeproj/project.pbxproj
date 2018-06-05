@@ -21,6 +21,10 @@
 		840B1CD320C5B3D10046542D /* CreateRequestViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CD020C5B3D10046542D /* CreateRequestViewProtocol.swift */; };
 		840B1CD520C5B81F0046542D /* CreateRequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CD420C5B81F0046542D /* CreateRequestPresenter.swift */; };
 		840B1CD720C5B82D0046542D /* CreateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CD620C5B82D0046542D /* CreateRequestModel.swift */; };
+		84187ED820C6D26C00FB5566 /* TripsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84187ED720C6D26C00FB5566 /* TripsViewProtocol.swift */; };
+		84187EDA20C6D2EF00FB5566 /* TripsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84187ED920C6D2EF00FB5566 /* TripsPresenterProtocol.swift */; };
+		84187EDE20C6D48E00FB5566 /* TripsModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84187EDD20C6D48E00FB5566 /* TripsModelProtocol.swift */; };
+		84187EE620C6D48E00FB5566 /* Trips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84187EE520C6D48E00FB5566 /* Trips.storyboard */; };
 		8424621820C11FA800D00057 /* OrderLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424621720C11FA800D00057 /* OrderLocation.swift */; };
 		842C037A20C5A3F100CA1C3B /* CreateRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842C037820C5A3F100CA1C3B /* CreateRequest.storyboard */; };
 		842C037B20C5A3F100CA1C3B /* CreateRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C037920C5A3F100CA1C3B /* CreateRequestView.swift */; };
@@ -127,6 +131,10 @@
 		840B1CD020C5B3D10046542D /* CreateRequestViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRequestViewProtocol.swift; sourceTree = "<group>"; };
 		840B1CD420C5B81F0046542D /* CreateRequestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestPresenter.swift; sourceTree = "<group>"; };
 		840B1CD620C5B82D0046542D /* CreateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestModel.swift; sourceTree = "<group>"; };
+		84187ED720C6D26C00FB5566 /* TripsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewProtocol.swift; sourceTree = "<group>"; };
+		84187ED920C6D2EF00FB5566 /* TripsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsPresenterProtocol.swift; sourceTree = "<group>"; };
+		84187EDD20C6D48E00FB5566 /* TripsModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsModelProtocol.swift; sourceTree = "<group>"; };
+		84187EE520C6D48E00FB5566 /* Trips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trips.storyboard; sourceTree = "<group>"; };
 		8424621720C11FA800D00057 /* OrderLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderLocation.swift; sourceTree = "<group>"; };
 		842C037820C5A3F100CA1C3B /* CreateRequest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateRequest.storyboard; sourceTree = "<group>"; };
 		842C037920C5A3F100CA1C3B /* CreateRequestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRequestView.swift; sourceTree = "<group>"; };
@@ -283,6 +291,24 @@
 			path = CreateRequestProtocols;
 			sourceTree = "<group>";
 		};
+		84187ED520C6D1F200FB5566 /* TripsProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				84187ED720C6D26C00FB5566 /* TripsViewProtocol.swift */,
+				84187ED920C6D2EF00FB5566 /* TripsPresenterProtocol.swift */,
+				84187EDD20C6D48E00FB5566 /* TripsModelProtocol.swift */,
+			);
+			path = TripsProtocols;
+			sourceTree = "<group>";
+		};
+		84187ED620C6D21400FB5566 /* TripsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84187EE520C6D48E00FB5566 /* Trips.storyboard */,
+			);
+			path = TripsScreen;
+			sourceTree = "<group>";
+		};
 		8424621620C11FA800D00057 /* Pojo */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +352,7 @@
 		8447456C20C07D2A0076D0EC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				84187ED520C6D1F200FB5566 /* TripsProtocols */,
 				840B1CCD20C5B3500046542D /* CreateRequestProtocols */,
 				840B1CBB20C52D3E0046542D /* ResetPasswordProtocols */,
 				84EFC1BD20C43530004E5BDF /* VerifyProtocols */,
@@ -480,6 +507,7 @@
 		84A2D4A720C2C91200576ACF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				84187ED620C6D21400FB5566 /* TripsScreen */,
 				842C037120C5A32B00CA1C3B /* CreateRequestScreen */,
 				840B1CBA20C52D2D0046542D /* ResetPasswordScreen */,
 				84937BCE20C45BFB00727437 /* ForgotPasswordScreen */,
@@ -748,6 +776,7 @@
 				845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */,
 				84937BBC20C3660B00727437 /* Login.storyboard in Resources */,
 				844BD61320C4C54C005E98FC /* DestinationScreen.storyboard in Resources */,
+				84187EE620C6D48E00FB5566 /* Trips.storyboard in Resources */,
 				844BD60420C38C36005E98FC /* OrderItem.xib in Resources */,
 				844C6FC220C6305F00379783 /* PaymentScreen.storyboard in Resources */,
 			);
@@ -886,8 +915,10 @@
 				84EFC1BF20C43530004E5BDF /* VerifyPresenterProtocol.swift in Sources */,
 				840B1CC320C52E060046542D /* ResetPasswordPresenterProtocol.swift in Sources */,
 				84937BC520C3670800727437 /* ForgotPassPresenterProtocol.swift in Sources */,
+				84187EDE20C6D48E00FB5566 /* TripsModelProtocol.swift in Sources */,
 				84EFC1BA20C434FF004E5BDF /* VerifyModel.swift in Sources */,
 				84937BBE20C3660B00727437 /* LoginViewController.swift in Sources */,
+				84187EDA20C6D2EF00FB5566 /* TripsPresenterProtocol.swift in Sources */,
 				84A2D4F020C2CE2400576ACF /* LocationManger.swift in Sources */,
 				84EFC1BC20C43510004E5BDF /* VerifyPresenter.swift in Sources */,
 				84D1854F20C2E52D0054BEBF /* SignupModel.swift in Sources */,
@@ -903,6 +934,7 @@
 				844BD5EF20C35E17005E98FC /* DPItem.swift in Sources */,
 				844BD60220C38C20005E98FC /* CreateOrderView.swift in Sources */,
 				844BD5F120C35F12005E98FC /* Order.swift in Sources */,
+				84187ED820C6D26C00FB5566 /* TripsViewProtocol.swift in Sources */,
 				84A2D4E120C2CD7D00576ACF /* PickLoacationPresenter.swift in Sources */,
 				84A2D4F120C2CE2400576ACF /* SearchUITextField.swift in Sources */,
 				8424621820C11FA800D00057 /* OrderLocation.swift in Sources */,

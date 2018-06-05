@@ -71,7 +71,8 @@ class LoginViewController: UIViewController , LoginViewProtocol {
             print("PickLoacationViewController")
             let sourceScreenStoryboard = UIStoryboard(name: "SourceScreen", bundle: nil)
             let signup = sourceScreenStoryboard.instantiateViewController(withIdentifier: "PickLoacationViewController")
-            self.present(signup, animated: true, completion: dismissLoading)
+            dismissLoading()
+            self.present(signup, animated: true, completion: nil)
         }
     }
     func showLoading() {
