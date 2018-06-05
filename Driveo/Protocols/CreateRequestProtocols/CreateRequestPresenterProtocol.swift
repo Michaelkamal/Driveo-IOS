@@ -12,11 +12,9 @@ protocol CreateRequestPresenterProtocol {
     
     func createRequestclicked(withTitle title:String, withDescription :String, withImages: [UIImage])
     
-    func addPhoto(withPhoto photo:Any)
-
     func deletePhotoAlert(withindex index:Int)
     
-    func getPhoto()
+    func getPhotoProviderAlert()
     
     func onCreateRequestSuccess(withMessage message:String)
     

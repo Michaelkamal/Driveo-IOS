@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class CreateRequestPresenter : CreateRequestPresenterProtocol{
-    func deletePhotoConfirmed(atIndex index: Int) {
-        createRequestView.deletePhoto(atIndex: index)
-    }
+
     
+ 
     
+  
     lazy var createRequestModel:CreateRequestModelProtocol = CreateRequestModel(withPresenter: self)
     
     var createRequestView:CreateRequestViewProtocol
@@ -24,6 +24,15 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
         self.createRequestView = view
     }
     
+    
+    func getPhotoProviderAlert() {
+        createRequestView.ImageProviderAlert()
+    }
+    
+    
+    func deletePhotoConfirmed(atIndex index: Int) {
+        createRequestView.deletePhoto(atIndex: index)
+    }
     
     func createRequestclicked(withTitle title: String, withDescription: String, withImages: [UIImage]) {
         
@@ -39,19 +48,15 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
         
     }
     
-    func addPhoto(withPhoto photo: Any) {
-        
-    }
+
     
     func deletePhotoAlert(withindex index:Int) {
         createRequestView.showDeletePhotoAlert(forIndex: index)
     }
     
     
-    func getPhoto() {
-       createRequestView.ImageProviderAlert()
-    }
-    
+
+    //called when request is succes
     func onCreateRequestSuccess(withMessage message:String) {
       createRequestView.dismissLoading()
         if message == "success" {
@@ -59,14 +64,17 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
         } else {
             createRequestView.showAlert(withTitle: "Error", withMsg: message)
         }
-        
     }
     
+    //called when request failure
     func onCreateRequestFailure(withError error: String) {
         createRequestView.dismissLoading()
         createRequestView.showAlert(withTitle: "Error", withMsg: error)
     }
     
+    
+    
+     //create Image Picker Controller for Gallery
     func getPhotoFromGallery() {
         let controller = UIImagePickerController()
         controller.delegate = createRequestView as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
@@ -75,6 +83,7 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
     }
     
     
+    //create Image Picker Controller for Camera
     func getPhotoFromCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let picker = UIImagePickerController()
