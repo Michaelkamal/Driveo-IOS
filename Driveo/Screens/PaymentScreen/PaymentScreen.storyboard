@@ -1,7 +1,67 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Payment View Controller-->
+        <scene sceneID="ijO-Vh-5OK">
+            <objects>
+                <viewController storyboardIdentifier="PaymentViewController" id="qnC-Ru-xFi" customClass="PaymentViewController" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rxQ-U0-fpb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kls-Sg-Rgq" userLabel="Order Status Label">
+                                <rect key="frame" x="154" y="85.5" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.51372549020000002" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoT-gR-L6M" userLabel="Back Button">
+                                <rect key="frame" x="22.5" y="53.5" width="17" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="950" constant="17" id="eRV-FZ-nY3"/>
+                                    <constraint firstAttribute="width" priority="950" constant="17" id="seC-im-cmj"/>
+                                </constraints>
+                                <state key="normal" image="ic_close"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" ambiguous="YES" text="Create Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL5-m4-ROf">
+                                <rect key="frame" x="111" y="53.5" width="139" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.29411764709999999" green="0.27450980390000002" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BsX-n7-8TG">
+                                <rect key="frame" x="67" y="212" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kls-Sg-Rgq" firstAttribute="centerX" secondItem="rxQ-U0-fpb" secondAttribute="centerX" id="DxP-Ag-y93"/>
+                            <constraint firstItem="Kls-Sg-Rgq" firstAttribute="top" secondItem="nL5-m4-ROf" secondAttribute="bottom" constant="2.3300000000000001" id="Jfe-7H-8Ix"/>
+                            <constraint firstItem="nL5-m4-ROf" firstAttribute="top" secondItem="Bj2-el-DU7" secondAttribute="top" constant="33.670000000000002" id="NDs-PD-zng"/>
+                            <constraint firstItem="UoT-gR-L6M" firstAttribute="leading" secondItem="Bj2-el-DU7" secondAttribute="leading" constant="22.699999999999999" id="RFK-xd-DGt"/>
+                            <constraint firstItem="UoT-gR-L6M" firstAttribute="top" secondItem="Bj2-el-DU7" secondAttribute="top" constant="33.670000000000002" id="r6H-lf-obb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bj2-el-DU7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Byj-jI-4qa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111" y="-107"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_close" width="42" height="43"/>
+    </resources>
 </document>

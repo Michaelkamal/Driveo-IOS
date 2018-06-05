@@ -15,6 +15,7 @@ class CreateOrderView: UIView {
     @IBOutlet weak var subtitle: UILabel!
     @IBOutlet weak var editButton: UIButton!
     
+    @IBOutlet weak var distinationLine: UIImageView!
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
