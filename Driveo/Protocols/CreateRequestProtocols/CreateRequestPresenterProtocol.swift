@@ -22,7 +22,10 @@ protocol CreateRequestPresenterProtocol {
     
     func onCreateRequestFailure(withError error:String)
     
+    func getPhotoFromGallery()
     
+    
+    func getPhotoFromCamera()
     
     
 }

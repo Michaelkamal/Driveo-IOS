@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 protocol CreateRequestViewProtocol {
     
     
@@ -16,4 +17,5 @@ protocol CreateRequestViewProtocol {
     func goToNextScreen()
     func getNewImage()
     func updateImages()
+    func ImageProviderAlert()
 }
