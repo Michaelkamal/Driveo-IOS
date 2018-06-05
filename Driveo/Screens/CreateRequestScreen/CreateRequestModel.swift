@@ -64,10 +64,6 @@ class CreateRequestModel:CreateRequestModelProtocol{
     func onFailure(_ networkError: ErrorType) {
         print("failed")
     }
-    
-    
-    
-   
-    
-    
 }
+
+

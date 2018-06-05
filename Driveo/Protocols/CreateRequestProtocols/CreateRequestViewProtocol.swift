@@ -18,4 +18,5 @@ protocol CreateRequestViewProtocol {
     func getNewImage()
     func updateImages()
     func ImageProviderAlert()
+    func showImagePickerController(pickerController:UIImagePickerController)
 }

@@ -11,21 +11,16 @@ import UIKit
 
 class CreateRequestPresenter : CreateRequestPresenterProtocol{
     
-     var createRequestView:CreateRequestViewProtocol
+    lazy var createRequestModel:CreateRequestModelProtocol = CreateRequestModel(withPresenter: self)
     
-    
-    
-    func getPhotoFromGallery() {
+    var createRequestView:CreateRequestViewProtocol
+
+
+    func onCreateRequestSuccess(withMessage message: String) {
         
     }
     
-    func getPhotoFromCamera() {
-        
-    }
-    
-    
-   
-    
+ 
     init(withView view:CreateRequestViewProtocol){
         self.createRequestView = view
     }
@@ -43,6 +38,7 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
         
     }
     
+    
     func getPhoto() {
        createRequestView.ImageProviderAlert()
     }
@@ -55,28 +51,27 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
         
     }
     
-//    func getPhotoFromGallery() {
-//        let controller = UIImagePickerController()
-//        controller.delegate = self
-//        controller.sourceType = .photoLibrary
-//        present(controller, animated: true, completion: nil)
-//    }
+    func getPhotoFromGallery() {
+        let controller = UIImagePickerController()
+        controller.delegate = createRequestView as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        controller.sourceType = .photoLibrary
+        createRequestView.showImagePickerController(pickerController: controller)
+    }
     
     
-//    func getPhotoFromCamera() {
-//
-//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//            let picker = UIImagePickerController()
-//            picker.delegate = self
-//            picker.sourceType = .camera
-//            picker.allowsEditing = false
-//            picker.sourceType = UIImagePickerControllerSourceType.camera
-//            picker.cameraCaptureMode = .photo
-//            picker.modalPresentationStyle = .fullScreen
-//            present(picker,animated: true,completion: nil)
-//        } else {
-//            showAlert(withTitle: "No Camera", withMsg: "Sorry, this device has no camera or permission is needed")
-//        }
-//    }
+    func getPhotoFromCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let picker = UIImagePickerController()
+            picker.delegate = createRequestView as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            picker.sourceType = .camera
+            picker.allowsEditing = false
+            picker.sourceType = UIImagePickerControllerSourceType.camera
+            picker.cameraCaptureMode = .photo
+            picker.modalPresentationStyle = .fullScreen
+            createRequestView.showImagePickerController(pickerController: picker)
+        } else {
+            createRequestView.showAlert(withTitle: "No Camera", withMsg: "No Camera or Permission is Needed")
+        }
+    }
     
 }
