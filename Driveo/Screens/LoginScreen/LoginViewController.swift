@@ -64,6 +64,7 @@ class LoginViewController: UIViewController , LoginViewProtocol {
      */
     func ChangeLabel(withString str:String){
         wrongEmail.text = str
+        dismissLoading()
     }
     func goToScreen(withScreenName name:String){
         if name == "next"{

@@ -142,9 +142,7 @@ class SignupView: UIViewController ,SignupViewProtocol{
     }
     
     @IBAction func goToLoginScreen(_ sender: Any) {
-        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
-        let loginScreen:LoginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(loginScreen, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
