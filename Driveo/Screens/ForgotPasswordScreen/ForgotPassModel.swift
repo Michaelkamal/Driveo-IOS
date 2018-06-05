@@ -31,19 +31,23 @@ class ForgotPassModel : ForgotPasswordModelProtocol{
         let networkObj:NetworkDAL = NetworkDAL.sharedInstance()
         let header = HTTPHeaders()
         
-        networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "forgot_password", andParameters: params, onSuccess: onSuccess(_:), onFailure: onFailure(_:))
+        networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "authentication/forgotpassword", andParameters: params, onSuccess: onSuccess(_:), onFailure: onFailure(_:))
     }
     
     func onSuccess(_ response: Any) {
         
         let dict = response as! Dictionary<String,Any>
         let message = dict["message"] as! String
-        fPP.sendSuccess(message: message)
+        if message.contains("success") {
+            fPP.sendSuccess(message: message)
+        }
+        else{
+            fPP.sendFailure(message: message)
+        }
     }
     
     func onFailure(_ networkError: ErrorType) {
-        print("failed")
-        fPP.sendFailure(message: "failed")
+        fPP.sendFailure(message: "Connection error")
     }
     
 }

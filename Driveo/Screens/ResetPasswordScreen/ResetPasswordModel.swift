@@ -19,7 +19,7 @@ class ResetPasswordModel: ResetPasswordModelProtocol {
         let defaults = UserDefaults.standard
         var token = defaults.object(forKey: "reset_token") as! String
         if token != nil{
-            networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "reset_password/?hash="+token, andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
+            networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "authentication/resetpassword/?hash="+token, andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
             let defaults = UserDefaults.standard
             defaults.set(nil, forKey: "reset_token")
             defaults.synchronize()
@@ -29,7 +29,10 @@ class ResetPasswordModel: ResetPasswordModelProtocol {
     func onSuccess(_ response: Any) {
         let dict = response as! Dictionary<String,Any>
         let message = dict["message"] as! String
-        rPP.resetSuccess(message:message)
+        if message.contains("success") {
+            rPP.resetSuccess(message:message)
+        }
+        rPP.resetFailure(message: message)
     }
     
     func onFailure(_ networkError: ErrorType) {

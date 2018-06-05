@@ -28,7 +28,7 @@ class ResetPasswordPresenter: ResetPasswordPresenterProtocol {
     }
     
     func resetFailure(message: String) {
-        
+        rPC.showAlert(withTitle: "Failed", andMessage: message)
     }
     
     

@@ -20,7 +20,9 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
     @IBOutlet weak var passwordFld2: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
         invalidPassLbl.isHidden = true
         messageLbl.isHidden = true
         rPP = ResetPasswordPresenter(withController: self)
@@ -68,7 +70,31 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
     func dismissLoading() {
         UIViewController.removeSpinner(spinner: spinner!)
     }
+    @objc   func keyboardWillShow(notification: NSNotification) {
+        let keyboardHeight = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue.height
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
+            self.view.window?.frame.origin.y = -1 * keyboardHeight
+            self.view.layoutIfNeeded()
+        })
+    }
+    @objc   func keyboardWillHide(notification: NSNotification) {
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
+            self.view.window?.frame.origin.y = 0
+            self.view.layoutIfNeeded()
+        })
+    }
     
+    func showAlert(withTitle title :String , andMessage msg:String){
+        dismissLoading()
+        var alert:UIAlertController = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)
+        self.present(alert, animated: true, completion: nil)
+        let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(dismissAlertAction)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     /*
     // MARK: - Navigation
 

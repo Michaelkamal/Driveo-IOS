@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any?) -> Bool{
         
         if url.host!=="driveo.herokuapp.com" {
-            if url.lastPathComponent == "reset_password"{
+            if url.lastPathComponent == "resetpassword"{
                let tokenHash = ((url.query!).split(separator: "="))[1]
                 let defaults = UserDefaults.standard
                 defaults.set(tokenHash, forKey: "reset_token")
