@@ -101,6 +101,12 @@ extension CreateRequestView : UICollectionViewDelegate,UICollectionViewDataSourc
         UIViewController.removeSpinner(spinner: spinner!)
     }
     
+    func showImagePickerController(pickerController:UIImagePickerController){
+        present(pickerController, animated: true, completion: nil)
+    }
+    
+    
+    
     func showAlert(withTitle title :String , withMsg msg:String){
         alert = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)
         self.present(alert!, animated: true, completion: nil)
