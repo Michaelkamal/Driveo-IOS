@@ -18,7 +18,7 @@ protocol CreateRequestPresenterProtocol {
     
     func getPhoto()
     
-    func onCreateRequestSuccess()
+    func onCreateRequestSuccess(withMessage message:String)
     
     func onCreateRequestFailure(withError error:String)
     
