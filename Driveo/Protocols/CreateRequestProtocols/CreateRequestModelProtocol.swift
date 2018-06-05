@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CreateRequestModelProtocol {
     
     
-    func sendCreateRequest(withTitle title:String, withDescription description:String, withImages imaged : [Any])
+    func sendCreateRequest(withTitle title: String, withDescription description: String, withImages images: [UIImage], from:String , to:String, provider_id:String, payment_method:String)
     
     func getPhoto(withImage image:Any)
 }
