@@ -43,7 +43,7 @@
                                     <action selector="didTapOnCloseButton:" destination="fqp-F3-k0H" eventType="touchUpInside" id="JrO-A5-CKq"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQv-CD-gSJ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQv-CD-gSJ">
                                 <rect key="frame" x="0.0" y="140" width="375" height="530"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeX-tO-e0u" userLabel="Content View">
@@ -52,12 +52,11 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="WeX-tO-e0u" secondAttribute="bottom" id="Kdk-j9-vif"/>
-                                    <constraint firstAttribute="trailing" secondItem="WeX-tO-e0u" secondAttribute="trailing" id="Obl-uN-llm"/>
-                                    <constraint firstItem="WeX-tO-e0u" firstAttribute="leading" secondItem="EQv-CD-gSJ" secondAttribute="leading" id="Sl6-rl-gfe"/>
+                                    <constraint firstAttribute="trailing" secondItem="WeX-tO-e0u" secondAttribute="trailing" id="QWn-ks-56Z"/>
                                     <constraint firstItem="WeX-tO-e0u" firstAttribute="centerY" secondItem="EQv-CD-gSJ" secondAttribute="centerY" id="aaJ-Z6-yXg"/>
+                                    <constraint firstItem="WeX-tO-e0u" firstAttribute="leading" secondItem="EQv-CD-gSJ" secondAttribute="leading" id="knV-44-1Ud"/>
                                     <constraint firstItem="WeX-tO-e0u" firstAttribute="centerX" secondItem="EQv-CD-gSJ" secondAttribute="centerX" id="pui-XL-vKo"/>
-                                    <constraint firstItem="WeX-tO-e0u" firstAttribute="top" secondItem="EQv-CD-gSJ" secondAttribute="top" id="qap-bO-KHT"/>
+                                    <constraint firstAttribute="bottom" secondItem="WeX-tO-e0u" secondAttribute="bottom" priority="250" id="um5-6u-kXx"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -65,8 +64,8 @@
                         <constraints>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="top" secondItem="DUk-wZ-ecb" secondAttribute="bottom" constant="32.329999999999998" id="7oL-tx-uLb"/>
                             <constraint firstItem="T6s-8t-7TZ" firstAttribute="centerX" secondItem="jB5-aL-VuJ" secondAttribute="centerX" id="AAD-X1-0IB"/>
-                            <constraint firstItem="EQv-CD-gSJ" firstAttribute="centerX" secondItem="jB5-aL-VuJ" secondAttribute="centerX" id="HoY-2t-dgy"/>
                             <constraint firstItem="hWG-YJ-Fpo" firstAttribute="leading" secondItem="jB5-aL-VuJ" secondAttribute="leading" constant="22.699999999999999" id="Iim-yH-zjF"/>
+                            <constraint firstItem="EQv-CD-gSJ" firstAttribute="centerX" secondItem="jB5-aL-VuJ" secondAttribute="centerX" id="SdM-qD-WdO"/>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="leading" secondItem="ii6-8q-b8t" secondAttribute="leading" id="YJF-n6-Kay"/>
                             <constraint firstItem="hWG-YJ-Fpo" firstAttribute="top" secondItem="ii6-8q-b8t" secondAttribute="top" constant="33.670000000000002" id="aNe-fs-q8R"/>
                             <constraint firstItem="hWG-YJ-Fpo" firstAttribute="width" secondItem="jB5-aL-VuJ" secondAttribute="height" multiplier="17:667" id="euz-vh-SaH"/>
@@ -74,13 +73,14 @@
                             <constraint firstItem="T6s-8t-7TZ" firstAttribute="top" secondItem="ii6-8q-b8t" secondAttribute="top" constant="33.670000000000002" id="qvd-U0-deL"/>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="bottom" secondItem="ii6-8q-b8t" secondAttribute="bottom" constant="2.3300000000000001" id="uPF-yr-Bet"/>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="trailing" secondItem="ii6-8q-b8t" secondAttribute="trailing" id="uYN-it-b5S"/>
+                            <constraint firstItem="WeX-tO-e0u" firstAttribute="top" secondItem="DUk-wZ-ecb" secondAttribute="bottom" constant="33" id="wPT-cL-3rk"/>
                             <constraint firstItem="DUk-wZ-ecb" firstAttribute="top" secondItem="T6s-8t-7TZ" secondAttribute="bottom" constant="2.3300000000000001" id="ywB-p6-h6M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ii6-8q-b8t"/>
                     </view>
                     <connections>
                         <outlet property="contentView" destination="WeX-tO-e0u" id="M8C-BM-sJc"/>
-                        <outlet property="contentViewbottomConstraint" destination="Kdk-j9-vif" id="l2Q-F3-zma"/>
+                        <outlet property="contentViewcenterHConstraint" destination="aaJ-Z6-yXg" id="1Ju-Ec-Cvd"/>
                         <outlet property="orderStatus" destination="DUk-wZ-ecb" id="xsP-mR-gs9"/>
                     </connections>
                 </viewController>

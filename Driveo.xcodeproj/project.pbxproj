@@ -42,6 +42,8 @@
 		844BD61720C4D14A005E98FC /* SourceScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BD61620C4D149005E98FC /* SourceScreen.storyboard */; };
 		844C6FBD20C619DA00379783 /* NextButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844C6FBC20C619DA00379783 /* NextButton.xib */; };
 		844C6FBF20C61AF800379783 /* NextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C6FBE20C61AF800379783 /* NextButtonView.swift */; };
+		844C6FC220C6305F00379783 /* PaymentScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844C6FC020C6305F00379783 /* PaymentScreen.storyboard */; };
+		844C6FC320C6305F00379783 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C6FC120C6305F00379783 /* PaymentViewController.swift */; };
 		845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D48EF20BEEF92000F16C1 /* AppDelegate.swift */; };
 		845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D48F320BEEF92000F16C1 /* Main.storyboard */; };
 		845D48F820BEEF92000F16C1 /* Driveo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 845D48F620BEEF92000F16C1 /* Driveo.xcdatamodeld */; };
@@ -146,6 +148,8 @@
 		844BD61620C4D149005E98FC /* SourceScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SourceScreen.storyboard; sourceTree = "<group>"; };
 		844C6FBC20C619DA00379783 /* NextButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextButton.xib; sourceTree = "<group>"; };
 		844C6FBE20C61AF800379783 /* NextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonView.swift; sourceTree = "<group>"; };
+		844C6FC020C6305F00379783 /* PaymentScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PaymentScreen.storyboard; sourceTree = "<group>"; };
+		844C6FC120C6305F00379783 /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		845D48EC20BEEF92000F16C1 /* Driveo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driveo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D48EF20BEEF92000F16C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845D48F420BEEF92000F16C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -367,6 +371,8 @@
 		844BD60B20C4BB12005E98FC /* PaymentScreen */ = {
 			isa = PBXGroup;
 			children = (
+				844C6FC020C6305F00379783 /* PaymentScreen.storyboard */,
+				844C6FC120C6305F00379783 /* PaymentViewController.swift */,
 			);
 			path = PaymentScreen;
 			sourceTree = "<group>";
@@ -743,6 +749,7 @@
 				84937BBC20C3660B00727437 /* Login.storyboard in Resources */,
 				844BD61320C4C54C005E98FC /* DestinationScreen.storyboard in Resources */,
 				844BD60420C38C36005E98FC /* OrderItem.xib in Resources */,
+				844C6FC220C6305F00379783 /* PaymentScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,6 +942,7 @@
 				84EFC1C120C43530004E5BDF /* VerifyViewProtocol.swift in Sources */,
 				84A2D4E620C2CD7D00576ACF /* PlacesDropDownMenu.swift in Sources */,
 				84A2D4E220C2CD7D00576ACF /* PickLoacationViewController.swift in Sources */,
+				844C6FC320C6305F00379783 /* PaymentViewController.swift in Sources */,
 				844BD5FE20C3778A005E98FC /* CreateOrderViewController.swift in Sources */,
 				84D1854D20C2E4BE0054BEBF /* SignupPresenter.swift in Sources */,
 				84D1855220C2E6CC0054BEBF /* StringExtension.swift in Sources */,
