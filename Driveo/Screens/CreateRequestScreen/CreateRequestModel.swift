@@ -12,9 +12,9 @@ import Alamofire
 
 class CreateRequestModel:CreateRequestModelProtocol{
     
-    var cRP:CreateRequestViewProtocol
+    var cRP:CreateRequestPresenterProtocol
     
-    init(withPresenter p:CreateRequestViewProtocol) {
+    init(withPresenter p:CreateRequestPresenterProtocol) {
         cRP = p
     }
     
@@ -58,6 +58,7 @@ class CreateRequestModel:CreateRequestModelProtocol{
         print("success")
         let dict = response as! Dictionary<String,Any>
         let message = dict["message"] as! String
+        cRP.
     }
     
     func onFailure(_ networkError: ErrorType) {
