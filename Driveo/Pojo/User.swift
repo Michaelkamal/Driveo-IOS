@@ -13,7 +13,7 @@ class User {
     var password:String
     var phone:String
     var email:String
-    
+    var confirmPassword:String?
     init(email: String , phone:String, password:String) {
         self.email=email
          self.phone=phone
