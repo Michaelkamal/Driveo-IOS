@@ -5,7 +5,9 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,22 +21,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_splash" translatesAutoresizingMaskIntoConstraints="NO" id="SiM-ST-MJR">
-                                <rect key="frame" x="-10.666666666666657" y="253" width="435.33333333333326" height="250"/>
+                                <rect key="frame" x="124.33333333333333" y="277.66666666666669" width="165.66666666666669" height="200.66666666666669"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SiM-ST-MJR" secondAttribute="height" multiplier="33:40" id="j97-Uk-S3w"/>
+                                </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Driveo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAc-8U-3QY">
+                                <rect key="frame" x="124.33333333333333" y="498.33333333333331" width="165.66666666666669" height="27.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="SiM-ST-MJR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9j4-Ls-JBF"/>
-                            <constraint firstItem="SiM-ST-MJR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="MZu-dM-Q3J"/>
-                            <constraint firstItem="SiM-ST-MJR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="bfq-8p-N3P"/>
-                            <constraint firstItem="SiM-ST-MJR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="f27-aC-PQk"/>
+                            <constraint firstItem="GAc-8U-3QY" firstAttribute="leading" secondItem="SiM-ST-MJR" secondAttribute="leading" id="2XQ-h6-Kwp"/>
+                            <constraint firstItem="SiM-ST-MJR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BK5-fF-vAI"/>
+                            <constraint firstItem="GAc-8U-3QY" firstAttribute="trailing" secondItem="SiM-ST-MJR" secondAttribute="trailing" id="lY8-VP-p0T"/>
+                            <constraint firstItem="SiM-ST-MJR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="nFv-HG-IH4"/>
+                            <constraint firstItem="SiM-ST-MJR" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.4" id="p8T-kJ-sCH"/>
+                            <constraint firstItem="GAc-8U-3QY" firstAttribute="top" secondItem="SiM-ST-MJR" secondAttribute="bottom" constant="20" id="uvY-n4-blC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.724637681159422" y="374.18478260869568"/>
         </scene>
     </scenes>
     <resources>

@@ -21,9 +21,11 @@ class  VerifyModel : VerifyModelProtocol {
     func sendVerificationCode(withToken token: String, withCode code: String) {
         let networkObject : NetworkDAL = NetworkDAL.sharedInstance()
         var parameters = [String:Any]()
-        parameters["code"] = code
+        parameters["verification_pin"] = code
         
-        networkObject.processPostReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: "verify", andParameters: parameters , onSuccess: onVerifySucces, onFailure: onVerifyFailure)
+        
+        
+        networkObject.processPostReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: "verify", andParameters: parameters , onSuccess: onVerifySucces, onFailure: onVerifyFailure,headers: ["Authorization":token])
         
     }
     

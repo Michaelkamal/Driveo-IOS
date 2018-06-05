@@ -10,15 +10,14 @@ import Foundation
 import UIKit
 
 class CreateRequestPresenter : CreateRequestPresenterProtocol{
+
     
+ 
+    
+  
     lazy var createRequestModel:CreateRequestModelProtocol = CreateRequestModel(withPresenter: self)
     
     var createRequestView:CreateRequestViewProtocol
-
-
-    func onCreateRequestSuccess(withMessage message: String) {
-        
-    }
     
  
     init(withView view:CreateRequestViewProtocol){
@@ -26,31 +25,56 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
     }
     
     
-    func createRequestclicked(withTitle title: String, withDescription: String, withImages: [Any]) {
+    func getPhotoProviderAlert() {
+        createRequestView.ImageProviderAlert()
+    }
+    
+    
+    func deletePhotoConfirmed(atIndex index: Int) {
+        createRequestView.deletePhoto(atIndex: index)
+    }
+    
+    func createRequestclicked(withTitle title: String, withDescription: String, withImages: [UIImage]) {
+        
+        if title == "" {
+            createRequestView.showAlert(withTitle: "Erroe", withMsg: "Request Should have a title")
+        }
+        else if NetworkDAL.isInternetAvailable() == false {
+            createRequestView.showAlert(withTitle: "Error", withMsg: ErrorType.internet.rawValue)
+        }else{
+            createRequestView.showLoading()
+            createRequestModel.sendCreateRequest(withTitle: title, withDescription: withDescription, withImages: withImages, from: "76576576", to: "65465465", provider_id: "1", payment_method: "hsh")
+        }
         
     }
     
-    func addPhoto(withPhoto photo: Any) {
-        
+
+    
+    func deletePhotoAlert(withindex index:Int) {
+        createRequestView.showDeletePhotoAlert(forIndex: index)
     }
     
-    func deletePhoto(withPhoto photo: Any) {
-        
+    
+
+    //called when request is succes
+    func onCreateRequestSuccess(withMessage message:String) {
+      createRequestView.dismissLoading()
+        if message == "success" {
+            createRequestView.goToNextScreen()
+        } else {
+            createRequestView.showAlert(withTitle: "Error", withMsg: message)
+        }
     }
     
-    
-    func getPhoto() {
-       createRequestView.ImageProviderAlert()
-    }
-    
-    func onCreateRequestSuccess() {
-        
-    }
-    
+    //called when request failure
     func onCreateRequestFailure(withError error: String) {
-        
+        createRequestView.dismissLoading()
+        createRequestView.showAlert(withTitle: "Error", withMsg: error)
     }
     
+    
+    
+     //create Image Picker Controller for Gallery
     func getPhotoFromGallery() {
         let controller = UIImagePickerController()
         controller.delegate = createRequestView as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
@@ -59,6 +83,7 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
     }
     
     
+    //create Image Picker Controller for Camera
     func getPhotoFromCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let picker = UIImagePickerController()

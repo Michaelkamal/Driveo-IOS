@@ -63,6 +63,7 @@ class CreateRequestModel:CreateRequestModelProtocol{
     
     func onFailure(_ networkError: ErrorType) {
         print("failed")
+        cRP.onCreateRequestFailure(withError: ErrorType.internet.rawValue)
     }
 }
 
