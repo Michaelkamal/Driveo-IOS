@@ -49,15 +49,18 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
     }
     
     func onCreateRequestSuccess(withMessage message:String) {
-     
-        if message == "" {
-            
+      createRequestView.dismissLoading()
+        if message == "success" {
+            createRequestView.goToNextScreen()
+        } else {
+            createRequestView.showAlert(withTitle: "Error", withMsg: message)
         }
         
     }
     
     func onCreateRequestFailure(withError error: String) {
-        
+        createRequestView.dismissLoading()
+        createRequestView.showAlert(withTitle: "Error", withMsg: error)
     }
     
     func getPhotoFromGallery() {

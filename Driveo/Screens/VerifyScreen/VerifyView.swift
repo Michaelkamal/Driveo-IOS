@@ -57,9 +57,9 @@ class VerifyView: UIViewController , VerifyViewProtocol, UITextFieldDelegate{
     }
     
     func goToHomeScreen() {
-        let storyBoard = UIStoryboard(name: "Home", bundle: nil)
-        let homeScreen:PickLoacationViewController = storyBoard.instantiateViewController(withIdentifier: "SourceViewController") as! PickLoacationViewController
-        self.present(homeScreen, animated: true, completion: nil)
+        let sourceScreenStoryboard = UIStoryboard(name: "SourceScreen", bundle: nil)
+        let signup = sourceScreenStoryboard.instantiateViewController(withIdentifier: "PickLoacationViewController")
+        self.present(signup, animated: true, completion: nil)
     }
     
     func showAlert(withTitle title: String, andMsg msg: String) {

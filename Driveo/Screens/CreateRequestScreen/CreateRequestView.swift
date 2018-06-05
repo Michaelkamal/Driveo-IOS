@@ -135,19 +135,10 @@ extension CreateRequestView : UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     func goToNextScreen() {
-        
+    //    self.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
     
-    func getNewImage() {
-        
-    }
-    
-    func updateImages() {
-        
-    }
-    
-    
-    
+
 func ImageProviderAlert(){
     
        chooseImageProviderAlert = UIAlertController.init(title: "Choose Photo Provider", message:nil, preferredStyle: .actionSheet)

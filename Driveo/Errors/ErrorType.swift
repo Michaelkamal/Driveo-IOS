@@ -14,4 +14,10 @@ enum ErrorType:String,Error{
     case parse = "Error parsing Json"
     case destinationError = "Destination can't be the source location"
     case incompleteData = "Please complete data"
+    case invalidEmal = ""
+    case invalidPhoneNumber = "w"
+    case passwordLength = "e"
+    case passwordNumberLetterError = "r"
+    case confirmPassword = "t"
+    
     }
