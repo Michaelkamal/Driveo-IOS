@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 class CreateRequestPresenter : CreateRequestPresenterProtocol{
+    func deletePhotoConfirmed(atIndex index: Int) {
+        createRequestView.deletePhoto(atIndex: index)
+    }
+    
     
     lazy var createRequestModel:CreateRequestModelProtocol = CreateRequestModel(withPresenter: self)
     
@@ -39,8 +43,8 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
         
     }
     
-    func deletePhoto(withPhoto photo: Any) {
-        
+    func deletePhotoAlert(withindex index:Int) {
+        createRequestView.showDeletePhotoAlert(forIndex: index)
     }
     
     

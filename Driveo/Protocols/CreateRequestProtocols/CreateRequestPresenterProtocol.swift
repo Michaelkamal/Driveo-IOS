@@ -13,8 +13,8 @@ protocol CreateRequestPresenterProtocol {
     func createRequestclicked(withTitle title:String, withDescription :String, withImages: [UIImage])
     
     func addPhoto(withPhoto photo:Any)
-    
-    func deletePhoto(withPhoto photo:Any)
+
+    func deletePhotoAlert(withindex index:Int)
     
     func getPhoto()
     
@@ -24,8 +24,8 @@ protocol CreateRequestPresenterProtocol {
     
     func getPhotoFromGallery()
     
-    
     func getPhotoFromCamera()
     
+    func deletePhotoConfirmed(atIndex index:Int)
     
 }

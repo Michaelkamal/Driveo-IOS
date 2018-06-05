@@ -9,12 +9,22 @@
 import UIKit
 import BeautifulTextField
 
-class CreateRequestView: UIViewController, CreateRequestViewProtocol {
+class CreateRequestView: UIViewController, CreateRequestViewProtocol ,UIGestureRecognizerDelegate  {
+
+    
+    func deletePhoto(atIndex index: Int) {
+                images.remove(at: index)
+                uploadImageCollectionView.reloadData()
+    }
+    
+
+    
    
     lazy var presenter:CreateRequestPresenterProtocol = CreateRequestPresenter(withView:self)
     var spinner:UIView?
     var alert:UIAlertController?
     var chooseImageProviderAlert:UIAlertController?
+    var deleteImageAlert:UIAlertController?
     var imagePickerController:UIImagePickerController?
     var images:[UIImage] = [UIImage.init(named: "ic_upload_image")!]
     
@@ -48,10 +58,34 @@ class CreateRequestView: UIViewController, CreateRequestViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    
+        let longPressOnCellGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        longPressOnCellGesture.minimumPressDuration = 0.5
+        longPressOnCellGesture.delaysTouchesBegan = true
+        longPressOnCellGesture.delegate = self
+        self.uploadImageCollectionView.addGestureRecognizer(longPressOnCellGesture)
     }
 
+    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizerState.ended {
+            return
+        }
+        
+        let point = gestureReconizer.location(in: self.uploadImageCollectionView)
+        let indexPath = self.uploadImageCollectionView.indexPathForItem(at: point)
+        
+        if let index = indexPath {
+            var cell = self.uploadImageCollectionView.cellForItem(at: index)
+            // do stuff with your cell, for example print the indexPath
+            if   index.row < (images.count-1){
+                presenter.deletePhotoAlert(withindex: index.row)
+            }
+            
+        } else {
+            //longpress outside collection view
+            print("out \n")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -81,6 +115,22 @@ extension CreateRequestView : UICollectionViewDelegate,UICollectionViewDataSourc
                 }
     }
     
+    
+    func showDeletePhotoAlert(forIndex index:Int){
+        
+        chooseImageProviderAlert = UIAlertController.init(title: "Delete Photo", message:nil, preferredStyle: .actionSheet)
+        
+        let photoFromGallery:UIAlertAction = UIAlertAction.init(title: "Ok", style: .default, handler: {(alert: UIAlertAction!) in
+            self.presenter.deletePhotoConfirmed(atIndex: index)
+        })
+        
+        let cancelAction:UIAlertAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
+        
+        chooseImageProviderAlert?.addAction(photoFromGallery)
+        chooseImageProviderAlert?.addAction(cancelAction)
+        
+        present(chooseImageProviderAlert!, animated: true, completion: nil)
+    }
     
     
     

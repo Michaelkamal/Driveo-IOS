@@ -17,4 +17,6 @@ protocol CreateRequestViewProtocol {
     func goToNextScreen()
     func ImageProviderAlert()
     func showImagePickerController(pickerController:UIImagePickerController)
+    func showDeletePhotoAlert(forIndex index:Int)
+    func deletePhoto(atIndex index:Int)
 }
