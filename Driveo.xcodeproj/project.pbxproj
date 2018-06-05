@@ -40,6 +40,8 @@
 		844BD61320C4C54C005E98FC /* DestinationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BD61120C4C54C005E98FC /* DestinationScreen.storyboard */; };
 		844BD61520C4C644005E98FC /* ScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD61420C4C643005E98FC /* ScreenController.swift */; };
 		844BD61720C4D14A005E98FC /* SourceScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BD61620C4D149005E98FC /* SourceScreen.storyboard */; };
+		844C6FBD20C619DA00379783 /* NextButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844C6FBC20C619DA00379783 /* NextButton.xib */; };
+		844C6FBF20C61AF800379783 /* NextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C6FBE20C61AF800379783 /* NextButtonView.swift */; };
 		845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D48EF20BEEF92000F16C1 /* AppDelegate.swift */; };
 		845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D48F320BEEF92000F16C1 /* Main.storyboard */; };
 		845D48F820BEEF92000F16C1 /* Driveo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 845D48F620BEEF92000F16C1 /* Driveo.xcdatamodeld */; };
@@ -142,6 +144,8 @@
 		844BD61120C4C54C005E98FC /* DestinationScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DestinationScreen.storyboard; sourceTree = "<group>"; };
 		844BD61420C4C643005E98FC /* ScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenController.swift; sourceTree = "<group>"; };
 		844BD61620C4D149005E98FC /* SourceScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SourceScreen.storyboard; sourceTree = "<group>"; };
+		844C6FBC20C619DA00379783 /* NextButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NextButton.xib; sourceTree = "<group>"; };
+		844C6FBE20C61AF800379783 /* NextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonView.swift; sourceTree = "<group>"; };
 		845D48EC20BEEF92000F16C1 /* Driveo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driveo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D48EF20BEEF92000F16C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845D48F420BEEF92000F16C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -338,6 +342,8 @@
 				844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */,
 				844BD60120C38C20005E98FC /* CreateOrderView.swift */,
 				844BD60320C38C36005E98FC /* OrderItem.xib */,
+				844C6FBE20C61AF800379783 /* NextButtonView.swift */,
+				844C6FBC20C619DA00379783 /* NextButton.xib */,
 			);
 			path = CreateOrderScreen;
 			sourceTree = "<group>";
@@ -729,6 +735,7 @@
 				844BD61720C4D14A005E98FC /* SourceScreen.storyboard in Resources */,
 				84A2D4DF20C2CD7D00576ACF /* DropDownCarrierItem.xib in Resources */,
 				842C037A20C5A3F100CA1C3B /* CreateRequest.storyboard in Resources */,
+				844C6FBD20C619DA00379783 /* NextButton.xib in Resources */,
 				84A2D4E520C2CD7D00576ACF /* DropDownPlacesItem.xib in Resources */,
 				845D48FD20BEEF92000F16C1 /* LaunchScreen.storyboard in Resources */,
 				845D48FA20BEEF92000F16C1 /* Assets.xcassets in Resources */,
@@ -896,6 +903,7 @@
 				84D1854720C2DEF40054BEBF /* SignupPresenterProtocol.swift in Sources */,
 				84D1854020C2D2BA0054BEBF /* User.swift in Sources */,
 				840B1CD520C5B81F0046542D /* CreateRequestPresenter.swift in Sources */,
+				844C6FBF20C61AF800379783 /* NextButtonView.swift in Sources */,
 				840B1CD220C5B3D10046542D /* CreateRequestModelProtocol.swift in Sources */,
 				84A2D4F220C2CE2400576ACF /* UIDatePicker.swift in Sources */,
 				84937BCD20C3672600727437 /* LoginModelProtocol.swift in Sources */,

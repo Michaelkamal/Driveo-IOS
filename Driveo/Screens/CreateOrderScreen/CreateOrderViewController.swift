@@ -16,6 +16,7 @@ class CreateOrderViewController: UIViewController {
     
     @IBOutlet weak var orderStatus: UILabel!
     
+    @IBOutlet weak var contentViewbottomConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         if let userOrder = userOrder{
@@ -65,10 +66,29 @@ class CreateOrderViewController: UIViewController {
                     {
                         orderStep.frame=CGRect(x: contentView.frame.minX+49, y: contentView.subviews.last!.frame.maxY, width: contentView.frame.width-98, height: contentView.frame.height/5)
                     }
-                    
+                    if i == userOrder.completeStatus-1
+                    {
+                        orderStep.distinationLine.removeFromSuperview()
+                    }
                     contentView.addSubview(orderStep)
                 }
             }
+        }
+        if let nextButton = Bundle.main.loadNibNamed("NextButton", owner: self, options: nil)?.first as? NextButtonView {
+            if contentView.subviews.count>1,contentView.subviews.last!.frame.maxY>self.view.frame.maxY
+            {
+                nextButton.frame=CGRect(x: contentView.frame.minX+49, y: contentView.subviews.last!.frame.maxY, width: contentView.frame.width-98, height: contentView.frame.height/5)
+            }
+            else
+            {
+                  nextButton.frame=CGRect(x: contentView.frame.minX+49, y: contentView.frame.maxY, width: contentView.frame.width-98, height: contentView.frame.height/5)
+            }
+            // TODO : register next func
+//             nextButton.nextFunc=
+             contentView.addSubview(nextButton)
+            contentViewbottomConstraint.constant = contentView.frame.maxY-contentView.subviews.last!.frame.maxY
+            contentView.updateConstraints()
+            contentView.superview?.setNeedsLayout()
         }
     }
     

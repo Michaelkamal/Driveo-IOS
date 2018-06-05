@@ -26,6 +26,7 @@ class PickLoacationViewController: UIViewController {
             searchTextField.searchFunc=search
             searchTextField.clearFunc=dismissPlacesSearch
             searchTextField.addTarget(self, action: #selector(search), for: UIControlEvents.allEditingEvents)
+            searchTextField.delegate=self
             if (carrierDropListView != nil)
             {
                 isSource=true
@@ -126,6 +127,8 @@ class PickLoacationViewController: UIViewController {
     }
     
     private func dismissAllPopups(){
+        searchTextField.resignFirstResponder()
+        self.view.endEditing(true)
         if(isSource)!{
             self.dismissDatePicker()
         }
@@ -288,4 +291,10 @@ extension PickLoacationViewController
     }
     
 }
-
+extension PickLoacationViewController:UITextFieldDelegate
+{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
