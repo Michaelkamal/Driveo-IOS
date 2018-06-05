@@ -100,15 +100,6 @@ class SignupView: UIViewController ,SignupViewProtocol{
         UIViewController.removeSpinner(spinner: spinner!)
     }
     
-    func showNoInternetAlert(){
-        let connectionAlertView:UIAlertController = UIAlertController(title: "Error", message: ErrorType.internet.rawValue, preferredStyle: .alert)
-        let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)
-        connectionAlertView.addAction(dismissAlertAction)
-        self.present(connectionAlertView, animated: true, completion: nil)
-        
-    }
-    
-    
     @IBAction func signupNewUser(_ sender: Any) {
         let user:User = User(email: emailTextField.text!, phone: phoneTextField.text!, password: passwordTextField.text!)
         user.confirmPassword = confirmPasswordTextField.text!
