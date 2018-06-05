@@ -7,10 +7,10 @@
 //
 
 import Foundation
-
+import UIKit
 protocol CreateRequestPresenterProtocol {
     
-    func createRequestclicked(withTitle title:String, withDescription :String, withImages: [Any])
+    func createRequestclicked(withTitle title:String, withDescription :String, withImages: [UIImage])
     
     func addPhoto(withPhoto photo:Any)
     

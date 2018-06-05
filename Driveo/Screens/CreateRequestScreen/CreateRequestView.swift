@@ -24,8 +24,26 @@ class CreateRequestView: UIViewController, CreateRequestViewProtocol {
     @IBOutlet weak var titleTextField: BaseBeautifulTextField!
     @IBOutlet weak var collectionViewWidth: NSLayoutConstraint!
     
+    
+    
+    
+    
+    
+    
+    
     @IBAction func nextButtonClicked(_ sender: Any) {
+        var sendImagesArray:[UIImage] = images
+        sendImagesArray.remove(at: sendImagesArray.count-1)
+        presenter.createRequestclicked(withTitle: titleTextField.text!, withDescription: descriptionTextView.text, withImages:sendImagesArray)
+        
     }
+    
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var uploadImageCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
