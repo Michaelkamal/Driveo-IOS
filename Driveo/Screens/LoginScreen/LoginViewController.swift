@@ -35,7 +35,7 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     }
     @IBAction func registerBut(_ sender: Any) {
         let signupStoryboard = UIStoryboard(name: "SignupStoryboard", bundle: nil)
-        let signup = signupStoryboard.instantiateViewController(withIdentifier: "signup")
+        let signup = signupStoryboard.instantiateViewController(withIdentifier: "SignupView")
         self.present(signup, animated: true, completion: nil)
     }
     
@@ -64,11 +64,14 @@ class LoginViewController: UIViewController , LoginViewProtocol {
      */
     func ChangeLabel(withString str:String){
         wrongEmail.text = str
+        dismissLoading()
     }
     func goToScreen(withScreenName name:String){
         if name == "next"{
-            print("hanroo7 next")
-            dismissLoading()
+            print("PickLoacationViewController")
+            let sourceScreenStoryboard = UIStoryboard(name: "SourceScreen", bundle: nil)
+            let signup = sourceScreenStoryboard.instantiateViewController(withIdentifier: "PickLoacationViewController")
+            self.present(signup, animated: true, completion: dismissLoading)
         }
     }
     func showLoading() {
