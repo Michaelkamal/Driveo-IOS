@@ -12,9 +12,11 @@ PODS:
   - GooglePlaces (2.7.0):
     - GoogleMaps/Base (= 2.7.0)
   - GooglePlacesSearchController (0.2.0)
+  - IQKeyboardManagerSwift (5.0.0)
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
+  - SkyFloatingLabelTextField (3.4.1)
   - SwiftyJSON (4.1.0)
   - TextFieldEffects (1.4.0)
 
@@ -25,7 +27,9 @@ DEPENDENCIES:
   - GooglePlacePicker
   - GooglePlaces
   - GooglePlacesSearchController
+  - IQKeyboardManagerSwift (= 5.0.0)
   - SDWebImage (~> 4.0)
+  - SkyFloatingLabelTextField (~> 3.0)
   - SwiftyJSON (~> 4.0)
   - TextFieldEffects
 
@@ -37,7 +41,9 @@ SPEC REPOS:
     - GooglePlacePicker
     - GooglePlaces
     - GooglePlacesSearchController
+    - IQKeyboardManagerSwift
     - SDWebImage
+    - SkyFloatingLabelTextField
     - SwiftyJSON
     - TextFieldEffects
 
@@ -48,10 +54,12 @@ SPEC CHECKSUMS:
   GooglePlacePicker: 59ea44db173c58486ad6123993e81feefcbce9c3
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GooglePlacesSearchController: 8cd39908bb40660ea375653f4757133e6d13a258
+  IQKeyboardManagerSwift: 3f340202ebe1a7076279b9b9b3c817243ddb3aab
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  SkyFloatingLabelTextField: 8085f20f57f74a00cfcae58099299faa1a971035
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
 
-PODFILE CHECKSUM: 5d371e06a89dc05f92c785ff06d3b3f311aca886
+PODFILE CHECKSUM: 868723abc23883438270e3856b4d6cba847fb27a
 
 COCOAPODS: 1.5.0

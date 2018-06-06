@@ -12,6 +12,8 @@ target 'Driveo' do
     pod 'SDWebImage', '~> 4.0' 
     pod "GooglePlacesSearchController"
     pod "BeautifulTextField"
+    pod 'SkyFloatingLabelTextField', '~> 3.0'
+    pod 'IQKeyboardManagerSwift', '5.0.0'
 
   target 'DriveoTests' do
     inherit! :search_paths
