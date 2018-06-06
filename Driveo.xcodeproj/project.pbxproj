@@ -393,8 +393,8 @@
 		844BD5ED20C31B65005E98FC /* CreateOrderScreen */ = {
 			isa = PBXGroup;
 			children = (
-				844BD5FB20C3776E005E98FC /* CreateOrderScreen.storyboard */,
 				844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */,
+				844BD5FB20C3776E005E98FC /* CreateOrderScreen.storyboard */,
 				844BD60120C38C20005E98FC /* CreateOrderView.swift */,
 				844BD60320C38C36005E98FC /* OrderItem.xib */,
 				844C6FBE20C61AF800379783 /* NextButtonView.swift */,
@@ -423,8 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				844C6FC120C6305F00379783 /* PaymentViewController.swift */,
-				84247CCA20C774E500AE43FA /* PaymentCell.swift */,
 				844C6FC020C6305F00379783 /* PaymentScreen.storyboard */,
+				84247CCA20C774E500AE43FA /* PaymentCell.swift */,
 				84247CCC20C777EB00AE43FA /* PaymentPresenter.swift */,
 			);
 			path = PaymentScreen;

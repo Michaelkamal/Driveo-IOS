@@ -22,7 +22,7 @@ class Order {
     
     internal var providerID:Int!
     
-    internal var paymentID:Int!{
+    internal var paymentMethod:PaymentMethod?{
         didSet{
             if oldValue == nil
             {

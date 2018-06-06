@@ -18,7 +18,7 @@ class NextButtonView: UIView {
     }
     public var nextFunc : (()->Void)?
     
-    public func registerEditFunction(){
+    public func registerNextFunction(){
         nextButton.addTarget(self, action:#selector(didTapOnNextButton), for: UIControlEvents.touchUpInside)
     }
     @objc func didTapOnNextButton()

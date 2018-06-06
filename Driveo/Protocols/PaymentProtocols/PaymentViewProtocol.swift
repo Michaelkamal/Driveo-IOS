@@ -8,5 +8,5 @@
 
 import Foundation
 protocol PaymentViewProtocol:GenericProtocol {
-    func updateTableViewData()->Void
+    func updateTableViewData(withArray array:[PaymentMethod])->Void
 }

@@ -8,14 +8,15 @@
 
 import Foundation
 
-struct PaymentMethods: Codable {
+public struct PaymentMethods: Codable {
     let methods: [PaymentMethod]?
 }
 
-struct PaymentMethod: Codable {
+public struct PaymentMethod: Codable {
     let id: Int?
     let name: String?
     let image: Image?
-    var isSelected: Bool?
+    var isSelected: Bool = false
+    var isEnable: Bool = false
 }
 
