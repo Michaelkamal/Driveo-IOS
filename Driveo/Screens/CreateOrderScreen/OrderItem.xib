@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,7 +44,7 @@
                     <state key="normal" image="ic_edit"/>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_destination_line" translatesAutoresizingMaskIntoConstraints="NO" id="0qV-bV-upL">
-                    <rect key="frame" x="15" y="34" width="3" height="44"/>
+                    <rect key="frame" x="10" y="34" width="3" height="44"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -54,9 +53,7 @@
                 <constraint firstItem="ScW-pt-Tf3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nRV-0c-dtT" secondAttribute="trailing" constant="15" id="BU3-2W-sVL"/>
                 <constraint firstItem="nRV-0c-dtT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="Bc2-P6-gjS"/>
                 <constraint firstItem="YGJ-8s-1H7" firstAttribute="leading" secondItem="nRV-0c-dtT" secondAttribute="leading" id="Fzq-OO-b8b"/>
-                <constraint firstItem="0qV-bV-upL" firstAttribute="width" secondItem="jF8-Il-Hsp" secondAttribute="height" multiplier="3:13" id="QvO-EI-Ps9"/>
-                <constraint firstItem="jF8-Il-Hsp" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="1:6" id="Vau-ze-JFq"/>
-                <constraint firstItem="0qV-bV-upL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="eNz-Dt-rQg"/>
+                <constraint firstItem="0qV-bV-upL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="eNz-Dt-rQg"/>
                 <constraint firstItem="YGJ-8s-1H7" firstAttribute="top" secondItem="nRV-0c-dtT" secondAttribute="bottom" constant="8.3300000000000001" id="iZn-xJ-Vfo"/>
                 <constraint firstItem="0qV-bV-upL" firstAttribute="top" secondItem="jF8-Il-Hsp" secondAttribute="bottom" constant="10" id="jmC-kx-xVx"/>
                 <constraint firstAttribute="bottom" secondItem="0qV-bV-upL" secondAttribute="bottom" id="kEQ-jX-RQX"/>

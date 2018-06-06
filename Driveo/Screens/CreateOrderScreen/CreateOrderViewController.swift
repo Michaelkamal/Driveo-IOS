@@ -16,10 +16,12 @@ class CreateOrderViewController: UIViewController {
     
     @IBOutlet weak var orderStatus: UILabel!
     
-    @IBOutlet weak var contentViewcenterHConstraint: NSLayoutConstraint!
+    @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let cellHeight=contentView.frame.height/5
+        let contentViewMaxY=contentView.frame.maxY
         if let userOrder = userOrder{
             orderStatus.text=userOrder.orderStatus?.rawValue
             for i in stride(from: 0, to:userOrder.completeStatus, by: 1)
@@ -61,11 +63,11 @@ class CreateOrderViewController: UIViewController {
                     orderStep.registerEditFunction()
                     if contentView.subviews.count<1
                     {
-                        orderStep.frame=CGRect(x: contentView.frame.minX+49, y: contentView.frame.minY, width: contentView.frame.width-98, height: contentView.frame.height/5)
+                        orderStep.frame=CGRect(x: contentView.frame.minX+49, y: contentView.frame.minY, width: contentView.frame.width-98, height: cellHeight)
                     }
                     else
                     {
-                        orderStep.frame=CGRect(x: contentView.frame.minX+49, y: contentView.subviews.last!.frame.maxY, width: contentView.frame.width-98, height: contentView.frame.height/5)
+                        orderStep.frame=CGRect(x: contentView.frame.minX+49, y: contentView.subviews.last!.frame.maxY, width: contentView.frame.width-98, height: cellHeight)
                     }
                     if i == userOrder.completeStatus-1
                     {
@@ -76,21 +78,27 @@ class CreateOrderViewController: UIViewController {
             }
         }
         if let nextButton = Bundle.main.loadNibNamed("NextButton", owner: self, options: nil)?.first as? NextButtonView {
-            if contentView.subviews.count>1,contentView.subviews.last!.frame.maxY>self.contentView.superview!.frame.maxY
+            if contentView.subviews.count>1,(contentView.subviews.last!.frame.maxY>contentViewMaxY ||
+                contentViewMaxY-contentView.subviews.last!.frame.maxY<cellHeight)
             {
-                nextButton.frame=CGRect(x: contentView.frame.minX+49, y: contentView.subviews.last!.frame.maxY, width: contentView.frame.width-98, height: contentView.frame.height/5)
-                contentViewcenterHConstraint.constant += contentView.frame.maxY-contentView.subviews.last!.frame.maxY
+                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentView.subviews.last!.frame.maxY-0.5*cellHeight, width: contentView.frame.width, height: cellHeight)
+                nextButton.heightConstraint.constant=(cellHeight*2/3)
+                nextButton.updateConstraints()
+                nextButton.setNeedsLayout()
+                contentView.addSubview(nextButton)
+                contentViewHeightConstraint.constant += nextButton.frame.maxY-contentViewMaxY+2.6*cellHeight
                 contentView.updateConstraints()
-                contentView.setNeedsLayout()
-                contentView.superview?.setNeedsLayout()
             }
             else
             {
-                nextButton.frame=CGRect(x: contentView.frame.minX+49, y: contentView.frame.maxY-contentView.frame.height/5, width: contentView.frame.width-98, height: contentView.frame.height/5)
+                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentViewMaxY-0.5*cellHeight, width: contentView.frame.width, height: cellHeight)
+                nextButton.heightConstraint.constant=(cellHeight*2/3)
+                nextButton.updateConstraints()
+                nextButton.setNeedsLayout()
+                contentView.addSubview(nextButton)
             }
             // TODO : register next func
-            //             nextButton.nextFunc=
-            contentView.addSubview(nextButton)
+            //        nextButton.nextFunc=
             
         }
     }
