@@ -17,11 +17,11 @@ class PickLoacationPresenter{
     
     public var userOrder:Order?
     
-    private var carrier:String?
+    private var carrier:Int?
     private var pickUpDate:String?
+    private var providersArray:[Provider]?
     
-    
-    private var viewDelagate:PickLocationProtocol!
+    private var viewDelagate:PickLocationViewProtocol!
     
     private let googlePlacesDal:GooglePlacesDAL = GooglePlacesDAL.sharedInstance()
     
@@ -32,7 +32,7 @@ class PickLoacationPresenter{
     init(withController controller:UIViewController,andOrder order:Order?=nil) {
         self.controller=controller
         self.userOrder=order
-        viewDelagate=controller as! PickLocationProtocol
+        viewDelagate=controller as! PickLocationViewProtocol
         
         if let userOrder = self.userOrder {
             self.pickUpDate=userOrder.date
@@ -93,7 +93,7 @@ class PickLoacationPresenter{
                 if let userOrder = userOrder {
                     userOrder.source=selectedLocation
                     userOrder.date=pickUpDate
-                    if let carrier=carrier{userOrder.carrier=carrier}
+                    if let carrier=carrier{userOrder.providerID=carrier}
                 }else{
                     userOrder=Order(withSource: selectedLocation,byCarrier: carrier!, onDate: pickUpDate!)
                 }
@@ -122,16 +122,36 @@ class PickLoacationPresenter{
     }
     
     // Select carrier
-    func didSelectCarrier(selectedCarrier carrier:CarrierDPItem)->Void {
-        viewDelagate.displaySelectedCarrier(withLogo:carrier.carrierLogo!)
-        self.carrier=carrier.carrierName
+    func didSelectCarrier(selectedCarrier carrier:Provider)->Void {
+        viewDelagate.displaySelectedCarrier(withLogoUrl:carrier.image!.url!)
+        self.carrier=carrier.id
     }
     
     
-    func getCarriers()->[CarrierDPItem]{
-        return [CarrierDPItem(CarrierName: "DHL",andRating: "4.4", image: #imageLiteral(resourceName: "ic_dhl")),
-                CarrierDPItem(CarrierName: "TNT",andRating: "4.5", image: #imageLiteral(resourceName: "ic_tnt")),
-                CarrierDPItem(CarrierName: "FEDEX",andRating: "5.0", image: #imageLiteral(resourceName: "ic_fedex"))]
+    func getCarriers(){
+        if let carriers = providersArray{
+             viewDelagate.updateCarrierArray(withCarriers: carriers)
+        }else{
+            NetworkDAL.sharedInstance().processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: "providers", withParser: { (JSON) -> [Any] in
+                var res:[Any]=[]
+                if let providers = try? JSONDecoder().decode(Providers.self, from: JSON.rawData()) {
+                    res += providers.providers! as [Any]
+                }
+                else
+                {
+                    self.viewDelagate.showAlert(ofError: ErrorType.parse)
+                }
+                return res
+            }, onSuccess: { (providers) in
+                    self.viewDelagate.updateCarrierArray(withCarriers: providers as! [Provider])
+                self.providersArray=providers as? [Provider]
+                
+                
+            }, onFailure: { err  in
+                print(err)
+                self.viewDelagate.showAlert(ofError: ErrorType.internet)
+            })
+        }
     }
 }
 

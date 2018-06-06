@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlacesSearchController
-
+import SDWebImage
 class PickLoacationViewController: UIViewController {
     
     private var presenter:PickLoacationPresenter!
@@ -87,7 +87,7 @@ class PickLoacationViewController: UIViewController {
     // select carrier
     @IBAction func didTapOnSelectCarrier(_ sender: UIButton) {
         dismissAllPopups()
-        carrierDropDownMenu.items=presenter.getCarriers()
+        presenter.getCarriers()
         carrierDropDownMenu.didSelectedButton()
     }
     
@@ -106,6 +106,7 @@ class PickLoacationViewController: UIViewController {
         
         if(isSource)!{
             carrierDropDownMenu.didSelectedItemIndex=presenter.didSelectCarrier
+            presenter.getCarriers()
         }
         
         placesDropDownMenu.didSelectedItemIndex=presenter.didSelectplace
@@ -146,8 +147,12 @@ extension PickLoacationViewController:GMSMapViewDelegate
 }
 
 // mark : view delagate
-extension PickLoacationViewController:PickLocationProtocol
+extension PickLoacationViewController:PickLocationViewProtocol
 {
+    func updateCarrierArray(withCarriers carriers: [Provider]) {
+         carrierDropDownMenu.items=carriers
+    }
+    
     var isCurrentScreenSourcePickUp: Bool {
         return self.isSource!
     }
@@ -179,13 +184,13 @@ extension PickLoacationViewController:PickLocationProtocol
     
     // display selected carrier logo on drop up list
     
-    func displaySelectedCarrier(withLogo logo:UIImage)->Void
+    func displaySelectedCarrier(withLogoUrl url:String)->Void
     {
         self.carrierView.subviews.forEach { $0.removeFromSuperview() }
         let imageView:UIImageView=UIImageView()
         imageView.frame = CGRect(x:20, y:5, width: self.carrierView.frame.width-20, height: self.carrierView.frame.height-10)
         imageView.contentMode = UIViewContentMode.scaleAspectFit
-        imageView.image=logo
+        imageView.sd_setImage(with: URL(string: ApiBaseUrl.mainApi.rawValue+url), completed: nil)
         self.carrierView.addSubview(imageView)
     }
     

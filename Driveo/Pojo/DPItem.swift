@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import SDWebImage
 public struct PlaceDPItem {
     
     public var place: String?
@@ -21,18 +21,3 @@ public struct PlaceDPItem {
     }
 }
 
-public struct CarrierDPItem {
-    public var carrierName: String?
-    public var carrierLogo: UIImage?
-    public var rating: String?
-    
-    public init(CarrierName name:String?,andRating rating: String?,image: UIImage?) {
-        self.carrierName=name
-        self.rating = rating
-        self.carrierLogo = image
-    }
-    
-    public init(rating: String) {
-        self.rating = rating
-    }
-}

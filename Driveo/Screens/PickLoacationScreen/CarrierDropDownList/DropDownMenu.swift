@@ -65,7 +65,7 @@ public class DropDownMenu : NSObject {
         }
     }
     
-    public var items = [CarrierDPItem]() {
+    public var items = [Provider]() {
         didSet {
             if let table = tableView {
                 table.reloadData()
@@ -105,7 +105,7 @@ public class DropDownMenu : NSObject {
         }
     }
     
-    public var didSelectedItemIndex: ((CarrierDPItem) -> (Void))?
+    public var didSelectedItemIndex: ((Provider) -> (Void))?
     
     public init(withView view: UIView,whenPressOnButton button:UIButton,andFoldingOrientation foldingOrientaion:FoldingOptions) {
         super.init()

@@ -20,7 +20,17 @@ class Order {
     
     internal var date:String!
     
-    internal var carrier:String!
+    internal var providerID:Int!
+    
+    internal var paymentID:Int!{
+        didSet{
+            if oldValue == nil
+            {
+                completeStatus+=1
+                orderStatus = .paymentMethod
+            }
+        }
+    }
     
     internal var destination:OrderLocation?{
         didSet{
@@ -33,10 +43,10 @@ class Order {
     }
     
     
-    init(withSource source:OrderLocation,byCarrier carrier:String,onDate date:String) {
+    init(withSource source:OrderLocation,byCarrier providerID:Int,onDate date:String) {
         self.source = source
         completeStatus+=1
-        self.carrier=carrier
+        self.providerID=providerID
         self.date = date
     }
     

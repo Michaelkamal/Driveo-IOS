@@ -13,7 +13,7 @@ import SwiftyJSON
 
 enum ApiBaseUrl:String{
     case googleApi = "https://maps.googleapis.com/"
-    case mainApi = "https://driveo.herokuapp.com/api/v1"
+    case mainApi = "https://driveo.herokuapp.com/"
 }
 
 public class NetworkDAL{
