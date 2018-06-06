@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class SignupView: UIViewController ,SignupViewProtocol{
 
@@ -16,28 +17,20 @@ class SignupView: UIViewController ,SignupViewProtocol{
     
     lazy var signupPresenter:SignupPresenter = SignupPresenter(signupView: self)
     
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField:SkyFloatingLabelTextField!
 
-    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var phoneTextField: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: SkyFloatingLabelTextField!
 
-    @IBOutlet weak var confirmPasswordError: UILabel!
-    
-    @IBOutlet weak var passwordError: UILabel!
-    
-    @IBOutlet weak var phoneError: UILabel!
-    
-    @IBOutlet weak var emaiError: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
  
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
+//        let notificationCenter = NotificationCenter.default
+//        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
+//        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
 
     }
   
@@ -76,19 +69,20 @@ class SignupView: UIViewController ,SignupViewProtocol{
     
     
     func setEmailAlertLabel(errorMsg: String) {
-        emaiError.text = errorMsg
+        emailTextField.errorMessage = errorMsg
     }
     
     func setPhoneAlertLabel(errorMsg: String) {
-        phoneError.text  = errorMsg
+            phoneTextField.errorMessage = errorMsg
+        
     }
     
     func setPasswordAlertLabel(errorMsg: String) {
-        passwordError.text = errorMsg
+        passwordTextField.errorMessage = errorMsg
     }
     
     func setConfirmPasswordAlertLabel(errorMsg: String) {
-        confirmPasswordError.text = errorMsg
+        confirmPasswordTextField.errorMessage = errorMsg
     }
     
     
