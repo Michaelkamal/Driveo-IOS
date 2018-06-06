@@ -66,8 +66,7 @@ class SignupPresenter : SignupPresenterProtocol{
             }
         }
     }
-    
-    
+
     
     func isPasswordValid(password: String) {
         if password != ""{
