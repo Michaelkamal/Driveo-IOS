@@ -25,7 +25,7 @@ class LoginModel : LoginModelProtocol{
 //            var headers = header as! HTTPHeaders
 //            networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "auth/login", andParameters: params, onSuccess: onSuccess, headers: headers)
 //        }
-        networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "auth/login", andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
+        networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "authentication/login", andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
     }
     
     func onSuccess(_ response:Any) -> Void{
@@ -34,14 +34,16 @@ class LoginModel : LoginModelProtocol{
         let dict = response as! Dictionary<String,Any>
         let defaults = UserDefaults.standard
         let token = dict["auth_token"] as! String
+        let message = dict["message"] as! String
+        
         print(token)
-        if token != nil {
+        if message.contains("success") {
             defaults.set(token, forKey :"auth_token")
             defaults.synchronize()
             lp.loginSuccess(user: user, token: token)
         }
         else{
-            lp.loginFailure(message: "Wrong email or password")
+            lp.loginFailure(message: message)
         }
         
     }
