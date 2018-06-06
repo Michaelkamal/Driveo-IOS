@@ -45,8 +45,9 @@ public class NetworkDAL{
             switch response.result {
             case .success(let data):
                 let jsonData = JSON(data);
+                
                 print("***URL**** "+urlSuffix)
-                //driveo://driveo.heroku.com/reset_password/?hash=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwiZXhwIjoxNTI4MjQyNjAzfQ.f7880ZL6hQPweP-bQiCcu6_kGOTMEtzKP4osywYFDp0
+                //driveo://driveo.herokuapp.com/reset_password/?hash=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwiZXhwIjoxNTI4Mjg4NTg5fQ.QPz0oZwJ-xPMQgLM7zLxVQGxOT6IXNLPVwKPZjgHcKs
                 print("-------*-*-*-----*******------///////-------********-----------------")
                 print(jsonData)
                 onSuccess(data);

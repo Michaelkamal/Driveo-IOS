@@ -8,13 +8,11 @@
 
 import Foundation
 
-
 class SignupPresenter : SignupPresenterProtocol{
  
     lazy var signupModel:SignupModelProtocol = SignupModel(presenter: self)
     
     var signupView:SignupViewProtocol
-    
     var isPasswordCorrect:Bool=false
     var isConfirmPasswordCorrect:Bool=false
     var isEmailCorrect:Bool=false
@@ -76,26 +74,30 @@ class SignupPresenter : SignupPresenterProtocol{
         {
             passwordErrorLabel=""
         }else if password.count<6 || password.count>12{
-            passwordErrorLabel="Password length should between 6-12"
+            passwordErrorLabel=ErrorType.passwordLength.rawValue
         }else{
-            passwordErrorLabel="Password should have letter and number"
+            passwordErrorLabel=ErrorType.passwordNumberLetterError.rawValue
         }
     }
     
     func isPasswordmatches(password: String, confirmPassword: String) {
-        if confirmPassword == password
-        {
-            confirmPasswordErrorLabel = ""
-        }else{
-            confirmPasswordErrorLabel  = "password doesn't match"
+        if password != ""{
+            if confirmPassword == password
+            {
+                confirmPasswordErrorLabel = ""
+            }else{
+                confirmPasswordErrorLabel  = ErrorType.confirmPassword.rawValue
+            }
         }
     }
+    
+    
     func isEmailValid(email: String) {
         if(email.matches("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"))
         {
             emailErrorLabel=""
         }else{
-            emailErrorLabel="Email is not Formatted"
+            emailErrorLabel=ErrorType.invalidEmail.rawValue
         }
     }
     
@@ -103,12 +105,12 @@ class SignupPresenter : SignupPresenterProtocol{
         if (phone.matches("^01[0-5]\\d{7,8}$"))
         {
             phoneErrorLabel=""
-            
         }else{
-            phoneErrorLabel="This is not a valid phone number"
+            phoneErrorLabel=ErrorType.invalidPhoneNumber.rawValue
         }
     }
     
+    //save token and tell view to present Verification Screen
    func goToVerifyScreen(withToken token:String){
         signupView.dismissLoading()
         let defaults = UserDefaults.standard
@@ -125,18 +127,21 @@ class SignupPresenter : SignupPresenterProtocol{
     
     func registerclicked(user: User) {
         signupView.showLoading()
-        print("Hello from registered \(user.email) \(user.password) + \(user.phone) \(isEmailCorrect) \(isPhoneCorrect) \(isPasswordCorrect) \(isConfirmPasswordCorrect)")
+        //check User Data is valid
+        isEmailValid(email: user.email)
+        isPhoneValid(phone: user.phone)
+        isPasswordValid(password: user.password)
+        isPasswordmatches(password: user.password, confirmPassword: user.confirmPassword!)
+        
         if !isEmailCorrect || !isPhoneCorrect || !isPasswordCorrect || !isConfirmPasswordCorrect {
             signupView.dismissLoading()
-            signupView.showAlert(withTitle: "Error", andMessage: ErrorType.incompleteData.rawValue)
+            signupView.showAlert(withTitle: ErrorType.errorTitle.rawValue, andMessage: ErrorType.incompleteData.rawValue)
         }else if NetworkDAL.isInternetAvailable() == false {
             signupView.dismissLoading()
-            signupView.showNoInternetAlert()
+            signupView.showAlert(withTitle: ErrorType.errorTitle.rawValue, andMessage: ErrorType.internet.rawValue)
         }else {
             signupModel.registerNewUser(user: user)
         }
     }
-    
-    
 }
 

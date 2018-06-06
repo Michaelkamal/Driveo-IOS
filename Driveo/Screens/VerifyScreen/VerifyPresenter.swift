@@ -37,19 +37,18 @@ class VerifyPresenter : VerifyPresenterProtocol{
                     }
                     else{
                         verifyView.dismissLoading()
-                        verifyView.showAlert(withTitle: "Error", andMsg: ErrorType.internet.rawValue)
+                        verifyView.showAlert(withTitle: ErrorType.errorTitle.rawValue, andMsg: ErrorType.internet.rawValue)
                     }
         }else{
-             errorText = "Please enter Valid Code"
+             errorText = ErrorType.pinCodeError.rawValue
         }
-       
     }
     
     func isCodeValid(withCode code: String){
         if code.matches("^\\d{4}$"){
             errorText = ""
         }else{
-            errorText = "Please enter Valid Code"
+            errorText = ErrorType.pinCodeError.rawValue
         }
     }
     
@@ -60,7 +59,7 @@ class VerifyPresenter : VerifyPresenterProtocol{
     
     func OnCodeVerifyFailure(withmsg msg: String) {
         verifyView.dismissLoading()
-        verifyView.showAlert(withTitle: "Error", andMsg: msg)
+        verifyView.showAlert(withTitle: ErrorType.errorTitle.rawValue, andMsg: msg)
     }
     
     

@@ -9,10 +9,7 @@
 import UIKit
 
 class SignupView: UIViewController ,SignupViewProtocol{
-    
-    
-    
-    
+
     var spinner:UIView?
     
     var alert:UIAlertController?
@@ -20,15 +17,13 @@ class SignupView: UIViewController ,SignupViewProtocol{
     lazy var signupPresenter:SignupPresenter = SignupPresenter(signupView: self)
     
     @IBOutlet weak var emailTextField: UITextField!
-    
+
     @IBOutlet weak var phoneTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var confirmPasswordTextField: UITextField!
-    
-    
-    
+
     @IBOutlet weak var confirmPasswordError: UILabel!
     
     @IBOutlet weak var passwordError: UILabel!
@@ -43,10 +38,7 @@ class SignupView: UIViewController ,SignupViewProtocol{
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-        
-        // Do any additional setup after loading the view.
-//          let defaults = UserDefaults.standard
-//        print(defaults.string(forKey: "auth_token") ?? "nothing")
+
     }
   
     
@@ -63,26 +55,6 @@ class SignupView: UIViewController ,SignupViewProtocol{
             self.view.layoutIfNeeded()
         })
     }
-    
-    
-    
-// @objc  func keyboardWillShow(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if view.frame.origin.y == 0{
-//                self.view.frame.origin.y -= keyboardSize.height
-//            }
-//        }
-//    }
-//
-//  @objc  func keyboardWillHide(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if view.frame.origin.y != 0 {
-//                self.view.frame.origin.y += keyboardSize.height
-//            }
-//        }
-//    }
-    
-    
     
     
     override func didReceiveMemoryWarning() {
@@ -128,23 +100,14 @@ class SignupView: UIViewController ,SignupViewProtocol{
         UIViewController.removeSpinner(spinner: spinner!)
     }
     
-    func showNoInternetAlert(){
-        let connectionAlertView:UIAlertController = UIAlertController(title: "Error", message: ErrorType.internet.rawValue, preferredStyle: .alert)
-        let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)
-        connectionAlertView.addAction(dismissAlertAction)
-        self.present(connectionAlertView, animated: true, completion: nil)
-        
-    }
-    
-    
     @IBAction func signupNewUser(_ sender: Any) {
-        signupPresenter.registerclicked(user: User(email: emailTextField.text!, phone: phoneTextField.text!, password: passwordTextField.text!))
+        let user:User = User(email: emailTextField.text!, phone: phoneTextField.text!, password: passwordTextField.text!)
+        user.confirmPassword = confirmPasswordTextField.text!
+        signupPresenter.registerclicked(user:user)
     }
     
     @IBAction func goToLoginScreen(_ sender: Any) {
-        let storyBoard = UIStoryboard(name: "Login", bundle: nil)
-        let loginScreen:LoginViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(loginScreen, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -178,12 +141,9 @@ extension SignupView : UITextFieldDelegate{
         case 4:
             signupPresenter.isPasswordmatches(password: passwordTextField.text!, confirmPassword: confirmPasswordTextField.text!)
         default: break
-            
         }
     }
 
-    
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textField.resignFirstResponder()
     }

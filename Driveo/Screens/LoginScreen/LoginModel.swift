@@ -34,12 +34,19 @@ class LoginModel : LoginModelProtocol{
         let dict = response as! Dictionary<String,Any>
         let defaults = UserDefaults.standard
         let token = dict["auth_token"] as! String
-        defaults.set(token, forKey :"auth_token")
-        defaults.synchronize()
-        lp.loginSuccess(user: user, token: token)
+        print(token)
+        if token != nil {
+            defaults.set(token, forKey :"auth_token")
+            defaults.synchronize()
+            lp.loginSuccess(user: user, token: token)
+        }
+        else{
+            lp.loginFailure(message: "Wrong email or password")
+        }
+        
     }
     func onFailure(_ networkError:ErrorType) -> Void{
-        print("failed")
+        lp.loginFailure(message: "Wrong email or password")
     }
     
     

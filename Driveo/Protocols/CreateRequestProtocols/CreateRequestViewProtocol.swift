@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 protocol CreateRequestViewProtocol {
     
     
@@ -14,6 +15,8 @@ protocol CreateRequestViewProtocol {
     func dismissLoading()
     func showAlert(withTitle title : String , withMsg msg:String)
     func goToNextScreen()
-    func getNewImage()
-    func updateImages()
+    func ImageProviderAlert()
+    func showImagePickerController(pickerController:UIImagePickerController)
+    func showDeletePhotoAlert(forIndex index:Int)
+    func deletePhoto(atIndex index:Int)
 }

@@ -7,22 +7,23 @@
 //
 
 import Foundation
-
+import UIKit
 protocol CreateRequestPresenterProtocol {
     
-    func createRequestclicked(withTitle title:String, withDescription :String, withImages: [Any])
+    func createRequestclicked(withTitle title:String, withDescription :String, withImages: [UIImage])
     
-    func addPhoto(withPhoto photo:Any)
+    func deletePhotoAlert(withindex index:Int)
     
-    func deletePhoto(withPhoto photo:Any)
+    func getPhotoProviderAlert()
     
-    func getPhoto()
-    
-    func onCreateRequestSuccess()
+    func onCreateRequestSuccess(withMessage message:String)
     
     func onCreateRequestFailure(withError error:String)
     
+    func getPhotoFromGallery()
     
+    func getPhotoFromCamera()
     
+    func deletePhotoConfirmed(atIndex index:Int)
     
 }

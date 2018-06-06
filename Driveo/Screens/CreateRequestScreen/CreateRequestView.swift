@@ -9,28 +9,67 @@
 import UIKit
 import BeautifulTextField
 
-class CreateRequestView: UIViewController, CreateRequestViewProtocol {
-   
-    
+class CreateRequestView: UIViewController, CreateRequestViewProtocol ,UIGestureRecognizerDelegate  {
+
+    lazy var presenter:CreateRequestPresenterProtocol = CreateRequestPresenter(withView:self)
     var spinner:UIView?
     var alert:UIAlertController?
+    var chooseImageProviderAlert:UIAlertController?
+    var deleteImageAlert:UIAlertController?
+    var imagePickerController:UIImagePickerController?
+    var images:[UIImage] = [UIImage.init(named: "ic_upload_image")!]
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var titleTextField: BaseBeautifulTextField!
     @IBOutlet weak var collectionViewWidth: NSLayoutConstraint!
     
-    @IBAction func nextButtonClicked(_ sender: Any) {
-    }
     @IBOutlet weak var uploadImageCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    
+        
+        let longPressOnCellGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        longPressOnCellGesture.minimumPressDuration = 0.5
+        longPressOnCellGesture.delaysTouchesBegan = true
+        longPressOnCellGesture.delegate = self
+        self.uploadImageCollectionView.addGestureRecognizer(longPressOnCellGesture)
     }
 
+    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizerState.ended {
+            return
+        }
+        let point = gestureReconizer.location(in: self.uploadImageCollectionView)
+        let indexPath = self.uploadImageCollectionView.indexPathForItem(at: point)
+        
+        if let index = indexPath {
+            var cell = self.uploadImageCollectionView.cellForItem(at: index)
+            // do stuff with your cell, for example print the indexPath
+            if   index.row < (images.count-1){
+                presenter.deletePhotoAlert(withindex: index.row)
+            }
+        } else {
+            //longpress outside collection view
+            print("out \n")
+        }
+    }
+    
+    
+    
+    @IBAction func nextButtonClicked(_ sender: Any) {
+        var sendImagesArray:[UIImage] = images
+        sendImagesArray.remove(at: sendImagesArray.count-1)
+        presenter.createRequestclicked(withTitle: titleTextField.text!, withDescription: descriptionTextView.text, withImages:sendImagesArray)
+    }
+    
+    
+    func deletePhoto(atIndex index: Int) {
+        images.remove(at: index)
+        uploadImageCollectionView.reloadData()
+    }
+    
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,66 +88,3 @@ class CreateRequestView: UIViewController, CreateRequestViewProtocol {
 
 }
 
-
-extension CreateRequestView : UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
-    
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("items gowa elsection")
-        return 10
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("bndeque cell")
-        var cell:UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addPhotoCell", for: indexPath)
-        
-        var img:UIImageView = cell.viewWithTag(1) as! UIImageView
-        img.image = UIImage.init(named: "ic_upload_image")
-        
-        
-        let height:CGFloat = uploadImageCollectionView.collectionViewLayout.collectionViewContentSize.height
-        heightConstraint.constant = height
-        self.view.setNeedsLayout()
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var width = UIScreen.main.bounds.size.width
-        return CGSize(width: width*0.36 , height: width*0.36)
-    }
-    
-    func showLoading() {
-        spinner = UIViewController.displaySpinner(onView: self.view)
-    }
-    
-    func dismissLoading() {
-        UIViewController.removeSpinner(spinner: spinner!)
-    }
-    
-    func showAlert(withTitle title :String , withMsg msg:String){
-        alert = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)
-        self.present(alert!, animated: true, completion: nil)
-        let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)
-        alert?.addAction(dismissAlertAction)
-    }
-    
-    func goToNextScreen() {
-        
-    }
-    
-    func getNewImage() {
-        
-    }
-    
-    func updateImages() {
-        
-    }
-    
-}

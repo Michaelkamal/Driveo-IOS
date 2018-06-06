@@ -16,7 +16,7 @@ protocol SignupViewProtocol {
     func  setConfirmPasswordAlertLabel(errorMsg : String)
     func showLoading()
     func dismissLoading()
-    func showNoInternetAlert()
     func goToVerifyScreen()
     func showAlert(withTitle title :String , andMessage msg:String)
+    
 }
