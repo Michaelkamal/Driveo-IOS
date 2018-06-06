@@ -70,14 +70,17 @@ class SignupPresenter : SignupPresenterProtocol{
     
     
     func isPasswordValid(password: String) {
-        if (password.matches("^((?!.*\\s)(?=.*[a-zA-Z])(?=.*\\d)).{6,12}$"))
-        {
-            passwordErrorLabel=""
-        }else if password.count<6 || password.count>12{
-            passwordErrorLabel=ErrorType.passwordLength.rawValue
-        }else{
-            passwordErrorLabel=ErrorType.passwordNumberLetterError.rawValue
+        if password != ""{
+            if (password.matches("^((?!.*\\s)(?=.*[a-zA-Z])(?=.*\\d)).{6,12}$"))
+            {
+                passwordErrorLabel=""
+            }else if password.count<6 || password.count>12{
+                passwordErrorLabel=ErrorType.passwordLength.rawValue
+            }else{
+                passwordErrorLabel=ErrorType.passwordNumberLetterError.rawValue
+            }
         }
+      
     }
     
     func isPasswordmatches(password: String, confirmPassword: String) {
@@ -93,21 +96,27 @@ class SignupPresenter : SignupPresenterProtocol{
     
     
     func isEmailValid(email: String) {
-        if(email.matches("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"))
-        {
-            emailErrorLabel=""
-        }else{
-            emailErrorLabel=ErrorType.invalidEmail.rawValue
+        if email != "" {
+            if(email.matches("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"))
+            {
+                emailErrorLabel=""
+            }else{
+                emailErrorLabel=ErrorType.invalidEmail.rawValue
+            }
         }
+       
     }
     
     func isPhoneValid(phone: String) {
-        if (phone.matches("^01[0-5]\\d{7,8}$"))
-        {
-            phoneErrorLabel=""
-        }else{
-            phoneErrorLabel=ErrorType.invalidPhoneNumber.rawValue
+        if phone != "" {
+            if (phone.matches("^01[0-5]\\d{7,8}$"))
+            {
+                phoneErrorLabel=""
+            }else{
+                phoneErrorLabel=ErrorType.invalidPhoneNumber.rawValue
+            }
         }
+       
     }
     
     //save token and tell view to present Verification Screen
