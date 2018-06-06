@@ -21,7 +21,16 @@
 		840B1CD320C5B3D10046542D /* CreateRequestViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CD020C5B3D10046542D /* CreateRequestViewProtocol.swift */; };
 		840B1CD520C5B81F0046542D /* CreateRequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CD420C5B81F0046542D /* CreateRequestPresenter.swift */; };
 		840B1CD720C5B82D0046542D /* CreateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CD620C5B82D0046542D /* CreateRequestModel.swift */; };
+		84187ED820C6D26C00FB5566 /* TripsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84187ED720C6D26C00FB5566 /* TripsViewProtocol.swift */; };
+		84187EDA20C6D2EF00FB5566 /* TripsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84187ED920C6D2EF00FB5566 /* TripsPresenterProtocol.swift */; };
+		84187EDE20C6D48E00FB5566 /* TripsModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84187EDD20C6D48E00FB5566 /* TripsModelProtocol.swift */; };
+		84187EE620C6D48E00FB5566 /* Trips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84187EE520C6D48E00FB5566 /* Trips.storyboard */; };
 		8424621820C11FA800D00057 /* OrderLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424621720C11FA800D00057 /* OrderLocation.swift */; };
+		84247CCB20C774E500AE43FA /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247CCA20C774E500AE43FA /* PaymentCell.swift */; };
+		84247CCD20C777EB00AE43FA /* PaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247CCC20C777EB00AE43FA /* PaymentPresenter.swift */; };
+		84247CD020C7784B00AE43FA /* PaymentViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247CCF20C7784B00AE43FA /* PaymentViewProtocol.swift */; };
+		84247CD220C77AE500AE43FA /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247CD120C77AE500AE43FA /* PaymentMethod.swift */; };
+		84247CD420C77F6100AE43FA /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247CD320C77F6100AE43FA /* Providers.swift */; };
 		842C037A20C5A3F100CA1C3B /* CreateRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842C037820C5A3F100CA1C3B /* CreateRequest.storyboard */; };
 		842C037B20C5A3F100CA1C3B /* CreateRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C037920C5A3F100CA1C3B /* CreateRequestView.swift */; };
 		8447456E20C07D2A0076D0EC /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447455820C07D270076D0EC /* ErrorType.swift */; };
@@ -31,7 +40,7 @@
 		844BD5EF20C35E17005E98FC /* DPItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5EE20C35E17005E98FC /* DPItem.swift */; };
 		844BD5F120C35F12005E98FC /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F020C35F12005E98FC /* Order.swift */; };
 		844BD5F320C36436005E98FC /* GooglePlacesDAL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F220C36436005E98FC /* GooglePlacesDAL.swift */; };
-		844BD5F620C3679D005E98FC /* PickLocationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F520C3679D005E98FC /* PickLocationProtocol.swift */; };
+		844BD5F620C3679D005E98FC /* PickLocationViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F520C3679D005E98FC /* PickLocationViewProtocol.swift */; };
 		844BD5F820C37045005E98FC /* GenericProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5F720C37044005E98FC /* GenericProtocol.swift */; };
 		844BD5FC20C3776E005E98FC /* CreateOrderScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BD5FB20C3776E005E98FC /* CreateOrderScreen.storyboard */; };
 		844BD5FE20C3778A005E98FC /* CreateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */; };
@@ -128,7 +137,16 @@
 		840B1CD020C5B3D10046542D /* CreateRequestViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRequestViewProtocol.swift; sourceTree = "<group>"; };
 		840B1CD420C5B81F0046542D /* CreateRequestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestPresenter.swift; sourceTree = "<group>"; };
 		840B1CD620C5B82D0046542D /* CreateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestModel.swift; sourceTree = "<group>"; };
+		84187ED720C6D26C00FB5566 /* TripsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewProtocol.swift; sourceTree = "<group>"; };
+		84187ED920C6D2EF00FB5566 /* TripsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsPresenterProtocol.swift; sourceTree = "<group>"; };
+		84187EDD20C6D48E00FB5566 /* TripsModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsModelProtocol.swift; sourceTree = "<group>"; };
+		84187EE520C6D48E00FB5566 /* Trips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trips.storyboard; sourceTree = "<group>"; };
 		8424621720C11FA800D00057 /* OrderLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderLocation.swift; sourceTree = "<group>"; };
+		84247CCA20C774E500AE43FA /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
+		84247CCC20C777EB00AE43FA /* PaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPresenter.swift; sourceTree = "<group>"; };
+		84247CCF20C7784B00AE43FA /* PaymentViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewProtocol.swift; sourceTree = "<group>"; };
+		84247CD120C77AE500AE43FA /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
+		84247CD320C77F6100AE43FA /* Providers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
 		842C037820C5A3F100CA1C3B /* CreateRequest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateRequest.storyboard; sourceTree = "<group>"; };
 		842C037920C5A3F100CA1C3B /* CreateRequestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRequestView.swift; sourceTree = "<group>"; };
 		8447455820C07D270076D0EC /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
@@ -138,7 +156,7 @@
 		844BD5EE20C35E17005E98FC /* DPItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPItem.swift; sourceTree = "<group>"; };
 		844BD5F020C35F12005E98FC /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		844BD5F220C36436005E98FC /* GooglePlacesDAL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesDAL.swift; sourceTree = "<group>"; };
-		844BD5F520C3679D005E98FC /* PickLocationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationProtocol.swift; sourceTree = "<group>"; };
+		844BD5F520C3679D005E98FC /* PickLocationViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLocationViewProtocol.swift; sourceTree = "<group>"; };
 		844BD5F720C37044005E98FC /* GenericProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericProtocol.swift; sourceTree = "<group>"; };
 		844BD5FB20C3776E005E98FC /* CreateOrderScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateOrderScreen.storyboard; sourceTree = "<group>"; };
 		844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +303,24 @@
 			path = CreateRequestProtocols;
 			sourceTree = "<group>";
 		};
+		84187ED520C6D1F200FB5566 /* TripsProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				84187ED720C6D26C00FB5566 /* TripsViewProtocol.swift */,
+				84187ED920C6D2EF00FB5566 /* TripsPresenterProtocol.swift */,
+				84187EDD20C6D48E00FB5566 /* TripsModelProtocol.swift */,
+			);
+			path = TripsProtocols;
+			sourceTree = "<group>";
+		};
+		84187ED620C6D21400FB5566 /* TripsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84187EE520C6D48E00FB5566 /* Trips.storyboard */,
+			);
+			path = TripsScreen;
+			sourceTree = "<group>";
+		};
 		8424621620C11FA800D00057 /* Pojo */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,8 +329,18 @@
 				844BD5EE20C35E17005E98FC /* DPItem.swift */,
 				844BD5F020C35F12005E98FC /* Order.swift */,
 				844BD61420C4C643005E98FC /* ScreenController.swift */,
+				84247CD120C77AE500AE43FA /* PaymentMethod.swift */,
+				84247CD320C77F6100AE43FA /* Providers.swift */,
 			);
 			path = Pojo;
+			sourceTree = "<group>";
+		};
+		84247CCE20C7782400AE43FA /* PaymentProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				84247CCF20C7784B00AE43FA /* PaymentViewProtocol.swift */,
+			);
+			path = PaymentProtocols;
 			sourceTree = "<group>";
 		};
 		842C037120C5A32B00CA1C3B /* CreateRequestScreen */ = {
@@ -329,13 +375,15 @@
 		8447456C20C07D2A0076D0EC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				84187ED520C6D1F200FB5566 /* TripsProtocols */,
 				840B1CCD20C5B3500046542D /* CreateRequestProtocols */,
 				840B1CBB20C52D3E0046542D /* ResetPasswordProtocols */,
 				84EFC1BD20C43530004E5BDF /* VerifyProtocols */,
 				84937BC120C366CD00727437 /* LoginProtocol */,
 				84937BBF20C3665D00727437 /* ForgotPasswordProtocol */,
 				844BD5F720C37044005E98FC /* GenericProtocol.swift */,
-				844BD5F420C3676D005E98FC /* HomeProtocols */,
+				844BD5F420C3676D005E98FC /* PickLocationProtocols */,
+				84247CCE20C7782400AE43FA /* PaymentProtocols */,
 				84D1854120C2D3580054BEBF /* SignupProtocols */,
 				8447456D20C07D2A0076D0EC /* LocationMangerProtocol.swift */,
 			);
@@ -345,8 +393,8 @@
 		844BD5ED20C31B65005E98FC /* CreateOrderScreen */ = {
 			isa = PBXGroup;
 			children = (
-				844BD5FB20C3776E005E98FC /* CreateOrderScreen.storyboard */,
 				844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */,
+				844BD5FB20C3776E005E98FC /* CreateOrderScreen.storyboard */,
 				844BD60120C38C20005E98FC /* CreateOrderView.swift */,
 				844BD60320C38C36005E98FC /* OrderItem.xib */,
 				844C6FBE20C61AF800379783 /* NextButtonView.swift */,
@@ -355,12 +403,12 @@
 			path = CreateOrderScreen;
 			sourceTree = "<group>";
 		};
-		844BD5F420C3676D005E98FC /* HomeProtocols */ = {
+		844BD5F420C3676D005E98FC /* PickLocationProtocols */ = {
 			isa = PBXGroup;
 			children = (
-				844BD5F520C3679D005E98FC /* PickLocationProtocol.swift */,
+				844BD5F520C3679D005E98FC /* PickLocationViewProtocol.swift */,
 			);
-			path = HomeProtocols;
+			path = PickLocationProtocols;
 			sourceTree = "<group>";
 		};
 		844BD5FA20C376DC005E98FC /* Recovered References */ = {
@@ -374,8 +422,10 @@
 		844BD60B20C4BB12005E98FC /* PaymentScreen */ = {
 			isa = PBXGroup;
 			children = (
-				844C6FC020C6305F00379783 /* PaymentScreen.storyboard */,
 				844C6FC120C6305F00379783 /* PaymentViewController.swift */,
+				844C6FC020C6305F00379783 /* PaymentScreen.storyboard */,
+				84247CCA20C774E500AE43FA /* PaymentCell.swift */,
+				84247CCC20C777EB00AE43FA /* PaymentPresenter.swift */,
 			);
 			path = PaymentScreen;
 			sourceTree = "<group>";
@@ -483,6 +533,7 @@
 		84A2D4A720C2C91200576ACF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				84187ED620C6D21400FB5566 /* TripsScreen */,
 				842C037120C5A32B00CA1C3B /* CreateRequestScreen */,
 				840B1CBA20C52D2D0046542D /* ResetPasswordScreen */,
 				84937BCE20C45BFB00727437 /* ForgotPasswordScreen */,
@@ -751,6 +802,7 @@
 				845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */,
 				84937BBC20C3660B00727437 /* Login.storyboard in Resources */,
 				844BD61320C4C54C005E98FC /* DestinationScreen.storyboard in Resources */,
+				84187EE620C6D48E00FB5566 /* Trips.storyboard in Resources */,
 				844BD60420C38C36005E98FC /* OrderItem.xib in Resources */,
 				844C6FC220C6305F00379783 /* PaymentScreen.storyboard in Resources */,
 			);
@@ -889,8 +941,11 @@
 				84EFC1BF20C43530004E5BDF /* VerifyPresenterProtocol.swift in Sources */,
 				840B1CC320C52E060046542D /* ResetPasswordPresenterProtocol.swift in Sources */,
 				84937BC520C3670800727437 /* ForgotPassPresenterProtocol.swift in Sources */,
+				84187EDE20C6D48E00FB5566 /* TripsModelProtocol.swift in Sources */,
 				84EFC1BA20C434FF004E5BDF /* VerifyModel.swift in Sources */,
 				84937BBE20C3660B00727437 /* LoginViewController.swift in Sources */,
+				84187EDA20C6D2EF00FB5566 /* TripsPresenterProtocol.swift in Sources */,
+				84247CD020C7784B00AE43FA /* PaymentViewProtocol.swift in Sources */,
 				84A2D4F020C2CE2400576ACF /* LocationManger.swift in Sources */,
 				84EFC1BC20C43510004E5BDF /* VerifyPresenter.swift in Sources */,
 				84D1854F20C2E52D0054BEBF /* SignupModel.swift in Sources */,
@@ -900,18 +955,22 @@
 				84A2D4DE20C2CD7D00576ACF /* DropDownCarrierItem.swift in Sources */,
 				840B1CD320C5B3D10046542D /* CreateRequestViewProtocol.swift in Sources */,
 				8447457B20C07D2A0076D0EC /* LocationMangerProtocol.swift in Sources */,
+				84247CD220C77AE500AE43FA /* PaymentMethod.swift in Sources */,
 				84A2D4E020C2CD7D00576ACF /* DropDownMenu.swift in Sources */,
 				844BD5F320C36436005E98FC /* GooglePlacesDAL.swift in Sources */,
 				84937BC620C3670800727437 /* ForgotPassViewProtocol.swift in Sources */,
 				844BD5EF20C35E17005E98FC /* DPItem.swift in Sources */,
 				844BD60220C38C20005E98FC /* CreateOrderView.swift in Sources */,
 				844BD5F120C35F12005E98FC /* Order.swift in Sources */,
+				84187ED820C6D26C00FB5566 /* TripsViewProtocol.swift in Sources */,
 				84A2D4E120C2CD7D00576ACF /* PickLoacationPresenter.swift in Sources */,
 				84A2D4F120C2CE2400576ACF /* SearchUITextField.swift in Sources */,
+				84247CD420C77F6100AE43FA /* Providers.swift in Sources */,
 				8424621820C11FA800D00057 /* OrderLocation.swift in Sources */,
 				840B1CBF20C52DC90046542D /* ResetPasswordViewProtocol.swift in Sources */,
 				845B28A420C712D900EC4335 /* CreateRequestViewExtension.swift in Sources */,
 				84D1854720C2DEF40054BEBF /* SignupPresenterProtocol.swift in Sources */,
+				84247CCD20C777EB00AE43FA /* PaymentPresenter.swift in Sources */,
 				84D1854020C2D2BA0054BEBF /* User.swift in Sources */,
 				840B1CD520C5B81F0046542D /* CreateRequestPresenter.swift in Sources */,
 				844C6FBF20C61AF800379783 /* NextButtonView.swift in Sources */,
@@ -920,6 +979,7 @@
 				84937BCD20C3672600727437 /* LoginModelProtocol.swift in Sources */,
 				84EFC1B820C434E6004E5BDF /* VerifyView.swift in Sources */,
 				840B1CD720C5B82D0046542D /* CreateRequestModel.swift in Sources */,
+				84247CCB20C774E500AE43FA /* PaymentCell.swift in Sources */,
 				840B1CC520C52E4E0046542D /* ResetPasswordModelProtocol.swift in Sources */,
 				84937BC720C3670800727437 /* ForgotPasswordModelProtocol.swift in Sources */,
 				84937BBD20C3660B00727437 /* LoginModel.swift in Sources */,
@@ -930,7 +990,7 @@
 				84D1854520C2D39B0054BEBF /* SignupViewProtocol.swift in Sources */,
 				84A2D4E420C2CD7D00576ACF /* DropDownPlacesItem.swift in Sources */,
 				84A2D4F320C2CE2400576ACF /* RoundedButton.swift in Sources */,
-				844BD5F620C3679D005E98FC /* PickLocationProtocol.swift in Sources */,
+				844BD5F620C3679D005E98FC /* PickLocationViewProtocol.swift in Sources */,
 				844BD61520C4C644005E98FC /* ScreenController.swift in Sources */,
 				84A2D4F420C2CE2400576ACF /* NetworkDAL.swift in Sources */,
 				8447456E20C07D2A0076D0EC /* ErrorType.swift in Sources */,

@@ -29,7 +29,7 @@ class LoginPresenter : LoginPresenterProtocol{
             
     }
     func loginFailure(message:String) -> Void {
-        lvc.ChangeLabel(withString: message)
+        lvc.showAlert(withTitle: "Failed", andMessage: message)
     }
     
 }

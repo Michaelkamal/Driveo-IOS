@@ -43,20 +43,23 @@
                                     <action selector="didTapOnCloseButton:" destination="fqp-F3-k0H" eventType="touchUpInside" id="JrO-A5-CKq"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQv-CD-gSJ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQv-CD-gSJ">
                                 <rect key="frame" x="0.0" y="140" width="375" height="530"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeX-tO-e0u" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="530"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="530" id="2NC-cm-ypf"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="WeX-tO-e0u" firstAttribute="top" secondItem="EQv-CD-gSJ" secondAttribute="top" id="36W-bH-iQT"/>
                                     <constraint firstAttribute="trailing" secondItem="WeX-tO-e0u" secondAttribute="trailing" id="QWn-ks-56Z"/>
-                                    <constraint firstItem="WeX-tO-e0u" firstAttribute="centerY" secondItem="EQv-CD-gSJ" secondAttribute="centerY" id="aaJ-Z6-yXg"/>
+                                    <constraint firstAttribute="bottom" secondItem="WeX-tO-e0u" secondAttribute="bottom" id="UIa-hb-bn3"/>
                                     <constraint firstItem="WeX-tO-e0u" firstAttribute="leading" secondItem="EQv-CD-gSJ" secondAttribute="leading" id="knV-44-1Ud"/>
-                                    <constraint firstItem="WeX-tO-e0u" firstAttribute="centerX" secondItem="EQv-CD-gSJ" secondAttribute="centerX" id="pui-XL-vKo"/>
-                                    <constraint firstAttribute="bottom" secondItem="WeX-tO-e0u" secondAttribute="bottom" priority="250" id="um5-6u-kXx"/>
+                                    <constraint firstItem="WeX-tO-e0u" firstAttribute="centerX" secondItem="EQv-CD-gSJ" secondAttribute="centerX" id="qUW-pm-75U"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -73,14 +76,13 @@
                             <constraint firstItem="T6s-8t-7TZ" firstAttribute="top" secondItem="ii6-8q-b8t" secondAttribute="top" constant="33.670000000000002" id="qvd-U0-deL"/>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="bottom" secondItem="ii6-8q-b8t" secondAttribute="bottom" constant="2.3300000000000001" id="uPF-yr-Bet"/>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="trailing" secondItem="ii6-8q-b8t" secondAttribute="trailing" id="uYN-it-b5S"/>
-                            <constraint firstItem="WeX-tO-e0u" firstAttribute="top" secondItem="DUk-wZ-ecb" secondAttribute="bottom" constant="33" id="wPT-cL-3rk"/>
                             <constraint firstItem="DUk-wZ-ecb" firstAttribute="top" secondItem="T6s-8t-7TZ" secondAttribute="bottom" constant="2.3300000000000001" id="ywB-p6-h6M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ii6-8q-b8t"/>
                     </view>
                     <connections>
                         <outlet property="contentView" destination="WeX-tO-e0u" id="M8C-BM-sJc"/>
-                        <outlet property="contentViewcenterHConstraint" destination="aaJ-Z6-yXg" id="1Ju-Ec-Cvd"/>
+                        <outlet property="contentViewHeightConstraint" destination="2NC-cm-ypf" id="alm-gT-eui"/>
                         <outlet property="orderStatus" destination="DUk-wZ-ecb" id="xsP-mR-gs9"/>
                     </connections>
                 </viewController>

@@ -20,4 +20,5 @@ extension UIViewController:LocationManagerProtocol
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    
 }

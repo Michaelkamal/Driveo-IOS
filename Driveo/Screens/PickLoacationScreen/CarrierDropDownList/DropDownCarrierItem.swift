@@ -22,9 +22,9 @@ class DropDownCarrierItem: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    public func reload(item: CarrierDPItem) {
+    public func reload(item: Provider) {
         ratingLabel.text = item.rating
-        carrierLogo.image = item.carrierLogo
+        carrierLogo.sd_setImage(with: URL(string:ApiBaseUrl.mainApi.rawValue+item.image!.url!), completed: nil) 
         
     }
 }

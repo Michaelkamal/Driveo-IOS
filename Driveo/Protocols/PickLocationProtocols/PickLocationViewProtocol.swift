@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 import CoreLocation
-protocol PickLocationProtocol:GenericProtocol {
+protocol PickLocationViewProtocol:GenericProtocol {
     var isCurrentScreenSourcePickUp:Bool{get}
     func placeMarker(onLocation location:CLLocation,withTitle title:String,andImage image:UIImage? ) ->Void
     func clearSearchText()->Void
-    func displaySelectedCarrier(withLogo logo:UIImage)->Void
+    func updateCarrierArray(withCarriers carriers:[Provider])->Void
+    func displaySelectedCarrier(withLogoUrl url:String)->Void
     func renderPlaces(placesArray arr:[PlaceDPItem])
     func dismissPlacesSearch()
     

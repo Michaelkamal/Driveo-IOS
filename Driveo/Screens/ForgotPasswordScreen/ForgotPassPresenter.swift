@@ -26,11 +26,11 @@ class ForgotPassPresenter : ForgotPassPresenterProtocol {
     
     
     func sendSuccess(message:String) ->Void {
-        fPC.ChangeLabel(withString: message)
+        fPC.showAlert(withTitle: "Success", andMessage: message)
     }
     
     func sendFailure(message: String) -> Void {
-        
+        fPC.showAlert(withTitle: "Failed", andMessage: message)
     }
     
 }
