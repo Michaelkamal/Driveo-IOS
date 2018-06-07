@@ -42,13 +42,16 @@ class OrderHistoryTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        self.tableView.register(UINib(nibName: "TripCell", bundle: nil), forCellReuseIdentifier: "OrderCell")
+        self.tableView.register(UINib(nibName: "TripCell", bundle: nil), forCellReuseIdentifier: "HistoryCell")
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "orderCell", for: indexPath) as! OrderCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! OrderCell
         
         cell.priceLabel.text = ""
         
         return cell
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 123
     }
     
 
