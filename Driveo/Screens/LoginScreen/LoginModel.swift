@@ -18,13 +18,6 @@ class LoginModel : LoginModelProtocol{
     
     func sendRequest(withParameters params:Dictionary<String,Any>){
         let networkObj:NetworkDAL = NetworkDAL.sharedInstance()
-        
-//        let defaults = UserDefaults.standard
-//        var header = defaults.object(forKey: "token")
-//        if header != nil {
-//            var headers = header as! HTTPHeaders
-//            networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "auth/login", andParameters: params, onSuccess: onSuccess, headers: headers)
-//        }
         networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "authentication/login", andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
     }
     
