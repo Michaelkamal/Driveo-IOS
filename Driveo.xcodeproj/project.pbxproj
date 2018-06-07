@@ -61,6 +61,8 @@
 		845D48FD20BEEF92000F16C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D48FB20BEEF92000F16C1 /* LaunchScreen.storyboard */; };
 		845D490820BEEF92000F16C1 /* DriveoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D490720BEEF92000F16C1 /* DriveoTests.swift */; };
 		845D491320BEEF93000F16C1 /* DriveoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D491220BEEF93000F16C1 /* DriveoUITests.swift */; };
+		846ABFF020C93E13003F8528 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846ABFEF20C93E13003F8528 /* SplashScreen.storyboard */; };
+		846ABFF220C93E44003F8528 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABFF120C93E44003F8528 /* SplashView.swift */; };
 		84937BBB20C3660B00727437 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BB720C3660A00727437 /* LoginPresenter.swift */; };
 		84937BBC20C3660B00727437 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84937BB820C3660B00727437 /* Login.storyboard */; };
 		84937BBD20C3660B00727437 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BB920C3660B00727437 /* LoginModel.swift */; };
@@ -183,6 +185,8 @@
 		845D490E20BEEF93000F16C1 /* DriveoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D491220BEEF93000F16C1 /* DriveoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveoUITests.swift; sourceTree = "<group>"; };
 		845D491420BEEF93000F16C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846ABFEF20C93E13003F8528 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		846ABFF120C93E44003F8528 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		84937BAE20C3023A00727437 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		84937BB720C3660A00727437 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		84937BB820C3660B00727437 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -489,6 +493,15 @@
 			path = DriveoUITests;
 			sourceTree = "<group>";
 		};
+		846ABFEC20C93DCF003F8528 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				846ABFEF20C93E13003F8528 /* SplashScreen.storyboard */,
+				846ABFF120C93E44003F8528 /* SplashView.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
 		84937BB420C3651300727437 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +546,7 @@
 		84A2D4A720C2C91200576ACF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				846ABFEC20C93DCF003F8528 /* SplashScreen */,
 				84187ED620C6D21400FB5566 /* TripsScreen */,
 				842C037120C5A32B00CA1C3B /* CreateRequestScreen */,
 				840B1CBA20C52D2D0046542D /* ResetPasswordScreen */,
@@ -799,6 +813,7 @@
 				84A2D4E520C2CD7D00576ACF /* DropDownPlacesItem.xib in Resources */,
 				845D48FD20BEEF92000F16C1 /* LaunchScreen.storyboard in Resources */,
 				845D48FA20BEEF92000F16C1 /* Assets.xcassets in Resources */,
+				846ABFF020C93E13003F8528 /* SplashScreen.storyboard in Resources */,
 				845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */,
 				84937BBC20C3660B00727437 /* Login.storyboard in Resources */,
 				844BD61320C4C54C005E98FC /* DestinationScreen.storyboard in Resources */,
@@ -953,6 +968,7 @@
 				84A2D4F020C2CE2400576ACF /* LocationManger.swift in Sources */,
 				84EFC1BC20C43510004E5BDF /* VerifyPresenter.swift in Sources */,
 				84D1854F20C2E52D0054BEBF /* SignupModel.swift in Sources */,
+				846ABFF220C93E44003F8528 /* SplashView.swift in Sources */,
 				842C037B20C5A3F100CA1C3B /* CreateRequestView.swift in Sources */,
 				840B1CCB20C52FF80046542D /* ResetPasswordModel.swift in Sources */,
 				84937BD220C45D0B00727437 /* ForgotPassPresenter.swift in Sources */,

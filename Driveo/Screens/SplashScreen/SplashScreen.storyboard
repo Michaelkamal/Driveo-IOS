@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mIk-eZ-vv6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View-->
+        <scene sceneID="bsO-D8-e64">
+            <objects>
+                <viewController id="mIk-eZ-vv6" customClass="SplashView" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i3e-yL-Ho5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_splash" translatesAutoresizingMaskIntoConstraints="NO" id="Wm9-ga-HSk">
+                                <rect key="frame" x="116.5" y="302.5" width="142" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="141.87" id="eGV-B5-vhj"/>
+                                    <constraint firstAttribute="height" constant="82" id="pUt-LH-d6w"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScO-Z0-exB">
+                                <rect key="frame" x="0.0" y="400.5" width="375" height="45"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Driveo">
+                                        <attributes>
+                                            <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="37.829999999999998" name=".SFNSText-Bold"/>
+                                            <font key="NSOriginalFont" size="17" name=".AppleSystemUIFontEmphasized"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ScO-Z0-exB" firstAttribute="leading" secondItem="ilH-UR-hya" secondAttribute="leading" id="DZw-Y6-2bs"/>
+                            <constraint firstItem="Wm9-ga-HSk" firstAttribute="centerY" secondItem="ilH-UR-hya" secondAttribute="centerY" id="EbR-9f-Cur"/>
+                            <constraint firstItem="ScO-Z0-exB" firstAttribute="top" secondItem="Wm9-ga-HSk" secondAttribute="bottom" constant="16" id="RUI-Rb-RKF"/>
+                            <constraint firstItem="Wm9-ga-HSk" firstAttribute="centerX" secondItem="ilH-UR-hya" secondAttribute="centerX" id="h8R-KP-8p4"/>
+                            <constraint firstItem="ilH-UR-hya" firstAttribute="trailing" secondItem="ScO-Z0-exB" secondAttribute="trailing" id="uAx-mU-HXl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ilH-UR-hya"/>
+                    </view>
+                    <connections>
+                        <outlet property="appName" destination="ScO-Z0-exB" id="uJU-0R-peL"/>
+                        <outlet property="splashIcon" destination="Wm9-ga-HSk" id="biF-MX-oVV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HTm-TO-gkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="145.27736131934034"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_splash" width="435" height="250"/>
+    </resources>
+</document>
