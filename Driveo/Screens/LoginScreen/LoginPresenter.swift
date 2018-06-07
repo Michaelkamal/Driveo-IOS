@@ -26,10 +26,12 @@ class LoginPresenter : LoginPresenterProtocol{
     
     func loginSuccess(user:User, token:String) ->Void{
             lvc.goToScreen(withScreenName: "next")
+        lvc.dismissLoading()
             
     }
     func loginFailure(message:String) -> Void {
         lvc.showAlert(withTitle: "Failed", andMessage: message)
+        lvc.dismissLoading()
     }
     
 }

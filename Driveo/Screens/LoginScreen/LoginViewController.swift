@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class LoginViewController: UIViewController , LoginViewProtocol {
     
@@ -14,7 +15,6 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     var spinner:UIView!
     
     @IBOutlet weak var passTxt: UITextField!
-    @IBOutlet weak var wrongEmail: UILabel!
     
     @IBOutlet weak var emailTxt: UITextField!
     
@@ -43,13 +43,14 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-        
         ChangeLabel(withString: "")
         
         lp = LoginPresenter(withController: self)
+        
+//        let textField = SkyFloatingLabelTextField(frame: CGRectMake(10, 10, 200, 45))
+//        textField.placeholder = "Name"
+//        textField.title = "Your full name"
+//        self.view.addSubview(textField)
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,31 +68,15 @@ class LoginViewController: UIViewController , LoginViewProtocol {
      }
      */
     func ChangeLabel(withString str:String){
-        wrongEmail.text = str
-        dismissLoading()
+       // wrongEmail.text = str
     }
     func goToScreen(withScreenName name:String){
         if name == "next"{
             print("PickLoacationViewController")
             let sourceScreenStoryboard = UIStoryboard(name: "SourceScreen", bundle: nil)
             let signup = sourceScreenStoryboard.instantiateViewController(withIdentifier: "PickLoacationViewController")
-            dismissLoading()
             self.present(signup, animated: true, completion: nil)
         }
-    }
-    
-    @objc   func keyboardWillShow(notification: NSNotification) {
-        let keyboardHeight = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue.height
-        UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            self.view.window?.frame.origin.y = -1 * keyboardHeight
-            self.view.layoutIfNeeded()
-        })
-    }
-    @objc   func keyboardWillHide(notification: NSNotification) {
-        UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            self.view.window?.frame.origin.y = 0
-            self.view.layoutIfNeeded()
-        })
     }
     
     func showLoading() {
@@ -103,7 +88,6 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     }
     
     func showAlert(withTitle title :String , andMessage msg:String){
-        dismissLoading()
         var alert:UIAlertController = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)
         self.present(alert, animated: true, completion: nil)
         let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)
