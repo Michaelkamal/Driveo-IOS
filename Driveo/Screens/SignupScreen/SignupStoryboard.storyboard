@@ -67,7 +67,7 @@
                                                 <rect key="frame" x="0.0" y="385" width="301" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19.399999618530273"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="3mV-vk-0Ww" id="ldO-kS-r07"/>
                                                 </connections>
@@ -76,7 +76,7 @@
                                                 <rect key="frame" x="0.0" y="316" width="301" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19.399999618530273"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="3mV-vk-0Ww" id="lus-5H-cP7"/>
                                                 </connections>
@@ -85,7 +85,7 @@
                                                 <rect key="frame" x="0.0" y="247" width="301" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19.399999618530273"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="3mV-vk-0Ww" id="WAz-p8-Jp0"/>
                                                 </connections>
@@ -94,7 +94,7 @@
                                                 <rect key="frame" x="0.0" y="178" width="301" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19.399999618530273"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="3mV-vk-0Ww" id="PUn-mU-BCg"/>
                                                 </connections>

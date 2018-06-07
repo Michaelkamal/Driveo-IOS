@@ -15,7 +15,7 @@ class PickLoacationPresenter{
     
     private var selectedLocation:OrderLocation!
     
-    public var userOrder:Order?
+    private var userOrder:Order=Order.sharedInstance()
     
     private var carrier:Int?
     private var pickUpDate:String?
@@ -29,29 +29,24 @@ class PickLoacationPresenter{
     
     private var controller:UIViewController!
     
-    init(withController controller:UIViewController,andOrder order:Order?=nil) {
+    init(withController controller:UIViewController) {
         self.controller=controller
-        self.userOrder=order
         viewDelagate=controller as! PickLocationViewProtocol
-        
-        if let userOrder = self.userOrder {
-            self.pickUpDate=userOrder.date
-            if viewDelagate.isCurrentScreenSourcePickUp{
+        self.pickUpDate=userOrder.date
+        if viewDelagate.isCurrentScreenSourcePickUp{
+            if (userOrder.source != nil )
+            {
                selectedLocation = userOrder.source
             }else{
-            if let destination = userOrder.destination
-            {
-                selectedLocation = destination
-            }
-            else
-            {
-                selectedLocation=OrderLocation(locationType: LocationType.destination)
-            }
-            }
-        }
-        else{
-            if viewDelagate.isCurrentScreenSourcePickUp {
                 selectedLocation=OrderLocation(locationType: LocationType.source)
+            }
+        }else
+        {
+            if (userOrder.destination != nil )
+            {
+                selectedLocation = userOrder.destination
+            }else{
+                selectedLocation=OrderLocation(locationType: LocationType.destination)
             }
         }
     }
@@ -90,26 +85,22 @@ class PickLoacationPresenter{
         {
             if selectedLocation.isComplete(),pickUpDate != nil,carrier != nil
             {
-                if let userOrder = userOrder {
                     userOrder.source=selectedLocation
                     userOrder.date=pickUpDate
-                    if let carrier=carrier{userOrder.providerID=carrier}
-                }else{
-                    userOrder=Order(withSource: selectedLocation,byCarrier: carrier!, onDate: pickUpDate!)
-                }
-                viewDelagate.presentToNextScreen(withOrder:userOrder!)
+                    userOrder.providerID=carrier
+                    viewDelagate.presentToNextScreen()
             }else
             {
                 viewDelagate.showAlert(ofError: .incompleteData)
             }
         }else
         {
-            if selectedLocation.isComplete(),let userOrder=userOrder
+            if selectedLocation.isComplete()
             {
-                if userOrder.source.coordinates!.coordinate.longitude != selectedLocation.coordinates!.coordinate.longitude, userOrder.source.coordinates!.coordinate.latitude != selectedLocation.coordinates!.coordinate.latitude
+                if userOrder.source?.coordinates!.coordinate.longitude != selectedLocation.coordinates!.coordinate.longitude, userOrder.source?.coordinates!.coordinate.latitude != selectedLocation.coordinates!.coordinate.latitude
                 {
                     userOrder.destination=selectedLocation
-                    viewDelagate.presentToNextScreen(withOrder:userOrder)
+                    viewDelagate.presentToNextScreen()
                 }else{
                     viewDelagate.showAlert(ofError: .destinationError)
                 }

@@ -28,7 +28,7 @@ class PaymentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter=PaymentPresenter(withController: self,andOrder: userOrder)
+        presenter=PaymentPresenter(withController: self)
         presenter.getPaymentDataArray()
         tableView.rowHeight=tableView.frame.height/4
     }
@@ -102,13 +102,8 @@ extension PaymentViewController: PaymentViewProtocol {
         present(alert, animated: true, completion: nil)
     }
     
-    func presentToNextScreen(withOrder order: Order) {
-        let createOrderStoryboard = UIStoryboard(name: ScreenController.createOrderScreen.storyBoardName(), bundle: nil)
-        let vc = createOrderStoryboard.instantiateViewController(withIdentifier: ScreenController.createOrderScreen.rawValue) as! CreateOrderViewController
-        vc.userOrder=order
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true,completion: nil)
-        
+    func presentToNextScreen() {
+        self.dismiss(animated: true,completion: nil)
     }
     
 }

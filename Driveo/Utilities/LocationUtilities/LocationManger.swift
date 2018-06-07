@@ -14,7 +14,7 @@ class LocationManager : NSObject,CLLocationManagerDelegate{
     private var locationMgr:CLLocationManager!
     private var delegate:LocationManagerProtocol?
     private var locationReturn : ((CLLocation?)->Void)?
-    
+    private var isFirstTime:Bool = true
     
     static internal func sharedInstance (withDelagate delagate:LocationManagerProtocol) ->(LocationManager)
     {
@@ -34,35 +34,29 @@ class LocationManager : NSObject,CLLocationManagerDelegate{
     // mark: When change authorization
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if(isFirstTime){
+            isFirstTime=false
+            return
+        }
         switch status {
         case .notDetermined,.restricted, .denied:
             delegate?.goToSettings()
         case .authorizedAlways,.authorizedWhenInUse:
             locationMgr.startUpdatingLocation()
         }
-    }
+        }
     
     // mark: When location update
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location:CLLocation = locations.first!
-        if locationReturn != nil
-        {
-            locationReturn!(location)
-        }
-        else
-        {
-            if locationReturn != nil
-            {
-                locationReturn!(nil)
-            }
+        if let location:CLLocation = locations.first{
+                locationReturn?(location)
         }
         locationMgr.stopUpdatingLocation()
     }
     // mark: Call to update location
     
     private func enableLocationServices() {
-        locationMgr.requestAlwaysAuthorization()
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined,.restricted, .denied:
             locationMgr.requestAlwaysAuthorization()
