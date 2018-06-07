@@ -28,14 +28,19 @@ class SplashView: UIViewController {
 //            self.splashIcon.alpha = 1
 //        }
 //
-        UIView.animate(withDuration: 1.5, delay: 0.3, options: .allowAnimatedContent, animations: {
+        UIView.animate(withDuration: 2.5, delay: 0.3, options: .allowAnimatedContent, animations: {
             self.appName.center.y -= self.view.bounds.height
         }, completion: nil)
         // Do any additional setup after loading the view.
         
         UIView.animate(withDuration: 1.5, delay: 0.3, options: .allowAnimatedContent, animations: {
             self.splashIcon.center.x += self.view.bounds.width
-        }, completion: nil)
+        }, completion: {
+            finished in
+            let loginStoryBoard = UIStoryboard.init(name: "Login", bundle: nil)
+            let loginPage:LoginViewController = loginStoryBoard.instantiateViewController(withIdentifier: "loginView") as! LoginViewController
+            self.present(loginPage, animated: true, completion: nil)
+        })
         // Do any additional setup after loading the view.
     }
         

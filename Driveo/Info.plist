@@ -53,9 +53,9 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need to access your location so this app can find your Location</string>
 	<key>UILaunchStoryboardName</key>
-	<string>SplashScreen</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>Login</string>
+	<string>SplashScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
