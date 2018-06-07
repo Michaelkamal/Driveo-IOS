@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SourceScreen-->
+        <!--CreateOrderScreen-->
         <scene sceneID="WUw-dB-82s">
             <objects>
-                <viewControllerPlaceholder storyboardName="SourceScreen" id="pQu-lb-uqB" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="CreateOrderScreen" id="pQu-lb-uqB" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="P5L-oW-zR3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v2Y-4H-ABJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,7 +10,7 @@ import UIKit
 
 class CreateOrderViewController: UIViewController {
     
-    public var userOrder:Order?
+    private lazy var userOrder:Order = Order.sharedInstance()
     
     @IBOutlet weak var contentView: UIView!
     
@@ -20,7 +20,7 @@ class CreateOrderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        orderStatus.text=userOrder?.orderStatus?.rawValue
+        orderStatus.text=userOrder.orderStatus.rawValue
         
     }
     
@@ -36,21 +36,20 @@ class CreateOrderViewController: UIViewController {
         addNextButton(withSuperViewMaxY: contentViewMaxY, andCellHeight: cellHeight)
     }
     
-    func presentScreen(screen:ScreenController,withOrder order:Order){
+    func presentScreen(screen:ScreenController){
         let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
         let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
-        switch screen {
-        case .sourceScreen, .destinationScreen:
+        switch userOrder.completeStatus{
+        // set Pick Up location
+        case 0:
             let vc = vc as! PickLoacationViewController
-            vc.userOrder = order
-            vc.isEditingFromCreateOrder=true
-            if screen == .sourceScreen {vc.isSource=true}
-        case .paymentScreen:
-            let vc = vc as! PaymentViewController
-            vc.userOrder = order
-        case .createOrderScreen:
+            vc.isSource=true
+        // set Drop off location
+        case 1:
+            let vc = vc as! PickLoacationViewController
+            vc.isSource=false
+        default:
             break
-            
         }
         vc.modalTransitionStyle = .flipHorizontal
         self.present(vc, animated: true,completion: nil)
@@ -59,25 +58,40 @@ class CreateOrderViewController: UIViewController {
     
     // add next order step of order to the scroll view
     func addNextOrderStep(withSuperViewMaxY contentViewMaxY:CGFloat,andCellHeight cellHeight:CGFloat){
-        if let userOrder = userOrder{
             if let orderStep = Bundle.main.loadNibNamed("OrderItem", owner: self, options: nil)?.first as? CreateOrderView {
                 
                 switch userOrder.completeStatus{
+                // set Pick Up location
+                case 0:
+                    orderStep.title.text="Pick up Location"
+                    orderStep.subtitle.text=userOrder.source?.address
+                    orderStep.editFunc={
+                        () in
+                        self.presentScreen(screen: ScreenController.sourceScreen)
+                    }
+                // set Drop off location
+                case 1:
+                    orderStep.title.text="Drop Off Location"
+                    orderStep.subtitle.text=userOrder.destination?.address
+                    orderStep.editFunc={
+                        () in
+                        self.presentScreen(screen: ScreenController.destinationScreen)
+                    }
                     // set payment method
                 case 2:
                     orderStep.title.text="Payment"
                     orderStep.subtitle.text=userOrder.paymentMethod?.name
                     orderStep.editFunc={
                         () in
-                        self.presentScreen(screen: ScreenController.paymentScreen, withOrder: userOrder)
+                        self.presentScreen(screen: ScreenController.paymentScreen)
                     }
                      // set order Details
                 case 3:
                     orderStep.title.text="Order Details"
-                    orderStep.subtitle.text=userOrder.paymentMethod?.name
+                    orderStep.subtitle.text=""//userOrder.paymentMethod?.name
                     orderStep.editFunc={
                         () in
-                        self.presentScreen(screen: ScreenController.paymentScreen, withOrder: userOrder)
+                        self.presentScreen(screen: ScreenController.paymentScreen)
                     }
                 default:
                     break
@@ -96,12 +110,10 @@ class CreateOrderViewController: UIViewController {
                 contentView.addSubview(orderStep)
             }
         }
-    }
     
     
     // add successfull steps so far to the scroll view
     func addSuccessfullOrderSteps(withSuperViewMaxY contentViewMaxY:CGFloat,andCellHeight cellHeight:CGFloat){
-        if let userOrder = userOrder{
             for i in stride(from: 0, to:userOrder.completeStatus, by: 1)
             {
                 if let orderStep = Bundle.main.loadNibNamed("OrderItem", owner: self, options: nil)?.first as? CreateOrderView {
@@ -109,23 +121,23 @@ class CreateOrderViewController: UIViewController {
                     switch i{
                     case 0:
                         orderStep.title.text="Pickup location"
-                        orderStep.subtitle.text=userOrder.source.address
+                        orderStep.subtitle.text=userOrder.source?.address
                         orderStep.editFunc={
                             () in
-                            self.presentScreen(screen: ScreenController.sourceScreen, withOrder: userOrder)
+                            self.presentScreen(screen: ScreenController.sourceScreen)
                         }
                     case 1:
                         orderStep.title.text="Drop off location"
                         orderStep.subtitle.text=userOrder.destination?.address
                         orderStep.editFunc={
                             () in
-                            self.presentScreen(screen: ScreenController.destinationScreen, withOrder: userOrder)}
+                            self.presentScreen(screen: ScreenController.destinationScreen)}
                     case 2:
                         orderStep.title.text="Payment method"
                         orderStep.subtitle.text=userOrder.paymentMethod?.name
                         orderStep.editFunc={
                             () in
-                            self.presentScreen(screen: ScreenController.paymentScreen, withOrder: userOrder)
+                            self.presentScreen(screen: ScreenController.paymentScreen)
                         }
                     default:
                         break
@@ -145,7 +157,7 @@ class CreateOrderViewController: UIViewController {
                 }
             }
         }
-    }
+    
     
     // add next button at the end of scroll view
     func addNextButton(withSuperViewMaxY contentViewMaxY:CGFloat,andCellHeight cellHeight:CGFloat){
@@ -163,18 +175,19 @@ class CreateOrderViewController: UIViewController {
             }
             else
             {
-                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentViewMaxY-0.5*cellHeight, width: contentView.frame.width, height: cellHeight)
-                nextButton.heightConstraint.constant=(cellHeight*2/3)
-                nextButton.updateConstraints()
-                nextButton.setNeedsLayout()
+                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentViewMaxY-cellHeight, width: contentView.frame.width, height: cellHeight)
                 contentView.addSubview(nextButton)
             }
             
             nextButton.nextFunc={ () in
-                switch self.userOrder!.completeStatus
+                switch self.userOrder.completeStatus
                 {
+                case 0:
+                    self.presentScreen(screen: ScreenController.sourceScreen)
+                case 1:
+                    self.presentScreen(screen: ScreenController.destinationScreen)
                 case 2:
-                    self.presentScreen(screen: ScreenController.paymentScreen, withOrder: self.userOrder!)
+                    self.presentScreen(screen: ScreenController.paymentScreen)
                 default:
                     break
                 }
@@ -183,7 +196,7 @@ class CreateOrderViewController: UIViewController {
         }
     }
     @IBAction func didTapOnCloseButton(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        // self.dismiss(animated: true, completion: nil)
     }
     
 }

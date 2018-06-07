@@ -14,12 +14,12 @@ class PickLoacationViewController: UIViewController {
     
     private var presenter:PickLoacationPresenter!
     
-    public var userOrder:Order?
+    private lazy var userOrder:Order = Order.sharedInstance()
     
     private lazy var datePicker: UIDatePicker = UIDatePicker()
     
     public var isSource : Bool?
-    public var isEditingFromCreateOrder : Bool?
+    
     
     @IBOutlet weak var searchTextField: SearchUITextField!{
         didSet{
@@ -100,8 +100,8 @@ class PickLoacationViewController: UIViewController {
     // mark: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter=PickLoacationPresenter(withController: self,andOrder: userOrder)
-        if isEditingFromCreateOrder == nil
+        presenter=PickLoacationPresenter(withController: self)
+        if (isSource! && userOrder.source == nil) || (!isSource! && userOrder.destination == nil)
         {presenter.getCurrentLocation()}
         
         if(isSource)!{
@@ -111,20 +111,16 @@ class PickLoacationViewController: UIViewController {
         
         placesDropDownMenu.didSelectedItemIndex=presenter.didSelectplace
         
-        if let userOrder=userOrder{
-            if(isSource)!{
-                addressLabel.text=userOrder.source.address
-                placeMarker(onLocation: userOrder.source.coordinates!, withTitle: userOrder.source.address!)
-                
+            if(isSource! && userOrder.source != nil){
+                addressLabel.text=userOrder.source?.address
+                placeMarker(onLocation: userOrder.source!.coordinates!, withTitle: userOrder.source!.address!)
             }else{
-                if(isEditingFromCreateOrder != nil)
+                if(userOrder.destination != nil)
                 {
                     addressLabel.text=userOrder.destination!.address
                     placeMarker(onLocation: userOrder.destination!.coordinates!, withTitle: userOrder.destination!.address!)
                 }
             }
-            
-        }
     }
     
     private func dismissAllPopups(){
@@ -210,27 +206,19 @@ extension PickLoacationViewController:PickLocationViewProtocol
     
     func showAlert(ofError error:ErrorType)->Void{
         let alert = UIViewController.getAlertController(ofErrorType: error, withTitle: "Error")
-        present(alert, animated: true, completion: nil)
+        guard let visibleViewController = self.navigationController?.visibleViewController else{
+            return
+        }
+        if !visibleViewController.isKind(of: UIAlertController.self)  {
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     // move to second screen
     
-    func presentToNextScreen(withOrder order:Order){
-        
-        if isSource!,isEditingFromCreateOrder == nil{
-            let destinationStoryboard = UIStoryboard(name: ScreenController.destinationScreen.storyBoardName(), bundle: nil)
-            let vc = destinationStoryboard.instantiateViewController(withIdentifier: ScreenController.destinationScreen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces)) as! PickLoacationViewController
-            vc.userOrder=order
-            vc.modalTransitionStyle = .crossDissolve
-            self.present(vc, animated: true,completion: nil)
-        }else{
-            let createOrderStoryboard = UIStoryboard(name: ScreenController.createOrderScreen.storyBoardName(), bundle: nil)
-            let vc = createOrderStoryboard.instantiateViewController(withIdentifier: ScreenController.createOrderScreen.rawValue) as! CreateOrderViewController
-            vc.userOrder=order
-            vc.modalTransitionStyle = .crossDissolve
-            self.present(vc, animated: true,completion: nil)
+    func presentToNextScreen(){
+            self.dismiss(animated: true,completion: nil)
         }
-    }
 }
 // mark : places auto complete extention
 extension PickLoacationViewController {
@@ -259,12 +247,12 @@ extension PickLoacationViewController
         
         datePicker.setDate(Date(), unit:.year, deltaMinimum:0, deltaMaximum:1, animated:true)
         
-        if let userOrder=userOrder{
+        if let date = userOrder.date{
             // Create date formatter
             let dateFormatter: DateFormatter = DateFormatter()
             // Set date format
             dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
-            let date = dateFormatter.date (from: userOrder.date)
+            let date = dateFormatter.date (from: date)
             datePicker.setDate(date!, animated: false)
         }
         // Add an event to call onDidChangeDate function when value is changed.

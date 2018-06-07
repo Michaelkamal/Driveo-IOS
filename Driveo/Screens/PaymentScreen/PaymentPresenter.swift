@@ -11,11 +11,11 @@ import UIKit
 
 class PaymentPresenter{
     
-public var userOrder:Order?
+public var userOrder:Order=Order.sharedInstance()
 
     private var selectedPaymentMethod:PaymentMethod?{
         didSet{
-            userOrder?.paymentMethod=selectedPaymentMethod
+            userOrder.paymentMethod=selectedPaymentMethod
         }
     }
 
@@ -25,25 +25,16 @@ private var controller:UIViewController!
     
 private var paymentMethods:[PaymentMethod]?
 
-init(withController controller:UIViewController,andOrder order:Order?=nil) {
+init(withController controller:UIViewController) {
     self.controller=controller
-    self.userOrder=order
     viewDelagate=controller as! PaymentViewProtocol
-    
-    if let userOrder = self.userOrder {
-        selectedPaymentMethod = userOrder.paymentMethod
-    }
-    else{
-       print("")
-    }
+    selectedPaymentMethod = userOrder.paymentMethod
 }
     
     public func didSelectPaymentMethod(paymentMethod method:PaymentMethod)
     
 {
-    if userOrder != nil{
         selectedPaymentMethod=method
-    }
 }
     
     public func getPaymentDataArray()
@@ -53,6 +44,7 @@ init(withController controller:UIViewController,andOrder order:Order?=nil) {
             viewDelagate.updateTableViewData(withArray: paymentMethods)
         }else
         {
+            // TODO : Get payment method from API
             paymentMethods=[PaymentMethod(id: 1, name: "Cach On Delivery", image:Image(url:"https://www.royalmint.com/globalassets/the-royal-mint/images/pages/discover/uk-coins/coins-designs-and-specifications/fifty-pence-coin/50_pence_1969.jpg?width=103&quality=50") , isSelected: false,isEnable:true),PaymentMethod(id: 2, name: "Cach On Delivery2", image:Image(url:"https://www.royalmint.com/globalassets/the-royal-mint/images/pages/discover/uk-coins/coins-designs-and-specifications/fifty-pence-coin/50_pence_1969.jpg?width=103&quality=50") , isSelected: false,isEnable:false),PaymentMethod(id: 3, name: "Cach On Delivery 3", image:Image(url:"https://www.royalmint.com/globalassets/the-royal-mint/images/pages/discover/uk-coins/coins-designs-and-specifications/fifty-pence-coin/50_pence_1969.jpg?width=103&quality=50") , isSelected: false,isEnable:false)]
         }
         viewDelagate.updateTableViewData(withArray: paymentMethods!)
@@ -60,7 +52,7 @@ init(withController controller:UIViewController,andOrder order:Order?=nil) {
     public func submitFunc()
     {
         if (selectedPaymentMethod != nil)  {
-            viewDelagate.presentToNextScreen(withOrder: userOrder!)
+            viewDelagate.presentToNextScreen()
         }else{
             viewDelagate.showAlert(ofError: .incompleteData)
         }

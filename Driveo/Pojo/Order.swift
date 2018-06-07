@@ -13,10 +13,26 @@ enum OrderStatus:String{
     case paymentMethod = "Payment"
 }
 class Order {
+    internal var orderStatus:OrderStatus!
     
-    internal var orderStatus:OrderStatus?
-    
-    internal var source:OrderLocation!
+    internal var source:OrderLocation?{
+        didSet{
+            if source!.isComplete(),oldValue == nil
+            {
+                completeStatus+=1
+                orderStatus = .sourceLocation
+            }
+        }
+    }
+    internal var destination:OrderLocation?{
+        didSet{
+            if destination!.isComplete(),oldValue == nil
+            {
+                completeStatus+=1
+                orderStatus = .destinationLocation
+            }
+        }
+    }
     
     internal var date:String!
     
@@ -31,25 +47,22 @@ class Order {
             }
         }
     }
-    
-    internal var destination:OrderLocation?{
-        didSet{
-            if destination!.isComplete(),oldValue == nil
-            {
-                completeStatus+=1
-                orderStatus = .destinationLocation
-            }
-        }
-    }
-    
-    
-    init(withSource source:OrderLocation,byCarrier providerID:Int,onDate date:String) {
-        self.source = source
-        completeStatus+=1
-        self.providerID=providerID
-        self.date = date
-    }
+   
     
     internal var completeStatus:Int=0
+    
+    static internal func sharedInstance () ->(Order)
+    {
+        struct Singleton {
+            static let instance = Order();
+        }
+        
+        return Singleton.instance;
+        
+    }
+    
+    init(){orderStatus = .sourceLocation }
+    
+    
     
 }

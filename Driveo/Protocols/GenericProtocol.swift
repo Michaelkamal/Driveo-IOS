@@ -9,5 +9,5 @@
 import Foundation
 protocol GenericProtocol {
     func showAlert(ofError error:ErrorType)->Void
-    func presentToNextScreen(withOrder order:Order)
+    func presentToNextScreen()
 }
