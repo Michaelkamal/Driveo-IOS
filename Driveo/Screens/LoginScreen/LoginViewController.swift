@@ -84,7 +84,7 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     }
     
     func dismissLoading() {
-        UIViewController.removeSpinner(spinner: spinner!)
+      //  UIViewController.removeSpinner(spinner: spinner!)
     }
     
     func showAlert(withTitle title :String , andMessage msg:String){
