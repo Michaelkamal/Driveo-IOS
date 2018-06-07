@@ -39,18 +39,24 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8Bm-km-3Yb">
+                                <rect key="frame" x="177" y="262.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ScO-Z0-exB" firstAttribute="leading" secondItem="ilH-UR-hya" secondAttribute="leading" id="DZw-Y6-2bs"/>
                             <constraint firstItem="Wm9-ga-HSk" firstAttribute="centerY" secondItem="ilH-UR-hya" secondAttribute="centerY" id="EbR-9f-Cur"/>
+                            <constraint firstItem="Wm9-ga-HSk" firstAttribute="top" secondItem="8Bm-km-3Yb" secondAttribute="bottom" constant="20" id="NLa-QI-uUF"/>
                             <constraint firstItem="ScO-Z0-exB" firstAttribute="top" secondItem="Wm9-ga-HSk" secondAttribute="bottom" constant="16" id="RUI-Rb-RKF"/>
                             <constraint firstItem="Wm9-ga-HSk" firstAttribute="centerX" secondItem="ilH-UR-hya" secondAttribute="centerX" id="h8R-KP-8p4"/>
                             <constraint firstItem="ilH-UR-hya" firstAttribute="trailing" secondItem="ScO-Z0-exB" secondAttribute="trailing" id="uAx-mU-HXl"/>
+                            <constraint firstItem="8Bm-km-3Yb" firstAttribute="centerX" secondItem="ilH-UR-hya" secondAttribute="centerX" id="yRq-CE-GX0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ilH-UR-hya"/>
                     </view>
                     <connections>
+                        <outlet property="LoadingSpinner" destination="8Bm-km-3Yb" id="pIA-t8-6c2"/>
                         <outlet property="appName" destination="ScO-Z0-exB" id="uJU-0R-peL"/>
                         <outlet property="splashIcon" destination="Wm9-ga-HSk" id="biF-MX-oVV"/>
                     </connections>

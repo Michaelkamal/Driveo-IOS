@@ -14,10 +14,15 @@ class SplashView: UIViewController {
     
     @IBOutlet weak var appName: UILabel!
     
+    
+    @IBOutlet weak var LoadingSpinner: UIActivityIndicatorView!
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
 //        splashIcon.alpha = 0.0
       //  appName.alpha = 0.0
+        LoadingSpinner.stopAnimating()
     }
     
     
@@ -30,16 +35,22 @@ class SplashView: UIViewController {
 //
         UIView.animate(withDuration: 2.5, delay: 0.3, options: .allowAnimatedContent, animations: {
             self.appName.center.y -= self.view.bounds.height
-        }, completion: nil)
+        }, completion: {
+        finished in
+             self.LoadingSpinner.startAnimating()
+            
+            let loginStoryBoard = UIStoryboard.init(name: "Login", bundle: nil)
+            let loginPage:LoginViewController = loginStoryBoard.instantiateViewController(withIdentifier: "loginView") as! LoginViewController
+            self.present(loginPage, animated: true, completion: nil)
+        })
         // Do any additional setup after loading the view.
         
         UIView.animate(withDuration: 1.5, delay: 0.3, options: .allowAnimatedContent, animations: {
             self.splashIcon.center.x += self.view.bounds.width
         }, completion: {
             finished in
-            let loginStoryBoard = UIStoryboard.init(name: "Login", bundle: nil)
-            let loginPage:LoginViewController = loginStoryBoard.instantiateViewController(withIdentifier: "loginView") as! LoginViewController
-            self.present(loginPage, animated: true, completion: nil)
+
+           
         })
         // Do any additional setup after loading the view.
     }
