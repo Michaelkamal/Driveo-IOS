@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 extension UIButton{
+    
     @IBInspectable
-    public var cornerRadius:CGFloat{
+override  public var  cornerRadius:CGFloat{
         set{
             self.layer.cornerRadius = newValue
         }
