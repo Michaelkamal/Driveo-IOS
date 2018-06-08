@@ -26,11 +26,11 @@ class OrdersPresenter: OrdersPresenterProtocol {
     }
     
     func onRequestSuccess(withOrders orders: [String : [OrderMock]]) {
-        
+        ordersView.onLoadSuccess(useData: orders)
     }
     
     func onRequestFailure(failure: String) {
-        
+        ordersView.onLoadFailure(failure: failure)
     }
     
     

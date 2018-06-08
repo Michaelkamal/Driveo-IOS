@@ -13,6 +13,7 @@ protocol  OrdersViewProtocol {
     func onLoadFailure(failure :String)
     func getInfoForTabOf(orderType order: OrderType, useData: @escaping (_ : [String:[OrderMock]]) -> Void)
     func showLoading()
+    func onLoadSuccess(useData: [String : [OrderMock]])
     func dismissLoading()
     
 }

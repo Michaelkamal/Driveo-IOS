@@ -18,7 +18,7 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
     let orangeColor = UIColor(red:1, green:0.5, blue:0.18, alpha:1.0)
     let greyColor = UIColor.lightGray
     
-    var successFunction:(([String:[OrderMock]]) -> Void)!
+    public var successFunction:(([String:[OrderMock]]) -> Void)!
     
     var ordersPresenter:OrdersPresenterProtocol!
     
@@ -93,4 +93,7 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func onLoadSuccess(useData: [String : [OrderMock]]) {
+        successFunction(useData)
+    }
 }
