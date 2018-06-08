@@ -14,6 +14,7 @@ target 'Driveo' do
     pod "BeautifulTextField"
     pod 'SkyFloatingLabelTextField', '~> 3.0'
     pod 'IQKeyboardManagerSwift', '5.0.0'
+    pod 'XLPagerTabStrip', '~> 8.0'
 
   target 'DriveoTests' do
     inherit! :search_paths
