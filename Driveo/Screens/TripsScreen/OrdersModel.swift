@@ -9,13 +9,20 @@
 import Foundation
 class OrderModel : OrdersModelProtocol{
     
+    func onRequestSuccess(date:Any)->Void{
+        
+    }
+    
+    func onRequestFailure(error:ErrorType)->Void{
+        
+    }
     
     func getOrders(forType type: OrderType, withToken token: String) {
         let networkObject : NetworkDAL = NetworkDAL.sharedInstance()
         
-        networkObject.processPostReq(withBaseUrl: <#T##ApiBaseUrl#>, andUrlSuffix: <#T##String#>, andParameters: ["type":type.rawValue], onSuccess: <#T##(Any) -> Void#>, onFailure: <#T##(ErrorType) -> Void#>, headers: ["Authorization":token])
+        networkObject.processPostReq(withBaseUrl: ApiBaseUrl.testmockAoi, andUrlSuffix: type.rawValue, andParameters: ["type":type.rawValue], onSuccess: onRequestSuccess, onFailure: onRequestFailure, headers: ["Authorization":token])
         
-        
+      
         
     }
     
