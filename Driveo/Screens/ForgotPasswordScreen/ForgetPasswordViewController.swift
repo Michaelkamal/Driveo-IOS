@@ -7,21 +7,18 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class ForgetPasswordViewController: UIViewController, ForgotPassViewProtocol {
     
     var spinner:UIView!
     
-    @IBOutlet weak var emailTxt: UITextField!
-    @IBOutlet weak var wrongMailLbl: UILabel!
+    @IBOutlet weak var emailTxt: SkyFloatingLabelTextField!
     var fPP:ForgotPassPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-        wrongMailLbl.isHidden = true
+
         fPP = ForgotPassPresenter(withController: self)
         // Do any additional setup after loading the view.
     }
@@ -37,7 +34,6 @@ class ForgetPasswordViewController: UIViewController, ForgotPassViewProtocol {
     
     @IBAction func sendLink(_ sender: UIButton) {
         if (emailTxt.text?.matches(String.regexes.email.rawValue))!{
-            wrongMailLbl.isHidden = true
             fPP.sendLink(withEmail: emailTxt.text!)
             print("matches")
             showLoading()
@@ -51,10 +47,7 @@ class ForgetPasswordViewController: UIViewController, ForgotPassViewProtocol {
     }
     
     func ChangeLabel(withString str: String) {
-        wrongMailLbl.text = str
-        wrongMailLbl.isHidden = false
-        if !str.contains("invalid email"){
-            dismissLoading()}
+        emailTxt.errorMessage = str
     }
     
     func showLoading() {
@@ -65,19 +58,6 @@ class ForgetPasswordViewController: UIViewController, ForgotPassViewProtocol {
         UIViewController.removeSpinner(spinner: spinner!)
     }
     
-    @objc   func keyboardWillShow(notification: NSNotification) {
-        let keyboardHeight = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue.height
-        UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            self.view.window?.frame.origin.y = -1 * keyboardHeight
-            self.view.layoutIfNeeded()
-        })
-    }
-    @objc   func keyboardWillHide(notification: NSNotification) {
-        UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            self.view.window?.frame.origin.y = 0
-            self.view.layoutIfNeeded()
-        })
-    }
     func showAlert(withTitle title :String , andMessage msg:String){
         dismissLoading()
         var alert:UIAlertController = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)

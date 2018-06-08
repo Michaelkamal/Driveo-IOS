@@ -47,14 +47,16 @@ public class NetworkDAL{
                 let jsonData = JSON(data);
                 
                 print("***URL**** "+urlSuffix)
-                //driveo://driveo.herokuapp.com/reset_password/?hash=eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNSwiZXhwIjoxNTI4Mjg4NTg5fQ.QPz0oZwJ-xPMQgLM7zLxVQGxOT6IXNLPVwKPZjgHcKs
-                print("-------*-*-*-----*******------///////-------********-----------------")
+                print("-------*-*-*-----******------///////-------********-----------------")
                 print(jsonData)
                 onSuccess(data);
                 
             case .failure :
                 //onFailure(.internet)
+                
+                print("-------*-*-*-----******------///////-------********-----------------")
                 print(response)
+                
                 print(response.result)
                 onFailure(ErrorType.internet)
             }

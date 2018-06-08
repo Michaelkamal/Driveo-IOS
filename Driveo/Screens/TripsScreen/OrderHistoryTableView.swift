@@ -39,7 +39,7 @@ class OrderHistoryTableView: UITableViewController {
         return 5
     }
 
-    
+     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         self.tableView.register(UINib(nibName: "TripCell", bundle: nil), forCellReuseIdentifier: "HistoryCell")

@@ -41,7 +41,7 @@ class LoginModel : LoginModelProtocol{
         
     }
     func onFailure(_ networkError:ErrorType) -> Void{
-        lp.loginFailure(message: "Wrong email or password")
+        lp.loginFailure(message: "Connection Error")
     }
     
     

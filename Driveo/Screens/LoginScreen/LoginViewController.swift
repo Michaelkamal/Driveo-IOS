@@ -11,22 +11,23 @@ import SkyFloatingLabelTextField
 
 class LoginViewController: UIViewController , LoginViewProtocol {
     
+
     var lp:LoginPresenterProtocol!
     var spinner:UIView!
     
-    @IBOutlet weak var passTxt: UITextField!
+    @IBOutlet weak var passTxt: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var emailTxt: SkyFloatingLabelTextField!
     
     @IBAction func loginBut(_ sender: Any) {
         
-        ChangeLabel(withString: "")
+        showErrorLabel(withString: "")
         if (emailTxt.text?.matches(String((String.regexes.email).rawValue)))! {
             lp.login(withUserName: emailTxt.text!, andPassword: passTxt.text!)
             showLoading()
         }
         else{
-            ChangeLabel(withString: "Invalid E-mail")
+            showErrorLabel(withString: "Invalid E-mail")
         }
     }
     
@@ -42,33 +43,17 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ChangeLabel(withString: "")
-        
+        showErrorLabel(withString: "")
         lp = LoginPresenter(withController: self)
-        
-//        let textField = SkyFloatingLabelTextField(frame: CGRectMake(10, 10, 200, 45))
-//        textField.placeholder = "Name"
-//        textField.title = "Your full name"
-//        self.view.addSubview(textField)
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    func ChangeLabel(withString str:String){
-       // wrongEmail.text = str
+    func showErrorLabel(withString str:String){
+       emailTxt.errorMessage = str
     }
     func goToScreen(withScreenName name:String){
         if name == "next"{
@@ -84,7 +69,7 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     }
     
     func dismissLoading() {
-      //  UIViewController.removeSpinner(spinner: spinner!)
+        UIViewController.removeSpinner(spinner: spinner!)
     }
     
     func showAlert(withTitle title :String , andMessage msg:String){
@@ -93,6 +78,7 @@ class LoginViewController: UIViewController , LoginViewProtocol {
         let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(dismissAlertAction)
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }

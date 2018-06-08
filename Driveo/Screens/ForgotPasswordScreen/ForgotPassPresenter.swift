@@ -26,10 +26,13 @@ class ForgotPassPresenter : ForgotPassPresenterProtocol {
     
     
     func sendSuccess(message:String) ->Void {
+        fPC.dismissLoading()
         fPC.showAlert(withTitle: "Success", andMessage: message)
+        
     }
     
     func sendFailure(message: String) -> Void {
+        fPC.dismissLoading()
         fPC.showAlert(withTitle: "Failed", andMessage: message)
     }
     

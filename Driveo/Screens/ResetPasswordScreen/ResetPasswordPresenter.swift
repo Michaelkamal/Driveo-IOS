@@ -24,10 +24,12 @@ class ResetPasswordPresenter: ResetPasswordPresenterProtocol {
     }
     
     func resetSuccess(message:String) {
-        rPC.ChangeLabel(withString: message)
+        rPC.dismissLoading()
+        rPC.showAlert(withTitle: "Success", andMessage: message)
     }
     
     func resetFailure(message: String) {
+        rPC.dismissLoading()
         rPC.showAlert(withTitle: "Failed", andMessage: message)
     }
     

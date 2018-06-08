@@ -9,7 +9,6 @@
 import Foundation
 protocol ResetPasswordViewProtocol{
     func goToScreen(withScreenName name:String);
-    func ChangeLabel(withString str:String)
     func showAlert(withTitle title :String , andMessage msg:String)
-
+    func dismissLoading()
 }

@@ -25,6 +25,7 @@
 		84187EDA20C6D2EF00FB5566 /* TripsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84187ED920C6D2EF00FB5566 /* TripsPresenterProtocol.swift */; };
 		84187EDE20C6D48E00FB5566 /* TripsModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84187EDD20C6D48E00FB5566 /* TripsModelProtocol.swift */; };
 		84187EE620C6D48E00FB5566 /* Trips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84187EE520C6D48E00FB5566 /* Trips.storyboard */; };
+		841D749D20C9DFEF00253AA4 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841D749C20C9DFEF00253AA4 /* UIButtonExtension.swift */; };
 		8424621820C11FA800D00057 /* OrderLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424621720C11FA800D00057 /* OrderLocation.swift */; };
 		84247CCB20C774E500AE43FA /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247CCA20C774E500AE43FA /* PaymentCell.swift */; };
 		84247CCD20C777EB00AE43FA /* PaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247CCC20C777EB00AE43FA /* PaymentPresenter.swift */; };
@@ -146,6 +147,7 @@
 		84187ED920C6D2EF00FB5566 /* TripsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsPresenterProtocol.swift; sourceTree = "<group>"; };
 		84187EDD20C6D48E00FB5566 /* TripsModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsModelProtocol.swift; sourceTree = "<group>"; };
 		84187EE520C6D48E00FB5566 /* Trips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trips.storyboard; sourceTree = "<group>"; };
+		841D749C20C9DFEF00253AA4 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		8424621720C11FA800D00057 /* OrderLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderLocation.swift; sourceTree = "<group>"; };
 		84247CCA20C774E500AE43FA /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
 		84247CCC20C777EB00AE43FA /* PaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPresenter.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 			children = (
 				8447456A20C07D290076D0EC /* SpinnerExtention.swift */,
 				8447456B20C07D290076D0EC /* LocationMangerProtocolExtention.swift */,
+				841D749C20C9DFEF00253AA4 /* UIButtonExtension.swift */,
 			);
 			path = UIViewControllerExtention;
 			sourceTree = "<group>";
@@ -1032,6 +1035,7 @@
 				84D1854320C2D3860054BEBF /* SignupModelProtocol.swift in Sources */,
 				84937BD020C45D0B00727437 /* ForgetPasswordViewController.swift in Sources */,
 				840B1CC920C52FB70046542D /* ResetPasswordPresenter.swift in Sources */,
+				841D749D20C9DFEF00253AA4 /* UIButtonExtension.swift in Sources */,
 				84937BBB20C3660B00727437 /* LoginPresenter.swift in Sources */,
 				845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */,
 				840B1CC720C52F490046542D /* ResetPasswordViewController.swift in Sources */,

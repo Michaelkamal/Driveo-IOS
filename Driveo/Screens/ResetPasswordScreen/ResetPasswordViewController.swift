@@ -7,24 +7,18 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
 
 class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
     
     var spinner:UIView!
     var rPP:ResetPasswordPresenterProtocol!
     
-    @IBOutlet weak var passwordFld1: UITextField!
-    @IBOutlet weak var invalidPassLbl: UILabel!
-    @IBOutlet weak var messageLbl: UILabel!
+    @IBOutlet weak var passwordFld1: SkyFloatingLabelTextField!
     
-    @IBOutlet weak var passwordFld2: UITextField!
+    @IBOutlet weak var passwordFld2: SkyFloatingLabelTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-        invalidPassLbl.isHidden = true
-        messageLbl.isHidden = true
         rPP = ResetPasswordPresenter(withController: self)
         // Do any additional setup after loading the view.
     }
@@ -38,10 +32,14 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
         
     }
     
-    func ChangeLabel(withString str: String) {
-        messageLbl.isHidden = false
-        messageLbl.text=str
-        dismissLoading()
+    func ChangeLabel(ofField field: Int ,withString str: String) {
+        switch field {
+        case 2:
+            passwordFld2.errorMessage = str
+        default:
+            passwordFld1.errorMessage = str
+
+        }
     }
     
     @IBAction func backToLogin(_ sender: UIButton) {
@@ -50,16 +48,16 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
     }
     
     @IBAction func sendPassword(_ sender: UIButton) {
-        if true{
-            invalidPassLbl.isHidden = true
-            messageLbl.isHidden = true
+        if passwordFld1.text! == passwordFld2.text! && true{
             rPP.resetPassword(withPassword: passwordFld1.text!)
             print("matches")
             showLoading()
         }
-        else{
-            invalidPassLbl.isHidden = false
-            invalidPassLbl.text = "Invalid password"
+        else if true{
+            ChangeLabel(ofField: 1, withString: "Invalid password")
+        }
+        else if passwordFld1.text! != passwordFld2.text! {
+            ChangeLabel(ofField: 2, withString: "Doesn't match")
         }
     }
     
@@ -70,22 +68,8 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
     func dismissLoading() {
         UIViewController.removeSpinner(spinner: spinner!)
     }
-    @objc   func keyboardWillShow(notification: NSNotification) {
-        let keyboardHeight = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as AnyObject).cgRectValue.height
-        UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            self.view.window?.frame.origin.y = -1 * keyboardHeight
-            self.view.layoutIfNeeded()
-        })
-    }
-    @objc   func keyboardWillHide(notification: NSNotification) {
-        UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            self.view.window?.frame.origin.y = 0
-            self.view.layoutIfNeeded()
-        })
-    }
     
     func showAlert(withTitle title :String , andMessage msg:String){
-        dismissLoading()
         var alert:UIAlertController = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)
         self.present(alert, animated: true, completion: nil)
         let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)

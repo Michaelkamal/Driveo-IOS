@@ -39,7 +39,7 @@ class ForgotPassModel : ForgotPasswordModelProtocol{
         let dict = response as! Dictionary<String,Any>
         let message = dict["message"] as! String
         if message.contains("success") {
-            fPP.sendSuccess(message: message)
+            fPP.sendSuccess(message: "Password changed successfully")
         }
         else{
             fPP.sendFailure(message: message)
