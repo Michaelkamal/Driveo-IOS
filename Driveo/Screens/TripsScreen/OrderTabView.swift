@@ -1,5 +1,5 @@
 //
-//  TripsTabView.swift
+//  OrderTabView.swift
 //  Driveo
 //
 //  Created by Admin on 6/8/18.
@@ -9,8 +9,8 @@
 import UIKit
 import XLPagerTabStrip
 
-class TripsTabView: ButtonBarPagerTabStripViewController {
-
+class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
+    
     let orangeColor = UIColor(red:1, green:0.5, blue:0.18, alpha:1.0)
     let greyColor = UIColor.lightGray
     override func viewDidLoad() {
@@ -32,24 +32,35 @@ class TripsTabView: ButtonBarPagerTabStripViewController {
             newCell?.label.textColor = self?.greyColor
         }
         super.viewDidLoad()
-        buttonBarView.addSubview(drawLine(height: 632))
+        buttonBarView.addSubview(drawLine())
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
- 
-    func drawLine(height:Float) ->UIView{
-        var line:UIView = UIView(frame: CGRect(x: 0, y: 63, width: 414, height: 0.5))
+    
+    func drawLine() ->UIView{
+        var line:UIView = UIView(frame: CGRect(x: 0, y: 125, width: 414, height: 200))
         line.backgroundColor = greyColor
         return line
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let historyView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "History")
+        let historyView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "History") as! OrderHistoryTableView
         let upcomingView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "Upcoming")
         return [historyView, upcomingView]
+    }
+    
+    func onLoadFailure(failure: String) {
+        
+    }
+    
+    func getInfoForTabOf(orderType order: OrderType) -> [String:[OrderMock]]{
+        let temp = OrderMock(date: "1/1/1", price: 50, from: "120", to: "220", payment: "cash", status: .active)
+        let arr = [temp,temp,temp]
+        let tripsDictionatry = ["History":arr]
+        return tripsDictionatry
     }
 
 }
