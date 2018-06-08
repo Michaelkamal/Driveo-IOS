@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,6 +27,9 @@
                                     <constraint firstAttribute="width" secondItem="emH-6c-Z3h" secondAttribute="height" multiplier="42:43" id="XfQ-q8-LKx"/>
                                 </constraints>
                                 <state key="normal" image="ic_close"/>
+                                <connections>
+                                    <action selector="exitView:" destination="BVt-Jd-DFG" eventType="touchUpInside" id="SEn-b4-qEG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at0-gz-P1K">
                                 <rect key="frame" x="166.5" y="58.5" width="42" height="21"/>
@@ -37,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="162" width="375" height="505"/>
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="M4l-Gv-NFO" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="96" width="375" height="54"/>
+                                <rect key="frame" x="19" y="96" width="337.5" height="54"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rTN-UO-Dvi">
                                     <size key="itemSize" width="50" height="50"/>
@@ -56,6 +60,7 @@
                             <constraint firstItem="M4l-Gv-NFO" firstAttribute="centerX" secondItem="NKI-c6-qqS" secondAttribute="centerX" id="Aka-h2-WrE"/>
                             <constraint firstItem="M4l-Gv-NFO" firstAttribute="top" secondItem="2E4-hF-O2u" secondAttribute="top" constant="76" id="Ci0-ud-peS"/>
                             <constraint firstItem="2E4-hF-O2u" firstAttribute="trailing" secondItem="jvm-TF-0KU" secondAttribute="trailing" id="GAe-5O-XGr"/>
+                            <constraint firstItem="M4l-Gv-NFO" firstAttribute="width" secondItem="NKI-c6-qqS" secondAttribute="width" multiplier="0.9" id="Jqs-e6-sUL"/>
                             <constraint firstItem="jvm-TF-0KU" firstAttribute="top" secondItem="2E4-hF-O2u" secondAttribute="top" constant="142" id="OBp-63-Au9"/>
                             <constraint firstItem="jvm-TF-0KU" firstAttribute="centerX" secondItem="NKI-c6-qqS" secondAttribute="centerX" id="Pfa-rk-PZK"/>
                             <constraint firstItem="emH-6c-Z3h" firstAttribute="leading" secondItem="2E4-hF-O2u" secondAttribute="leading" priority="750" constant="22.5" id="TlF-gF-d8o"/>
@@ -63,9 +68,7 @@
                             <constraint firstItem="jvm-TF-0KU" firstAttribute="leading" secondItem="2E4-hF-O2u" secondAttribute="leading" id="YQ6-Xe-Yvb"/>
                             <constraint firstItem="jvm-TF-0KU" firstAttribute="top" secondItem="M4l-Gv-NFO" secondAttribute="bottom" constant="12" id="YTT-ng-9Rf"/>
                             <constraint firstItem="emH-6c-Z3h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2E4-hF-O2u" secondAttribute="top" constant="24.16" id="ZHI-Nx-yr3"/>
-                            <constraint firstItem="M4l-Gv-NFO" firstAttribute="leading" secondItem="2E4-hF-O2u" secondAttribute="leading" id="hQR-Fw-QTb"/>
                             <constraint firstItem="emH-6c-Z3h" firstAttribute="top" secondItem="2E4-hF-O2u" secondAttribute="top" priority="750" constant="38.670000000000002" id="oLC-Nb-L1z"/>
-                            <constraint firstItem="2E4-hF-O2u" firstAttribute="trailing" secondItem="M4l-Gv-NFO" secondAttribute="trailing" id="shH-Ef-lh8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2E4-hF-O2u"/>
                     </view>
@@ -144,10 +147,10 @@
             </objects>
             <point key="canvasLocation" x="550" y="136"/>
         </scene>
-        <!--Order History Table View-->
+        <!--Upcoming Orders Table View-->
         <scene sceneID="Fdg-Pl-Tlb">
             <objects>
-                <tableViewController storyboardIdentifier="Upcoming" id="z1T-6d-SV7" customClass="OrderHistoryTableView" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Upcoming" id="z1T-6d-SV7" customClass="UpcomingOrdersTableView" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vn0-bL-rK2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

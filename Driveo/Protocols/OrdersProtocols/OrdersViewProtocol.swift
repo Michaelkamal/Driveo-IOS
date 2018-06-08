@@ -11,6 +11,8 @@ import Foundation
 protocol  OrdersViewProtocol {
     
     func onLoadFailure(failure :String)
-    func getInfoForTabOf(orderType order: OrderType) -> [String:[OrderMock]]
+    func getInfoForTabOf(orderType order: OrderType, useData: @escaping (_ : [String:[OrderMock]]) -> Void)
+    func showLoading()
+    func dismissLoading()
     
 }

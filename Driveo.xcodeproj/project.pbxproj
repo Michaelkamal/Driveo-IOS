@@ -10,6 +10,8 @@
 		151A73D53C1296903E0BAC0C /* Pods_DriveoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3039D78FFA4FBB8FC7748D /* Pods_DriveoTests.framework */; };
 		3991B73336CFAB391EE43C70 /* Pods_Driveo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812B8BD6E5F1093D015199A1 /* Pods_Driveo.framework */; };
 		6A8B2742BD4EA93B23009918 /* Pods_DriveoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF644CBEF5F0792EAC23D85C /* Pods_DriveoUITests.framework */; };
+		840345B220CB24E800322359 /* UpcomingOrdersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840345B120CB24E800322359 /* UpcomingOrdersTableView.swift */; };
+		840345B420CB348D00322359 /* OrdersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840345B320CB348D00322359 /* OrdersPresenter.swift */; };
 		840B1CBF20C52DC90046542D /* ResetPasswordViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CBE20C52DC90046542D /* ResetPasswordViewProtocol.swift */; };
 		840B1CC320C52E060046542D /* ResetPasswordPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CC220C52E060046542D /* ResetPasswordPresenterProtocol.swift */; };
 		840B1CC520C52E4E0046542D /* ResetPasswordModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CC420C52E4E0046542D /* ResetPasswordModelProtocol.swift */; };
@@ -141,6 +143,8 @@
 		70AFABCD82D6A1F0E690F921 /* Pods-DriveoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoTests/Pods-DriveoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C3039D78FFA4FBB8FC7748D /* Pods_DriveoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DriveoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		812B8BD6E5F1093D015199A1 /* Pods_Driveo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Driveo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		840345B120CB24E800322359 /* UpcomingOrdersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingOrdersTableView.swift; sourceTree = "<group>"; };
+		840345B320CB348D00322359 /* OrdersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPresenter.swift; sourceTree = "<group>"; };
 		840B1CBE20C52DC90046542D /* ResetPasswordViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewProtocol.swift; sourceTree = "<group>"; };
 		840B1CC220C52E060046542D /* ResetPasswordPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenterProtocol.swift; sourceTree = "<group>"; };
 		840B1CC420C52E4E0046542D /* ResetPasswordModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordModelProtocol.swift; sourceTree = "<group>"; };
@@ -352,8 +356,10 @@
 				846ABFF920C975E4003F8528 /* OrderHistoryTableView.swift */,
 				843E2DB620C9D88000DE459C /* HeaderCell.xib */,
 				843E2DBA20C9DB9400DE459C /* OrderCustomHeader.swift */,
-				843E2DBC20CAB1A500DE459C /* OrdersModel.swift */,
 				841D74A820CB195600253AA4 /* OrderTabView.swift */,
+				843E2DBC20CAB1A500DE459C /* OrdersModel.swift */,
+				840345B120CB24E800322359 /* UpcomingOrdersTableView.swift */,
+				840345B320CB348D00322359 /* OrdersPresenter.swift */,
 			);
 			path = TripsScreen;
 			sourceTree = "<group>";
@@ -1026,6 +1032,7 @@
 				840B1CCB20C52FF80046542D /* ResetPasswordModel.swift in Sources */,
 				84937BD220C45D0B00727437 /* ForgotPassPresenter.swift in Sources */,
 				843E2DBB20C9DB9400DE459C /* OrderCustomHeader.swift in Sources */,
+				840345B220CB24E800322359 /* UpcomingOrdersTableView.swift in Sources */,
 				84A2D4DE20C2CD7D00576ACF /* DropDownCarrierItem.swift in Sources */,
 				840B1CD320C5B3D10046542D /* CreateRequestViewProtocol.swift in Sources */,
 				8447457B20C07D2A0076D0EC /* LocationMangerProtocol.swift in Sources */,
@@ -1066,6 +1073,7 @@
 				84937BBD20C3660B00727437 /* LoginModel.swift in Sources */,
 				845D48F820BEEF92000F16C1 /* Driveo.xcdatamodeld in Sources */,
 				840B1CD120C5B3D10046542D /* CreateRequestPresenterProtocol.swift in Sources */,
+				840345B420CB348D00322359 /* OrdersPresenter.swift in Sources */,
 				8447457920C07D2A0076D0EC /* SpinnerExtention.swift in Sources */,
 				84EFC1C320C43530004E5BDF /* VerifyModelProtocol.swift in Sources */,
 				84D1854520C2D39B0054BEBF /* SignupViewProtocol.swift in Sources */,

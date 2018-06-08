@@ -11,12 +11,17 @@ import UIKit
 import XLPagerTabStrip
 
 class OrderHistoryTableView: UITableViewController,IndicatorInfoProvider {
+    
+    var parentTabView:OrdersViewProtocol!
+    var historyData:[String:[OrderMock]]!
+    var spinner:UIView?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
+        parentTabView!.getInfoForTabOf(orderType: .HistoryOrders , useData: useData)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -121,9 +126,15 @@ class OrderHistoryTableView: UITableViewController,IndicatorInfoProvider {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 53.33
     }
+    
+    func useData(_ data:[String:[OrderMock]]) {
+        historyData = data
+    }
         
         
-        
+    func showLoading() {
+        spinner = UIViewController.displaySpinner(onView: self.view)
+    }
         
         
     }

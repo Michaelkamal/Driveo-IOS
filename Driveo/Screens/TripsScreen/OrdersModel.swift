@@ -9,6 +9,13 @@
 import Foundation
 class OrderModel : OrdersModelProtocol{
     
+    var presenter:OrdersPresenterProtocol
+    
+    
+    init(withPresenter p:OrdersPresenterProtocol) {
+        presenter = p
+    }
+    
     func onRequestSuccess(date:Any)->Void{
         
     }

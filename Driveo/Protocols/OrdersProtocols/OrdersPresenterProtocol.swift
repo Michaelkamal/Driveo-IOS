@@ -10,7 +10,7 @@ import Foundation
 
 protocol OrdersPresenterProtocol {
     
-    func requestOrders(ofType typeOrder:String)
+    func requestOrders(ofType typeOrder: OrderType)
     
     func onRequestSuccess(withOrders orders:[String:[OrderMock]])
     

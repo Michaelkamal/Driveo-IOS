@@ -11,8 +11,18 @@ import XLPagerTabStrip
 
 class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
     
+    var spinner:UIView?
+    
+    var alert:UIAlertController?
+    
     let orangeColor = UIColor(red:1, green:0.5, blue:0.18, alpha:1.0)
     let greyColor = UIColor.lightGray
+    
+    var successFunction:(([String:[OrderMock]]) -> Void)!
+    
+    var ordersPresenter:OrdersPresenterProtocol!
+    
+    
     override func viewDidLoad() {
         // change selected bar color
         settings.style.buttonBarBackgroundColor = UIColor.red
@@ -33,6 +43,8 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
         }
         super.viewDidLoad()
         buttonBarView.addSubview(drawLine())
+        
+        ordersPresenter = OrdersPresenter(withView: self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,26 +53,44 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
     }
     
     func drawLine() ->UIView{
-        var line:UIView = UIView(frame: CGRect(x: 0, y: 125, width: 414, height: 200))
-        line.backgroundColor = greyColor
+        var line:UIView = UIView(frame: CGRect(x: 0, y: 53, width: 414, height: 0.5))
+        line.backgroundColor = UIColor.black
         return line
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let historyView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "History") as! OrderHistoryTableView
+        historyView.parentTabView = self
         let upcomingView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "Upcoming")
         return [historyView, upcomingView]
     }
     
     func onLoadFailure(failure: String) {
-        
+        showAlert(withTitle: "Failed", andMessage: failure)
     }
     
-    func getInfoForTabOf(orderType order: OrderType) -> [String:[OrderMock]]{
-        let temp = OrderMock(date: "1/1/1", price: 50, from: "120", to: "220", payment: "cash", status: .active)
-        let arr = [temp,temp,temp]
-        let tripsDictionatry = ["History":arr]
-        return tripsDictionatry
+    func getInfoForTabOf(orderType order: OrderType, useData: @escaping (_ : [String:[OrderMock]]) -> Void){
+        successFunction = useData
+        ordersPresenter.requestOrders(ofType : order)
     }
-
+    
+    func showAlert(withTitle title :String , andMessage msg:String){
+        alert = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)
+        self.present(alert!, animated: true, completion: nil)
+        let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)
+        alert?.addAction(dismissAlertAction)
+    }
+    
+    func showLoading() {
+        spinner = UIViewController.displaySpinner(onView: self.view)
+    }
+    
+    func dismissLoading() {
+        UIViewController.removeSpinner(spinner: spinner!)
+    }
+    
+    @IBAction func exitView(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
