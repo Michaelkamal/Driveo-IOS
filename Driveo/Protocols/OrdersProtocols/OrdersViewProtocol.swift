@@ -10,5 +10,6 @@ import Foundation
 
 protocol  OrdersViewProtocol {
     
-
+    func onLoadFailure(failure :String)
+    
 }

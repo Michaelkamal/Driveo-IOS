@@ -8,7 +8,9 @@
 
 import UIKit
 
-class OrderHistoryTableView: UITableViewController {
+import XLPagerTabStrip
+
+class OrderHistoryTableView: UITableViewController,IndicatorInfoProvider {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,9 @@ class OrderHistoryTableView: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "History")
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

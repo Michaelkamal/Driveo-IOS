@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Trips View Controller-->
+        <!--Trips Tab View-->
         <scene sceneID="OqW-Np-Oxc">
             <objects>
-                <viewController id="BVt-Jd-DFG" customClass="TripsViewController" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BVt-Jd-DFG" customClass="TripsTabView" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NKI-c6-qqS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,27 +33,46 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcT-qb-ZVJ">
-                                <rect key="frame" x="0.0" y="89" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="Zsn-vi-03V"/>
-                                    <tabBarItem systemItem="more" id="1gT-jn-1BL"/>
-                                </items>
-                            </tabBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvm-TF-0KU">
+                                <rect key="frame" x="0.0" y="162" width="375" height="505"/>
+                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="M4l-Gv-NFO" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="96" width="375" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rTN-UO-Dvi">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="at0-gz-P1K" firstAttribute="top" secondItem="2E4-hF-O2u" secondAttribute="top" constant="38.670000000000002" id="55q-u1-eMf"/>
                             <constraint firstItem="emH-6c-Z3h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2E4-hF-O2u" secondAttribute="leading" constant="17.440000000000001" id="5vq-MD-eZe"/>
                             <constraint firstItem="at0-gz-P1K" firstAttribute="centerX" secondItem="NKI-c6-qqS" secondAttribute="centerX" id="9ti-Ly-F41"/>
+                            <constraint firstItem="M4l-Gv-NFO" firstAttribute="centerX" secondItem="NKI-c6-qqS" secondAttribute="centerX" id="Aka-h2-WrE"/>
+                            <constraint firstItem="M4l-Gv-NFO" firstAttribute="top" secondItem="2E4-hF-O2u" secondAttribute="top" constant="76" id="Ci0-ud-peS"/>
+                            <constraint firstItem="2E4-hF-O2u" firstAttribute="trailing" secondItem="jvm-TF-0KU" secondAttribute="trailing" id="GAe-5O-XGr"/>
+                            <constraint firstItem="jvm-TF-0KU" firstAttribute="top" secondItem="2E4-hF-O2u" secondAttribute="top" constant="142" id="OBp-63-Au9"/>
+                            <constraint firstItem="jvm-TF-0KU" firstAttribute="centerX" secondItem="NKI-c6-qqS" secondAttribute="centerX" id="Pfa-rk-PZK"/>
                             <constraint firstItem="emH-6c-Z3h" firstAttribute="leading" secondItem="2E4-hF-O2u" secondAttribute="leading" priority="750" constant="22.5" id="TlF-gF-d8o"/>
+                            <constraint firstItem="2E4-hF-O2u" firstAttribute="bottom" secondItem="jvm-TF-0KU" secondAttribute="bottom" id="X7M-Ar-QtR"/>
+                            <constraint firstItem="jvm-TF-0KU" firstAttribute="leading" secondItem="2E4-hF-O2u" secondAttribute="leading" id="YQ6-Xe-Yvb"/>
+                            <constraint firstItem="jvm-TF-0KU" firstAttribute="top" secondItem="M4l-Gv-NFO" secondAttribute="bottom" id="YTT-ng-9Rf"/>
                             <constraint firstItem="emH-6c-Z3h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2E4-hF-O2u" secondAttribute="top" constant="24.16" id="ZHI-Nx-yr3"/>
+                            <constraint firstItem="M4l-Gv-NFO" firstAttribute="leading" secondItem="2E4-hF-O2u" secondAttribute="leading" id="hQR-Fw-QTb"/>
                             <constraint firstItem="emH-6c-Z3h" firstAttribute="top" secondItem="2E4-hF-O2u" secondAttribute="top" priority="750" constant="38.670000000000002" id="oLC-Nb-L1z"/>
+                            <constraint firstItem="2E4-hF-O2u" firstAttribute="trailing" secondItem="M4l-Gv-NFO" secondAttribute="trailing" id="shH-Ef-lh8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2E4-hF-O2u"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonBarView" destination="M4l-Gv-NFO" id="cZ4-5f-A1P"/>
+                        <outlet property="containerView" destination="jvm-TF-0KU" id="5w4-u4-MLG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xeb-MJ-Szp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,6 +14,12 @@ enum OrderType :String{
         case UpcomingOrders = "Upcoming"
 }
 
+enum HistoryStatus :String{
+    
+    case active = "Active"
+    case past = "Past"
+}
+
 struct OrderMock {
     
     var date:String
@@ -21,5 +27,6 @@ struct OrderMock {
     var from:String
     var to:String
     var payment:String
+    var status:HistoryStatus
     
 }
