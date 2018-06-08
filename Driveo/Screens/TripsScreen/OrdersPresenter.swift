@@ -22,7 +22,9 @@ class OrdersPresenter: OrdersPresenterProtocol {
         
         let defaults = UserDefaults.standard
         let token = defaults.string(forKey: "auth_token")
-        ordersModel.getOrders(forType: typeOrder, withToken: token!)
+        if token != nil{
+            ordersModel.getOrders(forType: typeOrder, withToken: token!)
+        }
     }
     
     func onRequestSuccess(withOrders orders: [String : [OrderMock]]) {

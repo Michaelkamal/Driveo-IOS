@@ -44,7 +44,6 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
         super.viewDidLoad()
         buttonBarView.addSubview(drawLine())
         
-        ordersPresenter = OrdersPresenter(withView: self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,6 +69,8 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
     }
     
     func getInfoForTabOf(orderType order: OrderType, useData: @escaping (_ : [String:[OrderMock]]) -> Void){
+        
+        ordersPresenter = OrdersPresenter(withView: self)
         successFunction = useData
         ordersPresenter.requestOrders(ofType : order)
     }

@@ -20,7 +20,7 @@ class OrderHistoryTableView: UITableViewController,IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //parentTabView!.getInfoForTabOf(orderType: .HistoryOrders , useData: useData)
+        parentTabView!.getInfoForTabOf(orderType: .HistoryOrders , useData: useData)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
