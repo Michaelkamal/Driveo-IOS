@@ -100,4 +100,33 @@ class OrderHistoryTableView: UITableViewController {
     }
     */
 
-}
+    
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        self.tableView.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "HeaderCell")
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell") as! OrderCustomHeader
+        
+        cell.titleLabel.text = "Active"
+        
+        return cell
+    }
+    
+
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 53.33
+    }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+

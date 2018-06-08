@@ -34,6 +34,9 @@
 		84247CD420C77F6100AE43FA /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247CD320C77F6100AE43FA /* Providers.swift */; };
 		842C037A20C5A3F100CA1C3B /* CreateRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842C037820C5A3F100CA1C3B /* CreateRequest.storyboard */; };
 		842C037B20C5A3F100CA1C3B /* CreateRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C037920C5A3F100CA1C3B /* CreateRequestView.swift */; };
+		843E2DB520C9D5BA00DE459C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E2DB420C9D5BA00DE459C /* UIViewExtension.swift */; };
+		843E2DB720C9D88000DE459C /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843E2DB620C9D88000DE459C /* HeaderCell.xib */; };
+		843E2DBB20C9DB9400DE459C /* OrderCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E2DBA20C9DB9400DE459C /* OrderCustomHeader.swift */; };
 		8447456E20C07D2A0076D0EC /* ErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447455820C07D270076D0EC /* ErrorType.swift */; };
 		8447457920C07D2A0076D0EC /* SpinnerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447456A20C07D290076D0EC /* SpinnerExtention.swift */; };
 		8447457A20C07D2A0076D0EC /* LocationMangerProtocolExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8447456B20C07D290076D0EC /* LocationMangerProtocolExtention.swift */; };
@@ -156,6 +159,9 @@
 		84247CD320C77F6100AE43FA /* Providers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
 		842C037820C5A3F100CA1C3B /* CreateRequest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateRequest.storyboard; sourceTree = "<group>"; };
 		842C037920C5A3F100CA1C3B /* CreateRequestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRequestView.swift; sourceTree = "<group>"; };
+		843E2DB420C9D5BA00DE459C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		843E2DB620C9D88000DE459C /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		843E2DBA20C9DB9400DE459C /* OrderCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCustomHeader.swift; sourceTree = "<group>"; };
 		8447455820C07D270076D0EC /* ErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorType.swift; sourceTree = "<group>"; };
 		8447456A20C07D290076D0EC /* SpinnerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerExtention.swift; sourceTree = "<group>"; };
 		8447456B20C07D290076D0EC /* LocationMangerProtocolExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationMangerProtocolExtention.swift; sourceTree = "<group>"; };
@@ -332,6 +338,8 @@
 				846ABFF320C9689B003F8528 /* TripCell.xib */,
 				846ABFF520C97041003F8528 /* OrderCell.swift */,
 				846ABFF920C975E4003F8528 /* OrderHistoryTableView.swift */,
+				843E2DB620C9D88000DE459C /* HeaderCell.xib */,
+				843E2DBA20C9DB9400DE459C /* OrderCustomHeader.swift */,
 			);
 			path = TripsScreen;
 			sourceTree = "<group>";
@@ -614,6 +622,7 @@
 				84A2D4E820C2CE2400576ACF /* LocationUtilities */,
 				84A2D4EA20C2CE2400576ACF /* CustomControls */,
 				84A2D4EE20C2CE2400576ACF /* NetworkUtilities */,
+				843E2DB420C9D5BA00DE459C /* UIViewExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -832,6 +841,7 @@
 				844BD61320C4C54C005E98FC /* DestinationScreen.storyboard in Resources */,
 				84187EE620C6D48E00FB5566 /* Trips.storyboard in Resources */,
 				844BD60420C38C36005E98FC /* OrderItem.xib in Resources */,
+				843E2DB720C9D88000DE459C /* HeaderCell.xib in Resources */,
 				844C6FC220C6305F00379783 /* PaymentScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -986,11 +996,13 @@
 				842C037B20C5A3F100CA1C3B /* CreateRequestView.swift in Sources */,
 				840B1CCB20C52FF80046542D /* ResetPasswordModel.swift in Sources */,
 				84937BD220C45D0B00727437 /* ForgotPassPresenter.swift in Sources */,
+				843E2DBB20C9DB9400DE459C /* OrderCustomHeader.swift in Sources */,
 				84A2D4DE20C2CD7D00576ACF /* DropDownCarrierItem.swift in Sources */,
 				840B1CD320C5B3D10046542D /* CreateRequestViewProtocol.swift in Sources */,
 				8447457B20C07D2A0076D0EC /* LocationMangerProtocol.swift in Sources */,
 				84247CD220C77AE500AE43FA /* PaymentMethod.swift in Sources */,
 				84A2D4E020C2CD7D00576ACF /* DropDownMenu.swift in Sources */,
+				843E2DB520C9D5BA00DE459C /* UIViewExtension.swift in Sources */,
 				844BD5F320C36436005E98FC /* GooglePlacesDAL.swift in Sources */,
 				846ABFF620C97041003F8528 /* OrderCell.swift in Sources */,
 				84937BC620C3670800727437 /* ForgotPassViewProtocol.swift in Sources */,
