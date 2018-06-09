@@ -23,5 +23,4 @@ class TripCellCollectionView: UICollectionViewCell {
     
     @IBOutlet weak var addressLabel: UILabel!
     
-    
 }

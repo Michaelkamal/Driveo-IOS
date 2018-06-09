@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerCollection" id="cJd-Rg-DFU" customClass="HeaderCollection" customModule="Driveo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="310" height="31"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZnC-yc-Cdp">
+                    <rect key="frame" x="0.0" y="0.0" width="310" height="31"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRV-6z-EFe">
+                            <rect key="frame" x="133.5" y="7.5" width="43" height="16"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13.329999923706055"/>
+                            <color key="textColor" red="0.50588235294117645" green="0.5490196078431373" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="XRV-6z-EFe" firstAttribute="centerY" secondItem="ZnC-yc-Cdp" secondAttribute="centerY" id="5da-tU-wYI"/>
+                        <constraint firstAttribute="height" constant="31" id="hXo-sC-yAc"/>
+                        <constraint firstItem="XRV-6z-EFe" firstAttribute="centerX" secondItem="ZnC-yc-Cdp" secondAttribute="centerX" id="teW-sL-d59"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="rp7-2u-w5V" firstAttribute="trailing" secondItem="ZnC-yc-Cdp" secondAttribute="trailing" id="2QC-UM-2NM"/>
+                <constraint firstItem="ZnC-yc-Cdp" firstAttribute="leading" secondItem="rp7-2u-w5V" secondAttribute="leading" id="DsJ-Kn-d5l"/>
+                <constraint firstItem="ZnC-yc-Cdp" firstAttribute="top" secondItem="cJd-Rg-DFU" secondAttribute="top" id="sMD-nH-B7M"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="rp7-2u-w5V"/>
+            <connections>
+                <outlet property="headerLabel" destination="XRV-6z-EFe" id="Vm3-sY-5ia"/>
+            </connections>
+            <point key="canvasLocation" x="124" y="-38"/>
+        </collectionReusableView>
+    </objects>
+</document>

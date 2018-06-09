@@ -12,6 +12,14 @@ private let reuseIdentifier = "TripCell"
 
 class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let factor = 414 / UIScreen.main.bounds.width
+        let subtractionValue = 34/factor
+        let value = subtractionValue/2
+        self.collectionView?.contentInset = UIEdgeInsetsMake(0, value, 0, value)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,13 +75,41 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+             //self.collectionView?.register(UINib(nibName: "HeaderCollection", bundle: nil), forCellWithReuseIdentifier: "headerCollection")
+             
+             self.collectionView?.register(UINib(nibName: "HeaderCollection", bundle: nil),
+                                              forSupplementaryViewOfKind: UICollectionElementKindSectionHeader,
+                                              withReuseIdentifier: "headerCollection")
+ 
+             let headerView:HeaderCollection = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerCollection", for: indexPath) as! HeaderCollection
+             
+            //do other header related calls or settups
+            headerView.headerLabel.text = "Active"
+            return headerView
+            
+            
+            
+        default:  fatalError("Unexpected element kind")
+        }
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let factor = 414 / UIScreen.main.bounds.width
+        let subtractionValue = 34/factor
+        return CGSize(width: UIScreen.main.bounds.width-subtractionValue, height: 43)
+
+    }
     
      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let factor = 414 / UIScreen.main.bounds.width
         let subtractionValue = 34/factor
         return CGSize(width: UIScreen.main.bounds.width-subtractionValue, height: 142)
     }
+
 
     // MARK: UICollectionViewDelegate
 
