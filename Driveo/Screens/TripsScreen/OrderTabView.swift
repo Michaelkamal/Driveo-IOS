@@ -58,7 +58,7 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let historyView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "History") as! OrderHistoryTableView
+        let historyView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "History") as! OrderHistoryCollectionView
         historyView.parentTabView = self
         let upcomingView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "Upcoming")
         return [historyView, upcomingView]
