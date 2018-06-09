@@ -13,24 +13,24 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5Ya-e3-pac" customClass="TripCellCollectionView" customModule="Driveo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="310" height="142"/>
+            <rect key="frame" x="0.0" y="0.0" width="339" height="142"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="310" height="142"/>
+                <rect key="frame" x="0.0" y="0.0" width="339" height="142"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzd-O8-Sqw">
-                        <rect key="frame" x="0.0" y="0.0" width="310" height="119.5"/>
+                        <rect key="frame" x="3" y="1" width="333" height="118.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
+                                <real key="value" value="0.0"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                <real key="value" value="1"/>
+                                <real key="value" value="2"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                                 <size key="value" width="0.0" height="3"/>
@@ -47,19 +47,19 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZP2-fy-sZJ">
-                        <rect key="frame" x="0.0" y="0.0" width="310" height="84.5"/>
+                        <rect key="frame" x="3" y="1" width="333" height="84.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="WRW-NG-rqh">
-                                <rect key="frame" x="29" y="21.5" width="268.5" height="21.5"/>
+                                <rect key="frame" x="29" y="21.5" width="291.5" height="21.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07 Apr 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obZ-rd-TvE">
-                                        <rect key="frame" x="0.0" y="0.0" width="177" height="21.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="192.5" height="21.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17.659999847412109"/>
                                         <color key="textColor" red="0.29411764705882354" green="0.27450980392156865" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#1235" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEc-3R-VhC">
-                                        <rect key="frame" x="177" y="0.0" width="91.5" height="21.5"/>
+                                        <rect key="frame" x="192.5" y="0.0" width="99" height="21.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="1" green="0.77254901960784317" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="945 Abagail Prairie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewf-M7-u6y">
-                                <rect key="frame" x="29" y="48.5" width="269" height="16.5"/>
+                                <rect key="frame" x="29" y="48.5" width="292" height="16.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13.810000419616699"/>
                                 <color key="textColor" red="0.50588235294117645" green="0.5490196078431373" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                                 <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                <real key="value" value="1"/>
+                                <real key="value" value="0.0"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                 <real key="value" value="1"/>
@@ -108,16 +108,16 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Fpr-Sr-qQp">
-                        <rect key="frame" x="29" y="95.5" width="235.5" height="16.5"/>
+                        <rect key="frame" x="29" y="96.5" width="264.5" height="16.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivered" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMs-l0-inb">
-                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="16.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="122" height="16.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="10"/>
                                 <color key="textColor" red="1" green="0.51372549020000002" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="0.51372549019607838" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34.00LE" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40i-8h-T6m">
-                                <rect key="frame" x="108.5" y="0.0" width="127" height="16.5"/>
+                                <rect key="frame" x="122" y="0.0" width="142.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13.810000419616699"/>
                                 <color key="textColor" red="0.50588235290000005" green="0.54901960780000003" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -125,7 +125,7 @@
                         </subviews>
                     </stackView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_payment_cash" translatesAutoresizingMaskIntoConstraints="NO" id="iiq-Rq-0pW">
-                        <rect key="frame" x="264.5" y="69.5" width="33" height="33"/>
+                        <rect key="frame" x="293.5" y="69.5" width="33" height="33"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="33" id="6sr-As-X8o"/>
                             <constraint firstAttribute="height" constant="33" id="wFs-Fk-s0Q"/>
@@ -136,16 +136,16 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="iiq-Rq-0pW" secondAttribute="trailing" constant="12.300000000000001" id="1zr-3B-uFw"/>
                 <constraint firstItem="Fpr-Sr-qQp" firstAttribute="leading" secondItem="5Ya-e3-pac" secondAttribute="leading" constant="29" id="3fZ-vN-ilX"/>
-                <constraint firstItem="kzd-O8-Sqw" firstAttribute="leading" secondItem="5Ya-e3-pac" secondAttribute="leading" id="AsU-Jt-zOE"/>
+                <constraint firstItem="kzd-O8-Sqw" firstAttribute="leading" secondItem="5Ya-e3-pac" secondAttribute="leading" constant="3" id="AsU-Jt-zOE"/>
                 <constraint firstAttribute="bottom" secondItem="iiq-Rq-0pW" secondAttribute="bottom" constant="39.329999999999998" id="FUO-BE-QWk"/>
                 <constraint firstAttribute="bottom" secondItem="kzd-O8-Sqw" secondAttribute="bottom" constant="22.329999999999998" id="IyO-Tf-j19"/>
-                <constraint firstItem="ZP2-fy-sZJ" firstAttribute="leading" secondItem="5Ya-e3-pac" secondAttribute="leading" id="Paj-t3-dFl"/>
-                <constraint firstItem="kzd-O8-Sqw" firstAttribute="top" secondItem="5Ya-e3-pac" secondAttribute="top" id="TWW-yh-4EE"/>
-                <constraint firstItem="ZP2-fy-sZJ" firstAttribute="top" secondItem="5Ya-e3-pac" secondAttribute="top" id="YYT-J3-gzV"/>
+                <constraint firstItem="ZP2-fy-sZJ" firstAttribute="leading" secondItem="5Ya-e3-pac" secondAttribute="leading" constant="3" id="Paj-t3-dFl"/>
+                <constraint firstItem="kzd-O8-Sqw" firstAttribute="top" secondItem="5Ya-e3-pac" secondAttribute="top" constant="1" id="TWW-yh-4EE"/>
+                <constraint firstItem="ZP2-fy-sZJ" firstAttribute="top" secondItem="5Ya-e3-pac" secondAttribute="top" constant="1" id="YYT-J3-gzV"/>
                 <constraint firstAttribute="trailing" secondItem="Fpr-Sr-qQp" secondAttribute="trailing" constant="45.670000000000002" id="cMk-Co-psh"/>
                 <constraint firstItem="Fpr-Sr-qQp" firstAttribute="top" secondItem="ZP2-fy-sZJ" secondAttribute="bottom" constant="11" id="sFJ-wt-6V8"/>
-                <constraint firstAttribute="trailing" secondItem="ZP2-fy-sZJ" secondAttribute="trailing" id="sXX-e6-aYX"/>
-                <constraint firstAttribute="trailing" secondItem="kzd-O8-Sqw" secondAttribute="trailing" id="xQ9-wK-Ty7"/>
+                <constraint firstAttribute="trailing" secondItem="ZP2-fy-sZJ" secondAttribute="trailing" constant="3" id="sXX-e6-aYX"/>
+                <constraint firstAttribute="trailing" secondItem="kzd-O8-Sqw" secondAttribute="trailing" constant="3" id="xQ9-wK-Ty7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="P95-1y-580"/>
             <connections>

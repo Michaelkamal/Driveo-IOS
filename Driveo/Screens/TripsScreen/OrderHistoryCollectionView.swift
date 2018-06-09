@@ -70,7 +70,9 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
     
     
      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 339, height: 142)
+        let factor = 414 / UIScreen.main.bounds.width
+        let subtractionValue = 34/factor
+        return CGSize(width: UIScreen.main.bounds.width-subtractionValue, height: 142)
     }
 
     // MARK: UICollectionViewDelegate
