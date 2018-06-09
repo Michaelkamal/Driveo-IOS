@@ -315,6 +315,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		840345B520CD1FCA00322359 /* to be deleted */ = {
+			isa = PBXGroup;
+			children = (
+				846ABFF920C975E4003F8528 /* OrderHistoryTableView.swift */,
+				843E2DB620C9D88000DE459C /* HeaderCell.xib */,
+				843E2DBA20C9DB9400DE459C /* OrderCustomHeader.swift */,
+				846ABFF320C9689B003F8528 /* TripCell.xib */,
+				840345B120CB24E800322359 /* UpcomingOrdersTableView.swift */,
+				846ABFF520C97041003F8528 /* OrderCell.swift */,
+			);
+			path = "to be deleted";
+			sourceTree = "<group>";
+		};
 		840B1CBA20C52D2D0046542D /* ResetPasswordScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,14 +372,8 @@
 			isa = PBXGroup;
 			children = (
 				84187EE520C6D48E00FB5566 /* Trips.storyboard */,
-				846ABFF320C9689B003F8528 /* TripCell.xib */,
-				846ABFF520C97041003F8528 /* OrderCell.swift */,
-				846ABFF920C975E4003F8528 /* OrderHistoryTableView.swift */,
-				843E2DB620C9D88000DE459C /* HeaderCell.xib */,
-				843E2DBA20C9DB9400DE459C /* OrderCustomHeader.swift */,
 				841D74A820CB195600253AA4 /* OrderTabView.swift */,
 				843E2DBC20CAB1A500DE459C /* OrdersModel.swift */,
-				840345B120CB24E800322359 /* UpcomingOrdersTableView.swift */,
 				840345B320CB348D00322359 /* OrdersPresenter.swift */,
 				84626C9F20CBE3C700AE2BB1 /* OrderHistoryCollectionView.swift */,
 				84626CA120CBE40B00AE2BB1 /* TripCollectionCell.xib */,
@@ -610,6 +617,7 @@
 		84A2D4A720C2C91200576ACF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				840345B520CD1FCA00322359 /* to be deleted */,
 				846ABFEC20C93DCF003F8528 /* SplashScreen */,
 				84187ED620C6D21400FB5566 /* TripsScreen */,
 				842C037120C5A32B00CA1C3B /* CreateRequestScreen */,
