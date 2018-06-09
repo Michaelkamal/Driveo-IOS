@@ -70,10 +70,12 @@
 		845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D48F320BEEF92000F16C1 /* Main.storyboard */; };
 		845D48F820BEEF92000F16C1 /* Driveo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 845D48F620BEEF92000F16C1 /* Driveo.xcdatamodeld */; };
 		845D48FA20BEEF92000F16C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845D48F920BEEF92000F16C1 /* Assets.xcassets */; };
-		845D48FD20BEEF92000F16C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D48FB20BEEF92000F16C1 /* LaunchScreen.storyboard */; };
 		845D490820BEEF92000F16C1 /* DriveoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D490720BEEF92000F16C1 /* DriveoTests.swift */; };
 		845D491320BEEF93000F16C1 /* DriveoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D491220BEEF93000F16C1 /* DriveoUITests.swift */; };
-		846ABFF020C93E13003F8528 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846ABFEF20C93E13003F8528 /* SplashScreen.storyboard */; };
+		84626CA020CBE3C700AE2BB1 /* OrderHistoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84626C9F20CBE3C700AE2BB1 /* OrderHistoryCollectionView.swift */; };
+		84626CA220CBE40B00AE2BB1 /* TripCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84626CA120CBE40B00AE2BB1 /* TripCollectionCell.xib */; };
+		84626CA420CBEA1A00AE2BB1 /* TripCellCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84626CA320CBEA1A00AE2BB1 /* TripCellCollectionView.swift */; };
+		846ABFF020C93E13003F8528 /* LauchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846ABFEF20C93E13003F8528 /* LauchScreen.storyboard */; };
 		846ABFF220C93E44003F8528 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABFF120C93E44003F8528 /* SplashView.swift */; };
 		846ABFF420C9689B003F8528 /* TripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846ABFF320C9689B003F8528 /* TripCell.xib */; };
 		846ABFF620C97041003F8528 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABFF520C97041003F8528 /* OrderCell.swift */; };
@@ -204,7 +206,6 @@
 		845D48F420BEEF92000F16C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		845D48F720BEEF92000F16C1 /* Driveo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Driveo.xcdatamodel; sourceTree = "<group>"; };
 		845D48F920BEEF92000F16C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		845D48FC20BEEF92000F16C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		845D48FE20BEEF92000F16C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		845D490320BEEF92000F16C1 /* DriveoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D490720BEEF92000F16C1 /* DriveoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveoTests.swift; sourceTree = "<group>"; };
@@ -212,7 +213,10 @@
 		845D490E20BEEF93000F16C1 /* DriveoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D491220BEEF93000F16C1 /* DriveoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveoUITests.swift; sourceTree = "<group>"; };
 		845D491420BEEF93000F16C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		846ABFEF20C93E13003F8528 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		84626C9F20CBE3C700AE2BB1 /* OrderHistoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryCollectionView.swift; sourceTree = "<group>"; };
+		84626CA120CBE40B00AE2BB1 /* TripCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCollectionCell.xib; sourceTree = "<group>"; };
+		84626CA320CBEA1A00AE2BB1 /* TripCellCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCellCollectionView.swift; sourceTree = "<group>"; };
+		846ABFEF20C93E13003F8528 /* LauchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LauchScreen.storyboard; sourceTree = "<group>"; };
 		846ABFF120C93E44003F8528 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		846ABFF320C9689B003F8528 /* TripCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCell.xib; sourceTree = "<group>"; };
 		846ABFF520C97041003F8528 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
@@ -360,6 +364,9 @@
 				843E2DBC20CAB1A500DE459C /* OrdersModel.swift */,
 				840345B120CB24E800322359 /* UpcomingOrdersTableView.swift */,
 				840345B320CB348D00322359 /* OrdersPresenter.swift */,
+				84626C9F20CBE3C700AE2BB1 /* OrderHistoryCollectionView.swift */,
+				84626CA120CBE40B00AE2BB1 /* TripCollectionCell.xib */,
+				84626CA320CBEA1A00AE2BB1 /* TripCellCollectionView.swift */,
 			);
 			path = TripsScreen;
 			sourceTree = "<group>";
@@ -520,7 +527,6 @@
 				845D48EF20BEEF92000F16C1 /* AppDelegate.swift */,
 				845D48F320BEEF92000F16C1 /* Main.storyboard */,
 				845D48F920BEEF92000F16C1 /* Assets.xcassets */,
-				845D48FB20BEEF92000F16C1 /* LaunchScreen.storyboard */,
 				845D48FE20BEEF92000F16C1 /* Info.plist */,
 				845D48F620BEEF92000F16C1 /* Driveo.xcdatamodeld */,
 			);
@@ -548,7 +554,7 @@
 		846ABFEC20C93DCF003F8528 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
-				846ABFEF20C93E13003F8528 /* SplashScreen.storyboard */,
+				846ABFEF20C93E13003F8528 /* LauchScreen.storyboard */,
 				846ABFF120C93E44003F8528 /* SplashView.swift */,
 			);
 			path = SplashScreen;
@@ -865,10 +871,10 @@
 				844C6FBD20C619DA00379783 /* NextButton.xib in Resources */,
 				846ABFF420C9689B003F8528 /* TripCell.xib in Resources */,
 				84A2D4E520C2CD7D00576ACF /* DropDownPlacesItem.xib in Resources */,
-				845D48FD20BEEF92000F16C1 /* LaunchScreen.storyboard in Resources */,
 				845D48FA20BEEF92000F16C1 /* Assets.xcassets in Resources */,
-				846ABFF020C93E13003F8528 /* SplashScreen.storyboard in Resources */,
+				846ABFF020C93E13003F8528 /* LauchScreen.storyboard in Resources */,
 				845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */,
+				84626CA220CBE40B00AE2BB1 /* TripCollectionCell.xib in Resources */,
 				84937BBC20C3660B00727437 /* Login.storyboard in Resources */,
 				844BD61320C4C54C005E98FC /* DestinationScreen.storyboard in Resources */,
 				84187EE620C6D48E00FB5566 /* Trips.storyboard in Resources */,
@@ -1048,6 +1054,7 @@
 				844BD60220C38C20005E98FC /* CreateOrderView.swift in Sources */,
 				844BD5F120C35F12005E98FC /* Order.swift in Sources */,
 				841D74A920CB195600253AA4 /* OrderTabView.swift in Sources */,
+				84626CA420CBEA1A00AE2BB1 /* TripCellCollectionView.swift in Sources */,
 				84187ED820C6D26C00FB5566 /* TripsViewProtocol.swift in Sources */,
 				843E2DC620CAB7F600DE459C /* OrderMockApi.swift in Sources */,
 				84A2D4E120C2CD7D00576ACF /* PickLoacationPresenter.swift in Sources */,
@@ -1080,6 +1087,7 @@
 				84A2D4E420C2CD7D00576ACF /* DropDownPlacesItem.swift in Sources */,
 				84A2D4F320C2CE2400576ACF /* RoundedButton.swift in Sources */,
 				844BD5F620C3679D005E98FC /* PickLocationViewProtocol.swift in Sources */,
+				84626CA020CBE3C700AE2BB1 /* OrderHistoryCollectionView.swift in Sources */,
 				844BD61520C4C644005E98FC /* ScreenController.swift in Sources */,
 				84A2D4F420C2CE2400576ACF /* NetworkDAL.swift in Sources */,
 				8447456E20C07D2A0076D0EC /* ErrorType.swift in Sources */,
@@ -1142,14 +1150,6 @@
 				845D48F420BEEF92000F16C1 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		845D48FB20BEEF92000F16C1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				845D48FC20BEEF92000F16C1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

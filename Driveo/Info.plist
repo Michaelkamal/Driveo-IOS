@@ -53,7 +53,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need to access your location so this app can find your Location</string>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>LauchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Trips</string>
 	<key>UIRequiredDeviceCapabilities</key>
