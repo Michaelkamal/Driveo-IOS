@@ -33,16 +33,6 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
         
     }
     
-    func ChangeLabel(ofField field: Int ,withString str: String) {
-        switch field {
-        case 2:
-            passwordFld2.errorMessage = str
-        default:
-            passwordFld1.errorMessage = str
-
-        }
-    }
-    
     @IBAction func backToLogin(_ sender: UIButton) {
         let loginView = self.storyboard?.instantiateViewController(withIdentifier: "loginView")
         self.present(loginView!, animated: true, completion: nil)
