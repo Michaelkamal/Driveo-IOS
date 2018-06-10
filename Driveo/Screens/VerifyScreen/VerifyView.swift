@@ -7,10 +7,10 @@
 //
 
 import UIKit
-
+import SkyFloatingLabelTextField
 class VerifyView: UIViewController , VerifyViewProtocol, UITextFieldDelegate{
     
-    @IBOutlet weak var verificationCodeTextField: UITextField!
+    @IBOutlet weak var verificationCodeTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var errorCodeLabel: UILabel!
     private lazy var presenter:VerifyPresenterProtocol = VerifyPresenter(view: self)
     
@@ -41,7 +41,7 @@ class VerifyView: UIViewController , VerifyViewProtocol, UITextFieldDelegate{
     */
 
     func setCodeErrorLabel(withError error: String) {
-        errorCodeLabel.text = error
+        verificationCodeTextField.errorMessage = error
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -72,6 +72,12 @@ class VerifyView: UIViewController , VerifyViewProtocol, UITextFieldDelegate{
     @IBAction func verifyButtonAction(_ sender: Any) {
         presenter.sendVerificationCode(withcode: verificationCodeTextField.text!)
     }
+    
+    
+    @IBAction func sendVerifyCodeAction(_ sender: Any) {
+        
+    }
+    
     
     
     func textFieldDidEndEditing(_ textField: UITextField){
