@@ -8,7 +8,7 @@
 
 import Foundation
 protocol LoginModelProtocol {
-    func sendRequest(withParameters params:Dictionary<String,Any>);
+    func sendRequest(withUserName name:String,andPassword pass:String);
     func onSuccess(_ response:Any) -> Void
     func onFailure(_ networkError:ErrorType) -> Void
 }

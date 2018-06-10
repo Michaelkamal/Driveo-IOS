@@ -21,14 +21,11 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     
     @IBAction func loginBut(_ sender: Any) {
         
-        showErrorLabel(withString: "")
-        if (emailTxt.text?.matches(String((String.regexes.email).rawValue)))! {
+        if validateEmail() {
             lp.login(withUserName: emailTxt.text!, andPassword: passTxt.text!)
             showLoading()
         }
-        else{
-            showErrorLabel(withString: "Invalid E-mail")
-        }
+        
     }
     
     @IBAction func forgotPass(_ sender: Any) {
@@ -43,8 +40,8 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showErrorLabel(withString: "")
         lp = LoginPresenter(withController: self)
+        emailTxt.delegate = self
     }
     
     
@@ -82,5 +79,37 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    
+    func validateEmail() -> Bool{
+        if (emailTxt.text?.validate(regex: String.regexes.email.rawValue))! {
+            showErrorLabel(withString: "")
+            return true
+        }
+        else{
+            showErrorLabel(withString: "Invalid Email")
+            return false
+        }
+    }
+    
+    
+    func loginFailed(withMessage message:String){
+        showAlert(withTitle: "Failed", andMessage: message)
+    }
+    
+}
+
+extension LoginViewController : UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField){
+        switch textField {
+        case emailTxt:
+            validateEmail()
+        default: break
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
+    
     
 }

@@ -17,20 +17,17 @@ class LoginPresenter : LoginPresenterProtocol{
     func login(withUserName name:String,andPassword pass:String){
         
         lm = LoginModel(withPresenter: self)
-        let user = User(email: name, phone: "", password: pass)
-        let params = user.getUserDataInDictionary()
-        
-        lm.sendRequest(withParameters: params)
+        lm.sendRequest(withUserName : name,andPassword : pass)
         
     }
     
     func loginSuccess(user:User, token:String) ->Void{
-            lvc.goToScreen(withScreenName: "next")
+        lvc.goToScreen(withScreenName: "next")
         lvc.dismissLoading()
             
     }
     func loginFailure(message:String) -> Void {
-        lvc.showAlert(withTitle: "Failed", andMessage: message)
+        lvc.loginFailed(withMessage: message)
         lvc.dismissLoading()
     }
     

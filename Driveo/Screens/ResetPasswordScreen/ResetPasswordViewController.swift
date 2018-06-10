@@ -20,7 +20,8 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         rPP = ResetPasswordPresenter(withController: self)
-        // Do any additional setup after loading the view.
+        passwordFld2.delegate = self
+        passwordFld1.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,32 +33,16 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
         
     }
     
-    func ChangeLabel(ofField field: Int ,withString str: String) {
-        switch field {
-        case 2:
-            passwordFld2.errorMessage = str
-        default:
-            passwordFld1.errorMessage = str
-
-        }
-    }
-    
     @IBAction func backToLogin(_ sender: UIButton) {
         let loginView = self.storyboard?.instantiateViewController(withIdentifier: "loginView")
         self.present(loginView!, animated: true, completion: nil)
     }
     
     @IBAction func sendPassword(_ sender: UIButton) {
-        if passwordFld1.text! == passwordFld2.text! && true{
+        if validatePasswordMainField() && validatePasswordMainField(){
             rPP.resetPassword(withPassword: passwordFld1.text!)
             print("matches")
             showLoading()
-        }
-        else if true{
-            ChangeLabel(ofField: 1, withString: "Invalid password")
-        }
-        else if passwordFld1.text! != passwordFld2.text! {
-            ChangeLabel(ofField: 2, withString: "Doesn't match")
         }
     }
     
@@ -67,6 +52,28 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
     
     func dismissLoading() {
         UIViewController.removeSpinner(spinner: spinner!)
+    }
+    
+    func validatePasswordMainField() -> Bool {
+        if passwordFld1.text!.validate(regex: String.regexes.password.rawValue) {
+            passwordFld1.errorMessage = ""
+            return true
+        }
+        else{
+            passwordFld1.errorMessage = "Invalid password"
+            return false
+        }
+    }
+    
+    func validatePasswordSecondaryField() -> Bool {
+        if passwordFld1.text! == passwordFld2.text! {
+            passwordFld2.errorMessage = ""
+            return true
+        }
+        else{
+            passwordFld2.errorMessage = "Doesn't match"
+            return false
+        }
     }
     
     func showAlert(withTitle title :String , andMessage msg:String){
@@ -89,4 +96,22 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
     }
     */
 
+}
+
+extension ResetPasswordViewController : UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField){
+        switch textField {
+        case passwordFld1:
+            validatePasswordMainField()
+        case passwordFld2:
+            validatePasswordSecondaryField()
+        default: break
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
+    
+    
 }

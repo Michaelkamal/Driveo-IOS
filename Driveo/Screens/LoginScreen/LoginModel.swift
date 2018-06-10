@@ -16,9 +16,11 @@ class LoginModel : LoginModelProtocol{
         lp=p
     }
     
-    func sendRequest(withParameters params:Dictionary<String,Any>){
+    func sendRequest(withUserName name:String,andPassword pass:String){
         let networkObj:NetworkDAL = NetworkDAL.sharedInstance()
-        networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "authentication/login", andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
+        let user = User(email: name, phone: "", password: pass)
+        let params = user.getUserDataInDictionary()
+        networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "authentication/signin", andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
     }
     
     func onSuccess(_ response:Any) -> Void{
@@ -32,6 +34,7 @@ class LoginModel : LoginModelProtocol{
         print(token)
         if message.contains("success") {
             defaults.set(token, forKey :"auth_token")
+            defaults.set(true, forKey :"verified")
             defaults.synchronize()
             lp.loginSuccess(user: user, token: token)
         }
@@ -46,4 +49,6 @@ class LoginModel : LoginModelProtocol{
     
     
 }
+
+
 
