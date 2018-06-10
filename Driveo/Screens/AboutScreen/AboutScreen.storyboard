@@ -35,22 +35,38 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obA-h0-uwl">
-                                        <rect key="frame" x="8" y="225" width="359" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="32" y="225" width="311" height="19.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="750" constant="324" id="gmn-SF-8fa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16.670000076293945"/>
                                         <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <color key="highlightedColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pj7-OV-wdr">
+                                        <rect key="frame" x="17.5" y="36" width="36" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16.75" id="FcD-QX-rhx"/>
+                                            <constraint firstAttribute="width" constant="35.770000000000003" id="If2-H2-tY6"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="ic_close"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="9nD-Vt-dZr" eventType="touchUpInside" id="sZr-vC-uvs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="obA-h0-uwl" secondAttribute="bottom" constant="2" id="45D-ys-sfI"/>
                                     <constraint firstItem="Srn-YF-jq9" firstAttribute="centerX" secondItem="W5v-q2-pHo" secondAttribute="centerX" id="6YY-g4-8LE"/>
                                     <constraint firstItem="TW1-m6-RVo" firstAttribute="centerX" secondItem="W5v-q2-pHo" secondAttribute="centerX" id="GBl-R4-n5F"/>
                                     <constraint firstItem="obA-h0-uwl" firstAttribute="top" secondItem="Srn-YF-jq9" secondAttribute="bottom" constant="39.460000000000001" id="NdI-Lj-eaC"/>
+                                    <constraint firstItem="Pj7-OV-wdr" firstAttribute="top" secondItem="W5v-q2-pHo" secondAttribute="top" constant="35.770000000000003" id="Oaa-gC-Y7Q"/>
                                     <constraint firstItem="obA-h0-uwl" firstAttribute="centerX" secondItem="W5v-q2-pHo" secondAttribute="centerX" id="cyU-lM-zjd"/>
                                     <constraint firstItem="Srn-YF-jq9" firstAttribute="top" secondItem="TW1-m6-RVo" secondAttribute="bottom" constant="50.159999999999997" id="jKS-U5-Ypv"/>
+                                    <constraint firstItem="Pj7-OV-wdr" firstAttribute="leading" secondItem="W5v-q2-pHo" secondAttribute="leading" constant="17.719999999999999" id="lCM-zm-u9K"/>
                                     <constraint firstAttribute="bottom" secondItem="obA-h0-uwl" secondAttribute="bottom" constant="2" id="lt6-SF-X6e"/>
                                     <constraint firstItem="TW1-m6-RVo" firstAttribute="top" secondItem="W5v-q2-pHo" secondAttribute="top" constant="23.18" id="u23-xh-Fs2"/>
-                                    <constraint firstItem="obA-h0-uwl" firstAttribute="leading" secondItem="W5v-q2-pHo" secondAttribute="leading" constant="8" id="zA2-Bf-ETF"/>
+                                    <constraint firstItem="obA-h0-uwl" firstAttribute="leading" secondItem="W5v-q2-pHo" secondAttribute="leading" constant="32" id="zA2-Bf-ETF"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -73,6 +89,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_close" width="42" height="43"/>
         <image name="ic_splash" width="435" height="250"/>
     </resources>
 </document>
