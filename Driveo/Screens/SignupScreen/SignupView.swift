@@ -107,6 +107,11 @@ class SignupView: UIViewController ,SignupViewProtocol{
     
     func goToVerifyScreen(){
         let verifyScreen:VerifyView = self.storyboard?.instantiateViewController(withIdentifier: "VerifyView") as! VerifyView
+        
+        verifyScreen.modalPresentationStyle = UIModalPresentationStyle.custom
+        verifyScreen.transitioningDelegate = self
+        //verifyScreen.view.backgroundColor = UIColor.black
+        self.view.alpha = 0.5
         self.present(verifyScreen, animated: true, completion: nil)
     }
     
@@ -141,6 +146,19 @@ extension SignupView : UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return textField.resignFirstResponder()
     }
+    
+    
+}
+
+
+extension SignupView : UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController?{
+         return HalfSizePresentationController(presentedViewController: presented, presenting: presentingViewController)
+    
+    }
+    
+    
     
     
 }

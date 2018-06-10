@@ -11,9 +11,16 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+enum MsgResponse:String {
+    case success = "success"
+    case successSignup = "sorry this account is not yet verified"
+    
+}
+
+
 enum SuffixUrl:String {
-    case signup = "/authenticate/signup"
-    case verify = "/authenticate/verify"
+    case signup = "authentication/signup"
+    case verify = "authenticate/verify"
 }
 
 

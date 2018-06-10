@@ -37,6 +37,7 @@
 		84247CD420C77F6100AE43FA /* Providers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84247CD320C77F6100AE43FA /* Providers.swift */; };
 		842C037A20C5A3F100CA1C3B /* CreateRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842C037820C5A3F100CA1C3B /* CreateRequest.storyboard */; };
 		842C037B20C5A3F100CA1C3B /* CreateRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842C037920C5A3F100CA1C3B /* CreateRequestView.swift */; };
+		843A09F420CDEB67002134F1 /* HalfSizePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A09F320CDEB67002134F1 /* HalfSizePresentationController.swift */; };
 		843E2DB520C9D5BA00DE459C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E2DB420C9D5BA00DE459C /* UIViewExtension.swift */; };
 		843E2DB720C9D88000DE459C /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843E2DB620C9D88000DE459C /* HeaderCell.xib */; };
 		843E2DBB20C9DB9400DE459C /* OrderCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E2DBA20C9DB9400DE459C /* OrderCustomHeader.swift */; };
@@ -176,6 +177,7 @@
 		84247CD320C77F6100AE43FA /* Providers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Providers.swift; sourceTree = "<group>"; };
 		842C037820C5A3F100CA1C3B /* CreateRequest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateRequest.storyboard; sourceTree = "<group>"; };
 		842C037920C5A3F100CA1C3B /* CreateRequestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRequestView.swift; sourceTree = "<group>"; };
+		843A09F320CDEB67002134F1 /* HalfSizePresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSizePresentationController.swift; sourceTree = "<group>"; };
 		843E2DB420C9D5BA00DE459C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		843E2DB620C9D88000DE459C /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		843E2DBA20C9DB9400DE459C /* OrderCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCustomHeader.swift; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 				84A2D4EA20C2CE2400576ACF /* CustomControls */,
 				84A2D4EE20C2CE2400576ACF /* NetworkUtilities */,
 				843E2DB420C9D5BA00DE459C /* UIViewExtension.swift */,
+				843A09F320CDEB67002134F1 /* HalfSizePresentationController.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1123,6 +1126,7 @@
 				844BD61520C4C644005E98FC /* ScreenController.swift in Sources */,
 				84A2D4F420C2CE2400576ACF /* NetworkDAL.swift in Sources */,
 				8447456E20C07D2A0076D0EC /* ErrorType.swift in Sources */,
+				843A09F420CDEB67002134F1 /* HalfSizePresentationController.swift in Sources */,
 				84937BCC20C3672600727437 /* LoginPresenterProtocol.swift in Sources */,
 				8447457A20C07D2A0076D0EC /* LocationMangerProtocolExtention.swift in Sources */,
 				844BD5F820C37045005E98FC /* GenericProtocol.swift in Sources */,

@@ -19,6 +19,6 @@ enum ErrorType:String,Error{
     case passwordLength = "Password length should between 6-12"
     case passwordNumberLetterError = "Password should have letter and number"
     case confirmPassword = "password doesn't match"
-    case pinCodeError = "Please enter valid code"
+    case pinCodeError = "code not valid"
     case errorTitle = "Error"
     }
