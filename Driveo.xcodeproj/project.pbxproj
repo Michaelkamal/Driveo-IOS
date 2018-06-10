@@ -77,6 +77,8 @@
 		84626CA420CBEA1A00AE2BB1 /* TripCellCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84626CA320CBEA1A00AE2BB1 /* TripCellCollectionView.swift */; };
 		84626CA620CBFD1800AE2BB1 /* HeaderCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84626CA520CBFD1800AE2BB1 /* HeaderCollection.xib */; };
 		84626CA820CC02F800AE2BB1 /* HeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84626CA720CC02F800AE2BB1 /* HeaderCollection.swift */; };
+		84626CAB20CD822E00AE2BB1 /* AboutScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84626CAA20CD822D00AE2BB1 /* AboutScreen.storyboard */; };
+		84626CAD20CD874600AE2BB1 /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84626CAC20CD874600AE2BB1 /* AboutScreen.swift */; };
 		846ABFF020C93E13003F8528 /* LauchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846ABFEF20C93E13003F8528 /* LauchScreen.storyboard */; };
 		846ABFF220C93E44003F8528 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABFF120C93E44003F8528 /* SplashView.swift */; };
 		846ABFF420C9689B003F8528 /* TripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846ABFF320C9689B003F8528 /* TripCell.xib */; };
@@ -220,6 +222,8 @@
 		84626CA320CBEA1A00AE2BB1 /* TripCellCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCellCollectionView.swift; sourceTree = "<group>"; };
 		84626CA520CBFD1800AE2BB1 /* HeaderCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollection.xib; sourceTree = "<group>"; };
 		84626CA720CC02F800AE2BB1 /* HeaderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollection.swift; sourceTree = "<group>"; };
+		84626CAA20CD822D00AE2BB1 /* AboutScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutScreen.storyboard; sourceTree = "<group>"; };
+		84626CAC20CD874600AE2BB1 /* AboutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
 		846ABFEF20C93E13003F8528 /* LauchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LauchScreen.storyboard; sourceTree = "<group>"; };
 		846ABFF120C93E44003F8528 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		846ABFF320C9689B003F8528 /* TripCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCell.xib; sourceTree = "<group>"; };
@@ -564,6 +568,15 @@
 			path = DriveoUITests;
 			sourceTree = "<group>";
 		};
+		84626CA920CD81FE00AE2BB1 /* AboutScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84626CAA20CD822D00AE2BB1 /* AboutScreen.storyboard */,
+				84626CAC20CD874600AE2BB1 /* AboutScreen.swift */,
+			);
+			path = AboutScreen;
+			sourceTree = "<group>";
+		};
 		846ABFEC20C93DCF003F8528 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,6 +630,7 @@
 		84A2D4A720C2C91200576ACF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				84626CA920CD81FE00AE2BB1 /* AboutScreen */,
 				840345B520CD1FCA00322359 /* to be deleted */,
 				846ABFEC20C93DCF003F8528 /* SplashScreen */,
 				84187ED620C6D21400FB5566 /* TripsScreen */,
@@ -885,6 +899,7 @@
 				844C6FBD20C619DA00379783 /* NextButton.xib in Resources */,
 				846ABFF420C9689B003F8528 /* TripCell.xib in Resources */,
 				84A2D4E520C2CD7D00576ACF /* DropDownPlacesItem.xib in Resources */,
+				84626CAB20CD822E00AE2BB1 /* AboutScreen.storyboard in Resources */,
 				845D48FA20BEEF92000F16C1 /* Assets.xcassets in Resources */,
 				846ABFF020C93E13003F8528 /* LauchScreen.storyboard in Resources */,
 				845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */,
@@ -1038,6 +1053,7 @@
 				84EFC1BF20C43530004E5BDF /* VerifyPresenterProtocol.swift in Sources */,
 				840B1CC320C52E060046542D /* ResetPasswordPresenterProtocol.swift in Sources */,
 				84937BC520C3670800727437 /* ForgotPassPresenterProtocol.swift in Sources */,
+				84626CAD20CD874600AE2BB1 /* AboutScreen.swift in Sources */,
 				84187EDE20C6D48E00FB5566 /* TripsModelProtocol.swift in Sources */,
 				843E2DC420CAB34100DE459C /* OrdersModelProtocol.swift in Sources */,
 				84EFC1BA20C434FF004E5BDF /* VerifyModel.swift in Sources */,

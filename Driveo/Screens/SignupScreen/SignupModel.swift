@@ -19,7 +19,7 @@ class SignupModel : SignupModelProtocol{
     
     func registerNewUser(user: User) {
         let networkobject = NetworkDAL.sharedInstance()
-        networkobject.processPostReq(withBaseUrl: ApiBaseUrl.mainApi,andUrlSuffix: "signup",andParameters: user.getUserDataInDictionary(),onSuccess: onRegisterSucsess,onFailure: onRegisterFailure)
+        networkobject.processPostReq(withBaseUrl: ApiBaseUrl.mainApi,andUrlSuffix: SuffixUrl.signup.rawValue,andParameters: user.getUserDataInDictionary(),onSuccess: onRegisterSucsess,onFailure: onRegisterFailure)
     }
     
     

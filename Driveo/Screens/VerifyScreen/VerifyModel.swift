@@ -25,7 +25,7 @@ class  VerifyModel : VerifyModelProtocol {
         
         
         
-        networkObject.processPostReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: "verify", andParameters: parameters , onSuccess: onVerifySucces, onFailure: onVerifyFailure,headers: ["Authorization":token])
+        networkObject.processPostReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.verify.rawValue, andParameters: parameters , onSuccess: onVerifySucces, onFailure: onVerifyFailure,headers: ["Authorization":token])
         
     }
     
