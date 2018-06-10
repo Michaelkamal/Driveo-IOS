@@ -27,6 +27,7 @@ class ForgetPasswordViewController: UIViewController, ForgotPassViewProtocol {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func exitView(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -35,15 +36,15 @@ class ForgetPasswordViewController: UIViewController, ForgotPassViewProtocol {
     @IBAction func sendLink(_ sender: UIButton) {
         if (emailTxt.text?.matches(String.regexes.email.rawValue))!{
             fPP.sendLink(withEmail: emailTxt.text!)
-            print("matches")
+            ChangeLabel(withString: "")
             showLoading()
         }
         else{
             ChangeLabel(withString: "Invalid email")
         }
     }
+    
     func goToScreen(withScreenName name: String) {
-        dismissLoading()
     }
     
     func ChangeLabel(withString str: String) {

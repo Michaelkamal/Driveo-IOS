@@ -10,6 +10,6 @@ import Foundation
 protocol LoginViewProtocol {
     func goToScreen(withScreenName name:String);
     func showErrorLabel(withString str:String)
-    func showAlert(withTitle title :String , andMessage msg:String)
     func dismissLoading()
+    func loginFailed(withMessage message:String)
 }
