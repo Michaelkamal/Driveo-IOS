@@ -30,7 +30,7 @@ class SignupModel : SignupModelProtocol{
     func onRegisterSucsess(data: Any) {
         let response = data as! [String:Any]
         let msg:String = response["message"] as! String
-        if  msg == "sorry this account is not yet verified" {
+        if  msg == MsgResponse.success.rawValue {
              let token = response["auth_token"] as! String
             
            
