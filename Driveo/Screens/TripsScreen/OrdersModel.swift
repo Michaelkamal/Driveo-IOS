@@ -29,7 +29,7 @@ class OrderModel : OrdersModelProtocol{
     
     func getOrders(forType type: OrderType, withToken token: String) {
         let networkObject : NetworkDAL = NetworkDAL.sharedInstance()
-        var suffixUrl = SuffixUrl.orders.rawValue + "1"
+        let suffixUrl = SuffixUrl.orders.rawValue + "1"
         
         networkObject.processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: suffixUrl, withParser: { (data) -> [Any] in
             if let response = try? JSONDecoder().decode(RequestOrdersResult.self, from: data.rawData()){
@@ -41,12 +41,13 @@ class OrderModel : OrdersModelProtocol{
                 print(respone)
                 if respone.message == MsgResponse.success.rawValue {
                     self.presenter.onRequestSuccess(withOrders: respone.data)
+                }else{
+                    self.presenter.onRequestFailure(failure: ErrorType.parse.rawValue)
                 }
-                self.presenter.onRequestFailure(failure: ErrorType.parse.rawValue)
+                
             }
         }, onFailure: onRequestFailure)
-        
-        networkObject.processPostReq(withBaseUrl: ApiBaseUrl.testmockAoi, andUrlSuffix: type.rawValue, andParameters: ["type":type.rawValue], onSuccess: onRequestSuccess, onFailure: onRequestFailure, headers: ["Authorization":token])
+
         
       
         

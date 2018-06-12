@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Driveo/Screens/PickLoacationScreen/PickLoacationViewController.swift"
-            timestampString = "550521973.873138"
+            filePath = "Driveo/Screens/TripsScreen/OrdersModel.swift"
+            timestampString = "550526645.930516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
-            landmarkName = "presentToNextScreen()"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getOrders(forType:withToken:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,93 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Driveo/Screens/PickLoacationScreen/PickLoacationViewController.swift"
-            timestampString = "550521973.873868"
+            filePath = "Driveo/Screens/TripsScreen/OrdersModel.swift"
+            timestampString = "550526645.931501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "presentToNextScreen()"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getOrders(forType:withToken:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Driveo/Screens/TripsScreen/OrdersModel.swift"
+            timestampString = "550526645.931935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getOrders(forType:withToken:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Driveo/Screens/TripsScreen/OrdersModel.swift"
+            timestampString = "550526645.932236"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getOrders(forType:withToken:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Driveo.OrderModel.getOrders(forType: Driveo.OrderType, withToken: Swift.String) -&gt; ()"
+                  moduleName = "Driveo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/Driveo-IOS/Driveo/Screens/TripsScreen/OrdersModel.swift"
+                  timestampString = "550526647.275836"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftyJSON.JSON) -&gt; Swift.Array&lt;Any&gt; in Driveo.OrderModel.getOrders(forType: Driveo.OrderType, withToken: Swift.String) -&gt; ()"
+                  moduleName = "Driveo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/Driveo-IOS/Driveo/Screens/TripsScreen/OrdersModel.swift"
+                  timestampString = "550526647.2946759"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Driveo/Screens/TripsScreen/OrdersModel.swift"
+            timestampString = "550526645.9325171"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getOrders(forType:withToken:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
