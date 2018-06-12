@@ -21,13 +21,14 @@ class CreateOrderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if(userOrder.source == nil){
-            self.presentScreen(screen: ScreenController.sourceScreen)}
-        orderStatus.text=userOrder.orderStatus.rawValue
+            self.presentScreen(screen: ScreenController.sourceScreen)
+        }
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        orderStatus.text=userOrder.orderStatus.rawValue
         contentView.subviews.forEach { (view) in
             view.removeFromSuperview()
         }
@@ -177,7 +178,7 @@ class CreateOrderViewController: UIViewController {
             }
             else
             {
-                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentViewMaxY-cellHeight, width: contentView.frame.width, height: cellHeight)
+                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentViewMaxY-0.5*cellHeight, width: contentView.frame.width, height: cellHeight)
                 contentView.addSubview(nextButton)
             }
             

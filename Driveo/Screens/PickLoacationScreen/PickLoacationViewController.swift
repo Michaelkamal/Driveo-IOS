@@ -224,8 +224,17 @@ extension PickLoacationViewController:PickLocationViewProtocol
     // move to second screen
     
     func presentToNextScreen(){
-            self.dismiss(animated: true,completion: nil)
-        }
+        let topController = UIApplication.shared.keyWindow!.rootViewController!;
+        if(topController.isKind(of: PickLoacationViewController.self)){
+           self.dismiss(animated: true,completion: { () in
+            let screen = ScreenController.createOrderScreen
+            let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+            let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
+            self.present(vc, animated: true, completion: nil)
+           })
+        }else{
+        self.dismiss(animated: true,completion: nil)
+        }}
 }
 // mark : places auto complete extention
 extension PickLoacationViewController {

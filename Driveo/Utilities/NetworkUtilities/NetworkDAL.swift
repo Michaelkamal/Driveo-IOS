@@ -91,7 +91,7 @@ public class NetworkDAL{
         onSuccess: @escaping (_ :[Any])->Void,
         onFailure:  @escaping (_ networkError:ErrorType)->Void
         )-> Void{
-         Alamofire.request(baseUrl.rawValue+urlSuffix, method: .post, parameters: nil, headers: headers).validate().responseJSON { response  in
+         Alamofire.request(baseUrl.rawValue+urlSuffix, method: .get, parameters: nil, headers: headers).validate().responseJSON { response  in
                         switch response.result {
                         case .success(let data):
                             let jsonData = JSON(data);

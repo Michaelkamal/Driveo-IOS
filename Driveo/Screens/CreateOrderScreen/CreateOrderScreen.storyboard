@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQv-CD-gSJ">
-                                <rect key="frame" x="0.0" y="140" width="375" height="524.5"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="527"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeX-tO-e0u" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="530"/>
@@ -74,7 +74,7 @@
                             <constraint firstItem="hWG-YJ-Fpo" firstAttribute="width" secondItem="jB5-aL-VuJ" secondAttribute="height" multiplier="17:667" id="euz-vh-SaH"/>
                             <constraint firstItem="DUk-wZ-ecb" firstAttribute="centerX" secondItem="jB5-aL-VuJ" secondAttribute="centerX" id="hGE-yT-8Jn"/>
                             <constraint firstItem="T6s-8t-7TZ" firstAttribute="top" secondItem="ii6-8q-b8t" secondAttribute="top" constant="33.670000000000002" id="qvd-U0-deL"/>
-                            <constraint firstItem="EQv-CD-gSJ" firstAttribute="bottom" secondItem="ii6-8q-b8t" secondAttribute="bottom" constant="-2.3300000000000001" id="uPF-yr-Bet"/>
+                            <constraint firstItem="EQv-CD-gSJ" firstAttribute="bottom" secondItem="ii6-8q-b8t" secondAttribute="bottom" id="uPF-yr-Bet"/>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="trailing" secondItem="ii6-8q-b8t" secondAttribute="trailing" id="uYN-it-b5S"/>
                             <constraint firstItem="DUk-wZ-ecb" firstAttribute="top" secondItem="T6s-8t-7TZ" secondAttribute="bottom" constant="2.3300000000000001" id="ywB-p6-h6M"/>
                         </constraints>
