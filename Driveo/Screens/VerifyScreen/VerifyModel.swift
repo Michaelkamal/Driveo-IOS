@@ -29,8 +29,21 @@ class  VerifyModel : VerifyModelProtocol {
         
     }
     
-    func onVerifySucces(response:Any){
-        presenter.OnCodeVerifiedSuccesfuly()
+    func onVerifySucces(response:Data){
+        do{
+            let response = try JSONDecoder().decode(GenericResult.self, from: response)
+            let msg:String = response.message
+            if  msg == MsgResponse.success.rawValue {
+               presenter.OnCodeVerifiedSuccesfuly()
+            }else{
+                presenter.OnCodeVerifyFailure(withmsg: msg)
+            }
+        }
+        catch {
+            print("catch")
+            print(ErrorType.parse.rawValue)
+            
+        }
     }
     
     func onVerifyFailure(response:ErrorType){
