@@ -86,11 +86,11 @@ public class NetworkDAL{
         withBaseUrl baseUrl:ApiBaseUrl,
         andUrlSuffix urlSuffix:String,
         withParser parser: @escaping (_ JSON:JSON) ->[Any],
+        andHeaders headers:HTTPHeaders? = nil,
         onSuccess: @escaping (_ :[Any])->Void,
         onFailure:  @escaping (_ networkError:ErrorType)->Void
         )-> Void{
-        
-                    Alamofire.request(baseUrl.rawValue+urlSuffix).validate().responseJSON { response  in
+         Alamofire.request(baseUrl.rawValue+urlSuffix, method: .post, parameters: nil, headers: headers).validate().responseJSON { response  in
                         switch response.result {
                         case .success(let data):
                             let jsonData = JSON(data);

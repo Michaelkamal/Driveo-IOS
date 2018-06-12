@@ -123,6 +123,8 @@ class PickLoacationPresenter{
         if let carriers = providersArray{
              viewDelagate.updateCarrierArray(withCarriers: carriers)
         }else{
+            let defaults = UserDefaults.standard
+            if let token = defaults.string(forKey: "auth_token") {
             NetworkDAL.sharedInstance().processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.providers.rawValue, withParser: { (JSON) -> [Any] in
                 var res:[Any]=[]
                 if let providers = try? JSONDecoder().decode(Providers.self, from: JSON.rawData()) {
@@ -133,7 +135,8 @@ class PickLoacationPresenter{
                     self.viewDelagate.showAlert(ofError: ErrorType.parse)
                 }
                 return res
-            }, onSuccess: { (providers) in
+            },andHeaders:["Authorization":token],
+                onSuccess: { (providers) in
                     self.viewDelagate.updateCarrierArray(withCarriers: providers as! [Provider])
                 self.providersArray=providers as? [Provider]
                 
@@ -142,6 +145,7 @@ class PickLoacationPresenter{
                 print(err)
                 self.viewDelagate.showAlert(ofError: ErrorType.internet)
             })
+            }
         }
     }
 }
