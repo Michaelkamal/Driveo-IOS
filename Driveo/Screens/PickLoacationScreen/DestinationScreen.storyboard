@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -93,10 +94,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0C-mc-a3Q" userLabel="Three Bars">
+                                <rect key="frame" x="12.5" y="34.5" width="30" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="m0C-mc-a3Q" secondAttribute="height" multiplier="15:11" id="qyU-vT-Xdm"/>
+                                </constraints>
+                                <state key="normal" image="ic_three_bars"/>
+                                <connections>
+                                    <action selector="didTapOnThreeBars:" destination="suH-Ec-ouZ" eventType="touchUpInside" id="fgy-3d-5Ig"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="71m-HP-8gX" firstAttribute="leading" secondItem="GBf-ju-NgR" secondAttribute="leading" constant="13" id="2MZ-O8-4OG"/>
+                            <constraint firstItem="m0C-mc-a3Q" firstAttribute="leading" secondItem="GBf-ju-NgR" secondAttribute="leading" constant="12.67" id="4cT-ki-4mF"/>
                             <constraint firstItem="GBf-ju-NgR" firstAttribute="centerX" secondItem="3YX-hT-8gf" secondAttribute="centerX" id="611-aI-LvX"/>
                             <constraint firstItem="Sgu-t7-HGj" firstAttribute="leading" secondItem="GBf-ju-NgR" secondAttribute="leading" constant="13" id="8gX-Gf-Jqv"/>
                             <constraint firstItem="Sgu-t7-HGj" firstAttribute="trailing" secondItem="GBf-ju-NgR" secondAttribute="trailing" constant="-13" id="8j6-tn-j6g"/>
@@ -106,12 +118,14 @@
                             <constraint firstItem="GBf-ju-NgR" firstAttribute="bottom" secondItem="3YX-hT-8gf" secondAttribute="bottom" id="LK8-7W-Twp"/>
                             <constraint firstItem="C5O-ZP-v1d" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GBf-ju-NgR" secondAttribute="leading" id="NA8-Pm-pYN"/>
                             <constraint firstItem="71m-HP-8gX" firstAttribute="top" secondItem="C5O-ZP-v1d" secondAttribute="bottom" constant="6.96" id="Yrb-fx-Pmj"/>
-                            <constraint firstItem="GBf-ju-NgR" firstAttribute="top" secondItem="C5O-ZP-v1d" secondAttribute="bottom" constant="-35.75" id="ZpK-EO-naU"/>
+                            <constraint firstItem="m0C-mc-a3Q" firstAttribute="width" secondItem="GBf-ju-NgR" secondAttribute="width" multiplier="0.08" id="ZOD-tx-bFu"/>
                             <constraint firstItem="GBf-ju-NgR" firstAttribute="centerY" secondItem="3YX-hT-8gf" secondAttribute="centerY" id="a7A-qw-ns0"/>
                             <constraint firstItem="geD-YR-ELe" firstAttribute="bottom" secondItem="GBf-ju-NgR" secondAttribute="bottom" constant="-12" id="bEv-qW-Xrt"/>
+                            <constraint firstItem="m0C-mc-a3Q" firstAttribute="top" secondItem="GBf-ju-NgR" secondAttribute="top" constant="14.5" id="bIN-ee-dOf"/>
                             <constraint firstItem="GBf-ju-NgR" firstAttribute="leading" secondItem="3YX-hT-8gf" secondAttribute="leading" id="cTh-JD-PA0"/>
                             <constraint firstItem="71m-HP-8gX" firstAttribute="height" secondItem="C5O-ZP-v1d" secondAttribute="height" id="hPB-KL-sye"/>
                             <constraint firstItem="Sgu-t7-HGj" firstAttribute="top" secondItem="71m-HP-8gX" secondAttribute="bottom" constant="21.300000000000001" id="jzw-mU-PkU"/>
+                            <constraint firstItem="C5O-ZP-v1d" firstAttribute="top" secondItem="GBf-ju-NgR" secondAttribute="top" constant="14.5" id="k6v-ew-EIK"/>
                             <constraint firstItem="GBf-ju-NgR" firstAttribute="top" secondItem="3YX-hT-8gf" secondAttribute="top" id="lX3-g6-SqG"/>
                             <constraint firstItem="C5O-ZP-v1d" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="GBf-ju-NgR" secondAttribute="trailing" id="mM4-XM-48v"/>
                             <constraint firstItem="GBf-ju-NgR" firstAttribute="trailing" secondItem="3YX-hT-8gf" secondAttribute="trailing" id="vTh-7x-Gg8"/>
@@ -134,5 +148,6 @@
     <resources>
         <image name="ic_current_location" width="89" height="89"/>
         <image name="ic_destination_line" width="3" height="233"/>
+        <image name="ic_three_bars" width="20" height="20"/>
     </resources>
 </document>

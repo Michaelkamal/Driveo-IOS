@@ -123,7 +123,7 @@ class PickLoacationPresenter{
         if let carriers = providersArray{
              viewDelagate.updateCarrierArray(withCarriers: carriers)
         }else{
-            NetworkDAL.sharedInstance().processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: "providers", withParser: { (JSON) -> [Any] in
+            NetworkDAL.sharedInstance().processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: "get_providers", withParser: { (JSON) -> [Any] in
                 var res:[Any]=[]
                 if let providers = try? JSONDecoder().decode(Providers.self, from: JSON.rawData()) {
                     res += providers.providers! as [Any]

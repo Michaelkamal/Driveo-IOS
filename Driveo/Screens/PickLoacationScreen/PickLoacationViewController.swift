@@ -20,6 +20,12 @@ class PickLoacationViewController: UIViewController {
     
     public var isSource : Bool?
     
+    @IBAction func didTapOnThreeBars(_ sender: UIButton) {
+        let screen = ScreenController.navigationDrawerScreen;
+        let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
+        presentFromLeft(vc)
+    }
     
     @IBOutlet weak var searchTextField: SearchUITextField!{
         didSet{
@@ -207,6 +213,7 @@ extension PickLoacationViewController:PickLocationViewProtocol
     func showAlert(ofError error:ErrorType)->Void{
         let alert = UIViewController.getAlertController(ofErrorType: error, withTitle: "Error")
         guard let visibleViewController = self.navigationController?.visibleViewController else{
+            present(alert, animated: true, completion: nil)
             return
         }
         if !visibleViewController.isKind(of: UIAlertController.self)  {

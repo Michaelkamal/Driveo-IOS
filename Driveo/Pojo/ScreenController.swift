@@ -13,6 +13,8 @@ enum ScreenController:String{
     case destinationScreen = "PickLoacationViewController "
     case createOrderScreen = "CreateOrderViewController"
     case paymentScreen = "PaymentViewController"
+    case navigationDrawerScreen = "NavigationDrawerViewController"
+    
     func storyBoardName() -> String {
         var storyBoardName:String
         switch self {
@@ -24,6 +26,8 @@ enum ScreenController:String{
             storyBoardName="CreateOrderScreen"
         case .paymentScreen:
             storyBoardName="PaymentScreen"
+        case .navigationDrawerScreen:
+            storyBoardName="NavigationDrawerScreen"
         }
         return storyBoardName
     }

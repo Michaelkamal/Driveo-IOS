@@ -16,6 +16,7 @@ import Foundation
 import Alamofire
 
 public struct Providers: Codable {
+    let message: String?
     let providers: [Provider]?
 }
 

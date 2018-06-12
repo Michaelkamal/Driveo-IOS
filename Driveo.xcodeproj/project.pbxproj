@@ -87,6 +87,10 @@
 		846ABFF420C9689B003F8528 /* TripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846ABFF320C9689B003F8528 /* TripCell.xib */; };
 		846ABFF620C97041003F8528 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABFF520C97041003F8528 /* OrderCell.swift */; };
 		846ABFFA20C975E4003F8528 /* OrderHistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABFF920C975E4003F8528 /* OrderHistoryTableView.swift */; };
+		8484886A20CEDB67009444B2 /* NavigationDrawerScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8484886920CEDB67009444B2 /* NavigationDrawerScreen.storyboard */; };
+		8484886C20CEDCDE009444B2 /* UIImageViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */; };
+		8484887120CF71A0009444B2 /* NavigationDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484887020CF71A0009444B2 /* NavigationDrawerViewController.swift */; };
+		8484887520CF7679009444B2 /* NavigationDrawerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484887420CF7679009444B2 /* NavigationDrawerTableViewCell.swift */; };
 		84937BBB20C3660B00727437 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BB720C3660A00727437 /* LoginPresenter.swift */; };
 		84937BBC20C3660B00727437 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84937BB820C3660B00727437 /* Login.storyboard */; };
 		84937BBD20C3660B00727437 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BB920C3660B00727437 /* LoginModel.swift */; };
@@ -235,6 +239,10 @@
 		846ABFF320C9689B003F8528 /* TripCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCell.xib; sourceTree = "<group>"; };
 		846ABFF520C97041003F8528 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		846ABFF920C975E4003F8528 /* OrderHistoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableView.swift; sourceTree = "<group>"; };
+		8484886920CEDB67009444B2 /* NavigationDrawerScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationDrawerScreen.storyboard; sourceTree = "<group>"; };
+		8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtention.swift; sourceTree = "<group>"; };
+		8484887020CF71A0009444B2 /* NavigationDrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerViewController.swift; sourceTree = "<group>"; };
+		8484887420CF7679009444B2 /* NavigationDrawerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerTableViewCell.swift; sourceTree = "<group>"; };
 		84937BAE20C3023A00727437 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		84937BB720C3660A00727437 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		84937BB820C3660B00727437 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -594,6 +602,24 @@
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
+		8484886820CEDB37009444B2 /* NavigationDrawerScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8484886920CEDB67009444B2 /* NavigationDrawerScreen.storyboard */,
+				8484887020CF71A0009444B2 /* NavigationDrawerViewController.swift */,
+				8484887420CF7679009444B2 /* NavigationDrawerTableViewCell.swift */,
+			);
+			path = NavigationDrawerScreen;
+			sourceTree = "<group>";
+		};
+		8484886D20CEDCE7009444B2 /* UIImageViewExtention */ = {
+			isa = PBXGroup;
+			children = (
+				8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */,
+			);
+			path = UIImageViewExtention;
+			sourceTree = "<group>";
+		};
 		84937BB420C3651300727437 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +664,7 @@
 		84A2D4A720C2C91200576ACF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8484886820CEDB37009444B2 /* NavigationDrawerScreen */,
 				84626CA920CD81FE00AE2BB1 /* AboutScreen */,
 				840345B520CD1FCA00322359 /* to be deleted */,
 				846ABFEC20C93DCF003F8528 /* SplashScreen */,
@@ -698,6 +725,7 @@
 				84A2D4EE20C2CE2400576ACF /* NetworkUtilities */,
 				843E2DB420C9D5BA00DE459C /* UIViewExtension.swift */,
 				843A09F320CDEB67002134F1 /* HalfSizePresentationController.swift */,
+				8484886D20CEDCE7009444B2 /* UIImageViewExtention */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -900,6 +928,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8484886A20CEDB67009444B2 /* NavigationDrawerScreen.storyboard in Resources */,
 				84BD73D920C2F02000380E11 /* SignupStoryboard.storyboard in Resources */,
 				844BD5FC20C3776E005E98FC /* CreateOrderScreen.storyboard in Resources */,
 				844BD61720C4D14A005E98FC /* SourceScreen.storyboard in Resources */,
@@ -1125,6 +1154,7 @@
 				840B1CD120C5B3D10046542D /* CreateRequestPresenterProtocol.swift in Sources */,
 				840345B420CB348D00322359 /* OrdersPresenter.swift in Sources */,
 				8447457920C07D2A0076D0EC /* SpinnerExtention.swift in Sources */,
+				8484887520CF7679009444B2 /* NavigationDrawerTableViewCell.swift in Sources */,
 				84EFC1C320C43530004E5BDF /* VerifyModelProtocol.swift in Sources */,
 				84D1854520C2D39B0054BEBF /* SignupViewProtocol.swift in Sources */,
 				84A2D4E420C2CD7D00576ACF /* DropDownPlacesItem.swift in Sources */,
@@ -1148,7 +1178,9 @@
 				84EFC1C120C43530004E5BDF /* VerifyViewProtocol.swift in Sources */,
 				84A2D4E620C2CD7D00576ACF /* PlacesDropDownMenu.swift in Sources */,
 				84A2D4E220C2CD7D00576ACF /* PickLoacationViewController.swift in Sources */,
+				8484886C20CEDCDE009444B2 /* UIImageViewExtention.swift in Sources */,
 				844C6FC320C6305F00379783 /* PaymentViewController.swift in Sources */,
+				8484887120CF71A0009444B2 /* NavigationDrawerViewController.swift in Sources */,
 				844BD5FE20C3778A005E98FC /* CreateOrderViewController.swift in Sources */,
 				84D1854D20C2E4BE0054BEBF /* SignupPresenter.swift in Sources */,
 				84D1855220C2E6CC0054BEBF /* StringExtension.swift in Sources */,

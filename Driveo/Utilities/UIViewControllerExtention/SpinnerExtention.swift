@@ -41,4 +41,24 @@ extension UIViewController {
         
     }
 }
-
+// MARK : transition to present from left
+extension UIViewController{
+        
+        func presentFromLeft(_ viewControllerToPresent: UIViewController) {
+            let transition = CATransition()
+            transition.duration = 0.15
+            transition.type = kCATransitionPush
+            transition.subtype = kCATransitionFromLeft
+            self.view.window!.layer.add(transition, forKey: kCATransition)
+            present(viewControllerToPresent, animated: false)
+        }
+        
+        func dismissToLeft() {
+            let transition = CATransition()
+            transition.duration = 0.15
+            transition.type = kCATransitionPush
+            transition.subtype = kCATransitionFromRight
+            self.view.window!.layer.add(transition, forKey: kCATransition)
+            dismiss(animated: false)
+        }
+    }
