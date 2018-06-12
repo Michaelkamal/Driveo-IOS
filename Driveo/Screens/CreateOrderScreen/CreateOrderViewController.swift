@@ -129,11 +129,18 @@ class CreateOrderViewController: UIViewController {
                             () in
                             self.presentScreen(screen: ScreenController.destinationScreen)}
                     case 2:
-                        orderStep.title.text="Payment method"
+                        orderStep.title.text="Order details"
                         orderStep.subtitle.text=userOrder.paymentMethod?.name
                         orderStep.editFunc={
                             () in
-                            self.presentScreen(screen: ScreenController.paymentScreen)
+                            self.presentScreen(screen: ScreenController.createRequestScreen)
+                        }
+                    case 3:
+                            orderStep.title.text="Payment method"
+                            orderStep.subtitle.text=userOrder.paymentMethod?.name
+                            orderStep.editFunc={
+                                () in
+                                self.presentScreen(screen: ScreenController.paymentScreen)
                         }
                     default:
                         break
@@ -183,6 +190,8 @@ class CreateOrderViewController: UIViewController {
                 case 1:
                     self.presentScreen(screen: ScreenController.destinationScreen)
                 case 2:
+                    self.presentScreen(screen: ScreenController.createRequestScreen)
+                case 3:
                     self.presentScreen(screen: ScreenController.paymentScreen)
                 default:
                     break
