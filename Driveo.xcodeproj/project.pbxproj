@@ -617,7 +617,7 @@
 		8484886D20CEDCE7009444B2 /* UIImageViewExtention */ = {
 			isa = PBXGroup;
 			children = (
-				8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */,
+				8455AD2120D0095100012D01 /* DateExtension.swift */,
 			);
 			path = UIImageViewExtention;
 			sourceTree = "<group>";
@@ -727,6 +727,7 @@
 				84A2D4EE20C2CE2400576ACF /* NetworkUtilities */,
 				843E2DB420C9D5BA00DE459C /* UIViewExtension.swift */,
 				843A09F320CDEB67002134F1 /* HalfSizePresentationController.swift */,
+				8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */,
 				8484886D20CEDCE7009444B2 /* UIImageViewExtention */,
 			);
 			path = Utilities;
@@ -743,7 +744,6 @@
 		84A2D4EA20C2CE2400576ACF /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
-				8455AD2120D0095100012D01 /* DateExtension.swift */,
 				84A2D4EB20C2CE2400576ACF /* SearchUITextField.swift */,
 				84A2D4EC20C2CE2400576ACF /* UIDatePicker.swift */,
 				84A2D4ED20C2CE2400576ACF /* RoundedButton.swift */,
