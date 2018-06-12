@@ -13,6 +13,18 @@ enum OrderStatus:String{
     case orderDetails = "Order details"
     case paymentMethod = "Payment"
 }
+enum OrderType :String{
+    
+    case HistoryOrders = "getHistoryOrders"
+    case UpcomingOrders = "Upcoming"
+}
+
+enum HistoryStatus :String{
+    
+    case active = "Active"
+    case past = "Past"
+}
+
 class Order {
     internal var orderStatus:OrderStatus!
     
@@ -35,6 +47,15 @@ class Order {
         }
     }
     
+    internal var details:OrderDetails?{
+        didSet{
+            if (oldValue == nil && details!.isComplete())
+            {
+                completeStatus+=1
+                orderStatus = .orderDetails
+            }
+        }
+    }
     internal var date:String!
     
     internal var providerID:Int!

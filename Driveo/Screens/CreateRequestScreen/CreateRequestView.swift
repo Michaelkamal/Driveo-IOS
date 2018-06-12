@@ -11,6 +11,7 @@ import BeautifulTextField
 
 class CreateRequestView: UIViewController, CreateRequestViewProtocol ,UIGestureRecognizerDelegate  {
 
+    private let userOrder=Order.sharedInstance()
     lazy var presenter:CreateRequestPresenterProtocol = CreateRequestPresenter(withView:self)
     var spinner:UIView?
     var alert:UIAlertController?
@@ -19,6 +20,12 @@ class CreateRequestView: UIViewController, CreateRequestViewProtocol ,UIGestureR
     var imagePickerController:UIImagePickerController?
     var images:[UIImage] = [UIImage.init(named: "ic_upload_image")!]
     
+    @IBAction func didTapOnThreeBars(_ sender: Any) {
+        let screen = ScreenController.navigationDrawerScreen;
+        let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
+        presentFromLeft(vc)
+    }
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var titleTextField: BaseBeautifulTextField!
@@ -33,6 +40,15 @@ class CreateRequestView: UIViewController, CreateRequestViewProtocol ,UIGestureR
         longPressOnCellGesture.delaysTouchesBegan = true
         longPressOnCellGesture.delegate = self
         self.uploadImageCollectionView.addGestureRecognizer(longPressOnCellGesture)
+        if let details=userOrder.details{
+            titleTextField.text=details.title
+            descriptionTextView.text=details.description
+            if let images=details.images,images.count>0
+            {
+                self.images = images + [#imageLiteral(resourceName: "ic_upload_image")]
+            }
+            
+        }
     }
 
     @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
@@ -72,7 +88,7 @@ class CreateRequestView: UIViewController, CreateRequestViewProtocol ,UIGestureR
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
 

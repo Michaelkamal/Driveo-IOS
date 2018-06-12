@@ -89,7 +89,7 @@ extension CreateRequestView : UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     func goToNextScreen() {
-        //    self.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

@@ -18,9 +18,13 @@ class CreateOrderViewController: UIViewController {
     
     @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     
+    
+    var cellHeight:CGFloat!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController!.viewControllers=[self]
+        cellHeight=contentView.frame.height/5
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +33,6 @@ class CreateOrderViewController: UIViewController {
         contentView.subviews.forEach { (view) in
             view.removeFromSuperview()
         }
-        let cellHeight=contentView.frame.height/5
         let contentViewMaxY=contentView.frame.maxY
         addSuccessfullOrderSteps(withSuperViewMaxY: contentViewMaxY, andCellHeight: cellHeight)
         addNextOrderStep(withSuperViewMaxY: contentViewMaxY, andCellHeight: cellHeight)
@@ -73,18 +76,16 @@ class CreateOrderViewController: UIViewController {
                         () in
                         self.presentScreen(screen: ScreenController.destinationScreen)
                     }
-                    // set payment method
                 case 2:
-                    orderStep.title.text="Payment"
-                    orderStep.subtitle.text=userOrder.paymentMethod?.name
+                    orderStep.title.text="Order details"
+                    orderStep.subtitle.text=userOrder.details?.title
                     orderStep.editFunc={
                         () in
-                        self.presentScreen(screen: ScreenController.paymentScreen)
+                        self.presentScreen(screen: ScreenController.createRequestScreen)
                     }
-                     // set order Details
                 case 3:
-                    orderStep.title.text="Order Details"
-                    orderStep.subtitle.text=""//userOrder.paymentMethod?.name
+                    orderStep.title.text="Payment method"
+                    orderStep.subtitle.text=userOrder.paymentMethod?.name
                     orderStep.editFunc={
                         () in
                         self.presentScreen(screen: ScreenController.paymentScreen)
@@ -130,7 +131,7 @@ class CreateOrderViewController: UIViewController {
                             self.presentScreen(screen: ScreenController.destinationScreen)}
                     case 2:
                         orderStep.title.text="Order details"
-                        orderStep.subtitle.text=userOrder.paymentMethod?.name
+                        orderStep.subtitle.text=userOrder.details?.title
                         orderStep.editFunc={
                             () in
                             self.presentScreen(screen: ScreenController.createRequestScreen)
@@ -168,12 +169,9 @@ class CreateOrderViewController: UIViewController {
             if contentView.subviews.count>1,(contentView.subviews.last!.frame.maxY>contentViewMaxY ||
                 contentViewMaxY-contentView.subviews.last!.frame.maxY<cellHeight)
             {
-                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentView.subviews.last!.frame.maxY-0.5*cellHeight, width: contentView.frame.width, height: cellHeight)
-                nextButton.heightConstraint.constant=(cellHeight*2/3)
-                nextButton.updateConstraints()
-                nextButton.setNeedsLayout()
+                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentView.subviews.last!.frame.maxY, width: contentView.frame.width, height: cellHeight)
                 contentView.addSubview(nextButton)
-                contentViewHeightConstraint.constant += nextButton.frame.maxY-contentViewMaxY+2.6*cellHeight
+                contentViewHeightConstraint.constant += nextButton.frame.maxY-contentViewMaxY+0.5*cellHeight
                 contentView.updateConstraints()
             }
             else

@@ -11,6 +11,8 @@ import UIKit
 
 class CreateRequestPresenter : CreateRequestPresenterProtocol{
 
+    private let userOrder=Order.sharedInstance()
+    
     lazy var createRequestModel:CreateRequestModelProtocol = CreateRequestModel(withPresenter: self)
     
     var createRequestView:CreateRequestViewProtocol
@@ -33,12 +35,14 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
     func createRequestclicked(withTitle title: String, withDescription: String, withImages: [UIImage]) {
         
         if title == "" {
-            createRequestView.showAlert(withTitle: "Erroe", withMsg: "Request Should have a title")
+            createRequestView.showAlert(withTitle: "Error", withMsg: "Request Should have a title")
         }
         else if NetworkDAL.isInternetAvailable() == false {
             createRequestView.showAlert(withTitle: "Error", withMsg: ErrorType.internet.rawValue)
         }else{
             createRequestView.showLoading()
+            userOrder.details = OrderDetails(withTitle: title,andDescription: withDescription,andImagesArray: withImages)
+            createRequestView.goToNextScreen()
             createRequestModel.sendCreateRequest(withTitle: title, withDescription: withDescription, withImages: withImages, from: "76576576", to: "65465465", provider_id: "1", payment_method: "hsh")
         }
         

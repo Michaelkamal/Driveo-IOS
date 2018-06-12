@@ -15,6 +15,12 @@ class OrderDetails {
     var images: [UIImage]?
     var imagesURL:[String]?
     
+    init(withTitle title:String,andDescription description:String?,andImagesArray images:[UIImage]) {
+        self.title=title
+        self.description=description
+        self.images=images
+    }
+    
     func getImagesInBase64() -> [Data] {
         var base64Array = [Data]()
         for img:UIImage in self.images!{
@@ -23,5 +29,14 @@ class OrderDetails {
             base64Array.append(base64Img)
         }
         return base64Array
+    }
+    
+    func isComplete() -> Bool {
+        if title != nil, title?.trimmingCharacters(in: CharacterSet.whitespaces) != "" {
+            return true
+        }else
+        {
+            return false
+        }
     }
 }

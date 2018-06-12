@@ -8,17 +8,7 @@
 
 import Foundation
 
-enum OrderType :String{
 
-        case HistoryOrders = "getHistoryOrders"
-        case UpcomingOrders = "Upcoming"
-}
-
-enum HistoryStatus :String{
-    
-    case active = "Active"
-    case past = "Past"
-}
 
 public struct OrderMock : Decodable {
     
