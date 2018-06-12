@@ -20,10 +20,7 @@ class CreateOrderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(userOrder.source == nil){
-            self.presentScreen(screen: ScreenController.sourceScreen)
-        }
-        
+        self.navigationController!.viewControllers=[self]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,10 +40,6 @@ class CreateOrderViewController: UIViewController {
         let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
         let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
         switch userOrder.completeStatus{
-        // set Pick Up location
-        case 0:
-            let vc = vc as! PickLoacationViewController
-            vc.isSource=true
         // set Drop off location
         case 1:
             let vc = vc as! PickLoacationViewController
@@ -198,8 +191,11 @@ class CreateOrderViewController: UIViewController {
             nextButton.registerNextFunction()
         }
     }
-    @IBAction func didTapOnCloseButton(_ sender: UIButton) {
-        // self.dismiss(animated: true, completion: nil)
+    @IBAction func didTapOnThreeBars(_ sender: UIButton) {
+        let screen = ScreenController.navigationDrawerScreen;
+        let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
+        presentFromLeft(vc)
     }
     
 }

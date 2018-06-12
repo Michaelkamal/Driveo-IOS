@@ -21,7 +21,7 @@ enum MsgResponse:String {
 
 enum SuffixUrl:String {
     case signup = "authentication/signup"
-    case verify = "authenticate/verify"
+    case verify = "authentication/verify"
     case providers = "providers"
 }
 

@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,15 +33,14 @@
                                 <color key="textColor" red="1" green="0.51372549019607838" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWG-YJ-Fpo" userLabel="Back Button">
-                                <rect key="frame" x="23" y="54" width="17" height="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWG-YJ-Fpo" userLabel="Three Bars Button">
+                                <rect key="frame" x="23" y="54" width="34" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" priority="950" constant="17" id="4pS-pV-nKc"/>
-                                    <constraint firstAttribute="height" priority="950" constant="17" id="CTA-a5-SPg"/>
+                                    <constraint firstAttribute="width" secondItem="hWG-YJ-Fpo" secondAttribute="height" multiplier="17:11" id="GHA-3v-qe4"/>
                                 </constraints>
-                                <state key="normal" image="ic_close"/>
+                                <state key="normal" image="ic_three_bars"/>
                                 <connections>
-                                    <action selector="didTapOnCloseButton:" destination="fqp-F3-k0H" eventType="touchUpInside" id="JrO-A5-CKq"/>
+                                    <action selector="didTapOnThreeBars:" destination="fqp-F3-k0H" eventType="touchUpInside" id="JrO-A5-CKq"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQv-CD-gSJ">
@@ -68,10 +68,10 @@
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="top" secondItem="DUk-wZ-ecb" secondAttribute="bottom" constant="32.329999999999998" id="7oL-tx-uLb"/>
                             <constraint firstItem="T6s-8t-7TZ" firstAttribute="centerX" secondItem="jB5-aL-VuJ" secondAttribute="centerX" id="AAD-X1-0IB"/>
                             <constraint firstItem="hWG-YJ-Fpo" firstAttribute="leading" secondItem="jB5-aL-VuJ" secondAttribute="leading" constant="22.699999999999999" id="Iim-yH-zjF"/>
+                            <constraint firstItem="hWG-YJ-Fpo" firstAttribute="width" secondItem="ii6-8q-b8t" secondAttribute="width" multiplier="0.09" id="P60-7m-goR"/>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="centerX" secondItem="jB5-aL-VuJ" secondAttribute="centerX" id="SdM-qD-WdO"/>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="leading" secondItem="ii6-8q-b8t" secondAttribute="leading" id="YJF-n6-Kay"/>
                             <constraint firstItem="hWG-YJ-Fpo" firstAttribute="top" secondItem="ii6-8q-b8t" secondAttribute="top" constant="33.670000000000002" id="aNe-fs-q8R"/>
-                            <constraint firstItem="hWG-YJ-Fpo" firstAttribute="width" secondItem="jB5-aL-VuJ" secondAttribute="height" multiplier="17:667" id="euz-vh-SaH"/>
                             <constraint firstItem="DUk-wZ-ecb" firstAttribute="centerX" secondItem="jB5-aL-VuJ" secondAttribute="centerX" id="hGE-yT-8Jn"/>
                             <constraint firstItem="T6s-8t-7TZ" firstAttribute="top" secondItem="ii6-8q-b8t" secondAttribute="top" constant="33.670000000000002" id="qvd-U0-deL"/>
                             <constraint firstItem="EQv-CD-gSJ" firstAttribute="bottom" secondItem="ii6-8q-b8t" secondAttribute="bottom" id="uPF-yr-Bet"/>
@@ -92,6 +92,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_close" width="42" height="43"/>
+        <image name="ic_three_bars" width="20" height="20"/>
     </resources>
 </document>

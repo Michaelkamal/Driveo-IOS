@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 enum ScreenController:String{
+    case main="UINavigationController"
     case sourceScreen = "PickLoacationViewController"
     case destinationScreen = "PickLoacationViewController "
     case createOrderScreen = "CreateOrderViewController"
@@ -18,6 +19,8 @@ enum ScreenController:String{
     func storyBoardName() -> String {
         var storyBoardName:String
         switch self {
+        case .main:
+            storyBoardName="Main"
         case .sourceScreen:
             storyBoardName="SourceScreen"
         case .destinationScreen:
@@ -28,6 +31,7 @@ enum ScreenController:String{
             storyBoardName="PaymentScreen"
         case .navigationDrawerScreen:
             storyBoardName="NavigationDrawerScreen"
+        
         }
         return storyBoardName
     }

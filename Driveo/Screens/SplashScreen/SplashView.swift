@@ -31,8 +31,8 @@ class SplashView: UIViewController {
             let defaults = UserDefaults.standard
             if defaults.string(forKey: "auth_token") != nil {
                 if defaults.string(forKey: "verified") != nil {
-                    let sourceScreenStoryboard = UIStoryboard(name: ScreenController.sourceScreen.storyBoardName(), bundle: nil)
-                    let signup = sourceScreenStoryboard.instantiateViewController(withIdentifier: ScreenController.sourceScreen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
+                    let sourceScreenStoryboard = UIStoryboard(name: ScreenController.main.storyBoardName(), bundle: nil)
+                    let signup = sourceScreenStoryboard.instantiateViewController(withIdentifier: ScreenController.main.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
                     self.present(signup, animated: true, completion: nil)
                 }
                 else {

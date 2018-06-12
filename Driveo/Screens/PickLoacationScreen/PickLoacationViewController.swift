@@ -18,7 +18,7 @@ class PickLoacationViewController: UIViewController {
     
     private lazy var datePicker: UIDatePicker = UIDatePicker()
     
-    public var isSource : Bool?
+    public var isSource : Bool = true
     
     @IBAction func didTapOnThreeBars(_ sender: UIButton) {
         let screen = ScreenController.navigationDrawerScreen;
@@ -78,7 +78,7 @@ class PickLoacationViewController: UIViewController {
     
     // create order and move to destination (OR) set destination and move to create order
     @IBAction func didPressOnNextButton(_ sender: RoundedButton) {
-        if isSource! {
+        if isSource {
             dismissAllPopups()
         }
         presenter.moveForward()
@@ -107,17 +107,17 @@ class PickLoacationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter=PickLoacationPresenter(withController: self)
-        if (isSource! && userOrder.source == nil) || (!isSource! && userOrder.destination == nil)
+        if (isSource && userOrder.source == nil) || (!isSource && userOrder.destination == nil)
         {presenter.getCurrentLocation()}
         
-        if(isSource)!{
+        if(isSource){
             carrierDropDownMenu.didSelectedItemIndex=presenter.didSelectCarrier
             presenter.getCarriers()
         }
         
         placesDropDownMenu.didSelectedItemIndex=presenter.didSelectplace
         
-            if(isSource! && userOrder.source != nil){
+            if(isSource && userOrder.source != nil){
                 addressLabel.text=userOrder.source?.address
                 placeMarker(onLocation: userOrder.source!.coordinates!, withTitle: userOrder.source!.address!)
             }else{
@@ -132,7 +132,7 @@ class PickLoacationViewController: UIViewController {
     private func dismissAllPopups(){
         searchTextField.resignFirstResponder()
         self.view.endEditing(true)
-        if(isSource)!{
+        if(isSource){
             self.dismissDatePicker()
         }
         self.dismissPlacesSearch()
@@ -156,7 +156,7 @@ extension PickLoacationViewController:PickLocationViewProtocol
     }
     
     var isCurrentScreenSourcePickUp: Bool {
-        return self.isSource!
+        return self.isSource
     }
     
     // mark: put place marker on location
@@ -224,17 +224,19 @@ extension PickLoacationViewController:PickLocationViewProtocol
     // move to second screen
     
     func presentToNextScreen(){
-        let topController = UIApplication.shared.keyWindow!.rootViewController!;
-        if(topController.isKind(of: PickLoacationViewController.self)){
-           self.dismiss(animated: true,completion: { () in
+        if let topController = self.navigationController?.viewControllers.last{
+        
+            if(topController.isKind(of: PickLoacationViewController.self)){
+            
             let screen = ScreenController.createOrderScreen
             let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
             let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
-            self.present(vc, animated: true, completion: nil)
-           })
-        }else{
-        self.dismiss(animated: true,completion: nil)
-        }}
+            self.navigationController!.pushViewController(vc, animated: true)
+            }}else{
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
 }
 // mark : places auto complete extention
 extension PickLoacationViewController {
