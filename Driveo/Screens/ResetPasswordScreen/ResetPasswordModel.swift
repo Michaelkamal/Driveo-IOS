@@ -26,13 +26,26 @@ class ResetPasswordModel: ResetPasswordModelProtocol {
         }
     }
     
-    func onSuccess(_ response: Any) {
-        let dict = response as! Dictionary<String,Any>
-        let message = dict["message"] as! String
-        if message.contains("success") {
-            rPP.resetSuccess(message:message)
+    func onSuccess(_ response: Data) {
+        
+        print(response)
+        do{
+            let response = try JSONDecoder().decode(GenericResult.self, from: response)
+            let msg:String = response.message
+            if  msg == MsgResponse.success.rawValue {
+                
+                rPP.resetSuccess(message:msg)
+                
+            }else{
+                rPP.resetFailure(message: msg)
+            }
         }
-        rPP.resetFailure(message: message)
+        catch {
+            print("catch")
+            print(ErrorType.parse.rawValue)
+            rPP.resetFailure(message: "Connection error")
+        }
+        
     }
     
     func onFailure(_ networkError: ErrorType) {

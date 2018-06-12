@@ -25,6 +25,9 @@ struct SigninResult : Decodable{
 }
 
 struct ForgotPasswordResult : Decodable{
+    var message:String
+}
+struct GenericResult : Decodable{
     
     var message:String
     
