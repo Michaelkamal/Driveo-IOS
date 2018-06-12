@@ -10,6 +10,7 @@ import Foundation
 enum OrderStatus:String{
     case sourceLocation = "Pick up location"
     case destinationLocation = "Drop location"
+    case orderDetails = "Order details"
     case paymentMethod = "Payment"
 }
 class Order {
