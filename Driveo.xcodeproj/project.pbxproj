@@ -617,6 +617,7 @@
 		8484886D20CEDCE7009444B2 /* UIImageViewExtention */ = {
 			isa = PBXGroup;
 			children = (
+				843E2DB420C9D5BA00DE459C /* UIViewExtension.swift */,
 			);
 			path = UIImageViewExtention;
 			sourceTree = "<group>";
@@ -725,7 +726,6 @@
 				84A2D4E820C2CE2400576ACF /* LocationUtilities */,
 				84A2D4EA20C2CE2400576ACF /* CustomControls */,
 				84A2D4EE20C2CE2400576ACF /* NetworkUtilities */,
-				843E2DB420C9D5BA00DE459C /* UIViewExtension.swift */,
 				843A09F320CDEB67002134F1 /* HalfSizePresentationController.swift */,
 				8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */,
 				8484886D20CEDCE7009444B2 /* UIImageViewExtention */,
