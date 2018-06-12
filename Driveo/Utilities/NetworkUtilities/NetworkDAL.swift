@@ -23,6 +23,7 @@ enum SuffixUrl:String {
     case signup = "authentication/signup"
     case verify = "authentication/verify"
     case providers = "providers"
+    case orders = "orders/"
 }
 
 
