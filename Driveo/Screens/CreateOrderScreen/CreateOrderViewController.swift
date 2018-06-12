@@ -171,7 +171,7 @@ class CreateOrderViewController: UIViewController {
             {
                 nextButton.frame=CGRect(x: contentView.frame.minX, y: contentView.subviews.last!.frame.maxY, width: contentView.frame.width, height: cellHeight)
                 contentView.addSubview(nextButton)
-                contentViewHeightConstraint.constant += nextButton.frame.maxY-contentViewMaxY+0.5*cellHeight
+                contentViewHeightConstraint.constant += nextButton.frame.maxY-contentViewMaxY+cellHeight
                 contentView.updateConstraints()
             }
             else

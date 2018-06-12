@@ -9,6 +9,7 @@
 import UIKit
 
 enum NavigationDrawerOptions:Int {
+    case trips
     case editProfile
     case chagePassword
     case logout
@@ -23,13 +24,15 @@ enum NavigationDrawerOptions:Int {
     var description : String {
         get {
             switch(self) {
-            
+            case .trips:
+                return "Trips"
             case .editProfile:
                 return "Edit profile"
             case .chagePassword:
                 return "Change password"
             case .logout:
                 return "Logout"
+            
             }
         }
     }
@@ -85,7 +88,9 @@ extension NavigationDrawerViewController: UITableViewDelegate,UITableViewDataSou
                 cell.moreImage.isHidden=false
             }
             switch option{
+            case .trips:
                 
+                cell.view.addTapGesture(tapNumber: 1, target: self, action: #selector(pushTrips))
             case .editProfile:
                 cell.view.addTapGesture(tapNumber: 1, target: self, action: #selector(pushEditProfile))
             case .chagePassword:
@@ -94,11 +99,16 @@ extension NavigationDrawerViewController: UITableViewDelegate,UITableViewDataSou
             case .logout:
                 
                 cell.view.addTapGesture(tapNumber: 1, target: self, action: #selector(logout))
+            
             }
         }
         return cell
     }
    
+    @objc func pushTrips(){
+        
+        print("Trips ")
+    }
     
     @objc func pushEditProfile(){
         print("EditProfile ")

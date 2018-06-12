@@ -47,10 +47,10 @@
                                 <rect key="frame" x="0.0" y="140" width="375" height="527"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeX-tO-e0u" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="530"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="527"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="530" id="2NC-cm-ypf"/>
+                                            <constraint firstAttribute="height" constant="527" id="9T0-z9-qIK"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -82,7 +82,7 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="WeX-tO-e0u" id="M8C-BM-sJc"/>
-                        <outlet property="contentViewHeightConstraint" destination="2NC-cm-ypf" id="alm-gT-eui"/>
+                        <outlet property="contentViewHeightConstraint" destination="9T0-z9-qIK" id="OtS-67-k4g"/>
                         <outlet property="orderStatus" destination="DUk-wZ-ecb" id="xsP-mR-gs9"/>
                     </connections>
                 </viewController>
