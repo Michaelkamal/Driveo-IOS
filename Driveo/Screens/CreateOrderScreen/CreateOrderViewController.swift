@@ -20,6 +20,8 @@ class CreateOrderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(userOrder.source == nil){
+            self.presentScreen(screen: ScreenController.sourceScreen)}
         orderStatus.text=userOrder.orderStatus.rawValue
         
     }

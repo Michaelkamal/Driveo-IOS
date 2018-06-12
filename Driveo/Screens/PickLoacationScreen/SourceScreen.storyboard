@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="suH-Ec-ouZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="suH-Ec-ouZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PingFang.ttc">
+            <string>PingFangSC-Semibold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Pick Loacation View Controller-->
         <scene sceneID="aCQ-o5-5qm">
@@ -24,6 +30,16 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                             </view>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5T-dv-Wvq" userLabel="Three Bars">
+                                <rect key="frame" x="12.5" y="34.5" width="30" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="J5T-dv-Wvq" secondAttribute="height" multiplier="15:11" id="56u-YB-0UX"/>
+                                </constraints>
+                                <state key="normal" image="ic_three_bars"/>
+                                <connections>
+                                    <action selector="didTapOnThreeBars:" destination="suH-Ec-ouZ" eventType="touchUpInside" id="qLs-oX-tk6"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sgu-t7-HGj" userLabel="Search View">
                                 <rect key="frame" x="13" y="106" width="349" height="56.5"/>
                                 <subviews>
@@ -151,10 +167,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="J5T-dv-Wvq" firstAttribute="leading" secondItem="GBf-ju-NgR" secondAttribute="leading" constant="12.67" id="1r8-qN-31g"/>
                             <constraint firstItem="71m-HP-8gX" firstAttribute="leading" secondItem="GBf-ju-NgR" secondAttribute="leading" constant="13" id="2MZ-O8-4OG"/>
                             <constraint firstItem="GBf-ju-NgR" firstAttribute="centerX" secondItem="3YX-hT-8gf" secondAttribute="centerX" id="611-aI-LvX"/>
+                            <constraint firstItem="C5O-ZP-v1d" firstAttribute="top" secondItem="GBf-ju-NgR" secondAttribute="top" constant="14.5" id="67e-Fl-xr2"/>
                             <constraint firstItem="Sgu-t7-HGj" firstAttribute="leading" secondItem="GBf-ju-NgR" secondAttribute="leading" constant="13" id="8gX-Gf-Jqv"/>
                             <constraint firstItem="Sgu-t7-HGj" firstAttribute="trailing" secondItem="GBf-ju-NgR" secondAttribute="trailing" constant="-13" id="8j6-tn-j6g"/>
+                            <constraint firstItem="J5T-dv-Wvq" firstAttribute="top" secondItem="GBf-ju-NgR" secondAttribute="top" constant="14.5" id="8pb-8v-obY"/>
                             <constraint firstItem="71m-HP-8gX" firstAttribute="trailing" secondItem="GBf-ju-NgR" secondAttribute="trailing" constant="-13" id="CnN-tb-hUk"/>
                             <constraint firstItem="geD-YR-ELe" firstAttribute="height" secondItem="w4m-dH-dyl" secondAttribute="height" id="DYd-Gc-KsY"/>
                             <constraint firstItem="A1S-2S-fZ4" firstAttribute="height" secondItem="geD-YR-ELe" secondAttribute="height" id="FNa-tx-ZTB"/>
@@ -168,9 +187,9 @@
                             <constraint firstItem="w4m-dH-dyl" firstAttribute="trailing" secondItem="GBf-ju-NgR" secondAttribute="trailing" constant="-13" id="ReM-p9-YbR"/>
                             <constraint firstItem="71m-HP-8gX" firstAttribute="top" secondItem="C5O-ZP-v1d" secondAttribute="bottom" constant="6.96" id="Yrb-fx-Pmj"/>
                             <constraint firstItem="geD-YR-ELe" firstAttribute="top" secondItem="w4m-dH-dyl" secondAttribute="bottom" constant="12" id="Zdu-1Q-bjI"/>
-                            <constraint firstItem="GBf-ju-NgR" firstAttribute="top" secondItem="C5O-ZP-v1d" secondAttribute="bottom" constant="-35.75" id="ZpK-EO-naU"/>
                             <constraint firstItem="GBf-ju-NgR" firstAttribute="centerY" secondItem="3YX-hT-8gf" secondAttribute="centerY" id="a7A-qw-ns0"/>
                             <constraint firstItem="geD-YR-ELe" firstAttribute="bottom" secondItem="GBf-ju-NgR" secondAttribute="bottom" constant="-12" id="bEv-qW-Xrt"/>
+                            <constraint firstItem="J5T-dv-Wvq" firstAttribute="width" secondItem="GBf-ju-NgR" secondAttribute="width" multiplier="0.08" id="bK0-dy-YhJ"/>
                             <constraint firstItem="GBf-ju-NgR" firstAttribute="leading" secondItem="3YX-hT-8gf" secondAttribute="leading" id="cTh-JD-PA0"/>
                             <constraint firstItem="A1S-2S-fZ4" firstAttribute="top" secondItem="w4m-dH-dyl" secondAttribute="bottom" constant="12" id="dub-IV-KbO"/>
                             <constraint firstItem="71m-HP-8gX" firstAttribute="height" secondItem="C5O-ZP-v1d" secondAttribute="height" id="hPB-KL-sye"/>
@@ -205,5 +224,6 @@
         <image name="ic_current_location" width="89" height="89"/>
         <image name="ic_destination_line" width="3" height="233"/>
         <image name="ic_down_arrow" width="49" height="29"/>
+        <image name="ic_three_bars" width="20" height="20"/>
     </resources>
 </document>
