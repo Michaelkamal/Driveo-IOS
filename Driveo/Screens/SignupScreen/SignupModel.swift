@@ -42,6 +42,7 @@ class SignupModel : SignupModelProtocol{
         catch {
             print("catch")
             print(ErrorType.parse.rawValue)
+            presenter.alertToShow(withTitle: "Error", andMessage:"Connection error" )
         }
         
         
