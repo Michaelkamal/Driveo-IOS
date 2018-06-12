@@ -8,19 +8,25 @@
 
 import Foundation
 
-class User {
-    
-    var password:String
+struct  User : Decodable{
+
+    var id:Int?
+    var name:String?
+    var verified: Bool?
+    var password:String?
     var phone:String
     var email:String
     var confirmPassword:String?
+    
     init(email: String , phone:String, password:String) {
         self.email=email
          self.phone=phone
          self.password=password
     }
     
+    
+    
     func getUserDataInDictionary()->[String:String]{
-        return ["email":self.email,"phone":self.phone,"password":self.password]
+        return ["email":self.email,"phone":self.phone,"password":self.password!]
     }
 }

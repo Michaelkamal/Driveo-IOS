@@ -11,6 +11,7 @@ import Foundation
 protocol SignupModelProtocol {
     
     func registerNewUser(user:User)
-    func onRegisterSucsess(data:Any)
+    func onRegisterSucsess(data:Data)
     func onRegisterFailure(data:Any)
+    
 }

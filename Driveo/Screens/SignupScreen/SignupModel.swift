@@ -27,16 +27,27 @@ class SignupModel : SignupModelProtocol{
         presenter.alertToShow(withTitle: "Error", andMessage: "Failed to connect")
     }
     
-    func onRegisterSucsess(data: Any) {
-        let response = data as! [String:Any]
-        let msg:String = response["message"] as! String
-        if  msg == MsgResponse.success.rawValue {
-             let token = response["auth_token"] as! String
-            
-           
-            presenter.goToVerifyScreen(withToken: token)
-        }else{
-            presenter.alertToShow(withTitle: "Error", andMessage:msg )
-    }
+    func onRegisterSucsess(data: Data) {
+        
+        do{
+            let response = try JSONDecoder().decode(SignupResult.self, from: data)
+            let msg:String = response.message
+            if  msg == MsgResponse.success.rawValue {
+                let token = response.auth_token
+                presenter.goToVerifyScreen(withToken: token)
+            }else{
+                presenter.alertToShow(withTitle: "Error", andMessage:msg )
+            }
+        }
+        catch {
+            print("catch")
+            print(ErrorType.parse.rawValue)
+        }
+        
+        
+        
+        
+       
+  
 }
 }

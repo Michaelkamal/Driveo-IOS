@@ -138,8 +138,8 @@ class SignupPresenter : SignupPresenterProtocol{
         //check User Data is valid
         isEmailValid(email: user.email)
         isPhoneValid(phone: user.phone)
-        isPasswordValid(password: user.password)
-        isPasswordmatches(password: user.password, confirmPassword: user.confirmPassword!)
+        isPasswordValid(password: user.password!)
+        isPasswordmatches(password: user.password!, confirmPassword: user.confirmPassword!)
         
         if !isEmailCorrect || !isPhoneCorrect || !isPasswordCorrect || !isConfirmPasswordCorrect {
             signupView.dismissLoading()

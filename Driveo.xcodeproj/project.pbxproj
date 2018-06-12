@@ -66,6 +66,8 @@
 		844C6FBF20C61AF800379783 /* NextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C6FBE20C61AF800379783 /* NextButtonView.swift */; };
 		844C6FC220C6305F00379783 /* PaymentScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844C6FC020C6305F00379783 /* PaymentScreen.storyboard */; };
 		844C6FC320C6305F00379783 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C6FC120C6305F00379783 /* PaymentViewController.swift */; };
+		8455AD1E20CFE22800012D01 /* RequestOrderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455AD1D20CFE22800012D01 /* RequestOrderResult.swift */; };
+		8455AD2020CFEAA200012D01 /* SignupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455AD1F20CFEAA200012D01 /* SignupResult.swift */; };
 		845B28A420C712D900EC4335 /* CreateRequestViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B28A320C712D900EC4335 /* CreateRequestViewExtension.swift */; };
 		845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D48EF20BEEF92000F16C1 /* AppDelegate.swift */; };
 		845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D48F320BEEF92000F16C1 /* Main.storyboard */; };
@@ -206,6 +208,8 @@
 		844C6FBE20C61AF800379783 /* NextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonView.swift; sourceTree = "<group>"; };
 		844C6FC020C6305F00379783 /* PaymentScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PaymentScreen.storyboard; sourceTree = "<group>"; };
 		844C6FC120C6305F00379783 /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		8455AD1D20CFE22800012D01 /* RequestOrderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestOrderResult.swift; sourceTree = "<group>"; };
+		8455AD1F20CFEAA200012D01 /* SignupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResult.swift; sourceTree = "<group>"; };
 		845B28A320C712D900EC4335 /* CreateRequestViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestViewExtension.swift; sourceTree = "<group>"; };
 		845D48EC20BEEF92000F16C1 /* Driveo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driveo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D48EF20BEEF92000F16C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -401,6 +405,8 @@
 				84247CD120C77AE500AE43FA /* PaymentMethod.swift */,
 				84247CD320C77F6100AE43FA /* Providers.swift */,
 				843E2DC520CAB7F600DE459C /* OrderMockApi.swift */,
+				8455AD1D20CFE22800012D01 /* RequestOrderResult.swift */,
+				8455AD1F20CFEAA200012D01 /* SignupResult.swift */,
 			);
 			path = Pojo;
 			sourceTree = "<group>";
@@ -1085,6 +1091,7 @@
 				843E2DC020CAB2EF00DE459C /* OrdersViewProtocol.swift in Sources */,
 				84937BC620C3670800727437 /* ForgotPassViewProtocol.swift in Sources */,
 				844BD5EF20C35E17005E98FC /* DPItem.swift in Sources */,
+				8455AD2020CFEAA200012D01 /* SignupResult.swift in Sources */,
 				844BD60220C38C20005E98FC /* CreateOrderView.swift in Sources */,
 				844BD5F120C35F12005E98FC /* Order.swift in Sources */,
 				841D74A920CB195600253AA4 /* OrderTabView.swift in Sources */,
@@ -1097,6 +1104,7 @@
 				8424621820C11FA800D00057 /* OrderLocation.swift in Sources */,
 				840B1CBF20C52DC90046542D /* ResetPasswordViewProtocol.swift in Sources */,
 				845B28A420C712D900EC4335 /* CreateRequestViewExtension.swift in Sources */,
+				8455AD1E20CFE22800012D01 /* RequestOrderResult.swift in Sources */,
 				84D1854720C2DEF40054BEBF /* SignupPresenterProtocol.swift in Sources */,
 				84626CA820CC02F800AE2BB1 /* HeaderCollection.swift in Sources */,
 				843E2DC220CAB30600DE459C /* OrdersPresenterProtocol.swift in Sources */,

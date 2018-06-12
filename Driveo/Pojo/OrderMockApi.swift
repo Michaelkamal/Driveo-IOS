@@ -20,13 +20,13 @@ enum HistoryStatus :String{
     case past = "Past"
 }
 
-struct OrderMock {
+public struct OrderMock : Decodable {
     
     var date:String
     var price:Double
     var from:String
     var to:String
     var payment:String
-    var status:HistoryStatus
+    var status:String
     
 }
