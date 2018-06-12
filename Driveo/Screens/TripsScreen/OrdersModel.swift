@@ -16,7 +16,7 @@ class OrderModel : OrdersModelProtocol{
         presenter = p
     }
     
-    func onRequestSuccess(date:Any)->Void{
+    func onRequestSuccess(date:Data)->Void{
         
     }
     
@@ -24,10 +24,30 @@ class OrderModel : OrdersModelProtocol{
         
     }
     
+    
+    
+    
     func getOrders(forType type: OrderType, withToken token: String) {
         let networkObject : NetworkDAL = NetworkDAL.sharedInstance()
+        let suffixUrl = SuffixUrl.orders.rawValue + "1"
         
-        networkObject.processPostReq(withBaseUrl: ApiBaseUrl.testmockAoi, andUrlSuffix: type.rawValue, andParameters: ["type":type.rawValue], onSuccess: onRequestSuccess, onFailure: onRequestFailure, headers: ["Authorization":token])
+        networkObject.processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: suffixUrl, withParser: { (data) -> [Any] in
+            if let response = try? JSONDecoder().decode(RequestOrdersResult.self, from: data.rawData()){
+               return [response] as [Any]
+            }
+            return []
+        }, andHeaders: ["Authorization":token], onSuccess: {(responseArray) in
+            if let respone = responseArray.first as? RequestOrdersResult {
+                print(respone)
+                if respone.message == MsgResponse.success.rawValue {
+                    self.presenter.onRequestSuccess(withOrders: respone.data)
+                }else{
+                    self.presenter.onRequestFailure(failure: ErrorType.parse.rawValue)
+                }
+                
+            }
+        }, onFailure: onRequestFailure)
+
         
       
         

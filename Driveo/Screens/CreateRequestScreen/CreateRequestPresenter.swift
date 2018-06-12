@@ -11,10 +11,6 @@ import UIKit
 
 class CreateRequestPresenter : CreateRequestPresenterProtocol{
 
-    
- 
-    
-  
     lazy var createRequestModel:CreateRequestModelProtocol = CreateRequestModel(withPresenter: self)
     
     var createRequestView:CreateRequestViewProtocol
