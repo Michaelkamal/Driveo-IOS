@@ -34,16 +34,25 @@ class ForgotPassModel : ForgotPasswordModelProtocol{
         networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "authentication/forgotpassword", andParameters: params, onSuccess: onSuccess(_:), onFailure: onFailure(_:))
     }
     
-    func onSuccess(_ response: Any) {
+    func onSuccess(_ response: Data) {
         
-        let dict = response as! Dictionary<String,Any>
-        let message = dict["message"] as! String
-        if message.contains("success") {
-            fPP.sendSuccess(message: "A reset link has been sent to your email")
+        print(response)
+        do{
+            let response = try JSONDecoder().decode(ForgotPasswordResult.self, from: response)
+            let msg:String = response.message
+            if  msg == MsgResponse.forgotSuccess.rawValue {
+                fPP.sendSuccess(message: msg)
+                
+            }else{
+                fPP.sendFailure(message: msg)
+            }
         }
-        else{
-            fPP.sendFailure(message: message)
+        catch {
+            print("catch")
+            print(ErrorType.parse.rawValue)
+            fPP.sendFailure(message: "Connection error")
         }
+
     }
     
     func onFailure(_ networkError: ErrorType) {

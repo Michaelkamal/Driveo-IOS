@@ -36,16 +36,18 @@ class SplashView: UIViewController {
                     self.present(signup, animated: true, completion: nil)
                 }
                 else {
-                    let verifyStoryBoard = UIStoryboard.init(name:"SignupStoryboard",bundle:nil)
-                    let verifyScreen = verifyStoryBoard.instantiateViewController(withIdentifier: "VerifyView") as! VerifyView
-                    self.present(verifyScreen, animated: true, completion: nil)
+                    self.dismiss(animated: true, completion: {
+                        let verifyStoryBoard = UIStoryboard.init(name:"SignupStoryboard",bundle:nil)
+                        let verifyScreen = verifyStoryBoard.instantiateViewController(withIdentifier: "VerifyView") as! VerifyView
+                        self.present(verifyScreen, animated: true, completion: nil)
+                        })
+                  
                 }
             } else {
                 let loginStoryBoard = UIStoryboard.init(name: "Login", bundle: nil)
                 let loginPage:LoginViewController = loginStoryBoard.instantiateViewController(withIdentifier: "loginView") as! LoginViewController
                 self.present(loginPage, animated: true, completion: nil)
             }
-           
         })
         
         UIView.animate(withDuration: 2.5, delay: 0.3, options: .allowAnimatedContent, animations: {
