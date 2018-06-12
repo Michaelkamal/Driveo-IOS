@@ -21,7 +21,7 @@ class LoginPresenter : LoginPresenterProtocol{
         
     }
     
-    func loginSuccess(user:User, token:String) ->Void{
+    func loginSuccess() ->Void{
         lvc.goToScreen(withScreenName: "next")
         lvc.dismissLoading()
             

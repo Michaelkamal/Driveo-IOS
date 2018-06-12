@@ -15,3 +15,12 @@ struct SignupResult : Decodable{
     var user:User
     
 }
+
+struct SigninResult : Decodable{
+    
+    var message:String
+    var auth_token:String
+    var user:User?
+    
+}
+
