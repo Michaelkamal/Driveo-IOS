@@ -57,7 +57,7 @@ class PickLoacationPresenter{
         let dateFormatter: DateFormatter = DateFormatter()
         
         // Set date format
-        dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.000Z"
         
         // Apply date format
         let selectedDate: String = dateFormatter.string(from: sender.date)
@@ -123,7 +123,7 @@ class PickLoacationPresenter{
         if let carriers = providersArray{
              viewDelagate.updateCarrierArray(withCarriers: carriers)
         }else{
-            NetworkDAL.sharedInstance().processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: "get_providers", withParser: { (JSON) -> [Any] in
+            NetworkDAL.sharedInstance().processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.providers.rawValue, withParser: { (JSON) -> [Any] in
                 var res:[Any]=[]
                 if let providers = try? JSONDecoder().decode(Providers.self, from: JSON.rawData()) {
                     res += providers.providers! as [Any]

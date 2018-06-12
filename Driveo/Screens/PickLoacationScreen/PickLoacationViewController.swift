@@ -258,7 +258,7 @@ extension PickLoacationViewController
             // Create date formatter
             let dateFormatter: DateFormatter = DateFormatter()
             // Set date format
-            dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.000Z"
             let date = dateFormatter.date (from: date)
             datePicker.setDate(date!, animated: false)
         }
