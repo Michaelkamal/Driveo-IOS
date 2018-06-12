@@ -173,7 +173,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rdG-uf-n6D" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="128" y="115.66666666666669" width="158.33333333333337" height="30"/>
+                                <rect key="frame" x="145.66666666666666" y="115.66666666666669" width="123.33333333333334" height="54"/>
                                 <color key="textColor" red="0.32941176470588235" green="0.32941176470588235" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="42.110000610351562"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -181,13 +181,6 @@
                                     <outlet property="delegate" destination="8sl-W1-8sL" id="CDT-Z9-cur"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjy-N9-9n6">
-                                <rect key="frame" x="56" y="401" width="302" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14.300000190734863"/>
-                                <color key="textColor" red="1" green="0.1158596633" blue="0.15590602749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Validation code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngF-rn-A79">
                                 <rect key="frame" x="148.33333333333334" y="57.000000000000007" width="117.33333333333334" height="20.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -195,7 +188,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ra-Ao-WLA">
-                                <rect key="frame" x="58" y="272" width="298" height="57"/>
+                                <rect key="frame" x="58" y="296" width="298" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="LVv-fT-V4j"/>
                                 </constraints>
@@ -219,7 +212,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxo-pJ-QUj" customClass="RoundedButton" customModule="Driveo" customModuleProvider="target">
-                                <rect key="frame" x="58" y="192" width="299" height="57"/>
+                                <rect key="frame" x="58" y="216" width="299" height="57"/>
                                 <color key="backgroundColor" red="0.086274509803921567" green="0.11764705882352941" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56.909999999999997" id="Rk9-Cb-FzM"/>
@@ -246,6 +239,7 @@
                             <constraint firstItem="gxo-pJ-QUj" firstAttribute="centerX" secondItem="6qb-O0-xo3" secondAttribute="centerX" id="Dwm-BI-j40"/>
                             <constraint firstItem="8Ra-Ao-WLA" firstAttribute="centerX" secondItem="6qb-O0-xo3" secondAttribute="centerX" id="Ljd-ZH-TJn"/>
                             <constraint firstItem="rdG-uf-n6D" firstAttribute="centerX" secondItem="aWi-un-8RI" secondAttribute="centerX" id="RyL-BV-Nf0"/>
+                            <constraint firstItem="aWi-un-8RI" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8Ra-Ao-WLA" secondAttribute="bottom" constant="2" id="S2Z-Aj-F1o"/>
                             <constraint firstItem="ngF-rn-A79" firstAttribute="centerX" secondItem="6qb-O0-xo3" secondAttribute="centerX" id="c3V-kH-rrc"/>
                             <constraint firstItem="ngF-rn-A79" firstAttribute="top" secondItem="aWi-un-8RI" secondAttribute="top" constant="37" id="q7I-na-lGJ"/>
                             <constraint firstItem="rdG-uf-n6D" firstAttribute="top" secondItem="ngF-rn-A79" secondAttribute="bottom" constant="38.329999999999998" id="wHv-oq-8Ei"/>
@@ -254,7 +248,6 @@
                         <viewLayoutGuide key="safeArea" id="aWi-un-8RI"/>
                     </view>
                     <connections>
-                        <outlet property="errorCodeLabel" destination="gjy-N9-9n6" id="cAg-OQ-lcu"/>
                         <outlet property="verificationCodeTextField" destination="rdG-uf-n6D" id="oyl-d7-bNe"/>
                     </connections>
                 </viewController>
