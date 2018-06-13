@@ -107,4 +107,51 @@ public class NetworkDAL{
     
     
     
+    internal func processPatchReq(
+        withBaseUrl baseUrl:ApiBaseUrl,
+        andUrlSuffix urlSuffix:String,
+        andParameters param: Parameters,
+        onSuccess: @escaping (_ :Data)->Void,
+        onFailure:  @escaping (_ networkError:ErrorType)->Void
+        , headers:HTTPHeaders? = nil)-> Void{
+        
+        Alamofire.request(baseUrl.rawValue+urlSuffix,method: .patch, parameters: param, headers:headers).validate().responseJSON { response  in
+            switch response.result {
+            case .success(let data):
+                let jsonData = JSON(data);
+                
+                print("***URL**** "+urlSuffix)
+                print("-------*-*-*-----******------///////-------********-----------------")
+                print(jsonData)
+                onSuccess(response.data!);
+                
+            case .failure :
+                //onFailure(.internet)
+                print("-------*-*-*-----****failiure**------///////-------********-----------------")
+                print(response)
+                
+                print(response.result)
+                onFailure(ErrorType.internet)
+            }
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

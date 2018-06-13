@@ -9,11 +9,9 @@
 import Foundation
 
 struct SignupResult : Decodable{
-    
     var message:String
     var auth_token:String
     var user:User
-    
 }
 
 struct SigninResult : Decodable{
