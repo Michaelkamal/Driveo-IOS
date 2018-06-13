@@ -25,15 +25,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(AppDelegate.MAPS_API_KEY)
         GMSPlacesClient.provideAPIKey(AppDelegate.MAPS_API_KEY)
         IQKeyboardManager.sharedManager().enable = true
-        
+       
         FirebaseApp.configure()
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert ,.badge, .sound]) { (success, error) in
-            if error == nil{
-                
-            }
-        }
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().requestAuthorization( options: [.alert, .badge, .sound], completionHandler: {_, _ in })
+        
+        let refreshToken = InstanceID.instanceID().token()
+        print(" Message \(refreshToken)") // da eb3ato lel firebase w fel refresh token eb3atoo lel back end tany w hen a tav3an hat3ml save fel back userdefaults w lw ma feesh 7aga htb3t lel backend w tsave  gheer kda msh ht3ml kda gheer fel refresh token
+        
         application.registerForRemoteNotifications()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshToken(notification:)), name: NSNotification.Name.InstanceIDTokenRefresh, object: nil)
         
         return true
@@ -142,5 +145,77 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
+}
+
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    
+    // user in the foregorund
+    // Receive displayed notifications for iOS 10 devices.
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        let userInfo = notification.request.content.userInfo
+        
+        
+        // Print full message.
+        print("-----------------------------------------------")
+        print("userNotificationCenter , willPresent notification , withCompletionHandler completionHandler")
+        print("-----------------------------------------------")
+        print(userInfo)
+        
+        ///notificationOnForeground(userInfo)
+        
+        // Change this to your preferred presentation option
+        completionHandler([])
+    }
+    
+    //user in the bg and open the app from the notification itself
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        // Print message ID.
+        //        if let messageID = userInfo[gcmMessageIDKey] {
+        //            print("Message ID: \(messageID)")
+        //        }
+        
+        // Print full message.
+        print("-----------------------------------------------")
+        print("userNotificationCenter , didReceive response, withCompletionHandler completionHandler")
+        print("-----------------------------------------------")
+        print(userInfo)
+        
+       // notificationOnBackground(userInfo)
+        
+        completionHandler()
+    }
+}
+// [END ios_10_message_handling]
+
+extension AppDelegate : MessagingDelegate {
+    
+    // [START refresh_token]
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        
+        print("messaging , didRefreshRegistrationToken")
+        print("Firebase token: \(fcmToken)")
+        
+//        UserDefaultsHandler.cacheObject(fcmToken, forKey: UDK_FBToken)
+//        UserDefaultsHandler.removeCachedData(forKey: UDK_FBTokenRegistered)
+//        
+//        if (TheUserModel.sharedInstance.canLogin){
+//            TheUserPresenter.sharedInstance.registerFireBase(FBToken: fcmToken)
+//        }
+    }
+    
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        
+        print("-----------------------------------------------")
+        print("messaging , didReceive remoteMessage")
+        print("-----------------------------------------------")
+        print("Received data message: \(remoteMessage.appData)")
+    }
+    // [END ios_10_data_message]
 }
 
