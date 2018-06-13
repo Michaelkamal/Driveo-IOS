@@ -21,7 +21,7 @@ class  VerifyModel : VerifyModelProtocol {
         var parameters = [String:Any]()
         parameters["verification_pin"] = code
         
-        networkObject.processPostReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.verify.rawValue, andParameters: parameters , onSuccess: onVerifySucces, onFailure: onVerifyFailure,headers: ["Authorization":token])
+        networkObject.processPatchReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.verify.rawValue, andParameters: parameters , onSuccess: onVerifySucces, onFailure: onVerifyFailure,headers: ["Authorization":token])
         }
     
     func onVerifySucces(response:Data){
