@@ -17,7 +17,7 @@ class OrdersPresenter: OrdersPresenterProtocol {
         
     }
     
-    func requestOrders(ofType typeOrder: OrderType) {
+    func requestOrders(ofType typeOrder: OrderType, page:String) {
         ordersModel = OrderModel(withPresenter: self)
         
         let defaults = UserDefaults.standard
@@ -27,7 +27,7 @@ class OrdersPresenter: OrdersPresenterProtocol {
         }
     }
     
-    func onRequestSuccess(withOrders orders: [String : [OrderMock]]) {
+    func onRequestSuccess(withOrders orders: [String : [PresentedOrder]]) {
         ordersView.onLoadSuccess(useData: orders)
     }
     

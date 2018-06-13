@@ -18,7 +18,7 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
     let orangeColor = UIColor(red:1, green:0.5, blue:0.18, alpha:1.0)
     let greyColor = UIColor.lightGray
     
-    public var successFunction:(([String:[OrderMock]]) -> Void)!
+    public var successFunction:(([String:[PresentedOrder]]) -> Void)!
     
     var ordersPresenter:OrdersPresenterProtocol!
     
@@ -60,7 +60,8 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let historyView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "History") as! OrderHistoryCollectionView
         historyView.parentTabView = self
-        let upcomingView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "History")
+        let upcomingView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "History") as! OrderHistoryCollectionView
+        upcomingView.parentTabView = self
         return [historyView, upcomingView]
     }
     
@@ -68,11 +69,11 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
         showAlert(withTitle: "Failed", andMessage: failure)
     }
     
-    func getInfoForTabOf(orderType order: OrderType, useData: @escaping (_ : [String:[OrderMock]]) -> Void){
+    func getInfoForTabOf(orderType order: OrderType, useData: @escaping (_ : [String:[PresentedOrder]]) -> Void, page:String){
         
         ordersPresenter = OrdersPresenter(withView: self)
         successFunction = useData
-        ordersPresenter.requestOrders(ofType : order)
+        ordersPresenter.requestOrders(ofType : order, page:page)
     }
     
     func showAlert(withTitle title :String , andMessage msg:String){
@@ -94,7 +95,7 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func onLoadSuccess(useData: [String : [OrderMock]]) {
+    func onLoadSuccess(useData: [String : [PresentedOrder]]) {
         successFunction(useData)
     }
 }

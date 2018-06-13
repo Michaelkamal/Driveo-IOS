@@ -14,7 +14,7 @@ struct RequestOrdersResult : Decodable {
     
     var history_pages:Int
     
-    var data:[String:[OrderMock]]
+    var data:[String:[PresentedOrder]]
    
     
 }

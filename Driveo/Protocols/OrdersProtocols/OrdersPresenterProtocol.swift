@@ -10,9 +10,9 @@ import Foundation
 
 protocol OrdersPresenterProtocol {
     
-    func requestOrders(ofType typeOrder: OrderType)
+    func requestOrders(ofType typeOrder: OrderType, page:String)
     
-    func onRequestSuccess(withOrders orders:[String:[OrderMock]])
+    func onRequestSuccess(withOrders orders:[String:[PresentedOrder]])
     
     func onRequestFailure(failure :String)
 }

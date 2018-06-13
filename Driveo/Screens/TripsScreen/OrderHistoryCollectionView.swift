@@ -14,8 +14,12 @@ private let reuseIdentifier = "TripCell"
 class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDelegateFlowLayout, IndicatorInfoProvider  {
     
     var parentTabView:OrdersViewProtocol!
-    var historyData:[String:[OrderMock]]!
+    var historyData:[String:[PresentedOrder]]!
+    var activeTrips:[PresentedOrder] = []
+    var pastTrips:[PresentedOrder] = []
+    var pageCount = 1
     var spinner:UIView?
+    var flagPagination = true
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -27,8 +31,14 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        parentTabView!.getInfoForTabOf(orderType: .HistoryOrders , useData: useData)
+        
+        for _ in 1...6 {
+            let pOrder = PresentedOrder(title: "title", orderId: "55455", description: "description", images: nil, payementMethod: "visa", price: "300", pickUpAddress: "roushdy", pickUplat: nil, pickUpLong: nil, dropOffAddress: nil, dropOffUplat: nil, dropOffLong: nil, date: "25/3/2018", status: "upcoming")
+            pastTrips.append(pOrder)
+            activeTrips.append(pOrder)
+        }
+    
+        parentTabView!.getInfoForTabOf(orderType: .HistoryOrders , useData: useData, page: String(pageCount))
         
     }
     
@@ -45,13 +55,18 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 2
+        switch section {
+        case 0:
+            return activeTrips.count
+        default:
+            return pastTrips.count
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -59,11 +74,45 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
         self.collectionView?.register(UINib(nibName: "TripCollectionCell", bundle: nil), forCellWithReuseIdentifier: "TripCell")
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TripCell", for: indexPath) as! TripCellCollectionView
+        let index = indexPath.item
         
-        cell.priceLabel.text = ""
-        
-   
-    
+        switch indexPath.section {
+        case 0:
+            cell.addressLabel.text = activeTrips[index].pickUpAddress
+            //cell.dateLabel.text = Date.getFormattedDate(string: activeTrips[index].date!)
+            cell.dateLabel.text = activeTrips[index].date
+            cell.idLabel.text = "id#" + activeTrips[index].orderId!
+            cell.orderStatusLabel.text = activeTrips[index].status
+            
+            switch activeTrips[index].payementMethod{
+            case "visa":
+                cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_visa")
+            case "masterCard":
+                cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_mastercard")
+            case "cash":
+                cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_cash")
+            default:
+                cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_cash")
+            }
+        default:
+            cell.addressLabel.text = pastTrips[index].pickUpAddress
+            //cell.dateLabel.text = Date.getFormattedDate(string: pastTrips[index].date!)
+            cell.dateLabel.text = pastTrips[index].date
+            cell.idLabel.text = "id#" + pastTrips[index].orderId!
+            cell.orderStatusLabel.text = pastTrips[index].status
+            cell.priceLabel.text = pastTrips[index].price
+            switch pastTrips[index].payementMethod{
+            case "visa":
+                cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_visa")
+            case "masterCard":
+                cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_mastercard")
+            case "cash":
+                cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_cash")
+            default:
+                cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_cash")
+            }
+            
+        }
         // Configure the cell
     
         return cell
@@ -82,7 +131,13 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
              let headerView:HeaderCollection = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerCollection", for: indexPath) as! HeaderCollection
              
             //do other header related calls or settups
-            headerView.headerLabel.text = "Active"
+             switch indexPath.section {
+             case 0:
+                headerView.headerLabel.text = "Active"
+             default:
+                headerView.headerLabel.text = "Past"
+             }
+            
             return headerView
             
             
@@ -105,13 +160,29 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
     }
 
 
-    func useData(_ data:[String:[OrderMock]]) {
+    func useData(_ data:[String:[PresentedOrder]]) {
         historyData = data
+        print(data)
+        activeTrips += data["active"]!
+        pastTrips += data ["history"]!
+        self.collectionView?.reloadData()
     }
     
     
     func showLoading() {
         spinner = UIViewController.displaySpinner(onView: self.view)
     }
-
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.item == pastTrips.count-1 && indexPath.section == 1 && flagPagination == true{
+            pageCount+=1
+            parentTabView!.getInfoForTabOf(orderType: .HistoryOrders , useData: useData, page: String(pageCount))
+            print("pageCount")
+            print(pageCount)
+            flagPagination = false
+        }
+    }
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        flagPagination = true
+    }
 }
