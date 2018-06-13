@@ -46,7 +46,7 @@ extension UIViewController{
         
         func presentFromLeft(_ viewControllerToPresent: UIViewController) {
             let transition = CATransition()
-            transition.duration = 0.15
+            transition.duration = 0.25
             transition.type = kCATransitionPush
             transition.subtype = kCATransitionFromLeft
             self.view.window!.layer.add(transition, forKey: kCATransition)
@@ -55,7 +55,7 @@ extension UIViewController{
         
         func dismissToLeft() {
             let transition = CATransition()
-            transition.duration = 0.15
+            transition.duration = 0.25
             transition.type = kCATransitionPush
             transition.subtype = kCATransitionFromRight
             self.view.window!.layer.add(transition, forKey: kCATransition)
