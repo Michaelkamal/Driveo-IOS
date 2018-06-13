@@ -15,6 +15,8 @@ target 'Driveo' do
     pod 'SkyFloatingLabelTextField', '~> 3.0'
     pod 'IQKeyboardManagerSwift', '5.0.0'
     pod 'XLPagerTabStrip', '~> 8.0'
+    pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
 
   target 'DriveoTests' do
     inherit! :search_paths

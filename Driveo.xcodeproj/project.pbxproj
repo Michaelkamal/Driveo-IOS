@@ -12,6 +12,7 @@
 		6A8B2742BD4EA93B23009918 /* Pods_DriveoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF644CBEF5F0792EAC23D85C /* Pods_DriveoUITests.framework */; };
 		840345B220CB24E800322359 /* UpcomingOrdersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840345B120CB24E800322359 /* UpcomingOrdersTableView.swift */; };
 		840345B420CB348D00322359 /* OrdersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840345B320CB348D00322359 /* OrdersPresenter.swift */; };
+		840782F320D1426000976562 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 840782F220D1425F00976562 /* GoogleService-Info.plist */; };
 		840B1CBF20C52DC90046542D /* ResetPasswordViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CBE20C52DC90046542D /* ResetPasswordViewProtocol.swift */; };
 		840B1CC320C52E060046542D /* ResetPasswordPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CC220C52E060046542D /* ResetPasswordPresenterProtocol.swift */; };
 		840B1CC520C52E4E0046542D /* ResetPasswordModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CC420C52E4E0046542D /* ResetPasswordModelProtocol.swift */; };
@@ -161,6 +162,7 @@
 		812B8BD6E5F1093D015199A1 /* Pods_Driveo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Driveo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840345B120CB24E800322359 /* UpcomingOrdersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingOrdersTableView.swift; sourceTree = "<group>"; };
 		840345B320CB348D00322359 /* OrdersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPresenter.swift; sourceTree = "<group>"; };
+		840782F220D1425F00976562 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		840B1CBE20C52DC90046542D /* ResetPasswordViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewProtocol.swift; sourceTree = "<group>"; };
 		840B1CC220C52E060046542D /* ResetPasswordPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenterProtocol.swift; sourceTree = "<group>"; };
 		840B1CC420C52E4E0046542D /* ResetPasswordModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordModelProtocol.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		84EFC1BE20C43530004E5BDF /* VerifyPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPresenterProtocol.swift; sourceTree = "<group>"; };
 		84EFC1C020C43530004E5BDF /* VerifyViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewProtocol.swift; sourceTree = "<group>"; };
 		84EFC1C220C43530004E5BDF /* VerifyModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyModelProtocol.swift; sourceTree = "<group>"; };
+		84F3C3FE20D145230000979D /* Driveo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Driveo.entitlements; sourceTree = "<group>"; };
 		AFD4C75E002CC92DBAF6FD12 /* Pods-Driveo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Driveo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Driveo/Pods-Driveo.release.xcconfig"; sourceTree = "<group>"; };
 		B6E29ACB4486A1DAC46D0BDF /* Pods-DriveoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoUITests/Pods-DriveoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD7A33C575B0340738F6AF6C /* Pods-DriveoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DriveoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DriveoUITests/Pods-DriveoUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -560,6 +563,7 @@
 		845D48EE20BEEF92000F16C1 /* Driveo */ = {
 			isa = PBXGroup;
 			children = (
+				84F3C3FE20D145230000979D /* Driveo.entitlements */,
 				8424621620C11FA800D00057 /* Pojo */,
 				8447455720C07D270076D0EC /* Errors */,
 				8447456C20C07D2A0076D0EC /* Protocols */,
@@ -569,6 +573,7 @@
 				845D48F320BEEF92000F16C1 /* Main.storyboard */,
 				845D48F920BEEF92000F16C1 /* Assets.xcassets */,
 				845D48FE20BEEF92000F16C1 /* Info.plist */,
+				840782F220D1425F00976562 /* GoogleService-Info.plist */,
 				845D48F620BEEF92000F16C1 /* Driveo.xcdatamodeld */,
 			);
 			path = Driveo;
@@ -899,6 +904,11 @@
 					845D48EB20BEEF92000F16C1 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					845D490220BEEF92000F16C1 = {
 						CreatedOnToolsVersion = 9.2;
@@ -956,6 +966,7 @@
 				844BD61320C4C54C005E98FC /* DestinationScreen.storyboard in Resources */,
 				84187EE620C6D48E00FB5566 /* Trips.storyboard in Resources */,
 				844BD60420C38C36005E98FC /* OrderItem.xib in Resources */,
+				840782F320D1426000976562 /* GoogleService-Info.plist in Resources */,
 				843E2DB720C9D88000DE459C /* HeaderCell.xib in Resources */,
 				844C6FC220C6305F00379783 /* PaymentScreen.storyboard in Resources */,
 			);
@@ -1064,24 +1075,30 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BeautifulTextField/BeautifulTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/GooglePlacesSearchController/GooglePlacesSearchController.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BeautifulTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GooglePlacesSearchController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1355,10 +1372,12 @@
 			baseConfigurationReference = 1A1900466273D5750A34E2B9 /* Pods-Driveo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Driveo/Driveo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C86JD592M;
 				INFOPLIST_FILE = Driveo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ibtekar.Driveo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibtikar.wassel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1370,10 +1389,12 @@
 			baseConfigurationReference = AFD4C75E002CC92DBAF6FD12 /* Pods-Driveo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Driveo/Driveo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2C86JD592M;
 				INFOPLIST_FILE = Driveo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ibtekar.Driveo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibtikar.wassel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

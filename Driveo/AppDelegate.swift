@@ -11,6 +11,8 @@ import CoreData
 import GoogleMaps
 import GooglePlaces
 import IQKeyboardManagerSwift
+import UserNotifications
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey(AppDelegate.MAPS_API_KEY)
         IQKeyboardManager.sharedManager().enable = true
         
+        FirebaseApp.configure()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert ,.badge, .sound]) { (success, error) in
+            if error == nil{
+                
+            }
+        }
+        application.registerForRemoteNotifications()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshToken(notification:)), name: NSNotification.Name.InstanceIDTokenRefresh, object: nil)
+        
         return true
     }
     
@@ -35,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        Messaging.messaging().shouldEstablishDirectChannel = false
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -116,6 +130,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    @objc func refreshToken(notification: NSNotification) {
+        let refreshToken = InstanceID.instanceID().token()
+        fBHandler()
+    }
+    
+    func fBHandler() {
+        Messaging.messaging().shouldEstablishDirectChannel = true
+    }
+    
     
 }
 
