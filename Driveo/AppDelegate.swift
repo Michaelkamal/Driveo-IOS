@@ -133,6 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @objc func refreshToken(notification: NSNotification) {
         let refreshToken = InstanceID.instanceID().token()
+        print(" Message \(refreshToken)")
         fBHandler()
     }
     

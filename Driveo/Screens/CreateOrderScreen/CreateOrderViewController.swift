@@ -23,7 +23,9 @@ class CreateOrderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController!.viewControllers=[self]
+        if self.navigationController!.viewControllers.count>1{
+            self.navigationController!.viewControllers=[self]
+        }
         cellHeight=contentView.frame.height/5
     }
     

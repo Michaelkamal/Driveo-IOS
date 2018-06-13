@@ -224,15 +224,12 @@ extension PickLoacationViewController:PickLocationViewProtocol
     // move to second screen
     
     func presentToNextScreen(){
-        if let topController = self.navigationController?.viewControllers.last{
-        
-            if(topController.isKind(of: PickLoacationViewController.self)){
-            
+        if self.navigationController != nil{
             let screen = ScreenController.createOrderScreen
             let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
             let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
             self.navigationController!.pushViewController(vc, animated: true)
-            }}else{
+            }else{
             self.dismiss(animated: true, completion: nil)
         }
     }

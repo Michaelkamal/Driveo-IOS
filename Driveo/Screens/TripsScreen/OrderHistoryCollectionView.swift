@@ -84,7 +84,7 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
             cell.idLabel.text = "id#" + activeTrips[index].orderId!
             cell.orderStatusLabel.text = activeTrips[index].status
             
-            switch activeTrips[index].payementMethod{
+            switch activeTrips[index].payementMethod!{
             case "visa":
                 cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_visa")
             case "masterCard":
@@ -101,7 +101,7 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
             cell.idLabel.text = "id#" + pastTrips[index].orderId!
             cell.orderStatusLabel.text = pastTrips[index].status
             cell.priceLabel.text = pastTrips[index].price
-            switch pastTrips[index].payementMethod{
+            switch pastTrips[index].payementMethod!{
             case "visa":
                 cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_visa")
             case "masterCard":
