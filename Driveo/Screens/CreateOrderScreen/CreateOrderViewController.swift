@@ -35,7 +35,8 @@ class CreateOrderViewController: UIViewController {
         contentView.subviews.forEach { (view) in
             view.removeFromSuperview()
         }
-        let contentViewMaxY=contentView.frame.maxY
+        let contentViewMaxY = contentView.superview!.frame.maxY
+        contentViewHeightConstraint.constant = contentView.superview!.frame.height
         addSuccessfullOrderSteps(withSuperViewMaxY: contentViewMaxY, andCellHeight: cellHeight)
         addNextOrderStep(withSuperViewMaxY: contentViewMaxY, andCellHeight: cellHeight)
         addNextButton(withSuperViewMaxY: contentViewMaxY, andCellHeight: cellHeight)
@@ -59,7 +60,8 @@ class CreateOrderViewController: UIViewController {
     
     // add next order step of order to the scroll view
     func addNextOrderStep(withSuperViewMaxY contentViewMaxY:CGFloat,andCellHeight cellHeight:CGFloat){
-            if let orderStep = Bundle.main.loadNibNamed("OrderItem", owner: self, options: nil)?.first as? CreateOrderView {
+        if (userOrder.completeStatus<4){
+        if let orderStep = Bundle.main.loadNibNamed("OrderItem", owner: self, options: nil)?.first as? CreateOrderView {
                 
                 switch userOrder.completeStatus{
                 // set Pick Up location
@@ -109,7 +111,7 @@ class CreateOrderViewController: UIViewController {
                 contentView.addSubview(orderStep)
             }
         }
-    
+    }
     
     // add successfull steps so far to the scroll view
     func addSuccessfullOrderSteps(withSuperViewMaxY contentViewMaxY:CGFloat,andCellHeight cellHeight:CGFloat){
@@ -145,6 +147,7 @@ class CreateOrderViewController: UIViewController {
                                 () in
                                 self.presentScreen(screen: ScreenController.paymentScreen)
                         }
+                            orderStep.distinationLine.removeFromSuperview()
                     default:
                         break
                     }
@@ -171,15 +174,16 @@ class CreateOrderViewController: UIViewController {
             if contentView.subviews.count>1,(contentView.subviews.last!.frame.maxY>contentViewMaxY ||
                 contentViewMaxY-contentView.subviews.last!.frame.maxY<cellHeight)
             {
-                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentView.subviews.last!.frame.maxY, width: contentView.frame.width, height: cellHeight)
+                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentView.subviews.last!.bounds.maxY, width: contentView.frame.width, height: cellHeight)
                 contentView.addSubview(nextButton)
-                contentViewHeightConstraint.constant += nextButton.frame.maxY-contentViewMaxY+cellHeight
-                contentView.updateConstraints()
+                contentViewHeightConstraint.constant += nextButton.bounds.maxY-contentView.bounds.maxY
+                nextButton.updateConstraints()
             }
             else
             {
-                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentViewMaxY-0.5*cellHeight, width: contentView.frame.width, height: cellHeight)
+                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentView.frame.maxY-cellHeight, width: contentView.frame.width, height: cellHeight)
                 contentView.addSubview(nextButton)
+                nextButton.updateConstraints()
             }
             
             nextButton.nextFunc={ () in

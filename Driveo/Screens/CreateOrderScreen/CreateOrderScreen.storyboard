@@ -50,12 +50,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="527"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="527" id="9T0-z9-qIK"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="ZTl-5L-hrf"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="WeX-tO-e0u" firstAttribute="top" secondItem="EQv-CD-gSJ" secondAttribute="top" id="36W-bH-iQT"/>
+                                    <constraint firstItem="WeX-tO-e0u" firstAttribute="centerY" secondItem="EQv-CD-gSJ" secondAttribute="centerY" id="LxK-2w-6ml"/>
                                     <constraint firstAttribute="trailing" secondItem="WeX-tO-e0u" secondAttribute="trailing" id="QWn-ks-56Z"/>
                                     <constraint firstAttribute="bottom" secondItem="WeX-tO-e0u" secondAttribute="bottom" id="UIa-hb-bn3"/>
                                     <constraint firstItem="WeX-tO-e0u" firstAttribute="leading" secondItem="EQv-CD-gSJ" secondAttribute="leading" id="knV-44-1Ud"/>
@@ -82,7 +83,7 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="WeX-tO-e0u" id="M8C-BM-sJc"/>
-                        <outlet property="contentViewHeightConstraint" destination="9T0-z9-qIK" id="OtS-67-k4g"/>
+                        <outlet property="contentViewHeightConstraint" destination="ZTl-5L-hrf" id="Fwe-ga-Dlc"/>
                         <outlet property="orderStatus" destination="DUk-wZ-ecb" id="xsP-mR-gs9"/>
                     </connections>
                 </viewController>
