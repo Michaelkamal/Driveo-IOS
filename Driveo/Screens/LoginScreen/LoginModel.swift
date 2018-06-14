@@ -30,6 +30,7 @@ class LoginModel : LoginModelProtocol{
             let msg:String = response.message
             if  msg == MsgResponse.success.rawValue {
                 let defaults = UserDefaults.standard
+                print(response.auth_token)
                 defaults.set(response.auth_token, forKey :"auth_token")
                 defaults.set(true, forKey :"verified")
                 defaults.synchronize()

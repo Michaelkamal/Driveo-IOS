@@ -13,6 +13,12 @@
 		840345B220CB24E800322359 /* UpcomingOrdersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840345B120CB24E800322359 /* UpcomingOrdersTableView.swift */; };
 		840345B420CB348D00322359 /* OrdersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840345B320CB348D00322359 /* OrdersPresenter.swift */; };
 		840782F320D1426000976562 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 840782F220D1425F00976562 /* GoogleService-Info.plist */; };
+		8408DF9C20D31F9D009258AE /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DF9B20D31F9D009258AE /* ChangePasswordViewController.swift */; };
+		8408DF9E20D31FB3009258AE /* ChangePasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DF9D20D31FB3009258AE /* ChangePasswordPresenter.swift */; };
+		8408DFA020D31FC1009258AE /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DF9F20D31FC1009258AE /* ChangePasswordModel.swift */; };
+		8408DFA320D31FEB009258AE /* ChangePasswordViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DFA220D31FEB009258AE /* ChangePasswordViewProtocol.swift */; };
+		8408DFA520D32009009258AE /* ChangePasswordPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DFA420D32009009258AE /* ChangePasswordPresenterProtocol.swift */; };
+		8408DFA720D32015009258AE /* ChangePasswordModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8408DFA620D32015009258AE /* ChangePasswordModelProtocol.swift */; };
 		840B1CBF20C52DC90046542D /* ResetPasswordViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CBE20C52DC90046542D /* ResetPasswordViewProtocol.swift */; };
 		840B1CC320C52E060046542D /* ResetPasswordPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CC220C52E060046542D /* ResetPasswordPresenterProtocol.swift */; };
 		840B1CC520C52E4E0046542D /* ResetPasswordModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CC420C52E4E0046542D /* ResetPasswordModelProtocol.swift */; };
@@ -163,6 +169,12 @@
 		840345B120CB24E800322359 /* UpcomingOrdersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingOrdersTableView.swift; sourceTree = "<group>"; };
 		840345B320CB348D00322359 /* OrdersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersPresenter.swift; sourceTree = "<group>"; };
 		840782F220D1425F00976562 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8408DF9B20D31F9D009258AE /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		8408DF9D20D31FB3009258AE /* ChangePasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenter.swift; sourceTree = "<group>"; };
+		8408DF9F20D31FC1009258AE /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
+		8408DFA220D31FEB009258AE /* ChangePasswordViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewProtocol.swift; sourceTree = "<group>"; };
+		8408DFA420D32009009258AE /* ChangePasswordPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordPresenterProtocol.swift; sourceTree = "<group>"; };
+		8408DFA620D32015009258AE /* ChangePasswordModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModelProtocol.swift; sourceTree = "<group>"; };
 		840B1CBE20C52DC90046542D /* ResetPasswordViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewProtocol.swift; sourceTree = "<group>"; };
 		840B1CC220C52E060046542D /* ResetPasswordPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenterProtocol.swift; sourceTree = "<group>"; };
 		840B1CC420C52E4E0046542D /* ResetPasswordModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordModelProtocol.swift; sourceTree = "<group>"; };
@@ -355,6 +367,26 @@
 			path = "to be deleted";
 			sourceTree = "<group>";
 		};
+		8408DF9A20D31F5D009258AE /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				8408DF9B20D31F9D009258AE /* ChangePasswordViewController.swift */,
+				8408DF9D20D31FB3009258AE /* ChangePasswordPresenter.swift */,
+				8408DF9F20D31FC1009258AE /* ChangePasswordModel.swift */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		8408DFA120D31FCD009258AE /* ChangePasswordProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				8408DFA220D31FEB009258AE /* ChangePasswordViewProtocol.swift */,
+				8408DFA420D32009009258AE /* ChangePasswordPresenterProtocol.swift */,
+				8408DFA620D32015009258AE /* ChangePasswordModelProtocol.swift */,
+			);
+			path = ChangePasswordProtocols;
+			sourceTree = "<group>";
+		};
 		840B1CBA20C52D2D0046542D /* ResetPasswordScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +513,7 @@
 		8447456C20C07D2A0076D0EC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				8408DFA120D31FCD009258AE /* ChangePasswordProtocols */,
 				843E2DBE20CAB2A600DE459C /* OrdersProtocols */,
 				84187ED520C6D1F200FB5566 /* TripsProtocols */,
 				840B1CCD20C5B3500046542D /* CreateRequestProtocols */,
@@ -677,6 +710,7 @@
 		84A2D4A720C2C91200576ACF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8408DF9A20D31F5D009258AE /* ChangePassword */,
 				8484886820CEDB37009444B2 /* NavigationDrawerScreen */,
 				84626CA920CD81FE00AE2BB1 /* AboutScreen */,
 				840345B520CD1FCA00322359 /* to be deleted */,
@@ -1122,6 +1156,7 @@
 				843E2DC420CAB34100DE459C /* OrdersModelProtocol.swift in Sources */,
 				84EFC1BA20C434FF004E5BDF /* VerifyModel.swift in Sources */,
 				846ABFFA20C975E4003F8528 /* OrderHistoryTableView.swift in Sources */,
+				8408DFA020D31FC1009258AE /* ChangePasswordModel.swift in Sources */,
 				84937BBE20C3660B00727437 /* LoginViewController.swift in Sources */,
 				84187EDA20C6D2EF00FB5566 /* TripsPresenterProtocol.swift in Sources */,
 				84247CD020C7784B00AE43FA /* PaymentViewProtocol.swift in Sources */,
@@ -1129,10 +1164,13 @@
 				84EFC1BC20C43510004E5BDF /* VerifyPresenter.swift in Sources */,
 				84D1854F20C2E52D0054BEBF /* SignupModel.swift in Sources */,
 				846ABFF220C93E44003F8528 /* SplashView.swift in Sources */,
+				8408DFA520D32009009258AE /* ChangePasswordPresenterProtocol.swift in Sources */,
 				842C037B20C5A3F100CA1C3B /* CreateRequestView.swift in Sources */,
+				8408DFA720D32015009258AE /* ChangePasswordModelProtocol.swift in Sources */,
 				840B1CCB20C52FF80046542D /* ResetPasswordModel.swift in Sources */,
 				84937BD220C45D0B00727437 /* ForgotPassPresenter.swift in Sources */,
 				843E2DBB20C9DB9400DE459C /* OrderCustomHeader.swift in Sources */,
+				8408DFA320D31FEB009258AE /* ChangePasswordViewProtocol.swift in Sources */,
 				840345B220CB24E800322359 /* UpcomingOrdersTableView.swift in Sources */,
 				84A2D4DE20C2CD7D00576ACF /* DropDownCarrierItem.swift in Sources */,
 				840B1CD320C5B3D10046542D /* CreateRequestViewProtocol.swift in Sources */,
@@ -1161,6 +1199,7 @@
 				845B28A420C712D900EC4335 /* CreateRequestViewExtension.swift in Sources */,
 				8455AD1E20CFE22800012D01 /* RequestOrderResult.swift in Sources */,
 				84D1854720C2DEF40054BEBF /* SignupPresenterProtocol.swift in Sources */,
+				8408DF9E20D31FB3009258AE /* ChangePasswordPresenter.swift in Sources */,
 				84626CA820CC02F800AE2BB1 /* HeaderCollection.swift in Sources */,
 				843E2DC220CAB30600DE459C /* OrdersPresenterProtocol.swift in Sources */,
 				84247CCD20C777EB00AE43FA /* PaymentPresenter.swift in Sources */,
@@ -1199,6 +1238,7 @@
 				84D1854320C2D3860054BEBF /* SignupModelProtocol.swift in Sources */,
 				84937BD020C45D0B00727437 /* ForgetPasswordViewController.swift in Sources */,
 				840B1CC920C52FB70046542D /* ResetPasswordPresenter.swift in Sources */,
+				8408DF9C20D31F9D009258AE /* ChangePasswordViewController.swift in Sources */,
 				84409D7E20D073F000C41D22 /* PresentedOrder.swift in Sources */,
 				841D749D20C9DFEF00253AA4 /* UIButtonExtension.swift in Sources */,
 				84937BBB20C3660B00727437 /* LoginPresenter.swift in Sources */,

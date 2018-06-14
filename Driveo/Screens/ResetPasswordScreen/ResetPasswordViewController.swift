@@ -39,7 +39,7 @@ class ResetPasswordViewController: UIViewController, ResetPasswordViewProtocol {
     }
     
     @IBAction func sendPassword(_ sender: UIButton) {
-        if validatePasswordMainField() && validatePasswordMainField(){
+        if validatePasswordMainField() && validatePasswordSecondaryField(){
             rPP.resetPassword(withPassword: passwordFld1.text!)
             print("matches")
             showLoading()

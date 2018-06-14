@@ -17,17 +17,17 @@
         <scene sceneID="xLF-sM-JbD">
             <objects>
                 <viewController storyboardIdentifier="loginView" id="xAa-4N-ti6" customClass="LoginViewController" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="rUn-hz-d8v">
+                    <view key="view" contentMode="scaleToFill" id="rUn-hz-d8v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iJs-8E-f2e">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJs-8E-f2e">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MeJ-ux-SKr">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MeJ-ux-SKr">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="812"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3n-0W-IWW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3n-0W-IWW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                 <rect key="frame" x="57" y="411" width="301" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="301" id="P1Q-fN-Ymd"/>
@@ -37,7 +37,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="19.5"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDW-Ie-kgj">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDW-Ie-kgj">
                                                 <rect key="frame" x="57" y="550" width="301" height="131"/>
                                                 <color key="backgroundColor" red="1" green="0.51372549019607838" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -58,7 +58,7 @@
                                                     <action selector="loginBut:" destination="xAa-4N-ti6" eventType="touchUpInside" id="7mK-TO-Bz7"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2y-3f-DS6">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2y-3f-DS6">
                                                 <rect key="frame" x="57" y="460" width="301" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="301" id="4xa-dF-Otk"/>
@@ -71,7 +71,7 @@
                                                     <action selector="forgotPass:" destination="xAa-4N-ti6" eventType="touchUpInside" id="mth-36-ATO"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qCA-Mm-Axb" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qCA-Mm-Axb" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                                 <rect key="frame" x="57" y="331" width="301" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="33" id="9l0-pv-ien"/>
@@ -81,23 +81,23 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="19.5"/>
                                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ic_splash" translatesAutoresizingMaskIntoConstraints="NO" id="2Z0-MT-wf8">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_splash" translatesAutoresizingMaskIntoConstraints="NO" id="2Z0-MT-wf8">
                                                 <rect key="frame" x="165" y="139" width="85" height="55"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="2Z0-MT-wf8" secondAttribute="height" multiplier="165:106" id="KfT-JL-af8"/>
                                                     <constraint firstAttribute="height" constant="54.670000000000002" id="l5J-4c-ECA"/>
                                                 </constraints>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bM7-1h-gHB" userLabel="I">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bM7-1h-gHB" userLabel="I">
                                                 <rect key="frame" x="69" y="729" width="276" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUE-WV-oJ4">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUE-WV-oJ4">
                                                         <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.56862745100000001" green="0.61176470589999998" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-hy-RdR">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDL-hy-RdR">
                                                         <rect key="frame" x="187" y="0.0" width="89" height="30"/>
                                                         <state key="normal" title="Register now">
                                                             <color key="titleColor" red="0.96862745098039216" green="0.67450980392156867" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
@@ -440,10 +440,10 @@
             </objects>
             <point key="canvasLocation" x="1671" y="-64"/>
         </scene>
-        <!--Reset Password View Controller-->
+        <!--Change Password View Controller-->
         <scene sceneID="HM0-VP-rft">
             <objects>
-                <viewController storyboardIdentifier="changePassword" id="nL7-R5-chd" customClass="ResetPasswordViewController" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="changePassword" id="nL7-R5-chd" customClass="ChangePasswordViewController" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jTm-8M-779">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -482,7 +482,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="sendPassword:" destination="nL7-R5-chd" eventType="touchUpInside" id="0oD-cH-zgM"/>
+                                                    <action selector="changePassword:" destination="nL7-R5-chd" eventType="touchUpInside" id="ILb-pA-4ZK"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Change password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Uwt-KP-dvW">
@@ -505,7 +505,7 @@
                                                     <color key="titleColor" red="0.29411764709999999" green="0.27450980390000002" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="backToLogin:" destination="nL7-R5-chd" eventType="touchUpInside" id="LLo-RA-eug"/>
+                                                    <action selector="exitPage:" destination="nL7-R5-chd" eventType="touchUpInside" id="4B7-RV-Sg3"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CMw-rO-tuU" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
@@ -574,8 +574,9 @@
                         <viewLayoutGuide key="safeArea" id="RRv-1b-ZhM"/>
                     </view>
                     <connections>
-                        <outlet property="passwordFld1" destination="7a8-RW-HPh" id="L84-Ie-Okz"/>
-                        <outlet property="passwordFld2" destination="CMw-rO-tuU" id="o1l-80-EOk"/>
+                        <outlet property="newPassword" destination="7a8-RW-HPh" id="E1Y-eS-rYk"/>
+                        <outlet property="newPasswordRepeat" destination="CMw-rO-tuU" id="8XA-we-6VM"/>
+                        <outlet property="oldPassword" destination="OcH-sK-G7P" id="LDY-M6-2Ft"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPt-8d-NJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
