@@ -17,7 +17,7 @@ class HalfSizePresentationController : UIPresentationController {
                 return CGRect.zero
             }
             
-            return CGRect(x: 0, y: theView.bounds.height/2, width: theView.bounds.width, height: 368)
+            return CGRect(x: 0, y: theView.bounds.height-368, width: theView.bounds.width, height: 368)
         }
         
     }
