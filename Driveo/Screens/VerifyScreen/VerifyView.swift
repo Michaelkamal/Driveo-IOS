@@ -20,7 +20,7 @@ class VerifyView: UIViewController , VerifyViewProtocol, UITextFieldDelegate{
  
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        verificationCodeTextField.addCharacterSpacing()
         // Do any additional setup after loading the view.
     }
 

@@ -30,6 +30,7 @@
 		840B1CD320C5B3D10046542D /* CreateRequestViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CD020C5B3D10046542D /* CreateRequestViewProtocol.swift */; };
 		840B1CD520C5B81F0046542D /* CreateRequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CD420C5B81F0046542D /* CreateRequestPresenter.swift */; };
 		840B1CD720C5B82D0046542D /* CreateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840B1CD620C5B82D0046542D /* CreateRequestModel.swift */; };
+		8415340720D433A50069D347 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8415340620D433A50069D347 /* UITextFieldExtension.swift */; };
 		84187ED820C6D26C00FB5566 /* TripsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84187ED720C6D26C00FB5566 /* TripsViewProtocol.swift */; };
 		84187EDA20C6D2EF00FB5566 /* TripsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84187ED920C6D2EF00FB5566 /* TripsPresenterProtocol.swift */; };
 		84187EDE20C6D48E00FB5566 /* TripsModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84187EDD20C6D48E00FB5566 /* TripsModelProtocol.swift */; };
@@ -186,6 +187,7 @@
 		840B1CD020C5B3D10046542D /* CreateRequestViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRequestViewProtocol.swift; sourceTree = "<group>"; };
 		840B1CD420C5B81F0046542D /* CreateRequestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestPresenter.swift; sourceTree = "<group>"; };
 		840B1CD620C5B82D0046542D /* CreateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestModel.swift; sourceTree = "<group>"; };
+		8415340620D433A50069D347 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		84187ED720C6D26C00FB5566 /* TripsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewProtocol.swift; sourceTree = "<group>"; };
 		84187ED920C6D2EF00FB5566 /* TripsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsPresenterProtocol.swift; sourceTree = "<group>"; };
 		84187EDD20C6D48E00FB5566 /* TripsModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsModelProtocol.swift; sourceTree = "<group>"; };
@@ -774,6 +776,7 @@
 				843A09F320CDEB67002134F1 /* HalfSizePresentationController.swift */,
 				8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */,
 				8484886D20CEDCE7009444B2 /* UIImageViewExtention */,
+				8415340620D433A50069D347 /* UITextFieldExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1227,6 +1230,7 @@
 				84A2D4E420C2CD7D00576ACF /* DropDownPlacesItem.swift in Sources */,
 				84A2D4F320C2CE2400576ACF /* RoundedButton.swift in Sources */,
 				844BD5F620C3679D005E98FC /* PickLocationViewProtocol.swift in Sources */,
+				8415340720D433A50069D347 /* UITextFieldExtension.swift in Sources */,
 				84626CA020CBE3C700AE2BB1 /* OrderHistoryCollectionView.swift in Sources */,
 				844BD61520C4C644005E98FC /* ScreenController.swift in Sources */,
 				84A2D4F420C2CE2400576ACF /* NetworkDAL.swift in Sources */,

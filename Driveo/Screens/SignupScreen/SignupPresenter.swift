@@ -26,96 +26,105 @@ class SignupPresenter : SignupPresenterProtocol{
     var emailErrorLabel:String = "" {
         didSet{
             signupView.setEmailAlertLabel(errorMsg:emailErrorLabel)
-            if emailErrorLabel != "" {
-                isEmailCorrect = false;
-            }else{
-                isEmailCorrect = true
-            }
         }
     }
     
     var phoneErrorLabel:String = "" {
         didSet{
             signupView.setPhoneAlertLabel(errorMsg:phoneErrorLabel)
-            if phoneErrorLabel != "" {
-                isPhoneCorrect = false;
-            }else{
-                isPhoneCorrect = true
-            }
         }
     }
     
     var passwordErrorLabel:String = "" {
         didSet{
             signupView.setPasswordAlertLabel(errorMsg:passwordErrorLabel)
-            if passwordErrorLabel != "" {
-                isPasswordCorrect = false;
-            }else{
-                isPasswordCorrect = true
-            }
         }
     }
     
     var confirmPasswordErrorLabel:String = "" {
         didSet{
             signupView.setConfirmPasswordAlertLabel(errorMsg:confirmPasswordErrorLabel)
-            if confirmPasswordErrorLabel != "" {
-                isConfirmPasswordCorrect = false;
-            }else{
-                isConfirmPasswordCorrect = true
-            }
         }
     }
 
     
     func isPasswordValid(password: String) {
-        if password != ""{
-            if (password.matches("^((?!.*\\s)(?=.*[a-zA-Z])(?=.*\\d)).{6,12}$"))
+      
+        if (password.matches("^((?!.*\\s)(?=.*[a-zA-Z])(?=.*\\d)).{6,12}$"))
+        {
+            passwordErrorLabel=""
+            isPasswordCorrect = true
+        }
+        else
+        {
+            if password == ""
             {
                 passwordErrorLabel=""
-            }else if password.count<6 || password.count>12{
+            }
+            else if password.count<6 || password.count>12{
                 passwordErrorLabel=ErrorType.passwordLength.rawValue
             }else{
                 passwordErrorLabel=ErrorType.passwordNumberLetterError.rawValue
             }
+            isPasswordCorrect = false
         }
-      
     }
     
     func isPasswordmatches(password: String, confirmPassword: String) {
-        if password != ""{
+
             if confirmPassword == password
             {
                 confirmPasswordErrorLabel = ""
+                isConfirmPasswordCorrect = true
             }else{
-                confirmPasswordErrorLabel  = ErrorType.confirmPassword.rawValue
+                if confirmPassword == "" {
+                    confirmPasswordErrorLabel = ""
+                }else{
+                    confirmPasswordErrorLabel  = ErrorType.confirmPassword.rawValue
+                }
+                isConfirmPasswordCorrect = false
             }
-        }
     }
     
-    
     func isEmailValid(email: String) {
-        if email != "" {
-            if(email.matches("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"))
-            {
-                emailErrorLabel=""
-            }else{
-                emailErrorLabel=ErrorType.invalidEmail.rawValue
-            }
+
+        if (email.matches("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"))
+        {
+            emailErrorLabel=""
+            isEmailCorrect = true
         }
-       
+        else
+        {
+                if email == ""
+                {
+                    emailErrorLabel=""
+                    
+                }
+                else {
+                    emailErrorLabel=ErrorType.invalidEmail.rawValue
+                }
+            isEmailCorrect = false
+        }
+  
     }
     
     func isPhoneValid(phone: String) {
-        if phone != "" {
+        
             if (phone.matches("^01[0-5]\\d{7,8}$"))
             {
                 phoneErrorLabel=""
-            }else{
-                phoneErrorLabel=ErrorType.invalidPhoneNumber.rawValue
+                isPhoneCorrect = true
             }
-        }
-       
+            else {
+                        if phone == ""{
+                             phoneErrorLabel=""
+                            
+                        }else {
+                             phoneErrorLabel=ErrorType.invalidPhoneNumber.rawValue
+                        }
+                isPhoneCorrect = false
+             }
+        
     }
     
     //save token and tell view to present Verification Screen
