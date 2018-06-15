@@ -17,7 +17,7 @@ enum ErrorType:String,Error{
     case invalidEmail = "Invalid Email"
     case invalidPhoneNumber = "This is not a valid phone number"
     case passwordLength = "Password length should between 6-12"
-    case passwordNumberLetterError = "Password should have letter and number"
+    case passwordNumberLetterError = "password must contain letter & number"
     case confirmPassword = "password doesn't match"
     case pinCodeError = "code not valid"
     case errorTitle = "Error"
