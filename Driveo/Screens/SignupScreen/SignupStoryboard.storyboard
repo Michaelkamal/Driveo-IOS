@@ -54,11 +54,16 @@
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P72-Ha-hkF">
                                                 <rect key="frame" x="0.0" y="459.99999999999994" width="301" height="43"/>
-                                                <color key="backgroundColor" red="1" green="0.64999452459999996" blue="0.15928030539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25.229999542236328"/>
+                                                <color key="backgroundColor" red="1" green="0.51372549020000002" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25.200000762939453"/>
                                                 <state key="normal" title="Signup">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="signupNewUser:" destination="3mV-vk-0Ww" eventType="touchUpInside" id="CB2-vF-fow"/>
                                                 </connections>
@@ -100,7 +105,7 @@
                                                 </connections>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_splash" translatesAutoresizingMaskIntoConstraints="NO" id="EDg-R2-Pcj">
-                                                <rect key="frame" x="37" y="94.333333333333329" width="240" height="54.666666666666671"/>
+                                                <rect key="frame" x="24" y="94.333333333333329" width="253" height="54.666666666666671"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54.670000000000002" id="zLT-gU-i8t"/>
                                                 </constraints>
@@ -128,7 +133,6 @@
                                             <constraint firstItem="IcR-8F-hIR" firstAttribute="top" secondItem="P72-Ha-hkF" secondAttribute="bottom" constant="55.609999999999999" id="qBD-D2-mqK"/>
                                             <constraint firstAttribute="trailing" secondItem="LbK-km-ZLl" secondAttribute="trailing" id="rcH-C3-Leh"/>
                                             <constraint firstItem="LbK-km-ZLl" firstAttribute="leading" secondItem="Cau-HZ-qwl" secondAttribute="leading" id="sK3-bD-3C3"/>
-                                            <constraint firstItem="EDg-R2-Pcj" firstAttribute="leading" secondItem="Cau-HZ-qwl" secondAttribute="leading" constant="37" id="sQr-8q-2hs"/>
                                             <constraint firstAttribute="height" constant="587" id="sXC-aW-rpG"/>
                                             <constraint firstAttribute="bottom" secondItem="IcR-8F-hIR" secondAttribute="bottom" id="wz5-y6-gqd"/>
                                         </constraints>

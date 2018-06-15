@@ -26,17 +26,18 @@ class VerifyPresenter : VerifyPresenterProtocol{
     
     func sendVerificationCode(withcode code: String) {
         if code.matches("^\\d{4}$"){
-            verifyView.showLoading()
+            
                     if NetworkDAL.isInternetAvailable()
                     {
                         let defaults = UserDefaults.standard
                         let token = defaults.string(forKey: "auth_token")
-                            if (token != nil) {
+                            if token != nil {
+                                verifyView.showLoading()
                                 verifyModel.sendVerificationCode(withToken: token!, withCode: code)
                             }
                     }
                     else{
-                        verifyView.dismissLoading()
+                        
                         verifyView.showAlert(withTitle: ErrorType.errorTitle.rawValue, andMsg: ErrorType.internet.rawValue)
                     }
         }else{
@@ -52,6 +53,7 @@ class VerifyPresenter : VerifyPresenterProtocol{
         }
     }
     
+    
     func OnCodeVerifiedSuccesfuly() {
         verifyView.dismissLoading()
         verifyView.goToHomeScreen()
@@ -62,5 +64,22 @@ class VerifyPresenter : VerifyPresenterProtocol{
         verifyView.showAlert(withTitle: ErrorType.errorTitle.rawValue, andMsg: msg)
     }
     
+    func askForVerificationCode(forToken token:String){
+        let defaults = UserDefaults.standard
+        if NetworkDAL.isInternetAvailable() {
+            if let token = defaults.string(forKey: "auth_token"){
+                verifyView.showLoading()
+                verifyModel.requestVerificationCode(forToken: token)
+            }
+        }else {
+            verifyView.showAlert(withTitle: ErrorType.errorTitle.rawValue, andMsg: ErrorType.internet.rawValue)
+        }
+       
+        
+    }
+
+    func onAskForVerificationCodeSuccess(){
+        verifyView.dismissLoading()
+    }
     
 }

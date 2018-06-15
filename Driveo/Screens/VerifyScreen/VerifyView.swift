@@ -11,11 +11,11 @@ import SkyFloatingLabelTextField
 class VerifyView: UIViewController , VerifyViewProtocol, UITextFieldDelegate{
     
     @IBOutlet weak var verificationCodeTextField: SkyFloatingLabelTextField!
-    @IBOutlet weak var errorCodeLabel: UILabel!
+
     private lazy var presenter:VerifyPresenterProtocol = VerifyPresenter(view: self)
     
      var spinner:UIView?
-    var alert:UIAlertController?
+     var alert:UIAlertController?
     
  
     override func viewDidLoad() {

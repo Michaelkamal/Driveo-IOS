@@ -12,4 +12,6 @@ protocol VerifyModelProtocol {
     
      func sendVerificationCode(withToken token: String, withCode code: String)
     
+    func requestVerificationCode(forToken token:String)
+    
 }

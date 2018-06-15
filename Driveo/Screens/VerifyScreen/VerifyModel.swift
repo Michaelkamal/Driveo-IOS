@@ -44,4 +44,11 @@ class  VerifyModel : VerifyModelProtocol {
         presenter.OnCodeVerifyFailure(withmsg: "Failed")
     }
     
+    func requestVerificationCode(forToken token:String){
+        let networkObject : NetworkDAL = NetworkDAL.sharedInstance()
+        let parameters = [String:Any]()
+        
+        networkObject.processPatchReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.verify.rawValue, andParameters: parameters , onSuccess: onVerifySucces, onFailure: onVerifyFailure,headers: ["Authorization":token])
+    }
+    
 }
