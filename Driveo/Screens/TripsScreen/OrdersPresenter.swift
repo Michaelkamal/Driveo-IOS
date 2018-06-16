@@ -27,7 +27,7 @@ class OrdersPresenter: OrdersPresenterProtocol {
         }
     }
     
-    func onRequestSuccess(withOrders orders: [String : [PresentedOrder]]) {
+    func onRequestSuccess(withOrders orders: RequestOrdersResult) {
         ordersView.onLoadSuccess(useData: orders)
     }
     

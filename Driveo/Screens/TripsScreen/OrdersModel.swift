@@ -16,10 +16,6 @@ class OrderModel : OrdersModelProtocol{
         presenter = p
     }
     
-    func onRequestSuccess(date:Data)->Void{
-        presenter.onRequestSuccess(withOrders: ["active": [],"history":[]])
-    }
-    
     func onRequestFailure(error:ErrorType)->Void{
         presenter.onRequestFailure(failure: "failed")
     }
@@ -40,7 +36,7 @@ class OrderModel : OrdersModelProtocol{
             if let respone = responseArray.first as? RequestOrdersResult {
                 print(respone)
                 if respone.message == MsgResponse.success.rawValue {
-                    self.presenter.onRequestSuccess(withOrders: respone.data)
+                    self.presenter.onRequestSuccess(withOrders: respone)
                 }else{
                     self.presenter.onRequestFailure(failure: ErrorType.parse.rawValue)
                 }

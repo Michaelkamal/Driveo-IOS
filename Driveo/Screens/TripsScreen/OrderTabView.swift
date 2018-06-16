@@ -18,7 +18,7 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
     let orangeColor = UIColor(red:1, green:0.5, blue:0.18, alpha:1.0)
     let greyColor = UIColor.lightGray
     
-    var successFunction:(([String:[PresentedOrder]]) -> Void)!
+    var successFunction:((RequestOrdersResult) -> Void)!
     var failureFunction:((String)->Void)!
     
     var ordersPresenter:OrdersPresenterProtocol!
@@ -61,7 +61,7 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let historyView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "History") as! OrderHistoryCollectionView
         historyView.parentTabView = self
-        let upcomingView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "History") as! OrderHistoryCollectionView
+        let upcomingView = UIStoryboard(name: "Trips", bundle: nil).instantiateViewController(withIdentifier: "Upcoming") as! OrderUpcomingCollectionView
         upcomingView.parentTabView = self
         return [historyView, upcomingView]
     }
@@ -70,7 +70,7 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
         failureFunction(failure)
     }
     
-    func getInfoForTabOf(orderType order: OrderType, useData: @escaping (_ : [String:[PresentedOrder]]) -> Void,onFailure: @escaping(_ : String) ->Void, page:String){
+    func getInfoForTabOf(orderType order: OrderType, useData: @escaping (_ : RequestOrdersResult) -> Void,onFailure: @escaping(_ : String) ->Void, page:String){
         
         ordersPresenter = OrdersPresenter(withView: self)
         failureFunction = onFailure
@@ -97,7 +97,7 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func onLoadSuccess(useData: [String : [PresentedOrder]]) {
+    func onLoadSuccess(useData: RequestOrdersResult) {
         successFunction(useData)
     }
 }

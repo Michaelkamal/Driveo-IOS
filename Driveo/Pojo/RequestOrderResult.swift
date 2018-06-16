@@ -12,7 +12,7 @@ struct RequestOrdersResult : Decodable {
 
     var message:String
     
-    var history_pages:Int
+    var total_pages:Int
     
     var data:[String:[PresentedOrder]]
    

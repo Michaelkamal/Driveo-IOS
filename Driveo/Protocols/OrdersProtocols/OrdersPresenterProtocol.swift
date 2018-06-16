@@ -12,7 +12,7 @@ protocol OrdersPresenterProtocol {
     
     func requestOrders(ofType typeOrder: OrderType, page:String)
     
-    func onRequestSuccess(withOrders orders:[String:[PresentedOrder]])
+    func onRequestSuccess(withOrders orders:RequestOrdersResult)
     
     func onRequestFailure(failure :String)
 }

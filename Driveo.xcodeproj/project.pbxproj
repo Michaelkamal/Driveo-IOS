@@ -98,6 +98,7 @@
 		846ABFF420C9689B003F8528 /* TripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846ABFF320C9689B003F8528 /* TripCell.xib */; };
 		846ABFF620C97041003F8528 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABFF520C97041003F8528 /* OrderCell.swift */; };
 		846ABFFA20C975E4003F8528 /* OrderHistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABFF920C975E4003F8528 /* OrderHistoryTableView.swift */; };
+		846FB6FB20D52DC400D90AC5 /* OrderUpcomingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FB6FA20D52DC400D90AC5 /* OrderUpcomingCollectionView.swift */; };
 		8484886A20CEDB67009444B2 /* NavigationDrawerScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8484886920CEDB67009444B2 /* NavigationDrawerScreen.storyboard */; };
 		8484886C20CEDCDE009444B2 /* UIImageViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */; };
 		8484887120CF71A0009444B2 /* NavigationDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484887020CF71A0009444B2 /* NavigationDrawerViewController.swift */; };
@@ -261,6 +262,7 @@
 		846ABFF320C9689B003F8528 /* TripCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCell.xib; sourceTree = "<group>"; };
 		846ABFF520C97041003F8528 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		846ABFF920C975E4003F8528 /* OrderHistoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableView.swift; sourceTree = "<group>"; };
+		846FB6FA20D52DC400D90AC5 /* OrderUpcomingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderUpcomingCollectionView.swift; sourceTree = "<group>"; };
 		8484886920CEDB67009444B2 /* NavigationDrawerScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationDrawerScreen.storyboard; sourceTree = "<group>"; };
 		8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtention.swift; sourceTree = "<group>"; };
 		8484887020CF71A0009444B2 /* NavigationDrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerViewController.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 				84626CA320CBEA1A00AE2BB1 /* TripCellCollectionView.swift */,
 				84626CA520CBFD1800AE2BB1 /* HeaderCollection.xib */,
 				84626CA720CC02F800AE2BB1 /* HeaderCollection.swift */,
+				846FB6FA20D52DC400D90AC5 /* OrderUpcomingCollectionView.swift */,
 			);
 			path = TripsScreen;
 			sourceTree = "<group>";
@@ -1254,6 +1257,7 @@
 				8484886C20CEDCDE009444B2 /* UIImageViewExtention.swift in Sources */,
 				844C6FC320C6305F00379783 /* PaymentViewController.swift in Sources */,
 				8484887120CF71A0009444B2 /* NavigationDrawerViewController.swift in Sources */,
+				846FB6FB20D52DC400D90AC5 /* OrderUpcomingCollectionView.swift in Sources */,
 				844BD5FE20C3778A005E98FC /* CreateOrderViewController.swift in Sources */,
 				84D1854D20C2E4BE0054BEBF /* SignupPresenter.swift in Sources */,
 				84D1855220C2E6CC0054BEBF /* StringExtension.swift in Sources */,
