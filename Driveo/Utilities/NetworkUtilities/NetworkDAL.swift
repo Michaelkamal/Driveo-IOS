@@ -24,8 +24,8 @@ enum SuffixUrl:String {
     case verify = "authentication/verify"
     case resendVerificatoin = "authentication/resendverification"
     case providers = "providers"
-    case historyOrders = "gethistory"
-    case upcomingOrders = "getupcoming"
+    case historyOrders = "showhistory"
+    case upcomingOrders = "showupcoming"
     case about = "aboutus"
 }
 
