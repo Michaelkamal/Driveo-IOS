@@ -34,6 +34,12 @@ struct  User : Decodable{
     }
     
     func getUserDataInDictionary()->[String:String]{
-        return ["email":self.email,"phone":self.phone,"password":self.password!,"confirm_password":self.confirmPassword!]
+        if let confirm = self.confirmPassword {
+            return ["email":self.email,"phone":self.phone,"password":self.password!,"confirm_password":self.confirmPassword!]
+        }
+        else {
+            return ["email":self.email,"phone":self.phone,"password":self.password!]
+        }
     }
+    
 }

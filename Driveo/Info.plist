@@ -57,7 +57,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LauchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>LauchScreen</string>
+	<string>Login</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
