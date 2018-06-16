@@ -23,9 +23,17 @@ class OrderModel : OrdersModelProtocol{
     
     
     
-    func getOrders(forType type: OrderType, withToken token: String) {
+    func getOrders(forPage page :String, withToken token:String, forType type:OrderType){
         let networkObject : NetworkDAL = NetworkDAL.sharedInstance()
-        let suffixUrl = SuffixUrl.orders.rawValue + "1"
+        var suffixUrl = ""
+        
+        if type == OrderType.HistoryOrders{
+            suffixUrl = SuffixUrl.historyOrders.rawValue + page
+        }else{
+            suffixUrl = SuffixUrl.upcomingOrders.rawValue + page
+        }
+        
+        
         
         networkObject.processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: suffixUrl, withParser: { (data) -> [Any] in
             if let response = try? JSONDecoder().decode(RequestOrdersResult.self, from: data.rawData()){

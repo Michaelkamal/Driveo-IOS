@@ -11,6 +11,6 @@ import Foundation
 protocol OrdersModelProtocol {
     
     
-    func getOrders(forType type :OrderType, withToken token:String)
+    func getOrders(forPage page :String, withToken token:String, forType type:OrderType)
     
 }
