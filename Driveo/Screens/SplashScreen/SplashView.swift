@@ -40,7 +40,6 @@ class SplashView: UIViewController {
                     
                 }
                 else {
-                    
                         let verifyStoryBoard = UIStoryboard.init(name:"SignupStoryboard",bundle:nil)
                         let verifyScreen = verifyStoryBoard.instantiateViewController(withIdentifier: "VerifyView") as! VerifyView
                     //  UIApplication.shared.keyWindow?.rootViewController = signup

@@ -75,7 +75,7 @@ class VerifyView: UIViewController , VerifyViewProtocol, UITextFieldDelegate{
     
     
     @IBAction func sendVerifyCodeAction(_ sender: Any) {
-        
+          presenter.askForVerificationCode()
     }
     
     
