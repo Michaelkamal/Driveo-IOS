@@ -18,7 +18,8 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
     let orangeColor = UIColor(red:1, green:0.5, blue:0.18, alpha:1.0)
     let greyColor = UIColor.lightGray
     
-    public var successFunction:(([String:[PresentedOrder]]) -> Void)!
+    var successFunction:(([String:[PresentedOrder]]) -> Void)!
+    var failureFunction:((String)->Void)!
     
     var ordersPresenter:OrdersPresenterProtocol!
     
@@ -66,12 +67,13 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
     }
     
     func onLoadFailure(failure: String) {
-        showAlert(withTitle: "Failed", andMessage: failure)
+        failureFunction(failure)
     }
     
-    func getInfoForTabOf(orderType order: OrderType, useData: @escaping (_ : [String:[PresentedOrder]]) -> Void, page:String){
+    func getInfoForTabOf(orderType order: OrderType, useData: @escaping (_ : [String:[PresentedOrder]]) -> Void,onFailure: @escaping(_ : String) ->Void, page:String){
         
         ordersPresenter = OrdersPresenter(withView: self)
+        failureFunction = onFailure
         successFunction = useData
         ordersPresenter.requestOrders(ofType : order, page:page)
     }

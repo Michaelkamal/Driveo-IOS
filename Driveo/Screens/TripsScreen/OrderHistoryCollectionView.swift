@@ -13,6 +13,8 @@ private let reuseIdentifier = "TripCell"
 
 class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDelegateFlowLayout, IndicatorInfoProvider  {
     
+    var alert:UIAlertController?
+    
     var parentTabView:OrdersViewProtocol!
     var historyData:[String:[PresentedOrder]]!
     var activeTrips:[PresentedOrder] = []
@@ -38,7 +40,8 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
             activeTrips.append(pOrder)
         }
     
-        parentTabView!.getInfoForTabOf(orderType: .HistoryOrders , useData: useData, page: String(pageCount))
+        parentTabView!.getInfoForTabOf(orderType: .HistoryOrders , useData: useData,onFailure: retrieveFailed, page: String(pageCount))
+        showLoading()
         
     }
     
@@ -158,7 +161,10 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
         let subtractionValue = 34/factor
         return CGSize(width: UIScreen.main.bounds.width-subtractionValue, height: 142)
     }
-
+    func retrieveFailed(_ message:String) -> Void {
+        dismissLoading()
+        showAlert(withTitle: "Failed", andMessage: message)
+    }
 
     func useData(_ data:[String:[PresentedOrder]]) {
         historyData = data
@@ -166,6 +172,7 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
         activeTrips += data["active"]!
         pastTrips += data ["history"]!
         self.collectionView?.reloadData()
+        dismissLoading()
     }
     
     
@@ -173,16 +180,29 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
         spinner = UIViewController.displaySpinner(onView: self.view)
     }
     
+    func dismissLoading() {
+        UIViewController.removeSpinner(spinner: spinner!)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.item == pastTrips.count-1 && indexPath.section == 1 && flagPagination == true{
             pageCount+=1
-            parentTabView!.getInfoForTabOf(orderType: .HistoryOrders , useData: useData, page: String(pageCount))
+            parentTabView!.getInfoForTabOf(orderType: .HistoryOrders , useData: useData, onFailure: retrieveFailed, page: String(pageCount))
             print("pageCount")
             print(pageCount)
             flagPagination = false
+            showLoading()
         }
     }
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         flagPagination = true
     }
+    
+    func showAlert(withTitle title :String , andMessage msg:String){
+        alert = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)
+        self.present(alert!, animated: true, completion: nil)
+        let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)
+        alert?.addAction(dismissAlertAction)
+    }
+    
 }

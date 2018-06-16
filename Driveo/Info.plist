@@ -46,6 +46,8 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>We need to access your Camera so this app can upload photos</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>We need to access your location so this app can find your Location</string>
 	<key>NSLocationUsageDescription</key>
@@ -55,7 +57,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LauchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>LauchScreen</string>
+	<string>Trips</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -66,8 +68,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>We need to access your Camera so this app can upload photos</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

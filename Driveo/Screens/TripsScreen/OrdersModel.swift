@@ -17,11 +17,11 @@ class OrderModel : OrdersModelProtocol{
     }
     
     func onRequestSuccess(date:Data)->Void{
-        
+        presenter.onRequestSuccess(withOrders: ["active": [],"history":[]])
     }
     
     func onRequestFailure(error:ErrorType)->Void{
-        
+        presenter.onRequestFailure(failure: "failed")
     }
     
     
