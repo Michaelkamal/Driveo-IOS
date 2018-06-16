@@ -17,11 +17,12 @@ class ChangePasswordPresenter: ChangePasswordPresenterProtocol {
         cPC = c
     }
     
-    func change(oldPassword oldPass:String , withPassword pass1: String) {
+    func change(oldPassword oldPass:String , withPassword pass1: String, andRepeatePass repPass: String) {
         cPM = ChangePasswordModel(withPresenter: self)
         let params = [
             "password" : oldPass,
-            "new_password" : pass1]
+            "new_password" : pass1,
+            "confirm_password" : repPass]
         cPM.sendRequest(withParameters: params)
     }
     

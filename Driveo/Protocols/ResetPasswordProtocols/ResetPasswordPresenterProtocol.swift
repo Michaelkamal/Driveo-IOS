@@ -8,7 +8,7 @@
 
 import Foundation
 protocol ResetPasswordPresenterProtocol {
-    func resetPassword(withPassword pass1: String) 
+    func resetPassword(withPassword pass1: String, andRepeatedPass repPass:String) 
     func resetSuccess(message:String) ->Void
     func resetFailure(message:String) -> Void
 }

@@ -25,7 +25,7 @@ class ChangePasswordViewController: UIViewController,ChangePasswordViewProtocol 
     
     @IBAction func changePassword(_ sender: Any) {
         if validatePasswordMainField() && validatePasswordSecondaryField() && validatePasswordOldField(){
-            cPP.change(oldPassword: oldPassword.text!, withPassword: newPassword.text!)
+            cPP.change(oldPassword: oldPassword.text!, withPassword: newPassword.text!, andRepeatePass: newPasswordRepeat.text!)
             print("matches")
             showLoading()
         }

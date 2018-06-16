@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ChangePasswordPresenterProtocol {
-    func change(oldPassword oldPass:String , withPassword pass1: String)
+    func change(oldPassword oldPass:String , withPassword pass1: String, andRepeatePass repPass: String)
     func changeSuccess(message:String) ->Void
     func changeFailure(message:String) -> Void
 }
