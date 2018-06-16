@@ -14,9 +14,8 @@ private let reuseIdentifier = "TripCell"
 class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDelegateFlowLayout, IndicatorInfoProvider  {
     
     var alert:UIAlertController?
-    
+    var totalpageCount = 1
     var parentTabView:OrdersViewProtocol!
-    var historyData:[String:[PresentedOrder]]!
     var activeTrips:[PresentedOrder] = []
     var pastTrips:[PresentedOrder] = []
     var pageCount = 1
@@ -166,11 +165,11 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
         showAlert(withTitle: "Failed", andMessage: message)
     }
 
-    func useData(_ data:[String:[PresentedOrder]]) {
-        historyData = data
+    func useData(_ data:RequestOrdersResult) {
         print(data)
-        activeTrips += data["active"]!
-        pastTrips += data ["history"]!
+        activeTrips += data.data["active"]!
+        pastTrips += data.data["history"]!
+        totalpageCount = data.total_pages
         self.collectionView?.reloadData()
         dismissLoading()
     }
@@ -185,7 +184,7 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
     }
     
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.item == pastTrips.count-1 && indexPath.section == 1 && flagPagination == true{
+        if indexPath.item == pastTrips.count-1 && indexPath.section == 1 && flagPagination == true && totalpageCount > pageCount{
             pageCount+=1
             parentTabView!.getInfoForTabOf(orderType: .HistoryOrders , useData: useData, onFailure: retrieveFailed, page: String(pageCount))
             print("pageCount")

@@ -118,7 +118,42 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TiL-dP-e0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2244" y="151.57421289355324"/>
+            <point key="canvasLocation" x="1442" y="152"/>
+        </scene>
+        <!--Order Upcoming Collection View-->
+        <scene sceneID="mwA-fV-2rD">
+            <objects>
+                <collectionViewController storyboardIdentifier="Upcoming" id="KqA-NI-Icr" customClass="OrderUpcomingCollectionView" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="2oX-GL-baZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bzE-JR-4rG">
+                            <size key="itemSize" width="188" height="179"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TripCell" id="95I-xl-fG4">
+                                <rect key="frame" x="32.5" y="0.0" width="310" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="310" height="142"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                                <size key="customSize" width="310" height="142"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="KqA-NI-Icr" id="0yr-iB-zra"/>
+                            <outlet property="delegate" destination="KqA-NI-Icr" id="bhd-EH-CTm"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UXG-up-IT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2353" y="152"/>
         </scene>
     </scenes>
     <resources>
