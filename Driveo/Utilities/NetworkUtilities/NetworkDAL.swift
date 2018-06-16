@@ -23,13 +23,14 @@ enum SuffixUrl:String {
     case signup = "authentication/signup"
     case verify = "authentication/verify"
     case providers = "providers"
-    case orders = "orders/"
+    case orders = "orders"
 }
 
 
 enum ApiBaseUrl:String{
     case googleApi = "https://maps.googleapis.com/"
     case mainApi = "https://driveo.herokuapp.com/api/v1/"
+    case usamaTest = "https://mina7esh.herokuapp.com/"
     //"https://driveo.herokuapp.com/"
     case testmockAoi = "https://84b52456-526d-4892-a227-4c47f5469182.mock.pstmn.io"
 }

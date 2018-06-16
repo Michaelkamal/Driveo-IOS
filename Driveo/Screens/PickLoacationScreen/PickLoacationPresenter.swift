@@ -17,7 +17,7 @@ class PickLoacationPresenter{
     
     private var userOrder:Order=Order.sharedInstance()
     
-    private var carrier:Int?
+    private var carrier:Provider?
     private var pickUpDate:String?
     private var providersArray:[Provider]?
     
@@ -38,7 +38,7 @@ class PickLoacationPresenter{
             {
                selectedLocation = userOrder.source
             }else{
-                selectedLocation=OrderLocation(locationType: LocationType.source)
+                selectedLocation=OrderLocation()
             }
         }else
         {
@@ -46,7 +46,7 @@ class PickLoacationPresenter{
             {
                 selectedLocation = userOrder.destination
             }else{
-                selectedLocation=OrderLocation(locationType: LocationType.destination)
+                selectedLocation=OrderLocation()
             }
         }
     }
@@ -87,7 +87,7 @@ class PickLoacationPresenter{
             {
                     userOrder.source=selectedLocation
                     userOrder.date=pickUpDate
-                    userOrder.providerID=carrier
+                    userOrder.provider=carrier
                     viewDelagate.presentToNextScreen()
             }else
             {
@@ -115,7 +115,7 @@ class PickLoacationPresenter{
     // Select carrier
     func didSelectCarrier(selectedCarrier carrier:Provider)->Void {
         viewDelagate.displaySelectedCarrier(withLogoUrl:carrier.image!.url!)
-        self.carrier=carrier.id
+        self.carrier=carrier
     }
     
     
@@ -128,7 +128,9 @@ class PickLoacationPresenter{
             NetworkDAL.sharedInstance().processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.providers.rawValue, withParser: { (JSON) -> [Any] in
                 var res:[Any]=[]
                 if let providers = try? JSONDecoder().decode(Providers.self, from: JSON.rawData()) {
-                    res += providers.providers! as [Any]
+                    if let providersArray = providers.providers{
+                    res += providersArray as [Any]
+                    }
                 }
                 else
                 {
@@ -137,9 +139,13 @@ class PickLoacationPresenter{
                 return res
             },andHeaders:["Authorization":token],
                 onSuccess: { (providers) in
-                    self.viewDelagate.updateCarrierArray(withCarriers: providers as! [Provider])
+                self.viewDelagate.updateCarrierArray(withCarriers: providers as! [Provider])
                 self.providersArray=providers as? [Provider]
-                
+                    
+                    // MARK : 3la bal ma el api tzbot
+//                    let tempProvider=[Provider(id: 1,name: "ab",image: Image(url:"asd"),rating: "4.4")]
+//                    self.viewDelagate.updateCarrierArray(withCarriers: tempProvider )
+//                    self.providersArray=tempProvider
                 
             }, onFailure: { err  in
                 print(err)

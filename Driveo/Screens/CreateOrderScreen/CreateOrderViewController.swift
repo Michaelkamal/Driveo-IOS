@@ -185,7 +185,10 @@ class CreateOrderViewController: UIViewController {
                 contentView.addSubview(nextButton)
                 nextButton.updateConstraints()
             }
-            
+            if self.userOrder.completeStatus > 3
+            {
+                nextButton.nextButton.setTitle("Order Now", for: .normal)
+            }
             nextButton.nextFunc={ () in
                 switch self.userOrder.completeStatus
                 {
@@ -198,6 +201,14 @@ class CreateOrderViewController: UIViewController {
                 case 3:
                     self.presentScreen(screen: ScreenController.paymentScreen)
                 default:
+                    let JSONData = try? JSONEncoder().encode(self.userOrder)
+                    let dictionary = try? JSONSerialization.jsonObject(with: JSONData!, options: .allowFragments) as? [String: Any]
+                    
+                    NetworkDAL.sharedInstance().processPostReq(withBaseUrl: ApiBaseUrl.usamaTest, andUrlSuffix: "test", andParameters: ["Order" : dictionary!!], onSuccess: { (data) in
+                        
+                    }, onFailure: { (err) in
+                        print(err)
+                    }, headers: nil)
                     break
                 }
             }

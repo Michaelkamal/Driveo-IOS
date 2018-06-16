@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
-class OrderDetails {
+final class OrderDetails {
     var title:String?
     var description: String?
     var images: [UIImage]?
     var imagesURL:[String]?
+    
+    init(){}
     
     init(withTitle title:String,andDescription description:String?,andImagesArray images:[UIImage]) {
         self.title=title
@@ -38,5 +40,32 @@ class OrderDetails {
         {
             return false
         }
+    }
+}
+
+// MARK : Encoding and Decoding
+extension OrderDetails : Codable  {
+    
+    enum CodingKeys: String, CodingKey {
+        case title = "order_title"
+        case description = "order_description"
+        case images = "order_images"
+        case imagesURL = "order_images_urls"
+    }
+    
+    public convenience init(from decoder: Decoder) throws {
+        self.init()
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        title = try container.decode(String.self, forKey: .title)
+        description = try container.decode(String.self, forKey: .description)
+        imagesURL = try container.decode(Array<String>.self, forKey: .imagesURL)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(title, forKey: .title)
+        try container.encode(description, forKey: .description)
+        try container.encode(self.getImagesInBase64(), forKey: .images)
+        try container.encode(["URL1","URL2"], forKey: .imagesURL)
     }
 }

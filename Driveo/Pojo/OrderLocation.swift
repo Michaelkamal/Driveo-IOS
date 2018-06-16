@@ -8,17 +8,12 @@
 
 import Foundation
 import CoreLocation
-enum LocationType:String{
-    case source
-    case destination
-}
+
 struct OrderLocation {
-    var locationType : LocationType
     var address : String?
     var coordinates: CLLocation?
     
-    init(locationType type:LocationType,withCoordinates coordinates:CLLocation?=nil,andAddress address:String?=nil) {
-        self.locationType=type
+    init(withCoordinates coordinates:CLLocation?=nil,andAddress address:String?=nil) {
         self.coordinates=coordinates
         self.address=address
     }
@@ -28,5 +23,28 @@ struct OrderLocation {
             return true
         }
         return false
+    }
+}
+// MARK : Encoding and Decoding
+extension OrderLocation : Codable  {
+    enum CodingKeys: String, CodingKey {
+        case address
+        case latitude
+        case longitude
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        address = try container.decode(String.self, forKey: .address)
+        let latitude = try container.decode(Double.self, forKey: .latitude)
+        let longitude = try container.decode(Double.self, forKey: .longitude)
+        coordinates = CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(address, forKey: .address)
+        try container.encode(coordinates?.coordinate.latitude, forKey: .latitude)
+        try container.encode(coordinates?.coordinate.latitude, forKey: .longitude)
     }
 }
