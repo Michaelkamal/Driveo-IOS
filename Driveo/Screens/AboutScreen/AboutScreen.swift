@@ -16,8 +16,22 @@ class AboutScreen: UIViewController {
         super.viewDidLoad()
         aboutText.text = " a single navigation stack to present or push the new View Controller with no interface to navigate back. This approach usually keeps the old View Controllers in memory. Using the key window to switch the window.rootViewController. This approach will kill the old ViewControllers, but it doesn’t look good from the UI standpoint. This also doesn’t allow you to easily navigate back and forward when needed.  But how about building the easy-maintainable app structure, that allow"
         // Do any additional setup after loading the view.
+    
+        let network = NetworkDAL.sharedInstance()
+        
+       
+   
+        
     }
 
+    
+    
+    
+    
+    
+    
+
+    
     
     @IBAction func backButton(_ sender: Any) {
     }
