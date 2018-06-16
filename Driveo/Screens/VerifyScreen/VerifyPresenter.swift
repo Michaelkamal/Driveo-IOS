@@ -64,7 +64,7 @@ class VerifyPresenter : VerifyPresenterProtocol{
         verifyView.showAlert(withTitle: ErrorType.errorTitle.rawValue, andMsg: msg)
     }
     
-    func askForVerificationCode(forToken token:String){
+    func askForVerificationCode(){
         let defaults = UserDefaults.standard
         if NetworkDAL.isInternetAvailable() {
             if let token = defaults.string(forKey: "auth_token"){

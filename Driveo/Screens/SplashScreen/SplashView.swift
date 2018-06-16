@@ -32,15 +32,19 @@ class SplashView: UIViewController {
             if defaults.string(forKey: "auth_token") != nil {
                 if defaults.string(forKey: "verified") != nil {
                     let sourceScreenStoryboard = UIStoryboard(name: ScreenController.main.storyBoardName(), bundle: nil)
-                    let signup = sourceScreenStoryboard.instantiateViewController(withIdentifier: ScreenController.main.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
-                    self.present(signup, animated: true, completion: nil)
+                    let home = sourceScreenStoryboard.instantiateViewController(withIdentifier: ScreenController.main.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
+                    
+                    self.present(home, animated: true, completion: nil)
+                    
+                  //  UIApplication.shared.keyWindow?.rootViewController = home
+                    
                 }
                 else {
-                    self.dismiss(animated: true, completion: {
                         let verifyStoryBoard = UIStoryboard.init(name:"SignupStoryboard",bundle:nil)
                         let verifyScreen = verifyStoryBoard.instantiateViewController(withIdentifier: "VerifyView") as! VerifyView
+                    //  UIApplication.shared.keyWindow?.rootViewController = signup
                         self.present(verifyScreen, animated: true, completion: nil)
-                        })
+                    
                   
                 }
             } else {

@@ -48,7 +48,6 @@ class  VerifyModel : VerifyModelProtocol {
     func requestVerificationCode(forToken token:String){
         let networkObject : NetworkDAL = NetworkDAL.sharedInstance()
         let parameters = [String:Any]()
-        
         networkObject.processPostReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.resendVerificatoin.rawValue, andParameters: parameters , onSuccess: onResendVerifySucces, onFailure: onVerifyFailure,headers: ["Authorization":token])
     }
     

@@ -18,7 +18,7 @@ protocol VerifyPresenterProtocol {
     
     func OnCodeVerifyFailure(withmsg msg: String)
     
-    func askForVerificationCode(forToken token:String)
+    func askForVerificationCode()
     
     func onAskForVerificationCodeSuccess()
     
