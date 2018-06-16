@@ -35,6 +35,7 @@ class  VerifyModel : VerifyModelProtocol {
                         }
             }
             catch {
+                presenter.OnCodeVerifyFailure(withmsg: ErrorType.internet.rawValue)
                 print("catch")
                 print(ErrorType.parse.rawValue)
             }
@@ -48,7 +49,33 @@ class  VerifyModel : VerifyModelProtocol {
         let networkObject : NetworkDAL = NetworkDAL.sharedInstance()
         let parameters = [String:Any]()
         
-        networkObject.processPatchReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.verify.rawValue, andParameters: parameters , onSuccess: onVerifySucces, onFailure: onVerifyFailure,headers: ["Authorization":token])
+        networkObject.processPostReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.resendVerificatoin.rawValue, andParameters: parameters , onSuccess: onResendVerifySucces, onFailure: onVerifyFailure,headers: ["Authorization":token])
     }
+    
+   
+    func onResendVerifySucces(response:Data){
+        do{
+            let response = try JSONDecoder().decode(GenericResult.self, from: response)
+            let msg:String = response.message
+            if  msg == MsgResponse.success.rawValue {
+            presenter.onAskForVerificationCodeSuccess()
+            }else{
+                presenter.OnCodeVerifyFailure(withmsg: msg)
+            }
+        }
+        catch {
+            presenter.OnCodeVerifyFailure(withmsg: ErrorType.internet.rawValue)
+            print("catch")
+            print(ErrorType.parse.rawValue)
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
+    
     
 }

@@ -20,15 +20,20 @@ struct  User : Decodable{
     
 
     
-    init(email: String , phone:String, password:String) {
+    init(email: String , phone:String, password:String,confirmPassword:String) {
         self.email=email
          self.phone=phone
          self.password=password
+        self.confirmPassword = confirmPassword
     }
     
-    
+    init(email: String , phone:String, password:String) {
+        self.email=email
+        self.phone=phone
+        self.password=password
+    }
     
     func getUserDataInDictionary()->[String:String]{
-        return ["email":self.email,"phone":self.phone,"password":self.password!]
+        return ["email":self.email,"phone":self.phone,"password":self.password!,"confirm_password":self.confirmPassword!]
     }
 }

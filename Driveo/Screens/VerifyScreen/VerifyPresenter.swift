@@ -72,10 +72,9 @@ class VerifyPresenter : VerifyPresenterProtocol{
                 verifyModel.requestVerificationCode(forToken: token)
             }
         }else {
-            verifyView.showAlert(withTitle: ErrorType.errorTitle.rawValue, andMsg: ErrorType.internet.rawValue)
-        }
-       
-        
+                     verifyView.showAlert(withTitle: ErrorType.errorTitle.rawValue, andMsg: ErrorType.internet.rawValue)
+                    }
+
     }
 
     func onAskForVerificationCodeSuccess(){
