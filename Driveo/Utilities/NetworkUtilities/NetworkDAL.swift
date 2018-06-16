@@ -22,9 +22,10 @@ enum MsgResponse:String {
 enum SuffixUrl:String {
     case signup = "authentication/signup"
     case verify = "authentication/verify"
-    case resendVerificatoin = "authentication/resendVerification"
+    case resendVerificatoin = "authentication/resendverification"
     case providers = "providers"
     case orders = "orders"
+    case about = "aboutus"
 }
 
 
