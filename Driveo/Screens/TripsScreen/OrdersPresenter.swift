@@ -23,7 +23,7 @@ class OrdersPresenter: OrdersPresenterProtocol {
         let defaults = UserDefaults.standard
         let token = defaults.string(forKey: "auth_token")
         if token != nil{
-            ordersModel.getOrders(forPage: page, withToken: token!)
+            ordersModel.getOrders(forPage: page, withToken: token!, forType: typeOrder)
         }
     }
     
