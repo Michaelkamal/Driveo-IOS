@@ -45,10 +45,5 @@ class SignupModel : SignupModelProtocol{
             presenter.alertToShow(withTitle: "Error", andMessage:"Connection error" )
         }
         
-        
-        
-        
-       
-  
 }
 }

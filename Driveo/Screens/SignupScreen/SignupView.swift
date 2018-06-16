@@ -95,8 +95,8 @@ class SignupView: UIViewController ,SignupViewProtocol{
     }
     
     @IBAction func signupNewUser(_ sender: Any) {
-        var user:User = User(email: emailTextField.text!, phone: phoneTextField.text!, password: passwordTextField.text!)
-        user.confirmPassword = confirmPasswordTextField.text!
+        var user:User = User(email: emailTextField.text!, phone: phoneTextField.text!, password: passwordTextField.text!, confirmPassword: confirmPasswordTextField.text!)
+        
         signupPresenter.registerclicked(user:user)
     }
     
