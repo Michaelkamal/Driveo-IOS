@@ -20,7 +20,7 @@ class LoginModel : LoginModelProtocol{
         let networkObj:NetworkDAL = NetworkDAL.sharedInstance()
         let user = User(email: name, phone: "", password: pass)
         let params = user.getUserDataInDictionary()
-        networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "authentication/signin", andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
+        networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: SuffixUrl.login.rawValue, andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
     }
     
     func onSuccess(_ response:Data) -> Void{
@@ -34,7 +34,9 @@ class LoginModel : LoginModelProtocol{
                 defaults.set(response.auth_token, forKey :"auth_token")
                 defaults.set(true, forKey :"verified")
                 defaults.synchronize()
-                lp.loginSuccess()
+                lp.loginSuccess(page: "next")
+            }else if msg == MsgResponse.notVerified.rawValue {
+                lp.loginSuccess(page: "verification")
                 
             }else{
                 lp.loginFailure(message: msg)

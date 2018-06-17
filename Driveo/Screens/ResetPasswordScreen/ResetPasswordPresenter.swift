@@ -16,10 +16,11 @@ class ResetPasswordPresenter: ResetPasswordPresenterProtocol {
         rPC = c
     }
     
-    func resetPassword(withPassword pass1: String) {
+    func resetPassword(withPassword pass1: String, andRepeatedPass repPass:String) {
         rPM = ResetPasswordModel(withPresenter: self)
         let params = [
-            "password" : pass1]
+            "password" : pass1,
+            "confirm_password" : repPass]
         rPM.sendRequest(withParameters: params)
     }
     

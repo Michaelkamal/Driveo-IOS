@@ -40,10 +40,8 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
         else if NetworkDAL.isInternetAvailable() == false {
             createRequestView.showAlert(withTitle: "Error", withMsg: ErrorType.internet.rawValue)
         }else{
-            createRequestView.showLoading()
             userOrder.details = OrderDetails(withTitle: title,andDescription: withDescription,andImagesArray: withImages)
             createRequestView.goToNextScreen()
-            createRequestModel.sendCreateRequest(withTitle: title, withDescription: withDescription, withImages: withImages, from: "76576576", to: "65465465", provider_id: "1", payment_method: "hsh")
         }
         
     }

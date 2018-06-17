@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreLocation
 enum OrderCurrentStep:String,Codable {
     case sourceLocation = "Pick up location"
     case destinationLocation = "Drop location"
@@ -65,7 +65,12 @@ final class Order  {
             }
         }
     }
+    
     internal var date:String!
+    
+    internal var price:Double?
+    
+    internal var weight:Double?
     
     internal var provider:Provider!
     
@@ -99,52 +104,83 @@ final class Order  {
 extension Order : Codable{
     // Mark : Encoding and decoding
     enum CodingKeys: String, CodingKey {
-        case orderID = "order_id"
-        case source = "source_location"
-        case destination = "destination_location"
-        case details = "details"
-        case date = "date"
-        case provider = "provider"
+        case orderID = "id"
+        case title = "title"
+        case description = "description"
+        case sourceLongitude = "src_longitude"
+        case sourceLatitude = "src_latitude"
+        case sourceAddress = "pickup_location"
+        case destinationLongitude = "dest_longitude"
+        case destinationLatitude = "dest_latitude"
+        case destinationAddress = "dropoff_location"
+        case date = "time"
+        case provider = "provider_id"
         case paymentMethod = "payment_method"
-        case orderStatus = "order_status"
+        case images = "images"
+        case weight = "weight"
+        case price = "price"
+        case orderStatus = "status"
     }
     
     public convenience init(from decoder: Decoder) throws {
         self.init()
         let container = try decoder.container(keyedBy: CodingKeys.self)
         orderID =  try container.decode(Double.self, forKey: .orderID)
-        source = try container.decode(OrderLocation.self, forKey: .source)
-        destination = try container.decode(OrderLocation.self, forKey: .destination)
+        source = OrderLocation()
+        source!.coordinates = CLLocation(
+            latitude: try container.decode(Double.self, forKey: .sourceLatitude),
+            longitude: try container.decode(Double.self, forKey: .sourceLongitude))
+        source!.address = try container.decode(String.self, forKey: .sourceAddress)
+        destination = OrderLocation()
+        destination!.coordinates = CLLocation(
+            latitude: try container.decode(Double.self, forKey: .destinationLatitude),
+            longitude: try container.decode(Double.self, forKey: .destinationLongitude))
+        destination!.address = try container.decode(String.self, forKey: .destinationAddress)
         date =  try container.decode(String.self, forKey: .date)
-        provider = try container.decode(Provider.self, forKey: .provider)
-        details =  try container.decode(OrderDetails.self, forKey: .details)
-        paymentMethod =  try container.decode(PaymentMethod.self, forKey: .paymentMethod)
+        provider = Provider()
+        provider.id = try container.decode(Int.self, forKey: .provider)
+        details = OrderDetails()
+        details!.title =  try container.decode(String.self, forKey: .title)
+        details!.description =  try container.decode(String.self, forKey: .description)
+        details!.imagesURL =  try container.decode(Array<String>.self, forKey: .images)
+        paymentMethod = PaymentMethod()
+        paymentMethod!.name =  try container.decode(String.self, forKey: .paymentMethod)
+        weight = try container.decode(Double.self, forKey: .weight)
+        price = try container.decode(Double.self, forKey: .price)
+       
         if let status = try? container.decode(String.self, forKey: .orderStatus){
             switch status {
-            case OrderStatus.upComing.rawValue :
+            case "pending" :
                 orderStatus = OrderStatus.upComing
                 
             case OrderStatus.active.rawValue :
                 orderStatus = OrderStatus.active
                 
-            case OrderStatus.past.rawValue :
+            case "history" :
                 orderStatus = OrderStatus.past
             default:
                 break
             }
+ 
         }
-        
+ 
     }
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(orderID, forKey: .orderID)
-        try container.encode(orderStatus.rawValue, forKey: .orderStatus)
-        try container.encode(source, forKey: .source)
-        try container.encode(destination, forKey: .destination)
+        try container.encode(details?.title, forKey: .title)
+        try container.encode(details?.description, forKey: .description)
+        try container.encode(source?.coordinates?.coordinate.latitude, forKey: .sourceLatitude)
+        try container.encode(source?.coordinates?.coordinate.longitude, forKey: .sourceLongitude)
+        try container.encode(source?.address, forKey: .sourceAddress)
+        try container.encode(destination?.coordinates?.coordinate.latitude, forKey: .destinationLatitude)
+        try container.encode(destination?.coordinates?.coordinate.longitude, forKey: .destinationLongitude)
+        try container.encode(destination?.address, forKey: .destinationAddress)
         try container.encode(date, forKey: .date)
-        try container.encode(provider, forKey: .provider)
-        try container.encode(details, forKey: .details)
-        try container.encode(paymentMethod, forKey: .paymentMethod)
+        try container.encode(provider.id, forKey: .provider)
+        try container.encode(paymentMethod?.name, forKey: .paymentMethod)
+        try container.encode(price, forKey: .price)
+        try container.encode(weight, forKey: .weight)
     }
 }

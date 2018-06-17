@@ -10,20 +10,22 @@ import Foundation
 import UIKit
 
 struct PresentedOrder: Decodable {
-    
-    var title:String?
-    var orderId:String?
+    var cost:String?
     var description:String?
-    var images:[String]?
-    var payementMethod:String?
-    var price:String?
-    var pickUpAddress:String?
-    var pickUplat:String?
-    var pickUpLong:String?
-    var dropOffAddress:String?
-    var dropOffUplat:String?
-    var dropOffLong:String?
-    var date:String?
+    var dest_latitude:Double?
+    var dest_longitude:Double?
+    var dropoff_location:String?
+    var images:[OrderImages]?
+    var order_id:Int?
+    var payment_method:String?
+    var pickup_location:String?
+    var src_latitude:Double?
+    var src_longitude:Double?
     var status:String?
-    
+    var time:String?
+    var title:String?
+    var weight:Int?
+}
+class OrderImages: Decodable {
+    var url:String?
 }

@@ -18,3 +18,9 @@ struct RequestOrdersResult : Decodable {
    
     
 }
+struct ordersData:Decodable {
+    var history:[String:[PresentedOrder]]?
+    var active:[String:[PresentedOrder]]?
+    var upcoming:[String:[PresentedOrder]]?
+    
+}

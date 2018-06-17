@@ -44,21 +44,32 @@ extension UIViewController {
 // MARK : transition to present from left
 extension UIViewController{
         
-        func presentFromLeft(_ viewControllerToPresent: UIViewController) {
-            let transition = CATransition()
-            transition.duration = 0.25
-            transition.type = kCATransitionPush
-            transition.subtype = kCATransitionFromLeft
-            self.view.window!.layer.add(transition, forKey: kCATransition)
-            present(viewControllerToPresent, animated: false)
-        }
-        
-        func dismissToLeft() {
-            let transition = CATransition()
-            transition.duration = 0.25
-            transition.type = kCATransitionPush
-            transition.subtype = kCATransitionFromRight
-            self.view.window!.layer.add(transition, forKey: kCATransition)
-            dismiss(animated: false)
-        }
+        func pushFromLeft(_ viewControllerToPresent: UIViewController) {
+            self.navigationController?.pushViewController(viewControllerToPresent, animated: false)
+            self.navigationController?.pushViewController(UIViewController(), animated: false)
+            self.navigationController?.popViewController(animated: true)
     }
+        
+        func popToLeft() {
+            self.navigationController?.popViewController(animated: true)
+        }
+}
+extension UIViewController{
+    class func displayCircularProgressBar(onView : UIView,withMaxValue max:Double) -> (backGround:UIView,progressBar:CircularProgress) {
+        let progressBarView = UIView.init(frame: onView.bounds)
+        progressBarView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        let progressBar = CircularProgress()
+        let size = onView.frame.size.width/3
+        progressBar.frame.size=CGSize(width:size,height:size)
+        progressBar.center=onView.convert(onView.center, from:onView.superview)
+        progressBar.trackColor=UIColor.gray
+        progressBar.IBColor1=UIColor.green
+        progressBar.angle = 0
+        progressBar.maxCount=max
+        DispatchQueue.main.async {
+            progressBarView.addSubview(progressBar)
+            onView.addSubview(progressBarView)
+        }
+        return (progressBarView,progressBar)
+    }
+}

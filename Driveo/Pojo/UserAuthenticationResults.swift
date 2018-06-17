@@ -17,7 +17,7 @@ struct SignupResult : Decodable{
 struct SigninResult : Decodable{
     
     var message:String
-    var auth_token:String
+    var auth_token:String?
     var user:User?
     
 }

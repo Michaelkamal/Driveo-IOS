@@ -81,7 +81,6 @@
 		8455AD2620D00D7300012D01 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455AD2520D00D7300012D01 /* DateExtension.swift */; };
 		845B28A420C712D900EC4335 /* CreateRequestViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B28A320C712D900EC4335 /* CreateRequestViewExtension.swift */; };
 		845D48F020BEEF92000F16C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D48EF20BEEF92000F16C1 /* AppDelegate.swift */; };
-		845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845D48F320BEEF92000F16C1 /* Main.storyboard */; };
 		845D48F820BEEF92000F16C1 /* Driveo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 845D48F620BEEF92000F16C1 /* Driveo.xcdatamodeld */; };
 		845D48FA20BEEF92000F16C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845D48F920BEEF92000F16C1 /* Assets.xcassets */; };
 		845D490820BEEF92000F16C1 /* DriveoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D490720BEEF92000F16C1 /* DriveoTests.swift */; };
@@ -98,11 +97,14 @@
 		846ABFF420C9689B003F8528 /* TripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846ABFF320C9689B003F8528 /* TripCell.xib */; };
 		846ABFF620C97041003F8528 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABFF520C97041003F8528 /* OrderCell.swift */; };
 		846ABFFA20C975E4003F8528 /* OrderHistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABFF920C975E4003F8528 /* OrderHistoryTableView.swift */; };
+		846CCAFA20D6A99F000E8D35 /* CreateOrderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CCAF920D6A99F000E8D35 /* CreateOrderPresenter.swift */; };
 		846FB6FB20D52DC400D90AC5 /* OrderUpcomingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FB6FA20D52DC400D90AC5 /* OrderUpcomingCollectionView.swift */; };
 		8484886A20CEDB67009444B2 /* NavigationDrawerScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8484886920CEDB67009444B2 /* NavigationDrawerScreen.storyboard */; };
 		8484886C20CEDCDE009444B2 /* UIImageViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */; };
 		8484887120CF71A0009444B2 /* NavigationDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484887020CF71A0009444B2 /* NavigationDrawerViewController.swift */; };
 		8484887520CF7679009444B2 /* NavigationDrawerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484887420CF7679009444B2 /* NavigationDrawerTableViewCell.swift */; };
+		84909A3520D6FCF8005D9716 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84909A3420D6FCF8005D9716 /* CircularProgressBar.swift */; };
+		84909A3720D700FC005D9716 /* CreateOrderViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84909A3620D700FC005D9716 /* CreateOrderViewProtocol.swift */; };
 		84937BBB20C3660B00727437 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BB720C3660A00727437 /* LoginPresenter.swift */; };
 		84937BBC20C3660B00727437 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84937BB820C3660B00727437 /* Login.storyboard */; };
 		84937BBD20C3660B00727437 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BB920C3660B00727437 /* LoginModel.swift */; };
@@ -240,7 +242,6 @@
 		845B28A320C712D900EC4335 /* CreateRequestViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRequestViewExtension.swift; sourceTree = "<group>"; };
 		845D48EC20BEEF92000F16C1 /* Driveo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Driveo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845D48EF20BEEF92000F16C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		845D48F420BEEF92000F16C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		845D48F720BEEF92000F16C1 /* Driveo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Driveo.xcdatamodel; sourceTree = "<group>"; };
 		845D48F920BEEF92000F16C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		845D48FE20BEEF92000F16C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -262,11 +263,14 @@
 		846ABFF320C9689B003F8528 /* TripCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCell.xib; sourceTree = "<group>"; };
 		846ABFF520C97041003F8528 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		846ABFF920C975E4003F8528 /* OrderHistoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableView.swift; sourceTree = "<group>"; };
+		846CCAF920D6A99F000E8D35 /* CreateOrderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderPresenter.swift; sourceTree = "<group>"; };
 		846FB6FA20D52DC400D90AC5 /* OrderUpcomingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderUpcomingCollectionView.swift; sourceTree = "<group>"; };
 		8484886920CEDB67009444B2 /* NavigationDrawerScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationDrawerScreen.storyboard; sourceTree = "<group>"; };
 		8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtention.swift; sourceTree = "<group>"; };
 		8484887020CF71A0009444B2 /* NavigationDrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerViewController.swift; sourceTree = "<group>"; };
 		8484887420CF7679009444B2 /* NavigationDrawerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerTableViewCell.swift; sourceTree = "<group>"; };
+		84909A3420D6FCF8005D9716 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		84909A3620D700FC005D9716 /* CreateOrderViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewProtocol.swift; sourceTree = "<group>"; };
 		84937BAE20C3023A00727437 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		84937BB720C3660A00727437 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		84937BB820C3660B00727437 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -531,6 +535,7 @@
 				84247CCE20C7782400AE43FA /* PaymentProtocols */,
 				84D1854120C2D3580054BEBF /* SignupProtocols */,
 				8447456D20C07D2A0076D0EC /* LocationMangerProtocol.swift */,
+				84909A3820D70102005D9716 /* CreateOrderProtocols */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 			isa = PBXGroup;
 			children = (
 				844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */,
+				846CCAF920D6A99F000E8D35 /* CreateOrderPresenter.swift */,
 				844BD5FB20C3776E005E98FC /* CreateOrderScreen.storyboard */,
 				844BD60120C38C20005E98FC /* CreateOrderView.swift */,
 				844BD60320C38C36005E98FC /* OrderItem.xib */,
@@ -608,7 +614,6 @@
 				84A2D4E720C2CE2400576ACF /* Utilities */,
 				84A2D4A720C2C91200576ACF /* Screens */,
 				845D48EF20BEEF92000F16C1 /* AppDelegate.swift */,
-				845D48F320BEEF92000F16C1 /* Main.storyboard */,
 				845D48F920BEEF92000F16C1 /* Assets.xcassets */,
 				845D48FE20BEEF92000F16C1 /* Info.plist */,
 				840782F220D1425F00976562 /* GoogleService-Info.plist */,
@@ -669,6 +674,14 @@
 				843E2DB420C9D5BA00DE459C /* UIViewExtension.swift */,
 			);
 			path = UIImageViewExtention;
+			sourceTree = "<group>";
+		};
+		84909A3820D70102005D9716 /* CreateOrderProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				84909A3620D700FC005D9716 /* CreateOrderViewProtocol.swift */,
+			);
+			path = CreateOrderProtocols;
 			sourceTree = "<group>";
 		};
 		84937BB420C3651300727437 /* LoginScreen */ = {
@@ -798,6 +811,7 @@
 				84A2D4EB20C2CE2400576ACF /* SearchUITextField.swift */,
 				84A2D4EC20C2CE2400576ACF /* UIDatePicker.swift */,
 				84A2D4ED20C2CE2400576ACF /* RoundedButton.swift */,
+				84909A3420D6FCF8005D9716 /* CircularProgressBar.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -999,7 +1013,6 @@
 				84626CAB20CD822E00AE2BB1 /* AboutScreen.storyboard in Resources */,
 				845D48FA20BEEF92000F16C1 /* Assets.xcassets in Resources */,
 				846ABFF020C93E13003F8528 /* LauchScreen.storyboard in Resources */,
-				845D48F520BEEF92000F16C1 /* Main.storyboard in Resources */,
 				84626CA620CBFD1800AE2BB1 /* HeaderCollection.xib in Resources */,
 				84626CA220CBE40B00AE2BB1 /* TripCollectionCell.xib in Resources */,
 				84937BBC20C3660B00727437 /* Login.storyboard in Resources */,
@@ -1219,6 +1232,7 @@
 				840B1CD720C5B82D0046542D /* CreateRequestModel.swift in Sources */,
 				84247CCB20C774E500AE43FA /* PaymentCell.swift in Sources */,
 				8455AD2620D00D7300012D01 /* DateExtension.swift in Sources */,
+				84909A3520D6FCF8005D9716 /* CircularProgressBar.swift in Sources */,
 				840B1CC520C52E4E0046542D /* ResetPasswordModelProtocol.swift in Sources */,
 				84937BC720C3670800727437 /* ForgotPasswordModelProtocol.swift in Sources */,
 				84937BBD20C3660B00727437 /* LoginModel.swift in Sources */,
@@ -1245,6 +1259,7 @@
 				84D1854320C2D3860054BEBF /* SignupModelProtocol.swift in Sources */,
 				84937BD020C45D0B00727437 /* ForgetPasswordViewController.swift in Sources */,
 				840B1CC920C52FB70046542D /* ResetPasswordPresenter.swift in Sources */,
+				84909A3720D700FC005D9716 /* CreateOrderViewProtocol.swift in Sources */,
 				8408DF9C20D31F9D009258AE /* ChangePasswordViewController.swift in Sources */,
 				84409D7E20D073F000C41D22 /* PresentedOrder.swift in Sources */,
 				841D749D20C9DFEF00253AA4 /* UIButtonExtension.swift in Sources */,
@@ -1262,6 +1277,7 @@
 				84D1854D20C2E4BE0054BEBF /* SignupPresenter.swift in Sources */,
 				84D1855220C2E6CC0054BEBF /* StringExtension.swift in Sources */,
 				84D1854B20C2E3640054BEBF /* SignupView.swift in Sources */,
+				846CCAFA20D6A99F000E8D35 /* CreateOrderPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1295,17 +1311,6 @@
 			targetProxy = 845D490F20BEEF93000F16C1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		845D48F320BEEF92000F16C1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				845D48F420BEEF92000F16C1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		845D491520BEEF93000F16C1 /* Debug */ = {

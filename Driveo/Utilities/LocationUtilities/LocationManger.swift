@@ -76,8 +76,9 @@ class LocationManager : NSObject,CLLocationManagerDelegate{
         
         let geocoder = CLGeocoder()
         geocoder.reverseGeocodeLocation(location) { (placemarksArray, error) in
-            if (placemarksArray?.count)! > 0 {
-                let placemark = placemarksArray?.first
+            if let placemarksArray = placemarksArray{
+            if (placemarksArray.count) > 0 {
+                let placemark = placemarksArray.first
                 var address:String=""
                 if let street = placemark!.thoroughfare {address += street }
                 if let number = placemark!.subThoroughfare {address += ", \(number)"}
@@ -85,7 +86,7 @@ class LocationManager : NSObject,CLLocationManagerDelegate{
                 if let locality = placemark!.locality {address += ", \(locality)"}
                 onSuccess(address != "" ? address : "Picked location")
             }
-        }
+            }}
     }
     
 }

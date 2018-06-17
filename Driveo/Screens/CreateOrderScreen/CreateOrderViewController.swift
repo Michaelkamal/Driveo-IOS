@@ -12,17 +12,29 @@ class CreateOrderViewController: UIViewController {
     
     private lazy var userOrder:Order = Order.sharedInstance()
     
+    private var progressBarView: (backGround:UIView,progressBar:CircularProgress)?
+    
+    private var orderSubmitted:Bool=false{
+        didSet{
+            if(!orderSubmitted){
+                self.removeProgressBar()
+            }
+        }
+    }
+    
     @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var orderStatus: UILabel!
     
     @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     
+    private var presenter: CreateOrderPresenter!
     
     var cellHeight:CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter =  CreateOrderPresenter(withController: self)
         if self.navigationController!.viewControllers.count>1{
             self.navigationController!.viewControllers=[self]
         }
@@ -31,7 +43,7 @@ class CreateOrderViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        orderStatus.text=userOrder.orderStatus.rawValue
+        orderStatus.text=userOrder.orderCurrentStep.rawValue
         contentView.subviews.forEach { (view) in
             view.removeFromSuperview()
         }
@@ -44,7 +56,12 @@ class CreateOrderViewController: UIViewController {
     
     func presentScreen(screen:ScreenController){
         let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
-        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
+        var vc : UIViewController
+        if(screen == ScreenController.sourceScreen){
+            vc = destinationStoryboard.instantiateViewController(withIdentifier: "PickLoacationViewController")
+        }else{
+         vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
+        }
         switch userOrder.completeStatus{
         // set Drop off location
         case 1:
@@ -54,7 +71,7 @@ class CreateOrderViewController: UIViewController {
             break
         }
         vc.modalTransitionStyle = .flipHorizontal
-        self.present(vc, animated: true,completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
@@ -201,14 +218,10 @@ class CreateOrderViewController: UIViewController {
                 case 3:
                     self.presentScreen(screen: ScreenController.paymentScreen)
                 default:
-                    let JSONData = try? JSONEncoder().encode(self.userOrder)
-                    let dictionary = try? JSONSerialization.jsonObject(with: JSONData!, options: .allowFragments) as? [String: Any]
-                    
-                    NetworkDAL.sharedInstance().processPostReq(withBaseUrl: ApiBaseUrl.usamaTest, andUrlSuffix: "test", andParameters: ["Order" : dictionary!!], onSuccess: { (data) in
-                        
-                    }, onFailure: { (err) in
-                        print(err)
-                    }, headers: nil)
+                    if(!self.isSubmitted){
+                        self.isSubmitted=true
+                        self.presenter.sumbitOrder(self.userOrder)
+                    }
                     break
                 }
             }
@@ -219,8 +232,64 @@ class CreateOrderViewController: UIViewController {
         let screen = ScreenController.navigationDrawerScreen;
         let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
         let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
-        presentFromLeft(vc)
+        pushFromLeft(vc)
     }
     
 }
 
+extension CreateOrderViewController:CreateOrderViewProtocol{
+    var isSubmitted: Bool {
+        get {
+            return orderSubmitted
+        }
+        set {
+            orderSubmitted = newValue
+        }
+    }
+    func displayProgressBar() {
+        if progressBarView == nil {
+            progressBarView=UIViewController.displayCircularProgressBar(onView: self.view, withMaxValue: 1)
+        }
+    }
+    
+    func updateProgressBar(withValue value: Double) {
+        if let progressBarTuble=progressBarView{
+            progressBarTuble.progressBar.increaseProgress(toValue: value)
+        }
+    }
+    
+    func removeProgressBar() {
+        
+        if let progressBarTuble=progressBarView{
+            UIViewController.removeSpinner(spinner: progressBarTuble.backGround)
+            progressBarView=nil
+        }
+    }
+    
+    func showAlert(ofError error: ErrorType) {
+        if (orderSubmitted){
+            orderSubmitted=false
+        }
+            let alert = UIViewController.getAlertController(ofErrorType: error, withTitle: "Error")
+            guard let visibleViewController = self.navigationController?.visibleViewController else{
+                present(alert, animated: true, completion: nil)
+                return
+            }
+            if !visibleViewController.isKind(of: UIAlertController.self)  {
+                present(alert, animated: true, completion: nil)
+            }
+    }
+    
+    func presentToNextScreen() {
+        self.removeProgressBar()
+        let screen = ScreenController.sourceScreen
+        let sourceScreenStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+        let home = sourceScreenStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
+        home.modalTransitionStyle = .flipHorizontal
+        self.present(home, animated: true) {
+            UIApplication.shared.keyWindow?.rootViewController = home
+        }
+    }
+    
+    
+}
