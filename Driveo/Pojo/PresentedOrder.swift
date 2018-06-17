@@ -15,15 +15,15 @@ struct PresentedOrder: Decodable {
     var orderId:String?
     var description:String?
     var images:[String]?
-    var payementMethod:String?
+    var payment_method:String?
     var price:String?
-    var pickUpAddress:String?
+    var pickup_location:String?
     var pickUplat:String?
     var pickUpLong:String?
-    var dropOffAddress:String?
+    var dropoff_location:String?
     var dropOffUplat:String?
     var dropOffLong:String?
-    var date:String?
+    var time:String?
     var status:String?
     
 }

@@ -25,6 +25,9 @@ class OrdersPresenter: OrdersPresenterProtocol {
         if token != nil{
             ordersModel.getOrders(forPage: page, withToken: token!, forType: typeOrder)
         }
+        else{
+            onRequestFailure(failure: "failed")
+        }
     }
     
     func onRequestSuccess(withOrders orders: RequestOrdersResult) {

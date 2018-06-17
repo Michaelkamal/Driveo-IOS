@@ -33,11 +33,6 @@ class OrderUpcomingCollectionView: UICollectionViewController , UICollectionView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for _ in 1...6 {
-            let pOrder = PresentedOrder(title: "title", orderId: "55455", description: "description", images: nil, payementMethod: "visa", price: "300", pickUpAddress: "roushdy", pickUplat: nil, pickUpLong: nil, dropOffAddress: nil, dropOffUplat: nil, dropOffLong: nil, date: "25/3/2018", status: "upcoming")
-            upcomingTrips.append(pOrder)
-        }
-        
         parentTabView!.getInfoForTabOf(orderType: .UpcomingOrders , useData: useData,onFailure: retrieveFailed, page: String(pageCount))
         showLoading()
         
@@ -72,13 +67,13 @@ class OrderUpcomingCollectionView: UICollectionViewController , UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TripCell", for: indexPath) as! TripCellCollectionView
         let index = indexPath.item
         
-        cell.addressLabel.text = upcomingTrips[index].pickUpAddress
+        cell.addressLabel.text = upcomingTrips[index].pickup_location
         //cell.dateLabel.text = Date.getFormattedDate(string: activeTrips[index].date!)
-        cell.dateLabel.text = upcomingTrips[index].date
+        cell.dateLabel.text = upcomingTrips[index].time
         cell.idLabel.text = "id#" + upcomingTrips[index].orderId!
         cell.orderStatusLabel.text = upcomingTrips[index].status
         
-        switch upcomingTrips[index].payementMethod!{
+        switch upcomingTrips[index].payment_method!{
         case "visa":
             cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_visa")
         case "masterCard":

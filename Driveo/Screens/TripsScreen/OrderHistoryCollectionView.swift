@@ -32,12 +32,6 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for _ in 1...6 {
-            let pOrder = PresentedOrder(title: "title", orderId: "55455", description: "description", images: nil, payementMethod: "visa", price: "300", pickUpAddress: "roushdy", pickUplat: nil, pickUpLong: nil, dropOffAddress: nil, dropOffUplat: nil, dropOffLong: nil, date: "25/3/2018", status: "upcoming")
-            pastTrips.append(pOrder)
-            activeTrips.append(pOrder)
-        }
     
         parentTabView!.getInfoForTabOf(orderType: .HistoryOrders , useData: useData,onFailure: retrieveFailed, page: String(pageCount))
         showLoading()
@@ -80,13 +74,13 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
         
         switch indexPath.section {
         case 0:
-            cell.addressLabel.text = activeTrips[index].pickUpAddress
+            cell.addressLabel.text = activeTrips[index].pickup_location
             //cell.dateLabel.text = Date.getFormattedDate(string: activeTrips[index].date!)
-            cell.dateLabel.text = activeTrips[index].date
+            cell.dateLabel.text = activeTrips[index].time
             cell.idLabel.text = "id#" + activeTrips[index].orderId!
             cell.orderStatusLabel.text = activeTrips[index].status
             
-            switch activeTrips[index].payementMethod!{
+            switch activeTrips[index].payment_method!{
             case "visa":
                 cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_visa")
             case "masterCard":
@@ -97,13 +91,13 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
                 cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_cash")
             }
         default:
-            cell.addressLabel.text = pastTrips[index].pickUpAddress
+            cell.addressLabel.text = pastTrips[index].pickup_location
             //cell.dateLabel.text = Date.getFormattedDate(string: pastTrips[index].date!)
-            cell.dateLabel.text = pastTrips[index].date
+            cell.dateLabel.text = pastTrips[index].time
             cell.idLabel.text = "id#" + pastTrips[index].orderId!
             cell.orderStatusLabel.text = pastTrips[index].status
             cell.priceLabel.text = pastTrips[index].price
-            switch pastTrips[index].payementMethod!{
+            switch pastTrips[index].payment_method!{
             case "visa":
                 cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_visa")
             case "masterCard":
@@ -167,8 +161,8 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
 
     func useData(_ data:RequestOrdersResult) {
         print(data)
-        activeTrips += data.data["active"]!
-        pastTrips += data.data["history"]!
+        activeTrips = data.data["active"]!
+        pastTrips = data.data["history"]!
         totalpageCount = data.total_pages
         self.collectionView?.reloadData()
         dismissLoading()
