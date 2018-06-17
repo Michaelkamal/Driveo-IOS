@@ -34,7 +34,9 @@ class LoginModel : LoginModelProtocol{
                 defaults.set(response.auth_token, forKey :"auth_token")
                 defaults.set(true, forKey :"verified")
                 defaults.synchronize()
-                lp.loginSuccess()
+                lp.loginSuccess(page: "next")
+            }else if msg == MsgResponse.notVerified.rawValue {
+                lp.loginSuccess(page: "verification")
                 
             }else{
                 lp.loginFailure(message: msg)

@@ -59,6 +59,12 @@ class LoginViewController: UIViewController , LoginViewProtocol {
             let signup = sourceScreenStoryboard.instantiateViewController(withIdentifier: "PickLoacationViewController")
             self.present(signup, animated: true, completion: nil)
         }
+        if name == "verification"{
+            print("verification")
+            let signupStoryboard = UIStoryboard(name: "SignupStoryboard", bundle: nil)
+            let signup = signupStoryboard.instantiateViewController(withIdentifier: "VerifyView")
+            self.present(signup, animated: true, completion: nil)
+        }
         
     }
     

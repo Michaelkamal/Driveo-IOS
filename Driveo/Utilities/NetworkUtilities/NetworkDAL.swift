@@ -13,8 +13,8 @@ import SwiftyJSON
 
 enum MsgResponse:String {
     case success = "success"
-    case successSignup = "sorry this account is not yet verified"
     case forgotSuccess = "Kindly check your mail to reset your password"
+    case notVerified = "sorry this account is not yet verified"
     
 }
 

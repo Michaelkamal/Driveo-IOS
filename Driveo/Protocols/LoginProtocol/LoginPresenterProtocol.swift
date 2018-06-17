@@ -9,7 +9,7 @@
 import Foundation
 protocol LoginPresenterProtocol {
     func login(withUserName name:String,andPassword pass:String)
-    func loginSuccess() ->Void
+    func loginSuccess(page: String) ->Void
     func loginFailure(message:String) -> Void
 }
 
