@@ -36,10 +36,10 @@ class SplashView: UIViewController {
                     UIApplication.shared.keyWindow?.rootViewController = home
                 }
             else {
-                let loginStoryBoard = UIStoryboard.init(name: "Login", bundle: nil)
-                let loginPage:LoginViewController = loginStoryBoard.instantiateViewController(withIdentifier: "loginView") as! LoginViewController
-             //   self.present(loginPage, animated: true, completion: nil)
-                   UIApplication.shared.keyWindow?.rootViewController = loginPage
+                let screen = ScreenController.loginScreen
+                let loginStoryBoard = UIStoryboard.init(name: screen.storyBoardName(), bundle: nil)
+                let loginPage:LoginViewController = loginStoryBoard.instantiateViewController(withIdentifier: screen.rawValue) as! LoginViewController
+                  UIApplication.shared.keyWindow?.rootViewController = loginPage
             }
         })
         

@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xAa-4N-ti6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xAa-4N-ti6">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="xLF-sM-JbD">
             <objects>
-                <viewController storyboardIdentifier="loginView" id="xAa-4N-ti6" customClass="LoginViewController" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="xAa-4N-ti6" customClass="LoginViewController" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rUn-hz-d8v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -443,7 +449,7 @@
         <!--Change Password View Controller-->
         <scene sceneID="HM0-VP-rft">
             <objects>
-                <viewController storyboardIdentifier="changePassword" id="nL7-R5-chd" customClass="ChangePasswordViewController" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordViewController" id="nL7-R5-chd" customClass="ChangePasswordViewController" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jTm-8M-779">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -501,11 +507,11 @@
                                                     <constraint firstAttribute="width" constant="17" id="9XL-Rz-LTO"/>
                                                     <constraint firstAttribute="height" constant="17" id="cvJ-nw-zGt"/>
                                                 </constraints>
-                                                <state key="normal" image="ic_close_search">
+                                                <state key="normal" image="ic_three_bars">
                                                     <color key="titleColor" red="0.29411764709999999" green="0.27450980390000002" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="exitPage:" destination="nL7-R5-chd" eventType="touchUpInside" id="4B7-RV-Sg3"/>
+                                                    <action selector="didTapOnThreeBars:" destination="nL7-R5-chd" eventType="touchUpInside" id="4B7-RV-Sg3"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CMw-rO-tuU" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
@@ -586,7 +592,7 @@
     </scenes>
     <resources>
         <image name="ic_close" width="42" height="43"/>
-        <image name="ic_close_search" width="41" height="42"/>
         <image name="ic_splash" width="435" height="250"/>
+        <image name="ic_three_bars" width="20" height="20"/>
     </resources>
 </document>

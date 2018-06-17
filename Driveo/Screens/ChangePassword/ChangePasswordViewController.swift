@@ -19,8 +19,8 @@ class ChangePasswordViewController: UIViewController,ChangePasswordViewProtocol 
     @IBOutlet weak var newPasswordRepeat: SkyFloatingLabelTextField!
     
 
-    @IBAction func exitPage(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func didTapOnThreeBars(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func changePassword(_ sender: Any) {
@@ -87,7 +87,14 @@ class ChangePasswordViewController: UIViewController,ChangePasswordViewProtocol 
     func showAlert(withTitle title: String, andMessage msg: String) {
         var alert:UIAlertController = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)
         self.present(alert, animated: true, completion: nil)
-        let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default)
+        var dismissAlertAction:UIAlertAction
+        if title.lowercased() == "success"{
+             dismissAlertAction = UIAlertAction(title: title, style: .default, handler: { (alert) in
+                self.didTapOnThreeBars(UIButton())
+            })}
+        else{
+             dismissAlertAction = UIAlertAction(title: "OK", style: .default)}
+        
         alert.addAction(dismissAlertAction)
     }
     

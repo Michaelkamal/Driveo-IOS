@@ -93,8 +93,8 @@ class OrderTabView: ButtonBarPagerTabStripViewController,OrdersViewProtocol {
         UIViewController.removeSpinner(spinner: spinner!)
     }
     
-    @IBAction func exitView(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func didTapOnThreeBars(_ sender: UIButton) {
+       popToLeft()
     }
     
     func onLoadSuccess(useData: RequestOrdersResult) {

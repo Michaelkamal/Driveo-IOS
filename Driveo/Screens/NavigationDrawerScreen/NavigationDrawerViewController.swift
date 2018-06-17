@@ -25,7 +25,7 @@ enum NavigationDrawerOptions:Int {
         get {
             switch(self) {
             case .trips:
-                return "Trips"
+                return "My orders"
             case .editProfile:
                 return "Edit profile"
             case .chagePassword:
@@ -106,20 +106,34 @@ extension NavigationDrawerViewController: UITableViewDelegate,UITableViewDataSou
     }
    
     @objc func pushTrips(){
-        
-        print("Trips ")
+        let screen = ScreenController.tripsScreen;
+        let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func pushEditProfile(){
         print("EditProfile ")
     }
     @objc func pushChangePassword(){
-        
-        print("Change PW ")
+        let screen = ScreenController.changePasswordScreen;
+        let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @objc func logout(){
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey :"auth_token")
+        defaults.removeObject(forKey :"verified")
+        defaults.synchronize()
+        let screen = ScreenController.loginScreen;
+        let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
+        vc.modalTransitionStyle = .crossDissolve
+        self.navigationController?.viewControllers.removeAll()
+        self.present(vc, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController = vc
         
-        print("Logout ")
     }
     
 }
