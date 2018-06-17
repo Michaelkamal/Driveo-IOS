@@ -70,7 +70,7 @@ class OrderUpcomingCollectionView: UICollectionViewController , UICollectionView
         cell.addressLabel.text = upcomingTrips[index].pickup_location
         cell.dateLabel.text = Date.getFormattedDate(string: upcomingTrips[index].time!)
         cell.dateLabel.text = upcomingTrips[index].time
-        //cell.idLabel.text = "id#" + upcomingTrips[index].order_id!
+        cell.idLabel.text = "id#" + String(upcomingTrips[index].order_id!)
         cell.orderStatusLabel.text = upcomingTrips[index].status
         
         switch upcomingTrips[index].payment_method!{
@@ -117,7 +117,7 @@ class OrderUpcomingCollectionView: UICollectionViewController , UICollectionView
     }
     
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.item == upcomingTrips.count-1 && indexPath.section == 1 && flagPagination == true && totalpageCount > pageCount{
+        if indexPath.item == upcomingTrips.count-1 && indexPath.section == 1 && totalpageCount > pageCount{
             pageCount+=1
             parentTabView!.getInfoForTabOf(orderType: .UpcomingOrders , useData: useData, onFailure: retrieveFailed, page: String(pageCount))
             print("pageCount")
