@@ -13,11 +13,19 @@ public struct PaymentMethods: Codable {
 }
 
 public struct PaymentMethod {
-    let id: Int?
-    let name: String?
-    let image: Image?
+    var id: Int?
+    var name: String?
+    var image: Image?
     var isSelected: Bool = false
     var isEnable: Bool = false
+    init() {}
+    init(id: Int, name: String, image:Image , isSelected: Bool,isEnable:Bool){
+        self.id=id
+        self.name=name
+        self.image=image
+        self.isSelected=isSelected
+        self.isEnable=isEnable
+    }
 }
 
 

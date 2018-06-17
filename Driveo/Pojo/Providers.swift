@@ -21,10 +21,12 @@ public struct Providers: Codable {
 }
 
 public struct Provider: Codable {
-    let id: Int?
-    let name: String?
-    let image: Image?
-    let rating: String?
+    var id: Int?
+    var name: String?
+    var image: Image?
+    var rating: String?
+    init() {
+    }
 }
 
 public struct Image: Codable {

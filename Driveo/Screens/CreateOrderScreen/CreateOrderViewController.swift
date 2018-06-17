@@ -18,11 +18,13 @@ class CreateOrderViewController: UIViewController {
     
     @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
     
+    private var presenter: CreateOrderPresenter!
     
     var cellHeight:CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter =  CreateOrderPresenter(withController: self)
         if self.navigationController!.viewControllers.count>1{
             self.navigationController!.viewControllers=[self]
         }
@@ -201,14 +203,7 @@ class CreateOrderViewController: UIViewController {
                 case 3:
                     self.presentScreen(screen: ScreenController.paymentScreen)
                 default:
-                    let JSONData = try? JSONEncoder().encode(self.userOrder)
-                    let dictionary = try? JSONSerialization.jsonObject(with: JSONData!, options: .allowFragments) as? [String: Any]
-                    
-                    NetworkDAL.sharedInstance().processPostReq(withBaseUrl: ApiBaseUrl.usamaTest, andUrlSuffix: "test", andParameters: ["Order" : dictionary!!], onSuccess: { (data) in
-                        
-                    }, onFailure: { (err) in
-                        print(err)
-                    }, headers: nil)
+                    self.presenter.sumbitOrder(self.userOrder)
                     break
                 }
             }
