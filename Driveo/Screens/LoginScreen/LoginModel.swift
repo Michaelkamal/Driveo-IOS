@@ -20,7 +20,7 @@ class LoginModel : LoginModelProtocol{
         let networkObj:NetworkDAL = NetworkDAL.sharedInstance()
         let user = User(email: name, phone: "", password: pass)
         let params = user.getUserDataInDictionary()
-        networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: "authentication/signin", andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
+        networkObj.processPostReq(withBaseUrl: .mainApi, andUrlSuffix: SuffixUrl.login.rawValue, andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
     }
     
     func onSuccess(_ response:Data) -> Void{

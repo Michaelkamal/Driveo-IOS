@@ -21,7 +21,7 @@ class ChangePasswordModel: ChangePasswordModelProtocol {
         var token = defaults.object(forKey: "auth_token") as! String
         let header = ["authorization" : token]
         
-        networkObj.processPatchReq(withBaseUrl: .mainApi, andUrlSuffix: "authentication/changepassword", andParameters: params, onSuccess: onSuccess, onFailure: onFailure,headers: header)
+        networkObj.processPatchReq(withBaseUrl: .mainApi, andUrlSuffix: SuffixUrl.changePassword.rawValue, andParameters: params, onSuccess: onSuccess, onFailure: onFailure,headers: header)
     }
     
     func onSuccess(_ response: Data) {
