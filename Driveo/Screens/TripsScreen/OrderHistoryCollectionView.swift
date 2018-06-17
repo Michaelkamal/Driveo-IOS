@@ -75,9 +75,9 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
         switch indexPath.section {
         case 0:
             cell.addressLabel.text = activeTrips[index].pickup_location
-            //cell.dateLabel.text = Date.getFormattedDate(string: activeTrips[index].date!)
+            cell.dateLabel.text = Date.getFormattedDate(string: activeTrips[index].time!)
             cell.dateLabel.text = activeTrips[index].time
-            cell.idLabel.text = "id#" + activeTrips[index].orderId!
+            //cell.idLabel.text = "id#" + activeTrips[index].order_id!
             cell.orderStatusLabel.text = activeTrips[index].status
             
             switch activeTrips[index].payment_method!{
@@ -92,9 +92,10 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
             }
         default:
             cell.addressLabel.text = pastTrips[index].pickup_location
-            //cell.dateLabel.text = Date.getFormattedDate(string: pastTrips[index].date!)
-            cell.dateLabel.text = pastTrips[index].time
-            cell.idLabel.text = "id#" + pastTrips[index].orderId!
+            let dateString = Date.getFormattedDate(string: pastTrips[index].time!)
+            print("shiekh",dateString)
+            cell.dateLabel.text = dateString
+            //cell.idLabel.text = "id#" + pastTrips[index].order_id!
             cell.orderStatusLabel.text = pastTrips[index].status
             cell.priceLabel.text = pastTrips[index].price
             switch pastTrips[index].payment_method!{

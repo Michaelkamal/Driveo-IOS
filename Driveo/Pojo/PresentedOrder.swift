@@ -12,9 +12,9 @@ import UIKit
 struct PresentedOrder: Decodable {
     
     var title:String?
-    var orderId:String?
+    var order_id:String?
     var description:String?
-    var images:[String]?
+    //var images:[String]?
     var payment_method:String?
     var price:String?
     var pickup_location:String?
