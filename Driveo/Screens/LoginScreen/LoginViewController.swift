@@ -54,10 +54,11 @@ class LoginViewController: UIViewController , LoginViewProtocol {
     }
     func goToScreen(withScreenName name:String){
         if name == "next"{
-            print("PickLoacationViewController")
-            let sourceScreenStoryboard = UIStoryboard(name: "SourceScreen", bundle: nil)
-            let signup = sourceScreenStoryboard.instantiateViewController(withIdentifier: "PickLoacationViewController")
-            self.present(signup, animated: true, completion: nil)
+            let screen = ScreenController.sourceScreen
+            let sourceScreenStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+            let sourceScreen = sourceScreenStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
+            sourceScreen.modalTransitionStyle =  .crossDissolve
+            self.present(sourceScreen, animated: true, completion: nil)
         }
         if name == "verification"{
             print("verification")

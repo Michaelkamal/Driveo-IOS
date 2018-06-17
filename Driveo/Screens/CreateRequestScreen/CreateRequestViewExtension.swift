@@ -89,7 +89,7 @@ extension CreateRequestView : UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     func goToNextScreen() {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     
