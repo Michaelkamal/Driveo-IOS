@@ -97,6 +97,7 @@
 		846ABFF420C9689B003F8528 /* TripCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846ABFF320C9689B003F8528 /* TripCell.xib */; };
 		846ABFF620C97041003F8528 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABFF520C97041003F8528 /* OrderCell.swift */; };
 		846ABFFA20C975E4003F8528 /* OrderHistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846ABFF920C975E4003F8528 /* OrderHistoryTableView.swift */; };
+		846CCAFA20D6A99F000E8D35 /* CreateOrderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CCAF920D6A99F000E8D35 /* CreateOrderPresenter.swift */; };
 		846FB6FB20D52DC400D90AC5 /* OrderUpcomingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FB6FA20D52DC400D90AC5 /* OrderUpcomingCollectionView.swift */; };
 		8484886A20CEDB67009444B2 /* NavigationDrawerScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8484886920CEDB67009444B2 /* NavigationDrawerScreen.storyboard */; };
 		8484886C20CEDCDE009444B2 /* UIImageViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */; };
@@ -260,6 +261,7 @@
 		846ABFF320C9689B003F8528 /* TripCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripCell.xib; sourceTree = "<group>"; };
 		846ABFF520C97041003F8528 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		846ABFF920C975E4003F8528 /* OrderHistoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryTableView.swift; sourceTree = "<group>"; };
+		846CCAF920D6A99F000E8D35 /* CreateOrderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderPresenter.swift; sourceTree = "<group>"; };
 		846FB6FA20D52DC400D90AC5 /* OrderUpcomingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderUpcomingCollectionView.swift; sourceTree = "<group>"; };
 		8484886920CEDB67009444B2 /* NavigationDrawerScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationDrawerScreen.storyboard; sourceTree = "<group>"; };
 		8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtention.swift; sourceTree = "<group>"; };
@@ -537,6 +539,7 @@
 			isa = PBXGroup;
 			children = (
 				844BD5FD20C3778A005E98FC /* CreateOrderViewController.swift */,
+				846CCAF920D6A99F000E8D35 /* CreateOrderPresenter.swift */,
 				844BD5FB20C3776E005E98FC /* CreateOrderScreen.storyboard */,
 				844BD60120C38C20005E98FC /* CreateOrderView.swift */,
 				844BD60320C38C36005E98FC /* OrderItem.xib */,
@@ -1258,6 +1261,7 @@
 				84D1854D20C2E4BE0054BEBF /* SignupPresenter.swift in Sources */,
 				84D1855220C2E6CC0054BEBF /* StringExtension.swift in Sources */,
 				84D1854B20C2E3640054BEBF /* SignupView.swift in Sources */,
+				846CCAFA20D6A99F000E8D35 /* CreateOrderPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
