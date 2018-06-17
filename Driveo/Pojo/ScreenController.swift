@@ -8,10 +8,9 @@
 
 import Foundation
 import UIKit
-enum ScreenController:String{
-    case main="UINavigationController"
-    case sourceScreen = "PickLoacationViewController"
-    case destinationScreen = "PickLoacationViewController "
+enum ScreenController:String{ 
+    case sourceScreen = "UINavigationController"
+    case destinationScreen = "PickLoacationViewController"
     case createOrderScreen = "CreateOrderViewController"
     case paymentScreen = "PaymentViewController"
     case navigationDrawerScreen = "NavigationDrawerViewController"
@@ -20,8 +19,6 @@ enum ScreenController:String{
     func storyBoardName() -> String {
         var storyBoardName:String
         switch self {
-        case .main:
-            storyBoardName="Main"
         case .sourceScreen:
             storyBoardName="SourceScreen"
         case .destinationScreen:

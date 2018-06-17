@@ -31,7 +31,7 @@ class CreateOrderViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        orderStatus.text=userOrder.orderStatus.rawValue
+        orderStatus.text=userOrder.orderCurrentStep.rawValue
         contentView.subviews.forEach { (view) in
             view.removeFromSuperview()
         }
@@ -44,7 +44,7 @@ class CreateOrderViewController: UIViewController {
     
     func presentScreen(screen:ScreenController){
         let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
-        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
+        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
         switch userOrder.completeStatus{
         // set Drop off location
         case 1:
@@ -54,7 +54,7 @@ class CreateOrderViewController: UIViewController {
             break
         }
         vc.modalTransitionStyle = .flipHorizontal
-        self.present(vc, animated: true,completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
@@ -219,7 +219,7 @@ class CreateOrderViewController: UIViewController {
         let screen = ScreenController.navigationDrawerScreen;
         let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
         let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
-        presentFromLeft(vc)
+        pushFromLeft(vc)
     }
     
 }

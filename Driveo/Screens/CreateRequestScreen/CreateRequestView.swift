@@ -23,8 +23,8 @@ class CreateRequestView: UIViewController, CreateRequestViewProtocol ,UIGestureR
     @IBAction func didTapOnThreeBars(_ sender: Any) {
         let screen = ScreenController.navigationDrawerScreen;
         let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
-        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
-        presentFromLeft(vc)
+        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
+        pushFromLeft(vc)
     }
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var descriptionTextView: UITextView!

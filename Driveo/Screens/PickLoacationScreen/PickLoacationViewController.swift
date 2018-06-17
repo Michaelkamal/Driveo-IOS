@@ -23,8 +23,8 @@ class PickLoacationViewController: UIViewController {
     @IBAction func didTapOnThreeBars(_ sender: UIButton) {
         let screen = ScreenController.navigationDrawerScreen;
         let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
-        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
-        presentFromLeft(vc)
+        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
+        pushFromLeft(vc)
     }
     
     @IBOutlet weak var searchTextField: SearchUITextField!{
@@ -224,13 +224,13 @@ extension PickLoacationViewController:PickLocationViewProtocol
     // move to second screen
     
     func presentToNextScreen(){
-        if self.navigationController != nil{
+        if self.navigationController?.viewControllers.first == self{
             let screen = ScreenController.createOrderScreen
             let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
             let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
-            self.navigationController!.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
             }else{
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     

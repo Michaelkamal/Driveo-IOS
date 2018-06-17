@@ -30,9 +30,9 @@ class SplashView: UIViewController {
             self.LoadingSpinner.stopAnimating()
             let defaults = UserDefaults.standard
             if defaults.string(forKey: "auth_token") != nil && defaults.string(forKey: "verified") != nil {
-                    let sourceScreenStoryboard = UIStoryboard(name: ScreenController.main.storyBoardName(), bundle: nil)
-                    let home = sourceScreenStoryboard.instantiateViewController(withIdentifier: ScreenController.main.rawValue.trimmingCharacters(in: CharacterSet.whitespaces))
-                  //  self.present(home, animated: true, completion: nil)
+                    let screen = ScreenController.sourceScreen
+                    let sourceScreenStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+                    let home = sourceScreenStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
                     UIApplication.shared.keyWindow?.rootViewController = home
                 }
             else {

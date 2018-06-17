@@ -45,7 +45,7 @@ class NavigationDrawerViewController: UIViewController {
     
     @IBOutlet weak var profilePicture: UIImageView!
     @IBAction func didTapOnCloseButton(_ sender: UIButton) {
-        dismissToLeft()
+        popToLeft()
     }
     
     override func viewDidLoad() {

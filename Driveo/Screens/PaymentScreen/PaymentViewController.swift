@@ -12,8 +12,11 @@ class PaymentViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBAction func didTapOnCloseButton(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func didTapOnThreeBars(_ sender: UIButton) {
+        let screen = ScreenController.navigationDrawerScreen;
+        let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
+        pushFromLeft(vc)
     }
     
     @IBAction func didTapOnSubmitButton(_ sender: RoundedButton) {
@@ -103,7 +106,7 @@ extension PaymentViewController: PaymentViewProtocol {
     }
     
     func presentToNextScreen() {
-        self.dismiss(animated: true,completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
