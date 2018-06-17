@@ -19,7 +19,7 @@ class ResetPasswordModel: ResetPasswordModelProtocol {
         let defaults = UserDefaults.standard
         var token = defaults.object(forKey: "reset_token") as! String
         if token != nil{
-            networkObj.processPatchReq(withBaseUrl: .mainApi, andUrlSuffix: "authentication/resetpassword/?hash="+token, andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
+            networkObj.processPatchReq(withBaseUrl: .mainApi, andUrlSuffix: SuffixUrl.resetPassword.rawValue+token, andParameters: params, onSuccess: onSuccess, onFailure: onFailure)
             let defaults = UserDefaults.standard
             defaults.set(nil, forKey: "reset_token")
             defaults.synchronize()

@@ -27,6 +27,9 @@ enum SuffixUrl:String {
     case historyOrders = "showhistory"
     case upcomingOrders = "showupcoming"
     case about = "aboutus"
+    case login = "authentication/signin"
+    case resetPassword = "authentication/resetpassword/?hash="
+    case changePassword = "authentication/changepassword"
 }
 
 
