@@ -60,6 +60,12 @@ class LoginViewController: UIViewController , LoginViewProtocol {
             sourceScreen.modalTransitionStyle =  .crossDissolve
             self.present(sourceScreen, animated: true, completion: nil)
         }
+        if name == "verification"{
+            print("verification")
+            let signupStoryboard = UIStoryboard(name: "SignupStoryboard", bundle: nil)
+            let signup = signupStoryboard.instantiateViewController(withIdentifier: "VerifyView")
+            self.present(signup, animated: true, completion: nil)
+        }
         
     }
     
