@@ -76,7 +76,6 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
         case 0:
             cell.addressLabel.text = activeTrips[index].pickup_location
             cell.dateLabel.text = Date.getFormattedDate(string: activeTrips[index].time!)
-            cell.dateLabel.text = activeTrips[index].time
             cell.idLabel.text = "id#" + String(activeTrips[index].order_id!)
             cell.orderStatusLabel.text = activeTrips[index].status
             
@@ -163,7 +162,9 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
     func useData(_ data:RequestOrdersResult) {
         dismissLoading()
         print(data)
-        activeTrips += data.data!["active"]!
+        if pastTrips.count == 0 {
+            activeTrips += data.data!["active"]!
+        }
         pastTrips += data.data!["history"]!
         totalpageCount = data.total_pages!
         self.collectionView?.reloadData()
