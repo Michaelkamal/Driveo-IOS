@@ -101,8 +101,8 @@ class OrderUpcomingCollectionView: UICollectionViewController , UICollectionView
     
     func useData(_ data:RequestOrdersResult) {
         print(data)
-        upcomingTrips += data.data["upcoming"]!
-        totalpageCount = data.total_pages
+        upcomingTrips += data.data!["upcoming"]!
+        totalpageCount = data.total_pages!
         self.collectionView?.reloadData()
         dismissLoading()
     }

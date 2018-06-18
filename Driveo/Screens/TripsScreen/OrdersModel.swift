@@ -48,7 +48,7 @@ class OrderModel : OrdersModelProtocol{
                 if respone.message == MsgResponse.success.rawValue {
                     self.presenter.onRequestSuccess(withOrders: respone)
                 }else{
-                    self.presenter.onRequestFailure(failure: ErrorType.parse.rawValue)
+                    self.presenter.onRequestFailure(failure: respone.message)
                 }
                 
             }

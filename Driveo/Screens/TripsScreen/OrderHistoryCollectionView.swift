@@ -97,7 +97,7 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
             cell.dateLabel.text = dateString
             cell.idLabel.text = "id#" + String(pastTrips[index].order_id!)
             cell.orderStatusLabel.text = pastTrips[index].status
-            cell.priceLabel.text = pastTrips[index].cost
+            cell.priceLabel.text = String(pastTrips[index].cost!)
             switch pastTrips[index].payment_method!{
             case "visa":
                 cell.paymentImage.image = #imageLiteral(resourceName: "ic_payment_visa")
@@ -163,9 +163,9 @@ class OrderHistoryCollectionView: UICollectionViewController, UICollectionViewDe
     func useData(_ data:RequestOrdersResult) {
         dismissLoading()
         print(data)
-        activeTrips += data.data["active"]!
-        pastTrips += data.data["history"]!
-        totalpageCount = data.total_pages
+        activeTrips += data.data!["active"]!
+        pastTrips += data.data!["history"]!
+        totalpageCount = data.total_pages!
         self.collectionView?.reloadData()
         
     }
