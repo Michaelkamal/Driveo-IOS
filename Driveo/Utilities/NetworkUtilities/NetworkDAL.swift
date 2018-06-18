@@ -24,8 +24,8 @@ enum SuffixUrl:String {
     case verify = "authentication/verify"
     case resendVerificatoin = "authentication/resendverification"
     case providers = "providers"
-    case historyOrders = "showhistory"
-    case upcomingOrders = "showupcoming"
+    case historyOrders = "orders/showhistory/"
+    case upcomingOrders = "orders/showupcoming/"
     case about = "aboutus"
     case login = "authentication/signin"
     case resetPassword = "authentication/resetpassword/?hash="
@@ -103,6 +103,8 @@ public class NetworkDAL{
                         case .success(let data):
                             let jsonData = JSON(data);
                             print(response.request!.url!.absoluteString)
+                            print(data)
+                            print(jsonData)
                             onSuccess(parser(jsonData));
                         case .failure :
                             onFailure(.internet)

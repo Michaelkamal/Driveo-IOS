@@ -37,8 +37,10 @@ class OrderModel : OrdersModelProtocol{
         
         networkObject.processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: suffixUrl, withParser: { (data) -> [Any] in
             if let response = try? JSONDecoder().decode(RequestOrdersResult.self, from: data.rawData()){
+                
                return [response] as [Any]
             }
+            print("*/*/*/*/*/*/ msh 3aref yparse /*/*/*/*/*/*/*")
             return []
         }, andHeaders: ["Authorization":token], onSuccess: {(responseArray) in
             if let respone = responseArray.first as? RequestOrdersResult {
