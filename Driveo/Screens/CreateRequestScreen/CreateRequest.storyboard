@@ -45,7 +45,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcH-ai-Nez">
                                 <rect key="frame" x="0.0" y="102" width="414" height="634"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vuk-cx-2Hb">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vuk-cx-2Hb" customClass="BeautifulTextField" customModule="BeautifulTextField">
                                         <rect key="frame" x="57" y="55" width="301" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="ku5-E9-f8L"/>
