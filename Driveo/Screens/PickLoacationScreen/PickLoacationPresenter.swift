@@ -141,12 +141,6 @@ class PickLoacationPresenter{
                 onSuccess: { (providers) in
                 self.viewDelagate.updateCarrierArray(withCarriers: providers as! [Provider])
                 self.providersArray=providers as? [Provider]
-                    
-                    // MARK : 3la bal ma el api tzbot
-//                    let tempProvider=[Provider(id: 1,name: "ab",image: Image(url:"asd"),rating: "4.4")]
-//                    self.viewDelagate.updateCarrierArray(withCarriers: tempProvider )
-//                    self.providersArray=tempProvider
-                
             }, onFailure: { err  in
                 print(err)
                 self.viewDelagate.showAlert(ofError: ErrorType.internet)

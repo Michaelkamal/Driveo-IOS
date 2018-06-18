@@ -8,24 +8,22 @@
 
 import Foundation
 
-public struct PaymentMethods: Codable {
-    let methods: [PaymentMethod]?
-}
 
+public struct PaymentMethods: Codable {
+    let paymentMethods: [PaymentMethod]?
+    let message: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case paymentMethods = "Payment_methods"
+        case message
+    }
+}
 public struct PaymentMethod {
     var id: Int?
     var name: String?
     var image: Image?
     var isSelected: Bool = false
-    var isEnable: Bool = false
     init() {}
-    init(id: Int, name: String, image:Image , isSelected: Bool,isEnable:Bool){
-        self.id=id
-        self.name=name
-        self.image=image
-        self.isSelected=isSelected
-        self.isEnable=isEnable
-    }
 }
 
 
@@ -35,7 +33,6 @@ extension PaymentMethod : Codable  {
         case id
         case name
         case image
-        case isEnable
     }
     
     public init(from decoder: Decoder) throws {
@@ -43,7 +40,6 @@ extension PaymentMethod : Codable  {
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         image = try container.decode(Image.self, forKey: .image)
-        isEnable = try container.decode(Bool.self, forKey: .isEnable)
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -51,7 +47,6 @@ extension PaymentMethod : Codable  {
         try container.encode(id, forKey: .id)
         try container.encode(name, forKey: .name)
         try container.encode(image, forKey: .image)
-        try container.encode(isEnable, forKey: .isEnable)
     }
 }
 

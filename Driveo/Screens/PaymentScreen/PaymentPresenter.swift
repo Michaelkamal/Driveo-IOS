@@ -25,6 +25,8 @@ private var controller:UIViewController!
     
 private var paymentMethods:[PaymentMethod]?
 
+private lazy var model = NetworkDAL.sharedInstance()
+    
 init(withController controller:UIViewController) {
     self.controller=controller
     viewDelagate=controller as! PaymentViewProtocol
@@ -44,10 +46,34 @@ init(withController controller:UIViewController) {
             viewDelagate.updateTableViewData(withArray: paymentMethods)
         }else
         {
-            // TODO : Get payment method from API
-            paymentMethods=[PaymentMethod(id: 1, name: "Cash", image:Image(url:"https://www.royalmint.com/globalassets/the-royal-mint/images/pages/discover/uk-coins/coins-designs-and-specifications/fifty-pence-coin/50_pence_1969.jpg?width=103&quality=50") , isSelected: false,isEnable:true),PaymentMethod(id: 2, name: "Cach On Delivery2", image:Image(url:"https://www.royalmint.com/globalassets/the-royal-mint/images/pages/discover/uk-coins/coins-designs-and-specifications/fifty-pence-coin/50_pence_1969.jpg?width=103&quality=50") , isSelected: false,isEnable:false),PaymentMethod(id: 3, name: "Cach On Delivery 3", image:Image(url:"https://www.royalmint.com/globalassets/the-royal-mint/images/pages/discover/uk-coins/coins-designs-and-specifications/fifty-pence-coin/50_pence_1969.jpg?width=103&quality=50") , isSelected: false,isEnable:false)]
+            
+            viewDelagate.showLoading()
+            let defaults = UserDefaults.standard
+            if let token = defaults.string(forKey: "auth_token") {
+                NetworkDAL.sharedInstance().processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.payment.rawValue, withParser: { (JSON) -> [Any] in
+                    var res:[Any]=[]
+                    if let paymentMethods = try? JSONDecoder().decode(PaymentMethods.self, from: JSON.rawData()) {
+                        if let methodsArray = paymentMethods.paymentMethods{
+                            res += methodsArray as [Any]
+                        }
+                    }
+                    else
+                    {
+                        self.viewDelagate.showAlert(ofError: ErrorType.parse)
+                    }
+                    return res
+                },andHeaders:["Authorization":token],
+                  onSuccess: { (paymentMethods) in
+                    if let paymentMethods = paymentMethods as? [PaymentMethod]{
+                       self.viewDelagate.updateTableViewData(withArray: paymentMethods)
+                        self.paymentMethods=paymentMethods
+                    }
+                }, onFailure: { err  in
+                    print(err)
+                    self.viewDelagate.showAlert(ofError: ErrorType.internet)
+                })
+            }
         }
-        viewDelagate.updateTableViewData(withArray: paymentMethods!)
     }
     public func submitFunc()
     {

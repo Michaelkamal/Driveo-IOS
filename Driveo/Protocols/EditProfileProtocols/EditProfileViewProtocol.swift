@@ -10,8 +10,6 @@ import Foundation
 protocol EditProfileProtocol : GenericProtocol{
     func  setEmailAlertLabel(errorMsg : String)
     func  setPhoneAlertLabel(errorMsg : String)
-    func  setPasswordAlertLabel(errorMsg : String)
-    func  setConfirmPasswordAlertLabel(errorMsg : String)
     func showLoading()
     func dismissLoading()
 }

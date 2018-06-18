@@ -17,7 +17,7 @@ struct  User : Decodable{
     var phone:String
     var email:String
     var confirmPassword:String?
-    
+    var avatar:Image?
 
     
     init(email: String , phone:String, password:String,confirmPassword:String) {

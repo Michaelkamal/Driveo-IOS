@@ -30,6 +30,8 @@ enum SuffixUrl:String {
     case resetPassword = "authentication/resetpassword/?hash="
     case changePassword = "authentication/changepassword"
     case order = "orders"
+    case update = "authentication/update"
+    case payment = "payments"
 }
 
 
@@ -187,8 +189,31 @@ public class NetworkDAL{
                 onFailure(ErrorType.internet)
             }
         })
+    }
+    internal func processPutReq(
+        withBaseUrl baseUrl:ApiBaseUrl,
+        andUrlSuffix urlSuffix:String,
+        andParameters param: Parameters,
+        onSuccess: @escaping (_ :Data)->Void,
+        onFailure:  @escaping (_ networkError:ErrorType)->Void
+        , headers:HTTPHeaders? = nil)-> Void{
         
-       
-       
+        Alamofire.request(baseUrl.rawValue+urlSuffix,method: .put, parameters: param, headers:headers).validate().responseJSON { response  in
+            switch response.result {
+            case .success(let data):
+                let jsonData = JSON(data);
+                
+                if(jsonData.dictionary!["message"]?.string == MsgResponse.success.rawValue)
+                {
+                onSuccess(response.data!);
+                }
+                else{
+                    onFailure(ErrorType.internet)
+                }
+            case .failure :
+                onFailure(ErrorType.internet)
+            }
+        }
+        
     }
 }

@@ -9,4 +9,6 @@
 import Foundation
 protocol PaymentViewProtocol:GenericProtocol {
     func updateTableViewData(withArray array:[PaymentMethod])->Void
+    func showLoading()
+    func dismissLoading()
 }

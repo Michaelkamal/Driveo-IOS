@@ -10,6 +10,8 @@ import UIKit
 import SDWebImage
 class PaymentViewController: UIViewController {
     
+    var spinner: UIView?
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func didTapOnThreeBars(_ sender: UIButton) {
@@ -53,17 +55,13 @@ extension PaymentViewController: UITableViewDelegate,UITableViewDataSource {
         if let cell = cell{
             let method = paymentMethods[indexPath.row]
             cell.paymentTitle.text=method.name
-            cell.paymentImage.sd_setImage(with: URL(string: //ApiBaseUrl.mainApi.rawValue+
-                method.image!.url!), completed:nil)
+            cell.paymentImage.sd_setImage(with: URL(string: method.image!.url!), completed:nil)
             if(method.isSelected || userOrder?.paymentMethod?.id == method.id)
             {
                 cell.selectImage.isHidden=false
             }else
             {
                 cell.selectImage.isHidden=true
-            }
-            if method.isEnable == false {
-                cell.paymentSubtitle.text="Not available"
             }
         }
         if( tableView.rowHeight * CGFloat(paymentMethods.count) < tableView.frame.height)
@@ -79,34 +77,42 @@ extension PaymentViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if (paymentMethods[indexPath.row].isEnable)
-        {
             for i  in 0..<paymentMethods.count{
                 paymentMethods[i].isSelected = false
             }
             paymentMethods[indexPath.row].isSelected=true
             tableView.reloadData()
             presenter.didSelectPaymentMethod(paymentMethod: paymentMethods[indexPath.row])
-        }}
+        }
 }
 
 extension PaymentViewController: PaymentViewProtocol {
     func updateTableViewData(withArray array: [PaymentMethod]) {
         paymentMethods=array
         tableView.reloadData()
-        
+        dismissLoading()
     }
     
     // show alert
     
     func showAlert(ofError error:ErrorType)->Void{
-        let alert = UIViewController.getAlertController(ofErrorType: error, withTitle: "Error")
+        let alert = UIAlertController(title: "Error", message: error.rawValue, preferredStyle: UIAlertControllerStyle.alert)
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel) { (action) in
+            self.presentToNextScreen()
+        }
+        alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }
     
     func presentToNextScreen() {
         self.navigationController?.popViewController(animated: true)
     }
+    func showLoading() {
+        spinner = UIViewController.displaySpinner(onView: self.view)
+    }
     
+    func dismissLoading() {
+        if let spinner=spinner{
+        UIViewController.removeSpinner(spinner: spinner)
+        }}
 }
