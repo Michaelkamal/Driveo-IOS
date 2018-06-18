@@ -52,8 +52,8 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P72-Ha-hkF">
-                                                <rect key="frame" x="0.0" y="413" width="301" height="57"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P72-Ha-hkF">
+                                                <rect key="frame" x="0.0" y="423.99999999999994" width="301" height="43"/>
                                                 <color key="backgroundColor" red="1" green="0.51372549020000002" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25.200000762939453"/>
                                                 <state key="normal" title="Signup">
@@ -69,7 +69,7 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Retype Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SaE-Mk-xcY" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="337.33333333333331" width="301" height="30"/>
+                                                <rect key="frame" x="0.0" y="349" width="301" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19.399999618530273"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -78,7 +78,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1uC-Dq-4Lt" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="268.33333333333331" width="301" height="30"/>
+                                                <rect key="frame" x="0.0" y="280" width="301" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19.399999618530273"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -87,7 +87,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AA5-4c-5SY" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="199.33333333333331" width="301" height="30"/>
+                                                <rect key="frame" x="0.0" y="211" width="301" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19.399999618530273"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
@@ -96,7 +96,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbK-km-ZLl" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="0.0" y="130.33333333333331" width="301" height="30"/>
+                                                <rect key="frame" x="0.0" y="142" width="301" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19.399999618530273"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
@@ -105,7 +105,7 @@
                                                 </connections>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_splash" translatesAutoresizingMaskIntoConstraints="NO" id="EDg-R2-Pcj">
-                                                <rect key="frame" x="24" y="46.333333333333329" width="253" height="55"/>
+                                                <rect key="frame" x="24" y="57.999999999999986" width="253" height="55"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="54.670000000000002" id="zLT-gU-i8t"/>
                                                 </constraints>
@@ -119,7 +119,9 @@
                                             <constraint firstItem="SaE-Mk-xcY" firstAttribute="leading" secondItem="Cau-HZ-qwl" secondAttribute="leading" id="5Hs-jc-Z7c"/>
                                             <constraint firstItem="LbK-km-ZLl" firstAttribute="top" secondItem="EDg-R2-Pcj" secondAttribute="bottom" constant="29" id="5UM-Gn-g8v"/>
                                             <constraint firstAttribute="trailing" secondItem="SaE-Mk-xcY" secondAttribute="trailing" id="CeP-oK-6Td"/>
+                                            <constraint firstItem="IcR-8F-hIR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="P72-Ha-hkF" secondAttribute="bottom" constant="22" id="D55-Ly-Svo"/>
                                             <constraint firstItem="AA5-4c-5SY" firstAttribute="top" secondItem="LbK-km-ZLl" secondAttribute="bottom" constant="38.82" id="Gfp-8K-olf"/>
+                                            <constraint firstItem="LbK-km-ZLl" firstAttribute="top" secondItem="EDg-R2-Pcj" secondAttribute="bottom" constant="29" id="PNe-R9-1Ni"/>
                                             <constraint firstItem="1uC-Dq-4Lt" firstAttribute="top" secondItem="AA5-4c-5SY" secondAttribute="bottom" constant="38.82" id="Pdp-1r-Mtz"/>
                                             <constraint firstAttribute="trailing" secondItem="EDg-R2-Pcj" secondAttribute="trailing" constant="24" id="VXk-6f-BuR"/>
                                             <constraint firstItem="SaE-Mk-xcY" firstAttribute="top" secondItem="1uC-Dq-4Lt" secondAttribute="bottom" constant="38.82" id="aRp-RY-Ui6"/>
@@ -130,7 +132,8 @@
                                             <constraint firstItem="EDg-R2-Pcj" firstAttribute="centerX" secondItem="Cau-HZ-qwl" secondAttribute="centerX" id="imq-tr-1Lo"/>
                                             <constraint firstItem="AA5-4c-5SY" firstAttribute="leading" secondItem="Cau-HZ-qwl" secondAttribute="leading" id="k1F-2P-LYm"/>
                                             <constraint firstAttribute="trailing" secondItem="P72-Ha-hkF" secondAttribute="trailing" id="ncj-vM-xXO"/>
-                                            <constraint firstItem="IcR-8F-hIR" firstAttribute="top" secondItem="P72-Ha-hkF" secondAttribute="bottom" constant="55.609999999999999" id="qBD-D2-mqK"/>
+                                            <constraint firstItem="EDg-R2-Pcj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Cau-HZ-qwl" secondAttribute="top" constant="16" id="q8W-9h-BMv"/>
+                                            <constraint firstItem="IcR-8F-hIR" firstAttribute="top" secondItem="P72-Ha-hkF" secondAttribute="bottom" priority="999" constant="44" id="qBD-D2-mqK"/>
                                             <constraint firstAttribute="trailing" secondItem="LbK-km-ZLl" secondAttribute="trailing" id="rcH-C3-Leh"/>
                                             <constraint firstItem="LbK-km-ZLl" firstAttribute="leading" secondItem="Cau-HZ-qwl" secondAttribute="leading" id="sK3-bD-3C3"/>
                                             <constraint firstAttribute="height" constant="540" id="sXC-aW-rpG"/>
@@ -139,8 +142,8 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Cau-HZ-qwl" secondAttribute="bottom" priority="750" constant="1" id="5Xw-Q6-xUr"/>
-                                    <constraint firstItem="Cau-HZ-qwl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="E3G-Ne-uyF" secondAttribute="top" constant="16" id="COd-og-2Cw"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cau-HZ-qwl" secondAttribute="bottom" priority="250" constant="1" id="5Xw-Q6-xUr"/>
+                                    <constraint firstItem="Cau-HZ-qwl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="E3G-Ne-uyF" secondAttribute="top" constant="1" id="COd-og-2Cw"/>
                                     <constraint firstAttribute="trailing" secondItem="Cau-HZ-qwl" secondAttribute="trailing" constant="1" id="DAj-Yk-ij2"/>
                                     <constraint firstItem="Cau-HZ-qwl" firstAttribute="centerX" secondItem="E3G-Ne-uyF" secondAttribute="centerX" id="PSj-ox-Tn6"/>
                                     <constraint firstItem="Cau-HZ-qwl" firstAttribute="centerY" secondItem="E3G-Ne-uyF" secondAttribute="centerY" id="Wwr-VQ-WpH"/>

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BeautifulTextField
 
 class CreateRequestView: UIViewController, CreateRequestViewProtocol ,UIGestureRecognizerDelegate  {
 
@@ -28,7 +27,7 @@ class CreateRequestView: UIViewController, CreateRequestViewProtocol ,UIGestureR
     }
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var titleTextField: BaseBeautifulTextField!
+    @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var collectionViewWidth: NSLayoutConstraint!
     
     @IBOutlet weak var uploadImageCollectionView: UICollectionView!
