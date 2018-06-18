@@ -119,6 +119,7 @@ extension Order : Codable{
         case images = "images"
         case weight = "weight"
         case price = "price"
+        case orderStatus = "status"
     }
     
     public convenience init(from decoder: Decoder) throws {
@@ -146,23 +147,23 @@ extension Order : Codable{
         paymentMethod!.name =  try container.decode(String.self, forKey: .paymentMethod)
         weight = try container.decode(Double.self, forKey: .weight)
         price = try container.decode(Double.self, forKey: .price)
-       /*
+       
         if let status = try? container.decode(String.self, forKey: .orderStatus){
             switch status {
-            case OrderStatus.upComing.rawValue :
+            case "pending" :
                 orderStatus = OrderStatus.upComing
                 
             case OrderStatus.active.rawValue :
                 orderStatus = OrderStatus.active
                 
-            case OrderStatus.past.rawValue :
+            case "history" :
                 orderStatus = OrderStatus.past
             default:
                 break
             }
  
         }
- */
+ 
     }
     
     public func encode(to encoder: Encoder) throws {

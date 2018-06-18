@@ -53,4 +53,23 @@ extension UIViewController{
         func popToLeft() {
             self.navigationController?.popViewController(animated: true)
         }
+}
+extension UIViewController{
+    class func displayCircularProgressBar(onView : UIView,withMaxValue max:Double) -> (backGround:UIView,progressBar:CircularProgress) {
+        let progressBarView = UIView.init(frame: onView.bounds)
+        progressBarView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        let progressBar = CircularProgress()
+        let size = onView.frame.size.width/3
+        progressBar.frame.size=CGSize(width:size,height:size)
+        progressBar.center=onView.convert(onView.center, from:onView.superview)
+        progressBar.trackColor=UIColor.gray
+        progressBar.IBColor1=UIColor.green
+        progressBar.angle = 0
+        progressBar.maxCount=max
+        DispatchQueue.main.async {
+            progressBarView.addSubview(progressBar)
+            onView.addSubview(progressBarView)
+        }
+        return (progressBarView,progressBar)
     }
+}

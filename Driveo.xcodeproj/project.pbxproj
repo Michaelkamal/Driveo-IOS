@@ -103,6 +103,8 @@
 		8484886C20CEDCDE009444B2 /* UIImageViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */; };
 		8484887120CF71A0009444B2 /* NavigationDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484887020CF71A0009444B2 /* NavigationDrawerViewController.swift */; };
 		8484887520CF7679009444B2 /* NavigationDrawerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484887420CF7679009444B2 /* NavigationDrawerTableViewCell.swift */; };
+		84909A3520D6FCF8005D9716 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84909A3420D6FCF8005D9716 /* CircularProgressBar.swift */; };
+		84909A3720D700FC005D9716 /* CreateOrderViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84909A3620D700FC005D9716 /* CreateOrderViewProtocol.swift */; };
 		84937BBB20C3660B00727437 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BB720C3660A00727437 /* LoginPresenter.swift */; };
 		84937BBC20C3660B00727437 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84937BB820C3660B00727437 /* Login.storyboard */; };
 		84937BBD20C3660B00727437 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BB920C3660B00727437 /* LoginModel.swift */; };
@@ -267,6 +269,8 @@
 		8484886B20CEDCDE009444B2 /* UIImageViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtention.swift; sourceTree = "<group>"; };
 		8484887020CF71A0009444B2 /* NavigationDrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerViewController.swift; sourceTree = "<group>"; };
 		8484887420CF7679009444B2 /* NavigationDrawerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerTableViewCell.swift; sourceTree = "<group>"; };
+		84909A3420D6FCF8005D9716 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		84909A3620D700FC005D9716 /* CreateOrderViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewProtocol.swift; sourceTree = "<group>"; };
 		84937BAE20C3023A00727437 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		84937BB720C3660A00727437 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		84937BB820C3660B00727437 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -531,6 +535,7 @@
 				84247CCE20C7782400AE43FA /* PaymentProtocols */,
 				84D1854120C2D3580054BEBF /* SignupProtocols */,
 				8447456D20C07D2A0076D0EC /* LocationMangerProtocol.swift */,
+				84909A3820D70102005D9716 /* CreateOrderProtocols */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -671,6 +676,14 @@
 			path = UIImageViewExtention;
 			sourceTree = "<group>";
 		};
+		84909A3820D70102005D9716 /* CreateOrderProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				84909A3620D700FC005D9716 /* CreateOrderViewProtocol.swift */,
+			);
+			path = CreateOrderProtocols;
+			sourceTree = "<group>";
+		};
 		84937BB420C3651300727437 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -798,6 +811,7 @@
 				84A2D4EB20C2CE2400576ACF /* SearchUITextField.swift */,
 				84A2D4EC20C2CE2400576ACF /* UIDatePicker.swift */,
 				84A2D4ED20C2CE2400576ACF /* RoundedButton.swift */,
+				84909A3420D6FCF8005D9716 /* CircularProgressBar.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -1218,6 +1232,7 @@
 				840B1CD720C5B82D0046542D /* CreateRequestModel.swift in Sources */,
 				84247CCB20C774E500AE43FA /* PaymentCell.swift in Sources */,
 				8455AD2620D00D7300012D01 /* DateExtension.swift in Sources */,
+				84909A3520D6FCF8005D9716 /* CircularProgressBar.swift in Sources */,
 				840B1CC520C52E4E0046542D /* ResetPasswordModelProtocol.swift in Sources */,
 				84937BC720C3670800727437 /* ForgotPasswordModelProtocol.swift in Sources */,
 				84937BBD20C3660B00727437 /* LoginModel.swift in Sources */,
@@ -1244,6 +1259,7 @@
 				84D1854320C2D3860054BEBF /* SignupModelProtocol.swift in Sources */,
 				84937BD020C45D0B00727437 /* ForgetPasswordViewController.swift in Sources */,
 				840B1CC920C52FB70046542D /* ResetPasswordPresenter.swift in Sources */,
+				84909A3720D700FC005D9716 /* CreateOrderViewProtocol.swift in Sources */,
 				8408DF9C20D31F9D009258AE /* ChangePasswordViewController.swift in Sources */,
 				84409D7E20D073F000C41D22 /* PresentedOrder.swift in Sources */,
 				841D749D20C9DFEF00253AA4 /* UIButtonExtension.swift in Sources */,

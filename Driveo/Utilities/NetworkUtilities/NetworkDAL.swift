@@ -30,14 +30,13 @@ enum SuffixUrl:String {
     case login = "authentication/signin"
     case resetPassword = "authentication/resetpassword/?hash="
     case changePassword = "authentication/changepassword"
+    case order = "orders"
 }
 
 
 enum ApiBaseUrl:String{
     case googleApi = "https://maps.googleapis.com/"
     case mainApi = "https://driveo.herokuapp.com/api/v1/"
-    case usamaTest = "https://mina7esh.herokuapp.com/"
-    //"https://driveo.herokuapp.com/"
     case testmockAoi = "https://84b52456-526d-4892-a227-4c47f5469182.mock.pstmn.io"
 }
 
@@ -142,25 +141,55 @@ public class NetworkDAL{
                 print(response.result)
                 onFailure(ErrorType.internet)
             }
-        }
+        }}
+    
+    
+    internal func processPostUploadMultiPart(
+        withBaseUrl baseUrl:ApiBaseUrl,
+        andUrlSuffix urlSuffix:String,
+        andParameters param: [String:Any],
+        onSuccess: @escaping (_ :DataResponse<Any>)->Void,onProgress:@escaping(_ :Double)->Void ,
+        onFailure:  @escaping (_ networkError:ErrorType)->Void
+        , headers:HTTPHeaders? = nil,andImages images:[UIImage] = [])-> Void{
         
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            for (key, value) in param {
+                multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+            }
+            multipartFormData.append(String(images.count).data(using: String.Encoding.utf8)!, withName: "images_count")
+            if images.count > 0 {
+                for i in 0..<images.count{
+                    let image = images[i]
+                    let imgData = UIImageJPEGRepresentation(image, 0.9)!
+                    multipartFormData.append(imgData, withName: "images[]",fileName:"images\(i+1).jpg", mimeType: "image/jpg")
+                }
+            }
+            
+            
+        }, usingThreshold: UInt64.init(), to: String("\(baseUrl.rawValue)\(urlSuffix)"), method: .post, headers: headers, encodingCompletion: { (result) in
+            
+            switch result {
+            case .success(let upload, _, _):
+                
+                upload.uploadProgress(closure: { (progress) in
+                    onProgress(progress.fractionCompleted)
+                })
+                
+                upload.responseJSON { response in
+                    if let value = response.result.value as? [String:Any]{
+                        if ( value["message"] as! String == MsgResponse.success.rawValue)
+                    {
+                       onSuccess(response)
+                        }else{
+                    onFailure(ErrorType.internet)
+                    }
+                    }}
+            case .failure(let encodingError):
+                onFailure(ErrorType.internet)
+            }
+        })
+        
+       
+       
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
