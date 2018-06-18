@@ -113,7 +113,10 @@ extension NavigationDrawerViewController: UITableViewDelegate,UITableViewDataSou
     }
     
     @objc func pushEditProfile(){
-        print("EditProfile ")
+        let screen = ScreenController.editProfileScreen;
+        let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @objc func pushChangePassword(){
         let screen = ScreenController.changePasswordScreen;

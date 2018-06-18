@@ -47,7 +47,7 @@ class CreateOrderViewController: UIViewController {
         contentView.subviews.forEach { (view) in
             view.removeFromSuperview()
         }
-        let contentViewMaxY = contentView.superview!.frame.maxY
+        let contentViewMaxY = contentView.frame.maxY
         contentViewHeightConstraint.constant = contentView.superview!.frame.height
         addSuccessfullOrderSteps(withSuperViewMaxY: contentViewMaxY, andCellHeight: cellHeight)
         addNextOrderStep(withSuperViewMaxY: contentViewMaxY, andCellHeight: cellHeight)
@@ -188,18 +188,23 @@ class CreateOrderViewController: UIViewController {
     // add next button at the end of scroll view
     func addNextButton(withSuperViewMaxY contentViewMaxY:CGFloat,andCellHeight cellHeight:CGFloat){
         if let nextButton = Bundle.main.loadNibNamed("NextButton", owner: self, options: nil)?.first as? NextButtonView {
-            if contentView.subviews.count>1,(contentView.subviews.last!.frame.maxY>contentViewMaxY ||
-                contentViewMaxY-contentView.subviews.last!.frame.maxY<cellHeight)
+            if contentView.subviews.count>1,(contentView.subviews.last!.bounds.maxY>contentViewMaxY ||
+                contentViewMaxY-contentView.subviews.last!.frame.maxY < cellHeight)
             {
-                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentView.subviews.last!.bounds.maxY, width: contentView.frame.width, height: cellHeight)
+                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentView.subviews.last!.frame.maxY, width: contentView.frame.width, height: 80)
                 contentView.addSubview(nextButton)
-                contentViewHeightConstraint.constant += nextButton.bounds.maxY-contentView.bounds.maxY
+                contentViewHeightConstraint.constant = nextButton.frame.maxY-contentView.frame.minY
+                contentView.setNeedsLayout()
+                contentView.superview!.setNeedsDisplay()
                 nextButton.updateConstraints()
+    
             }
             else
             {
-                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentView.frame.maxY-cellHeight, width: contentView.frame.width, height: cellHeight)
+                nextButton.frame=CGRect(x: contentView.frame.minX, y: contentViewMaxY-80, width: contentView.frame.width, height: 80)
                 contentView.addSubview(nextButton)
+                contentView.setNeedsLayout()
+                contentView.setNeedsDisplay()
                 nextButton.updateConstraints()
             }
             if self.userOrder.completeStatus > 3

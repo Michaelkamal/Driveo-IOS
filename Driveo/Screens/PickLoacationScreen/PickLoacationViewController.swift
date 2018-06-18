@@ -120,6 +120,7 @@ class PickLoacationViewController: UIViewController {
             if(isSource && userOrder.source != nil){
                 addressLabel.text=userOrder.source?.address
                 placeMarker(onLocation: userOrder.source!.coordinates!, withTitle: userOrder.source!.address!)
+                displaySelectedCarrier(withLogoUrl: userOrder.provider.image!.url!)
             }else{
                 if(userOrder.destination != nil)
                 {
@@ -190,9 +191,9 @@ extension PickLoacationViewController:PickLocationViewProtocol
     {
         self.carrierView.subviews.forEach { $0.removeFromSuperview() }
         let imageView:UIImageView=UIImageView()
-        imageView.frame = CGRect(x:20, y:5, width: self.carrierView.frame.width-20, height: self.carrierView.frame.height-10)
+        imageView.frame = CGRect(x:20, y:0, width: self.carrierView.frame.width-20, height: self.carrierView.frame.height)
         imageView.contentMode = UIViewContentMode.scaleAspectFit
-        imageView.sd_setImage(with: URL(string: ApiBaseUrl.mainApi.rawValue+url), completed: nil)
+        imageView.sd_setImage(with: URL(string:url), completed: nil)
         self.carrierView.addSubview(imageView)
     }
     

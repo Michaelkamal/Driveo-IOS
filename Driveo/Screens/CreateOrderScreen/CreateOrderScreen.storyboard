@@ -56,7 +56,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="WeX-tO-e0u" firstAttribute="top" secondItem="EQv-CD-gSJ" secondAttribute="top" id="36W-bH-iQT"/>
-                                    <constraint firstItem="WeX-tO-e0u" firstAttribute="centerY" secondItem="EQv-CD-gSJ" secondAttribute="centerY" id="LxK-2w-6ml"/>
+                                    <constraint firstItem="WeX-tO-e0u" firstAttribute="centerY" secondItem="EQv-CD-gSJ" secondAttribute="centerY" priority="250" id="LxK-2w-6ml"/>
                                     <constraint firstAttribute="trailing" secondItem="WeX-tO-e0u" secondAttribute="trailing" id="QWn-ks-56Z"/>
                                     <constraint firstAttribute="bottom" secondItem="WeX-tO-e0u" secondAttribute="bottom" id="UIa-hb-bn3"/>
                                     <constraint firstItem="WeX-tO-e0u" firstAttribute="leading" secondItem="EQv-CD-gSJ" secondAttribute="leading" id="knV-44-1Ud"/>

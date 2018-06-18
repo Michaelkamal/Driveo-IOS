@@ -105,6 +105,10 @@
 		8484887520CF7679009444B2 /* NavigationDrawerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484887420CF7679009444B2 /* NavigationDrawerTableViewCell.swift */; };
 		84909A3520D6FCF8005D9716 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84909A3420D6FCF8005D9716 /* CircularProgressBar.swift */; };
 		84909A3720D700FC005D9716 /* CreateOrderViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84909A3620D700FC005D9716 /* CreateOrderViewProtocol.swift */; };
+		84909A3D20D7C43A005D9716 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84909A3A20D7C43A005D9716 /* EditProfileViewController.swift */; };
+		84909A3E20D7C43A005D9716 /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84909A3B20D7C43A005D9716 /* EditProfilePresenter.swift */; };
+		84909A3F20D7C43A005D9716 /* EditProfileScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84909A3C20D7C43A005D9716 /* EditProfileScreen.storyboard */; };
+		84909A4120D81F75005D9716 /* EditProfileViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84909A4020D81F75005D9716 /* EditProfileViewProtocol.swift */; };
 		84937BBB20C3660B00727437 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BB720C3660A00727437 /* LoginPresenter.swift */; };
 		84937BBC20C3660B00727437 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84937BB820C3660B00727437 /* Login.storyboard */; };
 		84937BBD20C3660B00727437 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84937BB920C3660B00727437 /* LoginModel.swift */; };
@@ -271,6 +275,10 @@
 		8484887420CF7679009444B2 /* NavigationDrawerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDrawerTableViewCell.swift; sourceTree = "<group>"; };
 		84909A3420D6FCF8005D9716 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		84909A3620D700FC005D9716 /* CreateOrderViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewProtocol.swift; sourceTree = "<group>"; };
+		84909A3A20D7C43A005D9716 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		84909A3B20D7C43A005D9716 /* EditProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
+		84909A3C20D7C43A005D9716 /* EditProfileScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditProfileScreen.storyboard; sourceTree = "<group>"; };
+		84909A4020D81F75005D9716 /* EditProfileViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewProtocol.swift; sourceTree = "<group>"; };
 		84937BAE20C3023A00727437 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		84937BB720C3660A00727437 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		84937BB820C3660B00727437 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -536,6 +544,7 @@
 				84D1854120C2D3580054BEBF /* SignupProtocols */,
 				8447456D20C07D2A0076D0EC /* LocationMangerProtocol.swift */,
 				84909A3820D70102005D9716 /* CreateOrderProtocols */,
+				84909A4220D81F7E005D9716 /* EditProfileProtocols */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -684,6 +693,25 @@
 			path = CreateOrderProtocols;
 			sourceTree = "<group>";
 		};
+		84909A3920D7C43A005D9716 /* Edit Profile Screen */ = {
+			isa = PBXGroup;
+			children = (
+				84909A3A20D7C43A005D9716 /* EditProfileViewController.swift */,
+				84909A3B20D7C43A005D9716 /* EditProfilePresenter.swift */,
+				84909A3C20D7C43A005D9716 /* EditProfileScreen.storyboard */,
+			);
+			name = "Edit Profile Screen";
+			path = "Driveo/Screens/Edit Profile Screen";
+			sourceTree = SOURCE_ROOT;
+		};
+		84909A4220D81F7E005D9716 /* EditProfileProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				84909A4020D81F75005D9716 /* EditProfileViewProtocol.swift */,
+			);
+			path = EditProfileProtocols;
+			sourceTree = "<group>";
+		};
 		84937BB420C3651300727437 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +770,7 @@
 				84D1854920C2E1F10054BEBF /* SignupScreen */,
 				84A2D4A820C2C91200576ACF /* PickLoacationScreen */,
 				844BD5ED20C31B65005E98FC /* CreateOrderScreen */,
+				84909A3920D7C43A005D9716 /* Edit Profile Screen */,
 				844BD60B20C4BB12005E98FC /* PaymentScreen */,
 			);
 			path = Screens;
@@ -1009,6 +1038,7 @@
 				842C037A20C5A3F100CA1C3B /* CreateRequest.storyboard in Resources */,
 				844C6FBD20C619DA00379783 /* NextButton.xib in Resources */,
 				846ABFF420C9689B003F8528 /* TripCell.xib in Resources */,
+				84909A3F20D7C43A005D9716 /* EditProfileScreen.storyboard in Resources */,
 				84A2D4E520C2CD7D00576ACF /* DropDownPlacesItem.xib in Resources */,
 				84626CAB20CD822E00AE2BB1 /* AboutScreen.storyboard in Resources */,
 				845D48FA20BEEF92000F16C1 /* Assets.xcassets in Resources */,
@@ -1191,6 +1221,7 @@
 				843E2DBB20C9DB9400DE459C /* OrderCustomHeader.swift in Sources */,
 				8408DFA320D31FEB009258AE /* ChangePasswordViewProtocol.swift in Sources */,
 				840345B220CB24E800322359 /* UpcomingOrdersTableView.swift in Sources */,
+				84909A3D20D7C43A005D9716 /* EditProfileViewController.swift in Sources */,
 				84A2D4DE20C2CD7D00576ACF /* DropDownCarrierItem.swift in Sources */,
 				840B1CD320C5B3D10046542D /* CreateRequestViewProtocol.swift in Sources */,
 				8447457B20C07D2A0076D0EC /* LocationMangerProtocol.swift in Sources */,
@@ -1208,6 +1239,7 @@
 				844BD5F120C35F12005E98FC /* Order.swift in Sources */,
 				841D74A920CB195600253AA4 /* OrderTabView.swift in Sources */,
 				84626CA420CBEA1A00AE2BB1 /* TripCellCollectionView.swift in Sources */,
+				84909A4120D81F75005D9716 /* EditProfileViewProtocol.swift in Sources */,
 				84187ED820C6D26C00FB5566 /* TripsViewProtocol.swift in Sources */,
 				843E2DC620CAB7F600DE459C /* OrderMockApi.swift in Sources */,
 				84A2D4E120C2CD7D00576ACF /* PickLoacationPresenter.swift in Sources */,
@@ -1275,6 +1307,7 @@
 				846FB6FB20D52DC400D90AC5 /* OrderUpcomingCollectionView.swift in Sources */,
 				844BD5FE20C3778A005E98FC /* CreateOrderViewController.swift in Sources */,
 				84D1854D20C2E4BE0054BEBF /* SignupPresenter.swift in Sources */,
+				84909A3E20D7C43A005D9716 /* EditProfilePresenter.swift in Sources */,
 				84D1855220C2E6CC0054BEBF /* StringExtension.swift in Sources */,
 				84D1854B20C2E3640054BEBF /* SignupView.swift in Sources */,
 				846CCAFA20D6A99F000E8D35 /* CreateOrderPresenter.swift in Sources */,

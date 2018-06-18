@@ -24,7 +24,7 @@ class DropDownCarrierItem: UITableViewCell {
     }
     public func reload(item: Provider) {
         ratingLabel.text = item.rating
-        carrierLogo.sd_setImage(with: URL(string:ApiBaseUrl.mainApi.rawValue+item.image!.url!), completed: nil) 
+        carrierLogo.sd_setImage(with: URL(string:item.image!.url!), completed: nil)
         
     }
 }
