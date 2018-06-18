@@ -20,6 +20,7 @@ enum ScreenController:String{
     case createRequestScreen = "CreateRequestView"
     case tripsScreen = "OrderTabView"
     case editProfileScreen = "EditProfileViewController"
+    case aboutScreen = "AboutScreen"
     
     func storyBoardName() -> String {
         var storyBoardName:String
@@ -42,6 +43,8 @@ enum ScreenController:String{
             storyBoardName="Login"
         case .editProfileScreen:
             storyBoardName="EditProfileScreen"
+        case .aboutScreen:
+            storyBoardName="AboutScreen"
         }
         return storyBoardName
     }

@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nD-Vt-dZr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nD-Vt-dZr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--About Screen-->
         <scene sceneID="5iX-oh-5Wq">
             <objects>
-                <viewController id="9nD-Vt-dZr" customClass="AboutScreen" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutScreen" id="9nD-Vt-dZr" customClass="AboutScreen" customModule="Driveo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b65-te-fTj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,9 +43,10 @@
                                             <constraint firstAttribute="width" constant="35.770000000000003" id="Prt-Zi-vqd"/>
                                             <constraint firstAttribute="height" constant="16.75" id="ir0-Hl-oKG"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="ic_close"/>
+                                        <state key="normal" title="Button" image="ic_three_bars"/>
                                         <connections>
                                             <action selector="backButton:" destination="9nD-Vt-dZr" eventType="touchUpInside" id="2YX-Eo-XIe"/>
+                                            <action selector="didTapOnThreeBars:" destination="9nD-Vt-dZr" eventType="touchUpInside" id="JVJ-4s-TEX"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_splash" translatesAutoresizingMaskIntoConstraints="NO" id="REG-Md-Vai">
@@ -86,6 +93,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2g9-AT-chf"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutText" destination="HGW-UE-uDH" id="s9o-ax-wwC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nN-i0-dez" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,7 +103,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_close" width="42" height="43"/>
         <image name="ic_splash" width="435" height="250"/>
+        <image name="ic_three_bars" width="20" height="20"/>
     </resources>
 </document>

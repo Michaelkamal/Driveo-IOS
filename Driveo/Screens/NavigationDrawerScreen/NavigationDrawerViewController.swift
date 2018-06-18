@@ -13,6 +13,7 @@ enum NavigationDrawerOptions:Int {
     case editProfile
     case chagePassword
     case logout
+    case about
     
     internal static var caseCount: Int {
         var count = 0
@@ -32,7 +33,8 @@ enum NavigationDrawerOptions:Int {
                 return "Change password"
             case .logout:
                 return "Logout"
-            
+            case .about:
+                return "About"
             }
         }
     }
@@ -82,14 +84,13 @@ extension NavigationDrawerViewController: UITableViewDelegate,UITableViewDataSou
         
         if let option = NavigationDrawerOptions.init(rawValue: indexPath.row){
         cell.optionLabel.text=option.description
-            if (option.description == "Logout"){
+            if (option.description == "Logout" || option.description == "About" ){
             cell.moreImage.isHidden=true
             }else{
                 cell.moreImage.isHidden=false
             }
             switch option{
             case .trips:
-                
                 cell.view.addTapGesture(tapNumber: 1, target: self, action: #selector(pushTrips))
             case .editProfile:
                 cell.view.addTapGesture(tapNumber: 1, target: self, action: #selector(pushEditProfile))
@@ -100,6 +101,9 @@ extension NavigationDrawerViewController: UITableViewDelegate,UITableViewDataSou
                 
                 cell.view.addTapGesture(tapNumber: 1, target: self, action: #selector(logout))
             
+            case .about:
+                
+                cell.view.addTapGesture(tapNumber: 1, target: self, action: #selector(pushAbout))
             }
         }
         return cell
@@ -120,6 +124,12 @@ extension NavigationDrawerViewController: UITableViewDelegate,UITableViewDataSou
     }
     @objc func pushChangePassword(){
         let screen = ScreenController.changePasswordScreen;
+        let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
+        let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc func pushAbout(){
+        let screen = ScreenController.aboutScreen;
         let destinationStoryboard = UIStoryboard(name: screen.storyBoardName(), bundle: nil)
         let vc = destinationStoryboard.instantiateViewController(withIdentifier: screen.rawValue)
         self.navigationController?.pushViewController(vc, animated: true)
