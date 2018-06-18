@@ -26,14 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey(AppDelegate.MAPS_API_KEY)
         IQKeyboardManager.sharedManager().enable = true
        
+        
+        
         FirebaseApp.configure()
         
         Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization( options: [.alert, .badge, .sound], completionHandler: {_, _ in })
         
-        let refreshToken = InstanceID.instanceID().token()
-        print(" Message \(refreshToken)") // da eb3ato lel firebase w fel refresh token eb3atoo lel back end tany w hen a tav3an hat3ml save fel back userdefaults w lw ma feesh 7aga htb3t lel backend w tsave  gheer kda msh ht3ml kda gheer fel refresh token
+        let deviceToken = InstanceID.instanceID().token()
+        print(" Message \(deviceToken)") // da eb3ato lel firebase w fel refresh token eb3atoo lel back end tany w hen a tav3an hat3ml save fel back userdefaults w lw ma feesh 7aga htb3t lel backend w tsave  gheer kda msh ht3ml kda gheer fel refresh token
         
         application.registerForRemoteNotifications()
         
@@ -134,6 +136,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    //Firebase APNS
+    
     @objc func refreshToken(notification: NSNotification) {
         let refreshToken = InstanceID.instanceID().token()
         print(" Message \(refreshToken)")
@@ -163,6 +167,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         print("userNotificationCenter , willPresent notification , withCompletionHandler completionHandler")
         print("-----------------------------------------------")
         print(userInfo)
+        print("/*/*/*/*/*/*/*/*/*/*/*/*/")
+        print(notification.request.content)
         
         ///notificationOnForeground(userInfo)
         
@@ -185,6 +191,9 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         print("userNotificationCenter , didReceive response, withCompletionHandler completionHandler")
         print("-----------------------------------------------")
         print(userInfo)
+        print("/*/*/*/*/*/*/*/*/*/*/*/*/")
+        print(response.notification.request.content)
+        print("/*/*/*/*/*/*/*/*/*/*/*/*/")
         
        // notificationOnBackground(userInfo)
         
