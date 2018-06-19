@@ -53,7 +53,7 @@ class NavigationDrawerViewController: UIViewController {
     private lazy var user = UserDAL.sharedInstance().getUser()
     override func viewDidLoad() {
         super.viewDidLoad()
-        profilePicture.sd_setImage(with: URL(string:(user?.avatar?.url)!), completed: nil)
+      //  profilePicture.sd_setImage(with: URL(string:(user?.avatar?.url)!), completed: nil)
         if let userName=user?.name{
              self.userName.text=userName
         }else{

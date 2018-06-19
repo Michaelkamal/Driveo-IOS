@@ -32,6 +32,7 @@ enum SuffixUrl:String {
     case order = "orders"
     case update = "authentication/update"
     case payment = "payments"
+    case deleteOrder = "orders/cancel/"
 }
 
 

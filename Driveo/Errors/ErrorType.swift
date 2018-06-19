@@ -22,4 +22,5 @@ enum ErrorType:String,Error{
     case pinCodeError = "code not valid"
     case errorTitle = "Error"
     case deleteTrip = "Are you sure you want to delete this trip"
+    case orderDeleted = "Order Deleted"
     }
