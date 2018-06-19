@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SDWebImage
 enum NavigationDrawerOptions:Int {
     case trips
     case editProfile
@@ -46,12 +46,19 @@ class NavigationDrawerViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var userName: UILabel!
     @IBAction func didTapOnCloseButton(_ sender: UIButton) {
         popToLeft()
     }
-    
+    private lazy var user = UserDAL.sharedInstance().getUser()
     override func viewDidLoad() {
         super.viewDidLoad()
+        profilePicture.sd_setImage(with: URL(string:(user?.avatar?.url)!), completed: nil)
+        if let userName=user?.name{
+             self.userName.text=userName
+        }else{
+             self.userName.text=user?.email
+        }
         profilePicture.addTapGesture(tapNumber: 1, target: self, action: #selector(ImageProviderAlert))
         if(CGFloat(NavigationDrawerOptions.caseCount) * tableView.rowHeight > tableView.frame.height)
         {
@@ -164,12 +171,14 @@ extension NavigationDrawerViewController{
             self.getPhotoFromCamera()
         })
         
-        let cancelAction:UIAlertAction = UIAlertAction.init(title: "Delete", style: .cancel, handler: {(alert: UIAlertAction!) in
-            // TODO : delete user image
+        let deleteAction:UIAlertAction = UIAlertAction.init(title: "Delete", style: .default, handler: {(alert: UIAlertAction!) in
             self.profilePicture.image=#imageLiteral(resourceName: "ic_user")
+            self.changeImage(image:#imageLiteral(resourceName: "ic_user"))
         })
+        let cancelAction:UIAlertAction = UIAlertAction.init(title: "cancel", style: .cancel, handler: nil)
         chooseImageProviderAlert.addAction(photoFromCamera)
         chooseImageProviderAlert.addAction(photoFromGallery)
+        chooseImageProviderAlert.addAction(deleteAction)
         chooseImageProviderAlert.addAction(cancelAction)
         
         present(chooseImageProviderAlert, animated: true, completion: nil)
@@ -211,7 +220,25 @@ extension NavigationDrawerViewController : UIImagePickerControllerDelegate, UINa
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
             if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
           profilePicture.image=image
+                
+                self.changeImage(image:image)
             }
             dismiss(animated: true, completion: nil)
         }
+}
+extension NavigationDrawerViewController {
+    
+    func changeImage(image:UIImage){
+        let model = NetworkDAL.sharedInstance()
+        let defaults = UserDefaults.standard
+        if let token = defaults.string(forKey: "auth_token"){
+            model.processPutReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.update.rawValue, andParameters: ["avatar":UIImageJPEGRepresentation(image, 0.9)!], onSuccess: { (data) in
+                if let response = try? JSONDecoder().decode(SigninResult.self, from: data){
+                let user = response.user
+                    UserDAL.sharedInstance().saveUser(user: user!)
+                self.user = user
+                }
+            }, onFailure: {(err) in}, headers: ["Authorization":token])
+        }
+    }
 }

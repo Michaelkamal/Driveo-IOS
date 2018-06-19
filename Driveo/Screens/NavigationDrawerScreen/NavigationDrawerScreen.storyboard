@@ -29,7 +29,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYr-c2-eCd" userLabel="User Name Label">
-                                <rect key="frame" x="100" y="302" width="175" height="0.0"/>
+                                <rect key="frame" x="10" y="302" width="355" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50588235294117645" green="0.5490196078431373" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -107,9 +107,9 @@
                             <constraint firstItem="4dw-bT-0px" firstAttribute="height" secondItem="PgZ-Ez-OQm" secondAttribute="height" multiplier="0.3" id="IbO-9E-7lE"/>
                             <constraint firstItem="bSQ-04-RLz" firstAttribute="top" secondItem="eYr-c2-eCd" secondAttribute="bottom" constant="47.700000000000003" id="Sz9-iL-U8t"/>
                             <constraint firstItem="4dw-bT-0px" firstAttribute="centerX" secondItem="Zze-vf-Ft0" secondAttribute="centerX" id="U5f-ti-LQ9"/>
-                            <constraint firstItem="PgZ-Ez-OQm" firstAttribute="trailing" secondItem="eYr-c2-eCd" secondAttribute="trailing" constant="100" id="UDf-v4-rw1"/>
+                            <constraint firstItem="PgZ-Ez-OQm" firstAttribute="trailing" secondItem="eYr-c2-eCd" secondAttribute="trailing" constant="10" id="UDf-v4-rw1"/>
                             <constraint firstItem="4dw-bT-0px" firstAttribute="top" secondItem="PgZ-Ez-OQm" secondAttribute="top" constant="69.670000000000002" id="c7C-tx-ghu"/>
-                            <constraint firstItem="eYr-c2-eCd" firstAttribute="leading" secondItem="PgZ-Ez-OQm" secondAttribute="leading" constant="100" id="dbS-LR-PjO"/>
+                            <constraint firstItem="eYr-c2-eCd" firstAttribute="leading" secondItem="PgZ-Ez-OQm" secondAttribute="leading" constant="10" id="dbS-LR-PjO"/>
                             <constraint firstItem="bSQ-04-RLz" firstAttribute="bottom" secondItem="PgZ-Ez-OQm" secondAttribute="bottom" id="j1O-1z-c7v"/>
                             <constraint firstItem="bSQ-04-RLz" firstAttribute="leading" secondItem="PgZ-Ez-OQm" secondAttribute="leading" id="jPd-mL-NWt"/>
                             <constraint firstItem="4dw-bT-0px" firstAttribute="width" secondItem="PgZ-Ez-OQm" secondAttribute="width" multiplier="0.5" id="k3L-PR-3mI"/>
@@ -123,6 +123,7 @@
                     <connections>
                         <outlet property="profilePicture" destination="4dw-bT-0px" id="4j2-lz-BlT"/>
                         <outlet property="tableView" destination="bSQ-04-RLz" id="F4o-ZF-JRt"/>
+                        <outlet property="userName" destination="eYr-c2-eCd" id="2EV-zi-UNQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KhX-RK-cRV" userLabel="First Responder" sceneMemberID="firstResponder"/>

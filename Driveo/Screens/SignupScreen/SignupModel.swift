@@ -35,6 +35,7 @@ class SignupModel : SignupModelProtocol{
             if  msg == MsgResponse.success.rawValue {
                 let token = response.auth_token
                 presenter.goToVerifyScreen(withToken: token)
+                UserDAL.sharedInstance().saveUser(user: response.user)
             }else{
                 presenter.alertToShow(withTitle: "Error", andMessage:msg )
             }

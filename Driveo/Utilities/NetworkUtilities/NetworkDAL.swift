@@ -157,7 +157,6 @@ public class NetworkDAL{
             for (key, value) in param {
                 multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
             }
-            multipartFormData.append(String(images.count).data(using: String.Encoding.utf8)!, withName: "images_count")
             if images.count > 0 {
                 for i in 0..<images.count{
                     let image = images[i]
@@ -205,7 +204,11 @@ public class NetworkDAL{
                 
                 if(jsonData.dictionary!["message"]?.string == MsgResponse.success.rawValue)
                 {
-                onSuccess(response.data!);
+                    if let rawData = try? jsonData.rawData(){
+                        onSuccess(rawData)
+                    }else{
+                        onSuccess(response.data!)
+                    }
                 }
                 else{
                     onFailure(ErrorType.internet)

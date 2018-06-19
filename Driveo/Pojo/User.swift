@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct  User : Decodable{
+struct  User : Codable{
 
     var id:Int?
     var name:String?

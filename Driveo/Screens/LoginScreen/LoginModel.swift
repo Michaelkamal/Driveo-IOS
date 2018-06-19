@@ -35,6 +35,7 @@ class LoginModel : LoginModelProtocol{
                 defaults.set(true, forKey :"verified")
                 defaults.synchronize()
                 lp.loginSuccess(page: "next")
+                UserDAL.sharedInstance().saveUser(user: response.user!)
             }else if msg == MsgResponse.notVerified.rawValue {
                 lp.loginSuccess(page: "verification")
                 
