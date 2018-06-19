@@ -271,6 +271,16 @@ extension CreateOrderViewController:CreateOrderViewProtocol{
         }
     }
     
+    func showAlert(withTitle title :String , andMessage msg:String){
+       let alert = UIViewController.getCustomAlertController(ofErrorType: msg, withTitle: title)
+        let dismissAlertAction:UIAlertAction = UIAlertAction(title: "OK", style: .default,handler: {
+            (alertAction) in
+            self.presentToNextScreen()
+        })
+        alert.addAction(dismissAlertAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func showAlert(ofError error: ErrorType) {
         if (orderSubmitted){
             orderSubmitted=false

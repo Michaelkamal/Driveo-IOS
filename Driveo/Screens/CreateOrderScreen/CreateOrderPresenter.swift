@@ -30,12 +30,12 @@ class CreateOrderPresenter {
         }
         if let token = defaults.string(forKey: "auth_token"),let JSONData = try? JSONEncoder().encode(order),let dictionary = try? JSONSerialization.jsonObject(with: JSONData, options: .allowFragments) as? [String: Any]
         {
-            print(token)
             view.displayProgressBar()
             view.isSubmitted=true
             model.processPostUploadMultiPart(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.order.rawValue, andParameters: dictionary!, onSuccess: { (data) in
             self.view.isSubmitted=false
-            self.view.presentToNextScreen()
+            order.nullifyOrder()
+            self.view.showAlert(withTitle: "Success", andMessage: "Order added successfully")
         },onProgress: { (progress) in
             self.view.updateProgressBar(withValue: progress)
         } ,onFailure: { (err) in
