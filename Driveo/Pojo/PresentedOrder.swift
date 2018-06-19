@@ -15,7 +15,7 @@ struct PresentedOrder: Decodable {
     var dest_latitude:Float?
     var dest_longitude:Float?
     var dropoff_location:String?
-    var images:[OrderImages]?
+    //var images:[OrderImages]?
     var order_id:Int?
     var payment_method:String?
     var pickup_location:String?
