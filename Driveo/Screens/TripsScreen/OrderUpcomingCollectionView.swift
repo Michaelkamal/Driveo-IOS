@@ -136,4 +136,60 @@ class OrderUpcomingCollectionView: UICollectionViewController , UICollectionView
         alert?.addAction(dismissAlertAction)
     }
 
+    
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        alert = UIViewController.getCustomAlertController(ofErrorType: ErrorType.deleteTrip.rawValue, withTitle: ErrorType.errorTitle.rawValue)
+        let dismissAlertAction:UIAlertAction = UIAlertAction(title: "Cancel", style: .default)
+        alert?.addAction(dismissAlertAction)
+        
+           let cell = collectionView.cellForItem(at: indexPath) as! TripCellCollectionView
+        
+        var idText = cell.idLabel.text
+        let index = idText!.index(idText!.startIndex, offsetBy: 2)
+        let finalString = idText?.substring(from: index)
+      //  let finalStringNumber = String(finalString)
+        let order_id = Int(finalString!)
+        
+        let deleteAction:UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: {UIAlertAction in
+            
+     
+            
+            
+            if NetworkDAL.isInternetAvailable() == true {
+                let defaults = UserDefaults.standard
+                let networkObj = NetworkDAL.sharedInstance()
+                self.showLoading()
+                networkObj.processPatchReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.order.rawValue, andParameters: ["order_id":order_id ], onSuccess: { (myData) in
+                    self.dismissLoading()
+                    do {
+                        let response = try? JSONDecoder().decode(GenericResult.self, from: myData)
+                        if response?.message == MsgResponse.success.rawValue {
+                            //alert order deleted
+                            // delete this element
+                            self.upcomingTrips.remove(at: indexPath.row)
+                            self.collectionView?.reloadData()
+                            let deletionAlert = UIViewController.getCustomAlertController(ofErrorType: "Order Deleted", withTitle: ErrorType.errorTitle.rawValue)
+                            self.present(deletionAlert, animated: true, completion: nil)
+                        }
+                    }catch{
+                        //alert Connection Error
+                        let connectionAlert = UIViewController.getCustomAlertController(ofErrorType: ErrorType.internet.rawValue, withTitle: ErrorType.errorTitle.rawValue)
+                        self.present(connectionAlert, animated: true, completion: nil)
+                    }
+                }, onFailure: { (msg) in
+                     self.dismissLoading()
+                    }, headers: ["auth_token":defaults.string(forKey: "auth_token")!])
+            }else{
+                self.dismiss(animated: false, completion: nil)
+                let connectionAlert = UIViewController.getCustomAlertController(ofErrorType: ErrorType.internet.rawValue, withTitle: ErrorType.errorTitle.rawValue)
+                self.present(connectionAlert, animated: true, completion: nil)
+            }
+            
+            })
+        alert?.addAction(deleteAction)
+        self.present(alert!, animated: true, completion: nil)
+       
+    }
+    
 }
