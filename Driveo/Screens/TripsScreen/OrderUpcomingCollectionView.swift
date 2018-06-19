@@ -69,7 +69,6 @@ class OrderUpcomingCollectionView: UICollectionViewController , UICollectionView
         
         cell.addressLabel.text = upcomingTrips[index].pickup_location
         cell.dateLabel.text = Date.getFormattedDate(string: upcomingTrips[index].time!)
-        cell.dateLabel.text = upcomingTrips[index].time
         cell.idLabel.text = "id#" + String(upcomingTrips[index].order_id!)
         cell.orderStatusLabel.text = upcomingTrips[index].status
         
