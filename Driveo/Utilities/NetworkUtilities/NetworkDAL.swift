@@ -248,7 +248,7 @@ public class NetworkDAL{
                 
                 upload.responseJSON { response in
                     if let value = response.result.value as? [String:Any]{
-                        if ( value["message"] as! String == MsgResponse.success.rawValue)
+                        if ( value["message"] as? String == MsgResponse.success.rawValue)
                         {
                             onSuccess(response)
                         }else{
