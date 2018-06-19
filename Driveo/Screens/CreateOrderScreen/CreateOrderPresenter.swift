@@ -39,7 +39,7 @@ class CreateOrderPresenter {
         },onProgress: { (progress) in
             self.view.updateProgressBar(withValue: progress)
         } ,onFailure: { (err) in
-            self.view.showAlert(ofError: ErrorType.internet)
+            self.view.showAlert(withTitle: "error" ,andMessage: err)
         },headers:["Authorization":token],andImages: images)
         }}
 }

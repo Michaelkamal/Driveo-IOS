@@ -18,12 +18,20 @@ class AboutScreen: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        aboutText.text = " a single navigation stack to present or push the new View Controller with no interface to navigate back. This approach usually keeps the old View Controllers in memory. Using the key window to switch the window.rootViewController. This approach will kill the old ViewControllers, but it doesn’t look good from the UI standpoint. This also doesn’t allow you to easily navigate back and forward when needed.  But how about building the easy-maintainable app structure, that allow"
-        // Do any additional setup after loading the view.
-    
-        let network = NetworkDAL.sharedInstance()
-        
-       
+        let defaults = UserDefaults.standard
+        if let token = defaults.string(forKey: "auth_token") {
+            NetworkDAL.sharedInstance().processReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.about.rawValue, withParser: { (JSON) -> [Any] in
+                
+                return [JSON.dictionary!["about_us"]!]
+            },andHeaders:["Authorization":token],
+              onSuccess: { (aboutUs) in
+                DispatchQueue.main.async {
+                    self.aboutText.text = String(describing: aboutUs.first!)
+                }
+            }, onFailure: { err  in
+                print(err)
+            })
+        }
    
         
     }

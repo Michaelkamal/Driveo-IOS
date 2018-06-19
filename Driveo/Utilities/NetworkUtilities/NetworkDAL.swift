@@ -25,7 +25,7 @@ enum SuffixUrl:String {
     case providers = "providers"
     case historyOrders = "orders/showhistory/"
     case upcomingOrders = "orders/showupcoming/"
-    case about = "aboutus"
+    case about = "about"
     case login = "authentication/signin"
     case resetPassword = "authentication/resetpassword/?hash="
     case changePassword = "authentication/changepassword"
@@ -151,7 +151,7 @@ public class NetworkDAL{
         andUrlSuffix urlSuffix:String,
         andParameters param: [String:Any],
         onSuccess: @escaping (_ :DataResponse<Any>)->Void,onProgress:@escaping(_ :Double)->Void ,
-        onFailure:  @escaping (_ networkError:ErrorType)->Void
+        onFailure:  @escaping (_ networkError:String)->Void
         , headers:HTTPHeaders? = nil,andImages images:[UIImage] = [])-> Void{
         
         Alamofire.upload(multipartFormData: { multipartFormData in
@@ -182,12 +182,12 @@ public class NetworkDAL{
                         if ( value["message"] as! String == MsgResponse.success.rawValue)
                     {
                        onSuccess(response)
-                        }else{
-                    onFailure(ErrorType.internet)
-                    }
-                    }else{onSuccess(response)}}
+                    }else{
+                    onFailure(value["message"] as! String )
+                    }}
+                }
             case .failure(let encodingError):
-                onFailure(ErrorType.internet)
+                onFailure(ErrorType.internet.rawValue)
             }
         })
     }
