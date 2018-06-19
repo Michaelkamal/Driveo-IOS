@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 protocol CreateRequestPresenterProtocol {
     
-    func createRequestclicked(withTitle title:String, withDescription :String, withImages: [UIImage])
+    func createRequestclicked(withTitle title:String, withDescription :String, withImages: [UIImage],andWeight: Double)
     
     func deletePhotoAlert(withindex index:Int)
     

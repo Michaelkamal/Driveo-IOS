@@ -53,7 +53,12 @@ class NavigationDrawerViewController: UIViewController {
     private lazy var user = UserDAL.sharedInstance().getUser()
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(user?.avatar?.url == "")
+        {
+            profilePicture.image = #imageLiteral(resourceName: "ic_user")
+        }else{
         profilePicture.sd_setImage(with: URL(string:(user?.avatar?.url)!), completed: nil)
+        }
         if let userName=user?.name{
              self.userName.text=userName
         }else{
@@ -232,13 +237,16 @@ extension NavigationDrawerViewController {
         let model = NetworkDAL.sharedInstance()
         let defaults = UserDefaults.standard
         if let token = defaults.string(forKey: "auth_token"){
-            model.processPutReq(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.update.rawValue, andParameters: ["avatar":UIImageJPEGRepresentation(image, 0.9)!], onSuccess: { (data) in
-                if let response = try? JSONDecoder().decode(SigninResult.self, from: data){
-                let user = response.user
+            model.processPutUploadMultiPart(withBaseUrl: ApiBaseUrl.mainApi, andUrlSuffix: SuffixUrl.update.rawValue, andParameters: [:], headers: ["Authorization":token], onSuccess: { (data) in
+                if let response = try? JSONDecoder().decode(SigninResult.self, from: data.data!){
+                    let user = response.user
                     UserDAL.sharedInstance().saveUser(user: user!)
-                self.user = user
+                    self.user = user
                 }
-            }, onFailure: {(err) in}, headers: ["Authorization":token])
+            }, onFailure: { (err) in
+                
+            }, andImage: image)
+            
         }
     }
 }

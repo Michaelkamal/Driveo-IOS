@@ -74,7 +74,7 @@ final class Order  {
     
     internal var price:Double?
     
-    internal var weight:Double?=10.0
+    internal var weight:Double?
     
     internal var provider:Provider!
     
@@ -111,11 +111,12 @@ final class Order  {
         destination=nil
         details=nil
         price=nil
-        weight=10.0
+        weight=nil
         provider.id=nil
         provider.name=nil
         provider.rating=nil
         provider.image=nil
+        paymentMethod=nil
         completeStatus=0
     }
     
