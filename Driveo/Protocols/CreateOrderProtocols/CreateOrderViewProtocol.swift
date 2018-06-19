@@ -12,4 +12,5 @@ protocol CreateOrderViewProtocol:GenericProtocol {
     func displayProgressBar()
     func updateProgressBar(withValue value:Double)
     func removeProgressBar()
+    func showAlert(withTitle title :String , andMessage msg:String)
 }

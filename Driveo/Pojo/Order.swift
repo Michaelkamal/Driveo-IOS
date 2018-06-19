@@ -39,19 +39,23 @@ final class Order  {
     
     internal var source:OrderLocation?{
         didSet{
-            if source!.isComplete(),oldValue == nil
+            if let source=source{
+            if source.isComplete(),oldValue == nil
             {
                 completeStatus+=1
                 orderCurrentStep = .sourceLocation
             }
-        }
+            }}
     }
     internal var destination:OrderLocation?{
         didSet{
-            if destination!.isComplete(),oldValue == nil
+            
+            if let destination=destination{
+            if destination.isComplete(),oldValue == nil
             {
                 completeStatus+=1
                 orderCurrentStep = .destinationLocation
+            }
             }
         }
     }
@@ -70,7 +74,7 @@ final class Order  {
     
     internal var price:Double?
     
-    internal var weight:Double?
+    internal var weight:Double?=10.0
     
     internal var provider:Provider!
     
@@ -99,6 +103,21 @@ final class Order  {
     }
     
     init(){orderCurrentStep = .sourceLocation }
+    internal func nullifyOrder(){
+        orderID=nil
+        orderCurrentStep=OrderCurrentStep.sourceLocation
+        orderStatus = .upComing
+        source=nil
+        destination=nil
+        details=nil
+        price=nil
+        weight=10.0
+        provider.id=nil
+        provider.name=nil
+        provider.rating=nil
+        provider.image=nil
+        completeStatus=0
+    }
     
 }
 extension Order : Codable{

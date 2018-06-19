@@ -183,7 +183,7 @@ public class NetworkDAL{
                         }else{
                     onFailure(ErrorType.internet)
                     }
-                    }}
+                    }else{onSuccess(response)}}
             case .failure(let encodingError):
                 onFailure(ErrorType.internet)
             }
