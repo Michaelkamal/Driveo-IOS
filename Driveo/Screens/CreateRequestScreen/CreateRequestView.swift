@@ -31,6 +31,7 @@ class CreateRequestView: UIViewController, CreateRequestViewProtocol ,UIGestureR
     @IBOutlet weak var titleTextField:   BeautifulTextField!
     @IBOutlet weak var collectionViewWidth: NSLayoutConstraint!
     
+    @IBOutlet weak var weightTextField: BeautifulTextField!
     @IBOutlet weak var uploadImageCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,7 @@ class CreateRequestView: UIViewController, CreateRequestViewProtocol ,UIGestureR
         if let details=userOrder.details{
             titleTextField.text=details.title
             descriptionTextView.text=details.description
+            weightTextField.text=String(describing: userOrder.weight)
             if let images=details.images,images.count>0
             {
                 self.images = images + [#imageLiteral(resourceName: "ic_upload_image")]
@@ -74,10 +76,11 @@ class CreateRequestView: UIViewController, CreateRequestViewProtocol ,UIGestureR
     
     @IBAction func nextButtonClicked(_ sender: Any) {
         var sendImagesArray:[UIImage] = images
+        if let weight=Double(weightTextField.text!){
         sendImagesArray.remove(at: sendImagesArray.count-1)
-        presenter.createRequestclicked(withTitle: titleTextField.text!, withDescription: descriptionTextView.text, withImages:sendImagesArray)
+        presenter.createRequestclicked(withTitle: titleTextField.text!, withDescription: descriptionTextView.text, withImages:sendImagesArray,andWeight: weight)
     }
-    
+    }
     
     func deletePhoto(atIndex index: Int) {
         images.remove(at: index)

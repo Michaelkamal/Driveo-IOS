@@ -32,15 +32,18 @@ class CreateRequestPresenter : CreateRequestPresenterProtocol{
         createRequestView.deletePhoto(atIndex: index)
     }
     
-    func createRequestclicked(withTitle title: String, withDescription: String, withImages: [UIImage]) {
+    func createRequestclicked(withTitle title: String, withDescription: String, withImages: [UIImage],andWeight weight:Double) {
         
         if title == "" {
             createRequestView.showAlert(withTitle: "Error", withMsg: "Request Should have a title")
+        }else  if weight<0,weight>100 {
+            createRequestView.showAlert(withTitle: "Error", withMsg: "Weight should be in range 0-100 ")
         }
         else if NetworkDAL.isInternetAvailable() == false {
             createRequestView.showAlert(withTitle: "Error", withMsg: ErrorType.internet.rawValue)
         }else{
             userOrder.details = OrderDetails(withTitle: title,andDescription: withDescription,andImagesArray: withImages)
+            userOrder.weight=weight
             createRequestView.goToNextScreen()
         }
         

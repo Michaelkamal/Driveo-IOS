@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QvT-vd-N9N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QvT-vd-N9N">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Create Request View-->
         <scene sceneID="htc-2F-LS0">
@@ -144,6 +150,15 @@
                                             <action selector="nextButtonClicked:" destination="QvT-vd-N9N" eventType="touchUpInside" id="eME-V7-8g0"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Weight" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="flo-Pr-M3K" userLabel="Weight" customClass="BeautifulTextField" customModule="BeautifulTextField">
+                                        <rect key="frame" x="54" y="384" width="301" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32.140000000000001" id="dc4-mr-gOR"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vrj-w4-dOw">
                                         <rect key="frame" x="54" y="396" width="212" height="21"/>
                                         <constraints>
@@ -159,7 +174,7 @@
                                     <constraint firstItem="CRS-BP-yp8" firstAttribute="leading" secondItem="YcH-ai-Nez" secondAttribute="leading" priority="750" constant="71.109999999999999" id="4tV-a5-lci"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="N3b-vX-jOI" secondAttribute="trailing" constant="43.460000000000001" id="6Bh-Ql-Mhk"/>
                                     <constraint firstAttribute="bottom" secondItem="r2W-nQ-Yjp" secondAttribute="bottom" constant="8" id="7pb-iJ-CGm"/>
-                                    <constraint firstItem="Vrj-w4-dOw" firstAttribute="top" secondItem="N3b-vX-jOI" secondAttribute="bottom" constant="32.140000000000001" id="8z0-JT-60i"/>
+                                    <constraint firstItem="VWV-Tq-BDK" firstAttribute="top" secondItem="Vrj-w4-dOw" secondAttribute="bottom" constant="20" id="8CO-ad-N3i"/>
                                     <constraint firstItem="r2W-nQ-Yjp" firstAttribute="leading" secondItem="YcH-ai-Nez" secondAttribute="leading" constant="56.5" id="CkW-fY-fnO"/>
                                     <constraint firstItem="vuk-cx-2Hb" firstAttribute="centerX" secondItem="YcH-ai-Nez" secondAttribute="centerX" id="D7r-Az-Vpd"/>
                                     <constraint firstItem="N3b-vX-jOI" firstAttribute="centerX" secondItem="YcH-ai-Nez" secondAttribute="centerX" id="I3H-aq-L6Y"/>
@@ -167,7 +182,11 @@
                                     <constraint firstItem="VWV-Tq-BDK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YcH-ai-Nez" secondAttribute="leading" constant="43" id="JO7-lW-fNE"/>
                                     <constraint firstItem="CRS-BP-yp8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YcH-ai-Nez" secondAttribute="leading" constant="54.700000000000003" id="Jdx-eZ-Eoo"/>
                                     <constraint firstAttribute="trailing" secondItem="N3b-vX-jOI" secondAttribute="trailing" priority="750" constant="56.670000000000002" id="LPD-Ps-hdq"/>
+                                    <constraint firstItem="flo-Pr-M3K" firstAttribute="top" secondItem="N3b-vX-jOI" secondAttribute="bottom" constant="20" id="MMF-Ub-FyS"/>
+                                    <constraint firstAttribute="trailing" secondItem="flo-Pr-M3K" secondAttribute="trailing" constant="56.5" id="O99-ZS-hRC"/>
                                     <constraint firstItem="r2W-nQ-Yjp" firstAttribute="centerX" secondItem="YcH-ai-Nez" secondAttribute="centerX" id="PzR-Ag-cGb"/>
+                                    <constraint firstItem="Vrj-w4-dOw" firstAttribute="top" secondItem="flo-Pr-M3K" secondAttribute="bottom" constant="20" id="QDM-Nx-jPq"/>
+                                    <constraint firstItem="flo-Pr-M3K" firstAttribute="leading" secondItem="YcH-ai-Nez" secondAttribute="leading" constant="56.5" id="RQf-6i-EhN"/>
                                     <constraint firstItem="N3b-vX-jOI" firstAttribute="top" secondItem="CRS-BP-yp8" secondAttribute="bottom" constant="12.529999999999999" id="Sxj-YY-CcM"/>
                                     <constraint firstAttribute="trailing" secondItem="CRS-BP-yp8" secondAttribute="trailing" priority="750" constant="71" id="ToI-kc-YwR"/>
                                     <constraint firstAttribute="trailing" secondItem="Vrj-w4-dOw" secondAttribute="trailing" priority="750" constant="71.109999999999999" id="VKb-5y-sdY"/>
@@ -183,7 +202,6 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vrj-w4-dOw" secondAttribute="trailing" constant="54" id="igo-r7-hgX"/>
                                     <constraint firstItem="vuk-cx-2Hb" firstAttribute="leading" secondItem="YcH-ai-Nez" secondAttribute="leading" constant="56.5" id="mVo-mV-cgS"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VWV-Tq-BDK" secondAttribute="trailing" constant="43" id="o2r-HH-3pb"/>
-                                    <constraint firstItem="VWV-Tq-BDK" firstAttribute="top" secondItem="Vrj-w4-dOw" secondAttribute="bottom" constant="11" id="oGD-rd-1CW"/>
                                     <constraint firstItem="Vrj-w4-dOw" firstAttribute="leading" secondItem="YcH-ai-Nez" secondAttribute="leading" priority="750" constant="71.109999999999999" id="qAa-sg-TVB"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CRS-BP-yp8" secondAttribute="trailing" constant="54.700000000000003" id="qis-4K-k6R"/>
                                     <constraint firstItem="N3b-vX-jOI" firstAttribute="leading" secondItem="YcH-ai-Nez" secondAttribute="leading" priority="750" constant="56.670000000000002" id="rKz-G0-JOv"/>
@@ -217,6 +235,7 @@
                         <outlet property="heightConstraint" destination="ynd-H0-Fdy" id="qof-Qt-ppB"/>
                         <outlet property="titleTextField" destination="vuk-cx-2Hb" id="3tQ-do-2LX"/>
                         <outlet property="uploadImageCollectionView" destination="VWV-Tq-BDK" id="CxM-i0-Ssq"/>
+                        <outlet property="weightTextField" destination="flo-Pr-M3K" id="EBa-hU-jWb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ebo-D8-o3z" userLabel="First Responder" sceneMemberID="firstResponder"/>

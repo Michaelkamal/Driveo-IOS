@@ -162,7 +162,8 @@ public class NetworkDAL{
                 for i in 0..<images.count{
                     let image = images[i]
                     let imgData = UIImageJPEGRepresentation(image, 0.9)!
-                    multipartFormData.append(imgData, withName: "images[]",fileName:"images\(i+1).jpg", mimeType: "image/jpg")
+                    multipartFormData.append(imgData, withName: "images" //"images[]"
+                        ,fileName:"images\(i+1).jpg", mimeType: "image/jpg")
                 }
             }
             
@@ -220,39 +221,44 @@ public class NetworkDAL{
         }
         
     }
-    
-    internal func processDeleteReq(
+    internal func processPutUploadMultiPart(
         withBaseUrl baseUrl:ApiBaseUrl,
         andUrlSuffix urlSuffix:String,
-        andParameters param: Parameters,
-        onSuccess: @escaping (_ :Data)->Void,
+        andParameters param: [String:Any], headers:HTTPHeaders? = nil,
+        onSuccess: @escaping (_ :DataResponse<Any>)->Void,
         onFailure:  @escaping (_ networkError:ErrorType)->Void
-        , headers:HTTPHeaders? = nil)-> Void{
+        ,andImage image:UIImage)-> Void{
         
-        Alamofire.request(baseUrl.rawValue+urlSuffix,method: .patch, parameters: param, headers:headers).validate().responseJSON { response  in
-            switch response.result {
-            case .success(let data):
-                let jsonData = JSON(data);
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            for (key, value) in param {
+                multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+            }
+            
+            let imgData = UIImageJPEGRepresentation(image, 0.9)!
+            multipartFormData.append(imgData, withName: "avatar"
+                ,fileName:"avatar.jpg", mimeType: "image/jpg")
+            
+            
+        }, usingThreshold: UInt64.init(), to: String("\(baseUrl.rawValue)\(urlSuffix)"), method: .put, headers: headers, encodingCompletion: { (result) in
+            
+            switch result {
+            case .success(let upload, _, _):
                 
-                print("***URL**** "+urlSuffix)
-                print("-------*-*-*-----******------///////-------********-----------------")
-                print(jsonData)
-                onSuccess(response.data!);
+                upload.uploadProgress(closure: { (progress) in
+                })
                 
-            case .failure :
-                //onFailure(.internet)
-                print("-------*-*-*-----****failiure**------///////-------********-----------------")
-                print(response)
-                
-                print(response.result)
+                upload.responseJSON { response in
+                    if let value = response.result.value as? [String:Any]{
+                        if ( value["message"] as! String == MsgResponse.success.rawValue)
+                        {
+                            onSuccess(response)
+                        }else{
+                            onFailure(ErrorType.internet)
+                        }
+                    }else{onSuccess(response)}}
+            case .failure(let encodingError):
                 onFailure(ErrorType.internet)
             }
-        }}
-    
-    
-    
-    
-    
-    
-    
+        })
+    }
 }
